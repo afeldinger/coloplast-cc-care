@@ -1,0 +1,19 @@
+<header id="page-header">
+	<a href="#">
+	<svg id="logo-coloplast">
+		<use xlink:href="{{assets}}/img/svg-defs.svg#shape-logo-coloplast" />
+	</svg>
+	</a>
+
+	<h1>Coloplast Care</h1>
+
+	<ul>
+	{{#each pages}}
+		{{#is data.parent  "root" }} 
+		<li>
+			<a href="{{autolink}}"{{isActive}}> {{data.title }}</a>
+		</li> 
+		{{/is}}
+	{{/each}}
+	</ul>
+</header>

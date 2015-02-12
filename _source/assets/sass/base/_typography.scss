@@ -1,0 +1,25 @@
+
+body,
+table,
+thead,
+tbody,
+tfoot,
+input,
+textarea,
+button,
+select {
+	font-family: $font-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-header;
+}
+
+p {
+	margin: 1.2em 0;
+}

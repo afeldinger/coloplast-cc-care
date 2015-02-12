@@ -1,0 +1,15 @@
+
+header#page-header {
+	@extend %page-container;
+
+	height:80px;
+	
+	@include full-width-bg(linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, #f3f3f3), #fff);
+	@include divider-shadow();
+
+	#logo-coloplast {
+		width: 120px;
+		height: 30px;
+	}
+}
+

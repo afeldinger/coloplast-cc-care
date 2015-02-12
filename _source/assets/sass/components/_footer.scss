@@ -1,0 +1,6 @@
+
+footer#page-footer {
+	@extend %page-container;
+	@include full-width-bg($dark-gray);
+}
+

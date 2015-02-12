@@ -1,0 +1,31 @@
+
+
+hvordan genererer vi siderne?
+er der nogen særlige krav til templates?
+deadline for html skabeloner?
+
+
+opdeling af artikler & produkter i sektioner
+	- indholdssektioner
+	- facts & tips
+	- features
+		- icon class?
+	- testimonials
+
+gemme profildata / filtre
+	- skal filtrene gemmes mens man navigerer, og siden sendes med som en del af en evt. signup?
+
+"next article"
+	- hvor kommer data fra? 
+	- hvis man kommer direkte fra forsiden?
+	- respekteres filter-indstillingen?
+
+video elementer
+	- server?
+	- embedding/player?
+
+polls
+	- submit target
+
+search?
+
