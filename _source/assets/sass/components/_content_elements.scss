@@ -1,0 +1,45 @@
+
+.article-full {
+	background-color:#fff;
+	
+	.article-header {
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+
+		.elm-image {
+			img {
+				opacity: 0;
+			}
+		}
+		.elm-content {
+			h1 {
+				@include adjust-font-size-to($size-xxl);
+			}
+			p {
+				@include adjust-font-size-to($size-lg);
+				color: $color-primary;
+				font-weight: 300;
+			}
+		}
+	}
+}
+
+.main-content {
+	@extend .content-wrapper;
+
+}
+
+
+.content-block {
+	h1,
+	h2,
+	h3,
+	h4,
+	p {
+		max-width: .75 * $lg;
+	}
+}
+
+.related-items {
+	background-color: $color-background;
+}

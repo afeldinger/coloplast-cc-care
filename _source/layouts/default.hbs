@@ -6,18 +6,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-	<!-- build:css assets/css/default.css -->
+	<!-- build:css assets/css/default.min.css -->
 	<link rel="stylesheet" href="{{assets}}/css/default.css">
-	<!-- endbuild -->
-	<!-- build:js assets/js/scripts.min.js -->
-	<script src="{{assets}}/js/libs/jquery-1.11.1.min.js"></script>
-	<script src="{{assets}}/js/libs/svg4everybody.min.js"></script>
-	<script src="{{assets}}/js/main.js"></script>
 	<!-- endbuild -->
 </head>
 <body>
+
 {{>header}}
 {{ body }}
 {{>footer}}
+
+
+<!-- build:js assets/js/scripts.min.js -->
+<script src="{{assets}}/js/libs/jquery-1.11.1.min.js"></script>
+<script src="{{assets}}/js/libs/svg4everybody.min.js"></script>
+<script src="{{assets}}/js/libs/jquery-debounce.js"></script>
+<script src="{{assets}}/js/main.js"></script>
+<!-- endbuild -->
+
 </body>
 </html>

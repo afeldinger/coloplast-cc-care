@@ -1,4 +1,58 @@
 
+@font-face {
+    font-family: "HelveticaNeueW01";
+    src: url("../fonts/ae1656aa-5f8f-4905-aed0-93e667bd6e4a-abf75fb0048a6453487583d97e540c886a30bb40.eot?#iefix");
+    src: local('HelveticaNeue-Light'),
+         local('Helvetica Neue Light'),
+         url("../fonts/ae1656aa-5f8f-4905-aed0-93e667bd6e4a-abf75fb0048a6453487583d97e540c886a30bb40.eot?#iefix") format("eot"), 
+    	 url("../fonts/530dee22-e3c1-4e9f-bf62-c31d510d9656-d3f5ed72722efaf436265c43a014fdd0cfd77737.woff") format("woff"),
+    	 url("../fonts/688ab72b-4deb-4e15-a088-89166978d469-43777e352c10b5e05939db144bee82b73d858491.ttf") format("truetype"), 
+    	 url("../fonts/7816f72f-f47e-4715-8cd7-960e3723846a-72fb4fc5fc78ecb74c1a3c1712129eb4d0ebaa6b.svg#7816f72f-f47e-4715-8cd7-960e3723846a") format("svg");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "HelveticaNeueW01";
+    src: url("../fonts/b7693a83-b861-4aa6-85e0-9ecf676bc4d6-1f34fa8962dba17dd420802513f92e646643c142.eot?#iefix");
+    src: local('HelveticaNeue-Roman'),
+         local('Helvetica Neue Roman'),
+         url("../fonts/b7693a83-b861-4aa6-85e0-9ecf676bc4d6-1f34fa8962dba17dd420802513f92e646643c142.eot?#iefix") format("eot"), 
+    	 url("../fonts/bcf54343-d033-41ee-bbd7-2b77df3fe7ba-69bebefe9edeac85cc27516dbe0ea176c1c2c25c.woff") format("woff"),
+    	 url("../fonts/b0ffdcf0-26da-47fd-8485-20e4a40d4b7d-732a6affbe345e7093c12f5c0a3c6b36fc5c70e6.ttf") format("truetype"), 
+    	 url("../fonts/da09f1f1-062a-45af-86e1-2bbdb3dd94f9-7c1a1f386e4ba091e7c354a0913f51e247a66cc6.svg#da09f1f1-062a-45af-86e1-2bbdb3dd94f9") format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "HelveticaNeueW01";
+    src: url("../fonts/07fe0fec-b63f-4963-8ee1-535528b67fdb-fe56a38129fbbe9b1ff6e2b54a7b9b3409b322b9.eot?#iefix");
+    src: local('HelveticaNeue-Medium'),
+         local('Helvetica Neue Medium'),
+         url("../fonts/07fe0fec-b63f-4963-8ee1-535528b67fdb-fe56a38129fbbe9b1ff6e2b54a7b9b3409b322b9.eot?#iefix") format("eot"), 
+    	 url("../fonts/60be5c39-863e-40cb-9434-6ebafb62ab2b-2920e91b1e6ad09a5e10cd3ac4505dd51632acba.woff") format("woff"),
+    	 url("../fonts/4c6503c9-859b-4d3b-a1d5-2d42e1222415-cb113dd963a4d1349895b7bd849bc4ae608eb0a8.ttf") format("truetype"), 
+    	 url("../fonts/36c182c6-ef98-4021-9b0d-d63122c2bbf5-66821f7b57dbfe285e400c8b1d39cf67ec196da1.svg#36c182c6-ef98-4021-9b0d-d63122c2bbf5") format("svg");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "HelveticaNeueW01";
+    src: url("../fonts/c07fef9e-a934-42d7-92ad-69205f2b8a00-bb790812b9c72abc920228dab89a61b9ae7aa457.eot?#iefix");
+    src: local('HelveticaNeue-Bold'),
+         local('Helvetica Neue Bold'),
+         url("../fonts/c07fef9e-a934-42d7-92ad-69205f2b8a00-bb790812b9c72abc920228dab89a61b9ae7aa457.eot?#iefix") format("eot"), 
+    	 url("../fonts/14ff6081-326d-4dae-b778-d7afa66166fc-97968884d4c5a93c46ab1334ce9e9156c694ea4d.woff") format("woff"),
+    	 url("../fonts/8fda1e47-19be-46c7-8d83-8d4fb35572f0-e352a822bc1fa4bb1594ad9ff4546b8c95d26ab3.ttf") format("truetype"), 
+    	 url("../fonts/f751c8ae-1057-46d9-8d74-62592e002568-f61c8b2b6178ae899dce49b0f382f953a56c983f.svg#f751c8ae-1057-46d9-8d74-62592e002568") format("svg");
+    font-weight: 800;
+    font-style: normal;
+}   
+
+@include establish-baseline;
+
 body,
 table,
 thead,
@@ -11,6 +65,11 @@ select {
 	font-family: $font-body;
 }
 
+body {
+	color: $color-text-body;
+    @include adjust-leading-to($adjusted-line-height / $base-line-height);
+}
+
 h1,
 h2,
 h3,
@@ -18,8 +77,54 @@ h4,
 h5,
 h6 {
 	font-family: $font-header;
+    color: inherit;
+    font-weight: 300;
 }
 
-p {
-	margin: 1.2em 0;
+h1 {
+    @include adjust-font-size-to($size-xxl);
+    margin: rhythm(3) 0;
+    color: $color-primary;
+}
+h2 {
+    @include adjust-font-size-to($size-xl);
+    margin: rhythm(2) 0;
+    color: $color-primary;
+}
+h3 {
+    @include adjust-font-size-to($size-lg);
+    margin: rhythm(1) 0;
+}
+
+p,
+ul,
+ol {
+	margin: rhythm(2) 0;
+}
+
+a {
+	text-decoration: none;
+	
+	&,
+	&:visited {
+		color: $color-links;		
+	}
+	
+	&:active,
+	&:hover {
+		color: $color-links-active;
+	}
+
+    .icon {
+        align:absmiddle
+    }
+
+}
+
+
+.category {
+    font-size: $size-sm;
+    font-weight: 300;
+    text-transform:uppercase;
+    @include adjust-leading-to(2);
 }

@@ -1,6 +1,154 @@
 
 footer#page-footer {
-	@extend %page-container;
-	@include full-width-bg($dark-gray);
+	width:100%;
+
+	.main-footer {
+		background: $dark-gray;
+		color: #fff;
+		
+		h2,
+		a {
+			color:inherit;
+		}	
+	}
+
+	.secondary-footer {
+		background: #fff;
+
+
+		ul {
+			display:inline;
+			float:left;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		li {
+			display:inline; 
+			float:left;
+			margin: rhythm(1) 0;
+			padding: 0;
+			@include adjust-font-size-to($size-xs);
+			@include adjust-leading-to(4);
+
+			a {
+				text-decoration: underline;
+			}
+
+
+			&:nth-child(n+2) {
+				&:before {
+					content: '-';
+					display:inline;
+					float:left;
+					margin:0 6px;
+
+				}
+			}
+		}
+		a {
+			color: $color-text-body;
+
+			&:hover {
+				color: $color-links-active;
+			}
+		}
+	}
+	
+
+
+	section.call-us,
+	section.order-sample,
+	section.social {
+		margin: rhythm(4) 0;
+	}
+
+	h2 {
+		margin: rhythm(1) 0;
+		padding-bottom: rhythm(1);
+		border-bottom: 1px solid $color-borders;
+	}
+
+	.icon {
+		width: 32px;
+		height: 32px;
+		margin-top: rhythm(2);
+		fill: #ffffff;
+	}
+	
 }
 
+@include breakpoint($sm, true) {
+	footer#page-footer {
+		margin-top: rhythm(5);
+/*
+		position:fixed;
+		bottom:0;
+		width:100%;
+		height: rhythm(13);
+
+
+		&:hover {
+			height: auto;
+		}
+*/
+
+		.main-footer {
+			.content-wrapper {
+				max-width:$md;
+			}
+		}
+
+
+		.icon {
+			width: 40px;
+			height: 40px;
+			margin-top: rhythm(2);
+		}
+
+		section.call-us,
+		section.order-sample {
+			.icon {
+				display:inline;
+				position:relative;
+				float:left;
+				margin-left:-50px;
+
+			}
+		}
+
+		section.call-us {
+			@include grid-span(3,2);
+		}
+		section.order-sample {
+			@include grid-span(3,9);
+		}
+		section.social {
+			@include grid-span(4,5);
+		}
+
+
+		h2 {
+			margin: rhythm(3) 0;
+			border-bottom: 0;
+			padding-bottom: 0;
+		}
+
+		.secondary-footer {
+			ul {
+				float: right;
+			}
+		}
+	}
+}
+
+@include breakpoint($md, true) {
+	footer#page-footer {
+		.main-footer {
+			.content-wrapper {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+}

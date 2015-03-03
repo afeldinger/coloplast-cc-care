@@ -1,0 +1,21 @@
+
+.state-indicator {
+	position:absolute;
+	top:-999em;
+	left:-999em;
+
+	&:before {
+		content: 'xs';
+
+		@include breakpoint($sm) {
+			content: 'sm';
+		}
+		@include breakpoint($md) {
+			content: 'md';
+		}
+		@include breakpoint($lg) {
+			content: 'lg';
+		}
+	}
+
+}

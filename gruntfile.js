@@ -9,36 +9,37 @@ module.exports = function(grunt) {
           livereload: true,
       },
       scripts: {
-        files: ['_source/js/*.js'],
+        files: ['_source/assets/js/**/*.js'],
         tasks: ['jshint'],
         options: {
             spawn: false,
         },
       },
       images: {
-        files: ['_source/img/**/*.{png,jpg,gif}'],
+        files: ['_source/assets/img/**/*.{png,jpg,gif}'],
         tasks: ['imagemin'],
         options: {
           spawn: false,
         }
       },
+
+      svgstore: {
+        files: ['_source/assets/img/svg-defs/**/*.svg'],
+        tasks: ['svgstore:dev'],
+      },
+
       styles: {
-        files: ['_source/sass/**/*.scss'],
-        tasks: ['compass:dev', 'autoprefixer'],
+        files: ['_source/assets/sass/**/*.scss'],
+        tasks: ['compass:dev', 'autoprefixer:dev'],
         options: {
             spawn: false,
         }
       },
 
       handlebars: {
-        files: ['_source/layouts/*.hbs', '_source/includes/**/*.hbs', '_source/pages/*.hbs', '_source/contents/*.hbs'],
+        files: ['_source/layouts/*.hbs', '_source/partials/**/*.hbs', '_source/pages/*.hbs', '_source/data/*.json'],
         tasks: ['assemble'],
       },
-
-      html: {
-        files: ['./*.html'],
-        tasks: [],
-      }
     },
 
 
@@ -47,14 +48,24 @@ module.exports = function(grunt) {
       options: {
         layoutdir: '_source/layouts',
         partials: ['_source/partials/**/*.hbs'],
-        assets: '_source/assets',
+        assets: './_source/assets',
         helpers: [
           'handlebars-helpers',
+          'handlebars-helper-partial',
           'handlebars-helper-autolink',
           'handlebars-helper-isactive',
         ],
-
-        collections: ['articles'],
+        
+        collections: [
+          {
+            title: 'pages',
+            sortby: 'sortorder',
+            sortorder: 'asc', 
+          }
+        ],
+        
+        articles: grunt.file.readJSON('_source/data/articles.json'),
+        sections: grunt.file.readJSON('_source/data/sections.json'),
 
         //flatten: true,
         marked: {
@@ -64,17 +75,12 @@ module.exports = function(grunt) {
 
       pages: {
         files: [{
-          cwd: './_source/content/',
-          dest: 'dist/',
-          expand: true,
-          src: '**/*.hbs',
-        }, {
           cwd: './_source/pages/',
           dest: 'dist/',
           expand: true,
           src: '**/*.hbs',
         }]
-      }
+      },
 
     },
 
@@ -133,7 +139,6 @@ module.exports = function(grunt) {
           ],
           dest: 'dist/assets/js/scripts.js',
       },
-      dist: {}
     },
 
     uglify: {
@@ -141,7 +146,6 @@ module.exports = function(grunt) {
           src: 'dist/assets/js/scripts.js',
           dest: 'dist/assets/js/scripts.min.js',
       },
-      dist: {}
     },
 
 
@@ -170,7 +174,7 @@ module.exports = function(grunt) {
             files: [{
                 expand: true,
                 cwd: '_source/assets/img/',
-                src: ['**/*.svg', '!svg-defs/**/*.svg'],
+                src: ['**/*.svg', '!svg-defs.svg'],
                 dest: 'dist/assets/img/'
             }]
         }
@@ -179,10 +183,16 @@ module.exports = function(grunt) {
     svgstore: {
       options: {
         prefix : 'shape-', // This will prefix each ID
+        cleanup: ['fill', 'stroke'],
+        cleanupdefs: true,
         svg: { // will add and overide the the default xmlns="http://www.w3.org/2000/svg" attribute to the resulting SVG
           style: 'display:none',
           //viewBox : '0 0 100 100',
           xmlns: 'http://www.w3.org/2000/svg'
+        },
+        formatting: {
+          indent_size: 2,
+          max_preserve_newlines: 1,
         }
       },
       dev: {
@@ -235,18 +245,42 @@ module.exports = function(grunt) {
 
 
     autoprefixer: {
-        dist: {
+        dev: {
             files: {
                 '_source/assets/css/default.css': '_source/assets/css/default.css',
             },
         },
     },
+
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: '_source/assets/css',
+          src: ['*.css', '!*.min.css'],
+          dest: 'dist/assets/css',
+          ext: '.min.css',
+        }]
+      },
+    },
     
     clean: {
       dist: {
-        src: ['dist*'],
+        src: ['dist/*', '!dist/.htaccess'],
       }
-    }
+    },
+
+    copy: {
+      dist: {
+        files: [{
+          expand: true, 
+          cwd: '_source/assets/fonts/', 
+          src: ['**/*'],
+          dest: 'dist/assets/fonts/',
+        }],
+      },
+
+    },
 
     useminPrepare: {
       html: 'dist/01-frontpage.html',
@@ -257,8 +291,29 @@ module.exports = function(grunt) {
 
     usemin: {
       html: 'dist/**/*.html',
-      dist: {}
-    }
+    },
+
+
+    replace: {
+      dist: {
+        options: {
+          patterns: [
+            {
+              match: /\.\.\/_source\/assets\/img/g,
+              replacement: 'assets/img',
+            }
+          ]
+        },
+        files: [
+          {
+            expand: true, 
+            flatten: true, 
+            src: ['dist/**/*.{html,css}'], 
+            dest: 'dist/'
+          }
+        ]
+      },
+    },
 
 
   });
@@ -278,11 +333,14 @@ module.exports = function(grunt) {
     'imagemin',
     'svgmin',
     'svgstore:dist',
+    'concat',
+    'cssmin',
+    'uglify',
     'useminPrepare', 
-    'concat:generated',
-    //'cssmin:generated',
-    'uglify:generated',
-    'usemin'
+    'usemin',
+    'copy:dist',
+    'replace:dist',
+
   ]);
 
 };

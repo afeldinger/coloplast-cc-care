@@ -1,0 +1,164 @@
+
+nav.primary {
+	
+	font-family: $font-header;
+
+	> ul {
+		display:inline;
+		float:right;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	
+
+		> li {
+			@include visually-hidden;
+
+		    &.active > a {
+		    	color: $color-primary;
+		    }
+
+		    &.has-icon {
+		    	display: table-cell;
+		    	@include visually-not-hidden();
+
+				span {
+					@include visually-hidden;
+				}
+
+				svg {
+					fill: $dark-gray;
+
+					&:hover {
+						fill: $color-primary;
+					}
+				}
+			}
+
+			&:before,
+			&:after {
+				position:absolute;
+				content: ' ';				
+			    background: linear-gradient(to top, rgba($color-borders, 0), rgba($color-borders, .1) 20%, $color-borders 50%, rgba($color-borders, .9) 80%, rgba($color-borders, 0));
+				width:1px;
+				height:28px;
+			}
+
+			&:after {
+				right:0;
+			}
+
+			> a {
+				display:block;
+				text-align: center;
+				color: $color-text-body;
+				padding: 0px 10px rhythm(2);
+				line-height: 28px;
+/*
+			    border-right-width: 1px;
+			    border-style: solid;
+			    border-image: linear-gradient(to top, rgba($color-borders, 0), rgba($color-borders, .1) 20%, $color-borders 50%, rgba($color-borders, .9) 80%, rgba($color-borders, 0)) 1 100%;
+*/
+
+			}
+
+			&:last-child {
+				> a {
+					border-right-width: 0;
+				}
+			}
+		}
+	}
+
+
+}
+
+nav.primary-small {
+	
+}
+
+@include breakpoint($md, true) {
+
+	nav.primary {
+
+		> ul {
+			display: table;
+			float: none;
+			width: 100%;
+		
+			> li {
+
+				@include visually-not-hidden();
+				display: table-cell;
+/*
+			    &:first-child {
+			    	border-left-width:1px;
+			    }
+*/
+				&.nav-btn {
+					@include visually-hidden;
+				}
+
+
+
+				> ul {
+					position:absolute;
+					display:none;
+					top: 100%;
+					width:380px;
+					background: #fff;
+					z-index:10;
+
+					margin:0;
+					padding:4px 0 0;
+					list-style:none;
+
+					> li {
+						display:block;
+
+						> a {
+							display:block;
+							padding: rhythm(2) rhythm(2);
+							@include adjust-font-size-to($size-sm);
+							color: inherit;
+						}
+
+						&.over {
+							> a {
+								background: $light-gray;
+							}
+						}
+					}
+
+
+				}
+
+				&:nth-child(n+3) {
+					> ul {
+
+					}
+				}
+
+
+				&.over {
+
+
+					> a {
+
+						position:relative;
+						border-bottom:4px solid $color-primary;
+						z-index:12;
+
+					}
+
+					ul {
+						display: block;
+					}
+				}
+			}
+		}
+
+
+	}
+}
+

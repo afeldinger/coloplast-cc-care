@@ -1,0 +1,11 @@
+<div class="item-content">
+	<h2>{{title}}</h2>
+	<form>
+	{{#eachIndex options}}
+		<label for="survey_{{index}}">
+			<input type="radio" name="survey" id="survey_{{index}}" value="{{index}}">
+			{{this}}
+		</label>
+	{{/eachIndex}}
+	</form>
+</div>

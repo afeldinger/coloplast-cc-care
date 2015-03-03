@@ -1,15 +1,89 @@
 
+
 header#page-header {
-	@extend %page-container;
+	min-height:58px;
+	z-index:10;
 
-	height:80px;
 	
-	@include full-width-bg(linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, #f3f3f3), #fff);
-	@include divider-shadow();
+	background: 
+		linear-gradient(top, #fff 0%, #fff 50%, #fefefe 51%, #f3f3f3 100%), 
+		#fff;
 
-	#logo-coloplast {
-		width: 120px;
-		height: 30px;
+	@include divider-shadow();
+	
+	.brand-primary {
+		display: inline;
+		float: left;
+		width: 150px;
+		margin-top:0;
+		margin-bottom: 0;
+		margin-right:-150px;
+		padding-top: 15px;
+
+		color: $color-brand;
+
+		svg {
+			fill: $color-brand;
+			width: 120px;
+			height: 30px;
+		}
+
 	}
+
+	.brand-secondary {
+		@include visually-hidden;
+
+		display: inline;
+		float: right;
+		width: 150px;
+		margin-top:0;
+		margin-bottom: 0;
+		margin-left: -150px;
+		text-align: right;
+		padding-top:37px;
+
+		color: $color-primary;
+
+		svg {
+			//fill: $color-primary;
+			width: 120px;
+			height: 30px;
+		}
+	}
+
+	.brand-primary,
+	.brand-secondary {
+		span {
+			position: absolute;
+			left: -9999px;
+		}
+	}
+
+	nav.primary {
+		display: block;
+		padding: 18px 0 0 150px;
+	}
+
 }
 
+@include breakpoint($md, true) {
+
+	header#page-header {
+		height:80px;
+
+		.brand-primary {
+			padding-top: 37px;
+		}
+
+		.brand-secondary {
+			@include visually-not-hidden;
+			padding-top: 37px;
+		}
+
+		nav.primary {
+			padding: 40px 150px 0 150px;
+		}
+
+	}
+
+}

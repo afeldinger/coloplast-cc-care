@@ -1,0 +1,39 @@
+
+.hero {
+
+
+	margin-left:0;
+	margin-right:0;	
+
+	background-repeat: no-repeat;
+	background-position: 50% 0px;
+
+	@include divider-shadow();
+	
+	.content-wrapper {
+		position:relative;
+	}
+	
+	.elm-image {
+		img {
+			display:block;
+			margin:0 auto;
+			opacity: 0;
+		}
+	}
+	
+	
+	.elm-content {
+		//@include float-span(5, 1, omega);
+		position:absolute;
+		top: 60px;
+	}
+	
+
+}
+@include breakpoint($md, true) {
+	.hero {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

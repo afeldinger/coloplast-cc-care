@@ -5,14 +5,27 @@ body {
 	overflow-x: hidden;
 }
 body {
-	background-color: $background-color;
+	background-color: $color-background;
 	text-align: center;
 	margin:0;
 }
 
-
-%page-container {
-	margin:0 auto;
+.content-wrapper {
+	margin:0;
+	padding-left:$content-margin;
+	padding-right:$content-margin;
 	text-align:left;
-	width: $lg;
+	max-width: $lg;
+	overflow: hidden;
+}
+
+
+@include breakpoint($lg-bp, true) {
+
+	.content-wrapper {
+		margin:0 auto;
+		padding-left:0;
+		padding-right:0;
+		width: $lg;	
+	}
 }

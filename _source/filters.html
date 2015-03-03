@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Coloplast Care proof of concept</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.2.2/flexslider-min.css">
+	<style type="text/css">
+		
+		.flexslider {
+			background: #ccc;
+		}
+		.slide {
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+
+
+<h1>Filters</h1>
+<form>
+	<label for="categories">Pick a category</label>
+	<select id="categories" name="categories">
+		<option value="all">All</option>
+		<option value="fruits">Fruits</option>
+		<option value="nuts">Nuts</option>
+		<option value="berries">Berries</option>
+		<option value="vegetables">Vegetables</option>
+		<option value="meat">Meat</option>
+		<option value="mixed_salad">Mixed salad</option>
+		<option value="male">Male</option>
+	</select>
+</form>
+
+<ul id="foods">
+	<li data-category="fruits, mixed_salad">Apple</li>
+	<li data-category="fruits">Banana</li>
+	<li data-category="fruits">Orange</li>
+	<li data-category="fruits, male">Pear</li>
+	<li data-category="nuts">Walnut</li>
+	<li data-category="nuts, male">Pecan</li>
+	<li data-category="nuts, mixed_salad">Cashew</li>
+	<li data-category="nuts">Almond</li>
+	<li data-category="berries">Strawberry</li>
+	<li data-category="berries, male">Cherry</li>
+	<li data-category="berries, mixed_salad">Rasberry</li>
+	<li data-category="vegetables, mixed_salad">Cucumber</li>
+	<li data-category="vegetables">Tomato</li>
+	<li data-category="vegetables, mixed_salad">Red pepper</li>
+	<li data-category="vegetables, male">Onion</li>
+	<li data-category="vegetables">Garl	ic</li>
+	<li data-category="meat">Beef</li>
+	<li data-category="meat, mixed_salad">Chicken</li>
+	<li data-category="meat">Veal</li>
+	<li data-category="meat">Turkey</li>
+</ul>
+
+
+<div class="flexslider">
+	<ul class="slides">
+		<li class="slide slide-1">
+			<h1>Feature 1</h1>
+		</li>
+		<li class="slide slide-2">
+			<h1>Feature 2</h1>
+		</li>
+		<li class="slide slide-3">
+			<h1>Feature 3</h1>
+		</li>
+		<li class="slide slide-4">
+			<h1>Feature 4</h1>
+		</li>
+	</ul>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.2.2/jquery.flexslider-min.js"></script>
+<script>
+	$(document).ready(function() {
+
+		$('select#categories').change(function() {
+			var category = $(this).val();
+			if (category == 'all') {
+				$('#foods li').show();
+			} else {
+				$('#foods li').hide().filter(function() {
+					return $.inArray(category, $(this).data('category').split(/,\s+/g)) !== -1;
+				}).show();
+			} 
+		})
+
+		// Can also be used with $(document).ready()
+		$(window).load(function() {
+		  $('.flexslider').flexslider({
+		    animation: "slide"
+		  });
+		});
+
+	});
+	
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<li>
+	<a href="{{link}}">{{title}}</a>
+
+	{{#if sections}}
+	<ul>
+	{{#each sections}}
+		{{>nav_item this}}
+	{{/each}}
+	</ul>
+	{{/if}}
+</li> 

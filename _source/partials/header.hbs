@@ -1,19 +1,46 @@
 <header id="page-header">
-	<a href="#">
-	<svg id="logo-coloplast">
-		<use xlink:href="{{assets}}/img/svg-defs.svg#shape-logo-coloplast" />
-	</svg>
-	</a>
+	<div class="content-wrapper">
+		<h1 class="brand-primary">
+			<a href="index.html">
+				<span>Coloplast</span>
+				<svg viewBox="0 0 120 30" class="logo-coloplast" title="Coloplast">
+					<use xlink:href="{{assets}}/img/svg-defs.svg#shape-logo-coloplast" />
+				</svg>
+			</a>
+		</h1>
 
-	<h1>Coloplast Care</h1>
+		<h2 class="brand-secondary">
+			<span>Coloplast Care</span>
+			<svg class="logo-coloplast-care" title="Coloplast">
+				<use xlink:href="{{assets}}/img/svg-defs.svg#shape-logo-coloplast-care" />
+			</svg>
+		</h2>
 
-	<ul>
-	{{#each pages}}
-		{{#is data.parent  "root" }} 
-		<li>
-			<a href="{{autolink}}"{{isActive}}> {{data.title }}</a>
-		</li> 
-		{{/is}}
-	{{/each}}
-	</ul>
+		<nav class="primary" id="primary-nav">
+			<ul>
+
+			{{#each sections}}
+				{{>nav_item this}}
+			{{/each}}
+			<!--
+				<li class="search has-icon">
+					<a href="#">
+						<span>Search</span>
+						<svg class="icon icon-search" title="Search">
+							<use xlink:href="{{assets}}/img/svg-defs.svg#shape-icon-search" />
+						</svg>
+					</a>
+				</li>
+			-->
+				<li class="nav-btn has-icon">
+					<a href="#primary-nav">
+						<span>Navigation</span>
+						<svg class="icon icon-navbars" title="Navigation">
+							<use xlink:href="{{assets}}/img/svg-defs.svg#shape-icon-navbars" />
+						</svg>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
 </header>

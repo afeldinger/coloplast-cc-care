@@ -1,0 +1,20 @@
+<div class="elm-image">
+	{{#is type 'video'}}
+		<svg class="icon icon-media-play" title="Play media">
+			<use xlink:href="{{assets}}/img/svg-defs.svg#shape-icon-arrow-right" />
+		</svg>
+	{{/is}}
+	<img src="{{thumb}}">
+</div>
+
+<div class="elm-content">
+	<div class="category">{{category}}</div>
+	<h2>{{title}}</h2>
+	<p>{{teaser}}</p>
+	<a href="#" class="more-link">
+		Read more
+		<svg class="icon icon-arrow-right" title="Arrow right">
+			<use xlink:href="{{assets}}/img/svg-defs.svg#shape-icon-arrow-right" />
+		</svg>
+	</a>
+</div>

@@ -1,0 +1,19 @@
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/x-font-woff
+
+FileETag MTime Size
+<ifmodule mod_expires.c>
+  <filesmatch "\.(jpg|gif|png|svg|css|js|woff|ttf)$">
+       ExpiresActive on
+       ExpiresDefault "access plus 1 year"
+   </filesmatch>
+</ifmodule>

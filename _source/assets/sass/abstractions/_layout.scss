@@ -5,28 +5,49 @@
 	&:after {
 		position:absolute;
 		content: '';
-		left: -100%;
+		left:0;
+		width: 100%;
 		bottom: -8px;
-		width:300%;
 		height:8px;
+
 		background-image: 
 			linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,0) 30%), 
-			radial-gradient(50% 10px at 50% 0px, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0) 50%);
+			radial-gradient(100% 10px at 50% 2px, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0) 50%);
+		z-index: 5;
 	}
+
 }
 
 @mixin full-width-bg($args...) {
 	position: relative;
+	background: $args;
+	overflow: hidden;
 
-	&:before {
-		position:absolute;
-		content: '';
-		left:-100%;
-		width:300%;
-		top:0;
-		bottom:0;
-		background: $args;
-		z-index:-1;
-		border: 1px solid transparent;
+	@include breakpoint($lg-bp, true) {
+		width: $lg;
+		overflow: visible;
+		clear:both;
+
+
+		&:before {
+			position:absolute;
+			content: '';
+			left:-100%;
+			width:300%;
+			top:0px;
+			bottom:0;
+			background: $args;
+			z-index:-1;
+		}
+
 	}
+}
+
+@mixin visually-hidden() {
+	position: absolute;
+	left: -9999px;
+}
+@mixin visually-not-hidden($left: auto) {
+	position: static;
+	left: $left;
 }

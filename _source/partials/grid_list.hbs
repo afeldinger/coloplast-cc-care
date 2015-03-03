@@ -1,0 +1,27 @@
+<section class="grid-list">
+{{#if grid_title}}
+	<h2>{{grid_title}}</h2>
+{{/if}}
+
+{{#if show_filters}}
+	<aside class="filters">
+		filters
+	</aside>
+{{/if}}
+	
+	<ul class="list-items"> 
+	{{#withSort articles "data.title"}}
+		<li class="type-{{type}}" data-type="{{type}}" data-category="{{category}}" data-gender="{{gender}}">
+			{{#is type "survey"}}
+				{{partial 'grid_list_item_survey' this}}
+			{{else}}
+				{{#is type "cta"}}
+					{{partial 'grid_list_item_cta' this}}
+				{{else}}
+					{{partial 'grid_list_item' this}}
+				{{/is}}
+			{{/is}}
+		</li>
+	{{/withSort}}
+	</ul>
+</section>
