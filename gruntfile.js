@@ -308,7 +308,7 @@ module.exports = function(grunt) {
           {
             expand: true, 
             flatten: true, 
-            src: ['dist/**/*.{html,css}'], 
+            src: ['dist/**/*.{html,css}'],
             dest: 'dist/'
           }
         ]
