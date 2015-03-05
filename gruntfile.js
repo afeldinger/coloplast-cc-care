@@ -299,17 +299,18 @@ module.exports = function(grunt) {
         options: {
           patterns: [
             {
-              match: /\.\.\/_source\/assets\/img/g,
-              replacement: 'assets/img',
-            }
+              match: /(\.\.\/_source\/assets\/|_source\/assets\/|assets\/)/g,
+              replacement: 'http://git.krympevaerk.dk/coloplast_cc/dist/assets/',
+            },
           ]
         },
         files: [
           {
             expand: true, 
-            flatten: true, 
-            src: ['dist/**/*.{html,css}'],
-            dest: 'dist/'
+            //flatten: true, 
+            cwd: 'dist',
+            src: ['**/*.{html,css}'],
+            dest: 'dist/.'
           }
         ]
       },
