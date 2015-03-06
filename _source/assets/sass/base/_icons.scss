@@ -1,0 +1,16 @@
+
+
+.icon {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+.icon-navbars {
+	@include icon($navbars);
+}
+.icon-phone-outline {
+	@include icon($phone-outline);
+}
+.icon-box-open {
+	@include icon($box-open);
+}

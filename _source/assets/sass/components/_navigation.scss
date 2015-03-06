@@ -22,7 +22,7 @@ nav.primary {
 		    	display: table-cell;
 		    	@include visually-not-hidden();
 
-				span {
+				span:first-child {
 					@include visually-hidden;
 				}
 

@@ -53,23 +53,26 @@
 				text-indent: -999em;
 				color: inherit;
 
-				&:hover {
-					color: $color-primary;
-				}
-				.icon-arrow-right {
+				
+				.icon {
+					@include icon($arrow-right);
+
 					display:inline;
 					float:right;
-					width: 8px;
-					height:12px;
-					margin: 7px 0;
-					fill: $color-text-body;
+					font-size: inherit;
+					line-height: inherit;
+					text-indent: 999em;
+				}
+
+				&:hover {
+					color: $color-primary;
 				}
 			}
 		}
 
 		.elm-content-over {
 			position:absolute;
-			left:-999em;
+			left:-9999em;
 		}
 		
 		@include breakpoint($sm, true) {

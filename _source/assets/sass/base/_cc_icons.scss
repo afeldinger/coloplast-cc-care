@@ -1,0 +1,68 @@
+$search-font-family: "cc-icons";
+$search-value: "\e000";
+$search: "cc-icons" "\e000";
+$arrow-left-font-family: "cc-icons";
+$arrow-left-value: "\e008";
+$arrow-left: "cc-icons" "\e008";
+$gender-female-font-family: "cc-icons";
+$gender-female-value: "\e004";
+$gender-female: "cc-icons" "\e004";
+$gender-male-font-family: "cc-icons";
+$gender-male-value: "\e003";
+$gender-male: "cc-icons" "\e003";
+$phone-outline-font-family: "cc-icons";
+$phone-outline-value: "\e001";
+$phone-outline: "cc-icons" "\e001";
+$navbars-font-family: "cc-icons";
+$navbars-value: "\e002";
+$navbars: "cc-icons" "\e002";
+$arrow-down-font-family: "cc-icons";
+$arrow-down-value: "\e009";
+$arrow-down: "cc-icons" "\e009";
+$arrow-up-font-family: "cc-icons";
+$arrow-up-value: "\e006";
+$arrow-up: "cc-icons" "\e006";
+$box-open-font-family: "cc-icons";
+$box-open-value: "\e005";
+$box-open: "cc-icons" "\e005";
+$arrow-right-font-family: "cc-icons";
+$arrow-right-value: "\e007";
+$arrow-right: "cc-icons" "\e007";
+
+@mixin icon-font-family($char) {
+  font-family: nth($char, 1);
+}
+
+@mixin icon-font() {
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin icon-content($char) {
+  content: nth($char, 2);
+}
+
+@mixin icon($char) {
+  @include icon-font-family($char);
+  @include icon-font();
+
+  &:before {
+    @include icon-content($char);
+  }
+}
+
+@font-face {
+  font-family: "cc-icons";
+  src:url("../fonts/cc-icons.eot");
+  src:url("../fonts/cc-icons.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/cc-icons.woff") format("woff"),
+    url("../fonts/cc-icons.ttf") format("truetype"),
+    url("../fonts/cc-icons.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

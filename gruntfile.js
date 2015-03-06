@@ -28,6 +28,16 @@ module.exports = function(grunt) {
         tasks: ['svgstore:dev'],
       },
 
+      sprites: {
+        files: ['_source/assets/img/{sprites,sprites-2x}/*.png'],
+        tasks: ['sprite'],
+      },
+
+      iconfonts: {
+        files: ['_source/assets/fonts/icons/*.svg'],
+        tasks: ['font'],
+      },
+
       styles: {
         files: ['_source/assets/sass/**/*.scss'],
         tasks: ['compass:dev', 'autoprefixer:dev'],
@@ -42,6 +52,31 @@ module.exports = function(grunt) {
       },
     },
 
+
+    font: {
+      all: {
+        // SVG files to read in 
+        src: ['_source/assets/fonts/icons/*.svg'],
+   
+        // Location to output CSS variables 
+        destCss: [
+          //'_source/assets/css/icons.css',
+          '_source/assets/sass/base/_cc_icons.scss'
+        ],
+   
+        // Location to output fonts (expanded via brace expansion) 
+        destFonts: '_source/assets/fonts/cc-icons.{svg,woff,eot,ttf}',
+   
+        // Optional: Custom naming of font families for multi-task support 
+        fontFamily: 'cc-icons',
+
+
+        cssRouter: function (fontpath) {
+          return fontpath.replace('_source/assets','..');
+
+        },
+      }
+    },
 
     // Assembles your page content with html layout
     assemble: {
@@ -148,6 +183,25 @@ module.exports = function(grunt) {
       },
     },
 
+    sprite:{
+      normal: {
+        src: '_source/assets/img/sprites/*.png',
+        dest: '_source/assets/img/sprites.png',
+        destCss: '_source/assets/sass/base/_sprites.scss',
+        imgPath: '../img/sprites.png',
+        cssVarMap: function (sprite) {
+          sprite.name = 'sprite_' + sprite.name;
+        }
+      },
+      /*
+      retina: {
+        src: '_source/assets/img/sprites-2x/*.png',
+        dest: '_source/assets/img/sprites-2x.png',
+        destCss: '_source/assets/sass/base/_sprites-2x.scss'
+      },
+      */
+
+    },
 
     imagemin: {
         dist: {
@@ -275,7 +329,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true, 
           cwd: '_source/assets/fonts/', 
-          src: ['**/*'],
+          src: ['*.{svg,woff,eot,ttf}'],
           dest: 'dist/assets/fonts/',
         }],
       },

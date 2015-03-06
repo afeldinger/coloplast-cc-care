@@ -1,6 +1,10 @@
+Active
+	no svgs - use icon font/image sprites instead
+	no data-attributes - classname-based filters
+	external survey function?
 
-no svgs - use icon font/image sprites instead
-no data-attributes - classname-based filters
-absolute links to static assets
-survey function
 
+
+Completed
+
+	absolute links to static assets

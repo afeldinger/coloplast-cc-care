@@ -19,15 +19,13 @@ header#page-header {
 		margin-bottom: 0;
 		margin-right:-150px;
 		padding-top: 15px;
-
+		
 		color: $color-brand;
 
-		svg {
-			fill: $color-brand;
-			width: 120px;
-			height: 30px;
+		span {
+			display:block;
+			@include sprite($sprite-logo-coloplast);
 		}
-
 	}
 
 	.brand-secondary {
@@ -35,27 +33,26 @@ header#page-header {
 
 		display: inline;
 		float: right;
-		width: 150px;
-		margin-top:0;
+		width: 110px;
+		margin-top: 0;
 		margin-bottom: 0;
 		margin-left: -150px;
-		text-align: right;
-		padding-top:37px;
+		padding-top:0px;
 
 		color: $color-primary;
-
-		svg {
-			//fill: $color-primary;
-			width: 120px;
-			height: 30px;
+		
+		span {
+			float:right;
+			@include sprite($sprite-logo-coloplast-care);
 		}
 	}
 
 	.brand-primary,
 	.brand-secondary {
 		span {
-			position: absolute;
-			left: -9999px;
+			display:block;
+			text-align: left;
+			text-indent: -999em;
 		}
 	}
 
@@ -77,11 +74,11 @@ header#page-header {
 
 		.brand-secondary {
 			@include visually-not-hidden;
-			padding-top: 37px;
+			padding-top: 23px;
 		}
 
 		nav.primary {
-			padding: 40px 150px 0 150px;
+			padding: 40px 110px 0 150px;
 		}
 
 	}

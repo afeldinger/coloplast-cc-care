@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,6 +55,60 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+@font-face {
+  font-family: "cc-icons";
+  src: url("../fonts/cc-icons.eot");
+  src: url("../fonts/cc-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/cc-icons.woff") format("woff"), url("../fonts/cc-icons.ttf") format("truetype"), url("../fonts/cc-icons.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.icon {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.icon-navbars {
+  font-family: "cc-icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-navbars:before {
+  content: "";
+}
+
+.icon-phone-outline {
+  font-family: "cc-icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-phone-outline:before {
+  content: "";
+}
+
+.icon-box-open {
+  font-family: "cc-icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-box-open:before {
+  content: "";
+}
+
 html,
 body {
   overflow-x: hidden;
@@ -82,6 +137,36 @@ body {
     width: 66.66667rem;
   }
 }
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
 @font-face {
   font-family: "HelveticaNeueW01";
   src: url("../fonts/ae1656aa-5f8f-4905-aed0-93e667bd6e4a-abf75fb0048a6453487583d97e540c886a30bb40.eot?#iefix");
@@ -293,33 +378,22 @@ footer#page-footer h2 {
   border-bottom: 1px solid #bcbcbc;
 }
 footer#page-footer .icon {
-  width: 32px;
-  height: 32px;
+  display: block;
+  font-size: 32px;
+  line-height: 1em;
   margin-top: 0.8rem;
-  fill: #ffffff;
+  color: #fff;
 }
 
 @media (min-width: 45rem) {
   footer#page-footer {
     margin-top: 2rem;
-    /*
-    		position:fixed;
-    		bottom:0;
-    		width:100%;
-    		height: rhythm(13);
-    
-    
-    		&:hover {
-    			height: auto;
-    		}
-    */
   }
   footer#page-footer .main-footer .content-wrapper, footer#page-footer .main-footer .main-content {
     max-width: 60rem;
   }
   footer#page-footer .icon {
-    width: 40px;
-    height: 40px;
+    font-size: 36px;
     margin-top: 0.8rem;
   }
   footer#page-footer section.call-us .icon,
@@ -428,22 +502,33 @@ footer#page-footer .icon {
   text-indent: -999em;
   color: inherit;
 }
+.grid-list li .elm-content a.more-link .icon,
+.grid-list li .elm-content-over a.more-link .icon {
+  font-family: "cc-icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: inline;
+  float: right;
+  font-size: inherit;
+  line-height: inherit;
+  text-indent: 999em;
+}
+.grid-list li .elm-content a.more-link .icon:before,
+.grid-list li .elm-content-over a.more-link .icon:before {
+  content: "";
+}
 .grid-list li .elm-content a.more-link:hover,
 .grid-list li .elm-content-over a.more-link:hover {
   color: #00b2ce;
 }
-.grid-list li .elm-content a.more-link .icon-arrow-right,
-.grid-list li .elm-content-over a.more-link .icon-arrow-right {
-  display: inline;
-  float: right;
-  width: 8px;
-  height: 12px;
-  margin: 7px 0;
-  fill: #707070;
-}
 .grid-list li .elm-content-over {
   position: absolute;
-  left: -999em;
+  left: -9999em;
 }
 @media (min-width: 45rem) {
   .grid-list li {
@@ -625,32 +710,37 @@ header#page-header .brand-primary {
   padding-top: 15px;
   color: #004990;
 }
-header#page-header .brand-primary svg {
-  fill: #004990;
+header#page-header .brand-primary span {
+  display: block;
+  background-image: url(../img/sprites.png);
+  background-position: -89px 0px;
   width: 120px;
-  height: 30px;
+  height: 28px;
 }
 header#page-header .brand-secondary {
   position: absolute;
   left: -9999px;
   display: inline;
   float: right;
-  width: 150px;
+  width: 110px;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: -150px;
-  text-align: right;
-  padding-top: 37px;
+  padding-top: 0px;
   color: #00b2ce;
 }
-header#page-header .brand-secondary svg {
-  width: 120px;
-  height: 30px;
+header#page-header .brand-secondary span {
+  float: right;
+  background-image: url(../img/sprites.png);
+  background-position: 0px 0px;
+  width: 89px;
+  height: 38px;
 }
 header#page-header .brand-primary span,
 header#page-header .brand-secondary span {
-  position: absolute;
-  left: -9999px;
+  display: block;
+  text-align: left;
+  text-indent: -999em;
 }
 header#page-header nav.primary {
   display: block;
@@ -667,10 +757,10 @@ header#page-header nav.primary {
   header#page-header .brand-secondary {
     position: static;
     left: auto;
-    padding-top: 37px;
+    padding-top: 23px;
   }
   header#page-header nav.primary {
-    padding: 40px 150px 0 150px;
+    padding: 40px 110px 0 150px;
   }
 }
 .hero {
@@ -732,7 +822,7 @@ nav.primary > ul > li.has-icon {
   position: static;
   left: auto;
 }
-nav.primary > ul > li.has-icon span {
+nav.primary > ul > li.has-icon span:first-child {
   position: absolute;
   left: -9999px;
 }
@@ -846,14 +936,4 @@ nav.primary > ul > li:last-child > a {
   .state-indicator:before {
     content: 'lg';
   }
-}
-
-svg.icon {
-  width: 16px;
-  height: 16px;
-  vertical-align: text-top;
-}
-
-#shape-logo-coloplast-care {
-  fill: #00b2ce;
 }
