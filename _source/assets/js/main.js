@@ -48,8 +48,9 @@ function grid_list_init() {
 				$(this).addClass('over');
 			}, function() {
 				$(this).removeClass('over');
-			}).click(function() {
-				//alert($(this).find('a.more-link').attr('href'));
+			}).click(function(e) {
+				e.preventDefault();
+				location.href = $(this).find('a.more-link').attr('href');
 			})
 			.find('.elm-content').clone().removeClass('elm-content').addClass('elm-content-over').appendTo(this);
 

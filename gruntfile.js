@@ -23,11 +23,6 @@ module.exports = function(grunt) {
         }
       },
 
-      svgstore: {
-        files: ['_source/assets/img/svg-defs/**/*.svg'],
-        tasks: ['svgstore:dev'],
-      },
-
       sprites: {
         files: ['_source/assets/img/{sprites,sprites-2x}/*.png'],
         tasks: ['sprite'],
@@ -184,6 +179,15 @@ module.exports = function(grunt) {
     },
 
     sprite:{
+      retina: {
+        src: '_source/assets/img/sprites-2x/*.png',
+        dest: '_source/assets/img/sprites-2x.png',
+        destCss: '_source/assets/sass/base/_sprites-2x.scss',
+        imgPath: '../img/sprites-2x.png',
+        cssVarMap: function (sprite) {
+          sprite.name = 'sprite_' + sprite.name + '_2x';
+        },
+      },
       normal: {
         src: '_source/assets/img/sprites/*.png',
         dest: '_source/assets/img/sprites.png',
@@ -193,13 +197,6 @@ module.exports = function(grunt) {
           sprite.name = 'sprite_' + sprite.name;
         }
       },
-      /*
-      retina: {
-        src: '_source/assets/img/sprites-2x/*.png',
-        dest: '_source/assets/img/sprites-2x.png',
-        destCss: '_source/assets/sass/base/_sprites-2x.scss'
-      },
-      */
 
     },
 
@@ -228,55 +225,11 @@ module.exports = function(grunt) {
             files: [{
                 expand: true,
                 cwd: '_source/assets/img/',
-                src: ['**/*.svg', '!svg-defs.svg'],
+                src: ['**/*.svg'],
                 dest: 'dist/assets/img/'
             }]
         }
     },
-
-    svgstore: {
-      options: {
-        prefix : 'shape-', // This will prefix each ID
-        cleanup: ['fill', 'stroke'],
-        cleanupdefs: true,
-        svg: { // will add and overide the the default xmlns="http://www.w3.org/2000/svg" attribute to the resulting SVG
-          style: 'display:none',
-          //viewBox : '0 0 100 100',
-          xmlns: 'http://www.w3.org/2000/svg'
-        },
-        formatting: {
-          indent_size: 2,
-          max_preserve_newlines: 1,
-        }
-      },
-      dev: {
-        files: {
-          '_source/assets/img/svg-defs.svg': ['_source/assets/img/svg-defs/*.svg'],
-        }
-      },
-      dist: {
-        files: {
-          'dist/assets/img/svg-defs.svg': ['dist/assets/img/svg-defs/*.svg'],
-        }
-      },
-    },
-
-    /*
-    sass: {
-        dist: {
-            options: {
-                style: 'expanded', //'compressed'
-                require: ['compass', 'sass-globbing'],
-            },
-            expand: true,
-            cwd: './_source/sass/',
-            src: ['*.scss'],
-            dest: './assets/css/',
-            ext: '.css'
-        } 
-    },
-    */
-
 
     compass: {
       options: {
@@ -377,7 +330,7 @@ module.exports = function(grunt) {
   require('matchdep').filterDev(['grunt-*', 'assemble']).forEach(grunt.loadNpmTasks);
 
   // Default task(s).
-  grunt.registerTask('default', ['assemble', 'svgstore:dev', 'compass:dist', 'autoprefixer']);
+  grunt.registerTask('default', ['assemble', 'compass:dist', 'autoprefixer']);
 
   // Build minified assets
   grunt.registerTask('build', [
@@ -387,10 +340,9 @@ module.exports = function(grunt) {
     'prettify', 
     'imagemin',
     'svgmin',
-    'svgstore:dist',
-    'concat',
-    'cssmin',
-    'uglify',
+//    'concat',
+//    'cssmin',
+//    'uglify',
     'useminPrepare', 
     'usemin',
     'copy:dist',

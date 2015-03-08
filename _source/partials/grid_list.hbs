@@ -10,26 +10,26 @@
 {{/if}}
 	
 	<ul class="list-items"> 
-	{{#withSort articles "data.title"}}
+	{{#eachProperty articles}}
 		<li class="
-			type-{{type}} 
-		{{#each category}}
+			type-{{value.type}} 
+		{{#each value.category}}
 			filter--category--{{hyphenate this}} 
 		{{/each}}
-		{{#each gender}}
+		{{#each value.gender}}
 			filter--gender--{{hyphenate this}}
 		{{/each}}
 		">
 			{{#is type "survey"}}
-				{{partial 'grid_list_item_survey' this}}
+				{{partial 'grid_list_item_survey' value}}
 			{{else}}
 				{{#is type "cta"}}
-					{{partial 'grid_list_item_cta' this}}
+					{{partial 'grid_list_item_cta' value}}
 				{{else}}
-					{{partial 'grid_list_item' this}}
+					{{partial 'grid_list_item' value}}
 				{{/is}}
 			{{/is}}
 		</li>
-	{{/withSort}}
+	{{/eachProperty}}
 	</ul>
 </section>

@@ -1,0 +1,134 @@
+
+.article-full {
+	margin-top:0;
+	text-align:center;
+	background-color:#fff;
+
+	> *:nth-child(n+2) {
+		margin-top: rhythm(6);
+	}
+
+	.article-header {
+		text-align:left;
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		padding-top: rhythm(2);
+		padding-bottom: rhythm(4);
+
+		.content-block {
+			.elm-image {
+				img {
+					max-width: none;
+					opacity: 0;
+				}
+			}
+			.elm-content {
+				h1 {
+					@include adjust-font-size-to($size-xxxl);
+				}
+				p {
+					@include adjust-font-size-to($size-lg);
+					color: $color-primary;
+					font-weight: 300;
+				}
+			}
+		}
+	}
+
+	.main-content {
+		text-align:left;
+	}
+
+
+	&.type-article {
+		
+		.article-header {
+			background-color: $color-background;
+		}
+
+		.main-content {
+			@extend .content-wrapper;
+			max-width: 636px;
+			margin-left: auto;
+			margin-right: auto;
+		}			
+
+		
+		@include breakpoint($sm, true) {
+			
+			.article-header {
+				padding-top: 0;
+				padding-bottom: 0;
+
+				background-image:none !important;
+
+				@include layout(6 6, $gutter:60/68) {
+					.content-block {
+						position: relative;
+						margin-top: rhythm(8);
+						margin-bottom: rhythm(8);
+
+						.elm-image {
+							position:relative;
+							@include grid-span(1,2);
+							height: 645px;
+							overflow:hidden;
+
+							img {
+								position: absolute;
+								opacity:1;
+								left: 50%;
+								height: 100%;
+								transform: translate(-50%,0);
+							}
+
+						}
+						.elm-content {
+							position:absolute;
+							bottom: 0;
+							transform: translate(0, -25%);
+							@include grid-span(1,1);
+						}
+					}
+				}
+			}
+
+
+			.main-content {
+				@include layout(6 6, $gutter: 1.25) {
+					.content-block {
+
+						.elm-image {
+							margin-bottom: rhythm(4);
+
+							&.full-width {
+								@include grid-span(2, 1);
+							}
+
+							&.inline-left {
+								clear:left;
+								@include float-span(1, 1);
+							}
+						}
+						.elm-content {
+							width:auto;
+							float:none;
+							clear:none;
+							display:inline;
+						}
+					}
+				}
+			}
+		}
+		@include breakpoint($md, true) {
+			
+			.article-header {
+				.content-block {
+					.elm-content {
+						transform: translate(0, -45%);
+					}
+				}
+			}
+		}
+	}
+}

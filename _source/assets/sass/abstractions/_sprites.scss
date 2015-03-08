@@ -1,0 +1,13 @@
+
+@mixin sprite-2x($sprite2x, $sprite1x) {
+  @include sprite($sprite2x);
+  @include sprite-position($sprite1x);
+  @include sprite-height($sprite1x);
+  @include sprite-width($sprite1x);
+  @include sprite-background-size($sprite1x);
+}
+
+
+@mixin sprite-background-size($sprite) {
+  background-size: nth($sprite, 5) nth($sprite, 6);
+}

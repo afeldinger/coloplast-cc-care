@@ -8,10 +8,23 @@ body {
 	background-color: $color-background;
 	text-align: center;
 	margin:0;
+
+	&.page-article,
+	&.page-product {
+		background-color: #fff;
+	}
+
+	> * + * {
+		margin-top: rhythm(6);
+	}
+
 }
 
+
+
 .content-wrapper {
-	margin:0;
+	margin-left:0;
+	margin-right:0;
 	padding-left:$content-margin;
 	padding-right:$content-margin;
 	text-align:left;
@@ -23,7 +36,8 @@ body {
 @include breakpoint($lg-bp, true) {
 
 	.content-wrapper {
-		margin:0 auto;
+		margin-left:auto;
+		margin-right:auto;
 		padding-left:0;
 		padding-right:0;
 		width: $lg;	

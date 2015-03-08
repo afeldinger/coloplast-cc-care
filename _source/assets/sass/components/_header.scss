@@ -24,6 +24,7 @@ header#page-header {
 
 		span {
 			display:block;
+			//@include sprite-2x($sprite-logo-coloplast-2x, $sprite-logo-coloplast);
 			@include sprite($sprite-logo-coloplast);
 		}
 	}

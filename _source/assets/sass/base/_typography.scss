@@ -91,6 +91,7 @@ h2 {
     margin: rhythm(2) 0;
     color: $color-primary;
 }
+
 h3 {
     @include adjust-font-size-to($size-lg);
     margin: rhythm(1) 0;
@@ -100,6 +101,17 @@ p,
 ul,
 ol {
 	margin: rhythm(2) 0;
+
+    &:first-child {
+        margin-top:0;
+    }
+
+    & + h2 {
+        margin-top: rhythm(3)
+    }
+    & + h3 {
+        margin-top: rhythm(3)
+    }
 }
 
 a {

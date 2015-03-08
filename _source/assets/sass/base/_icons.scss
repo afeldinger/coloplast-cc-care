@@ -14,3 +14,16 @@
 .icon-box-open {
 	@include icon($box-open);
 }
+
+.icon-social-facebook {
+	@include icon($social-facebook);
+}
+.icon-social-twitter {
+	@include icon($social-twitter);
+}
+.icon-social-googleplus {
+	@include icon($social-googleplus);
+}
+.icon-social-youtube {
+	@include icon($social-youtube);
+}
