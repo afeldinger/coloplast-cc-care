@@ -158,7 +158,7 @@ module.exports = function(grunt) {
       options: {
         jshintrc: '.jshintrc'
       },
-      all: ['_source/assets/js/{,**/}*.js', '!_source/assets/js/{,**/}*.min.js']
+      all: ['_source/assets/js/{,**/}*.js', '!_source/assets/js/libs/**/*.js']
     },
 
     concat: { 

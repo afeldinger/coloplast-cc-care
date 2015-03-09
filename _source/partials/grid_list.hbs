@@ -20,10 +20,10 @@
 			filter--gender--{{hyphenate this}}
 		{{/each}}
 		">
-			{{#is type "survey"}}
+			{{#is value.type "survey"}}
 				{{partial 'grid_list_item_survey' value}}
 			{{else}}
-				{{#is type "cta"}}
+				{{#is value.type "cta"}}
 					{{partial 'grid_list_item_cta' value}}
 				{{else}}
 					{{partial 'grid_list_item' value}}

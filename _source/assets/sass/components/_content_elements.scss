@@ -35,9 +35,15 @@
 	background-color: $color-background;
 
 	
-	.content-wrapper > * {
+	.content-wrapper > *,
+	.content-wrapper > .slider-items .slider-item {
 		margin-top: rhythm(6);
 		margin-bottom: rhythm(6);
+	}
+
+	.content-wrapper > .slider-items {
+		margin-top:0;
+		margin-bottom:0;
 	}
 
 

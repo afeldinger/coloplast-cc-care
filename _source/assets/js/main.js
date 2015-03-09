@@ -43,16 +43,15 @@ function grid_list_init() {
 			$(this).data('position', i);
 
 
-			$(this).filter(':has(a)')
+			$(this).filter(':has(a.more-link)')
 			.hover(function() {
 				$(this).addClass('over');
 			}, function() {
 				$(this).removeClass('over');
 			}).click(function(e) {
-				e.preventDefault();
+				e.stopPropagation();
 				location.href = $(this).find('a.more-link').attr('href');
-			})
-			.find('.elm-content').clone().removeClass('elm-content').addClass('elm-content-over').appendTo(this);
+			}).find('.elm-content').clone().removeClass('elm-content').addClass('elm-content-over').appendTo(this);
 
 		});
 	});
@@ -74,6 +73,10 @@ $(document).ready(function() {
 	});
 
 	grid_list_init();
+
+	$('.flexslider').flexslider({
+		animation: 'slide'
+	});
 
 	$('#primary-nav')
 		.find('li').hover(
