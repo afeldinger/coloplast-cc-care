@@ -4,11 +4,14 @@ header#page-header {
 	min-height:58px;
 	z-index:10;
 
-	
+	background-color: #fff;
+	@include background-image(linear-gradient(to bottom, #fff 0%, #fff 50%, #fefefe 51%, #f3f3f3 100%));
+/*
 	background: 
-		linear-gradient(top, #fff 0%, #fff 50%, #fefefe 51%, #f3f3f3 100%), 
-		#fff;
 
+		linear-gradient(to bottom, #fff 0%, #fff 50%, #fefefe 51%, #f3f3f3 100%), 
+		#fff;
+*/
 	@include divider-shadow();
 	
 	.brand-primary {

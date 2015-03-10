@@ -154,7 +154,8 @@
 
 				.elm-image {
 					margin: 0 (-1 * $content-margin);
-					background-image: linear-gradient(top, $light-gray 0%, $light-gray 71.8181%, #fff 71.8181%, #fff 100%);
+
+					@include background-image(linear-gradient(to bottom, $light-gray 0%, $light-gray 71.8181%, #fff 71.8181%, #fff 100%));
 
 					img {
 						display:block;
@@ -190,7 +191,7 @@
 		}
 		@include breakpoint($sm, true) {
 			.article-header {
-				background-image: linear-gradient(top, $light-gray 0%, $light-gray 71.8181%, #fff 71.8181%, #fff 100%);
+				@include background-image(linear-gradient(to bottom, $light-gray 0%, $light-gray 71.8181%, #fff 71.8181%, #fff 100%));
 				margin-bottom: rhythm(10);
 
 				.content-block {
