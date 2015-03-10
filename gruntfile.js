@@ -182,7 +182,7 @@ module.exports = function(grunt) {
       retina: {
         src: '_source/assets/img/sprites-2x/*.png',
         dest: '_source/assets/img/sprites-2x.png',
-        destCss: '_source/assets/sass/base/_sprites-2x.scss',
+        destCss: '_source/assets/sass/abstractions/_sprites-2x.scss',
         imgPath: '../img/sprites-2x.png',
         cssVarMap: function (sprite) {
           sprite.name = 'sprite_' + sprite.name + '_2x';
@@ -191,7 +191,7 @@ module.exports = function(grunt) {
       normal: {
         src: '_source/assets/img/sprites/*.png',
         dest: '_source/assets/img/sprites.png',
-        destCss: '_source/assets/sass/base/_sprites.scss',
+        destCss: '_source/assets/sass/abstractions/_sprites.scss',
         imgPath: '../img/sprites.png',
         cssVarMap: function (sprite) {
           sprite.name = 'sprite_' + sprite.name;

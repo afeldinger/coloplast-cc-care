@@ -25,14 +25,6 @@ nav.primary {
 				span:first-child {
 					@include visually-hidden;
 				}
-
-				svg {
-					fill: $dark-gray;
-
-					&:hover {
-						fill: $color-primary;
-					}
-				}
 			}
 
 			&:before,
@@ -90,11 +82,7 @@ nav.primary-small {
 
 				@include visually-not-hidden();
 				display: table-cell;
-/*
-			    &:first-child {
-			    	border-left-width:1px;
-			    }
-*/
+
 				&.nav-btn {
 					@include visually-hidden;
 				}
@@ -107,6 +95,7 @@ nav.primary-small {
 					top: 100%;
 					width:380px;
 					background: #fff;
+					border-radius: 0 0 4px 4px;
 					z-index:10;
 
 					margin:0;

@@ -2,6 +2,7 @@
 footer#page-footer {
 	width:100%;
 
+
 	.main-footer {
 		background: $dark-gray;
 		color: #fff;
@@ -9,7 +10,12 @@ footer#page-footer {
 		h2,
 		a {
 			color:inherit;
-		}	
+		}
+		
+		.button {
+			background: $light-gray;
+			color: $dark-gray;
+		}
 	}
 
 	.secondary-footer {

@@ -1,8 +1,8 @@
 
 
 .content-block {
-	overflow:hidden;
 	clear:both;
+	@include clearfix;
 
 	.elm-image {
 		text-align:center;
@@ -13,10 +13,6 @@
 		}
 	}
 
-	h1,
-	h2,
-	h3,
-	h4,
 	p {
 		max-width: .75 * $lg;
 	}
@@ -30,36 +26,3 @@
 		}
 	}
 }
-
-.related {
-	background-color: $color-background;
-
-	
-	.content-wrapper > *,
-	.content-wrapper > .slider-items .slider-item {
-		margin-top: rhythm(6);
-		margin-bottom: rhythm(6);
-	}
-
-	.content-wrapper > .slider-items {
-		margin-top:0;
-		margin-bottom:0;
-	}
-
-
-	@include breakpoint($sm, true) {
-
-		@include layout(6 6, $gutter:60/68) {
-			.content-block {
-				.elm-image {
-					@include grid-span(1,1);
-				}
-				.elm-content {
-					@include grid-span(1,2);
-				}
-			}
-		}
-	}
-	
-}
-

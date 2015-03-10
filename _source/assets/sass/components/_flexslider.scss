@@ -1,15 +1,9 @@
 
-$flex-viewport-max-height:            2000px;
-$flex-viewport-loading-max-height:    300px;
-
 .flex-container,
 .flex-slider {
-
   a:hover,
   a:focus {
-
     outline: none;
-
   }
 
 }
@@ -18,21 +12,16 @@ $flex-viewport-loading-max-height:    300px;
 .slides > li,
 .flex-control-nav,
 .flex-direction-nav {
-  
   margin: 0; 
   padding: 0; 
   list-style: none;
-
 }
 
 .flex-pauseplay span {
-
   text-transform: capitalize;
-
 }
 
 .flexslider {
-
   margin: 0; 
   padding: 0;
   position: relative;
@@ -42,54 +31,31 @@ $flex-viewport-loading-max-height:    300px;
     zoom: 1;
     
     > li {
-
+      margin:0;
       display: none; 
       -webkit-backface-visibility: hidden;
-
     }
 
-    img{
-
+    img {
       width: 100%;
       height: auto;
       display: block;
-
     }
 
+    @include clearfix();
 
-    &:after{
-
-      content: "\0020"; 
-      display: block; 
-      clear: both; 
-      visibility: hidden; 
-      line-height: 0; 
-      height: 0;
-
-
-    }
-
-    html[xmlns] &{
-      
+    html[xmlns] & {
       display: block;
-
     }
 
-    * html &{
-      
+    * html & {
       height: 1%;
-
     }
     
-
-    .no-js &{
-
+    .no-js & {
       > li{
-
         &:first-child{
-
           display: block;
-
         }
       }
     }
@@ -98,118 +64,88 @@ $flex-viewport-loading-max-height:    300px;
 
 
 .flex-viewport { 
-
-  max-height: $flex-viewport-max-height; 
-
+  max-height: 2000px; 
   transition: all 1s ease;
 
-  .loading &{
-
-    max-height: $flex-viewport-loading-max-height;
+  .loading & {
+    max-height: 300px;
 
   }
 }
 
-
 .carousel li { 
-
   margin-right: 5px; 
-
 }
-
-
 
 .flex-direction-nav {
 
   *height: 0;
 
   a  { 
-
     text-decoration: none; 
     display: block; 
-    width: 40px; 
-    height: 40px; 
-    margin: -20px 0 0; 
+    width: 20px; 
+    height: 20px; 
+    margin: -10px 0 0; 
     position: absolute; 
     top: 50%; 
     z-index: 10; 
     overflow: hidden; 
-    opacity: 0; 
+    //opacity: 0; 
     cursor: pointer; 
 
     transition: all 0.3s ease-in-out;
-/*
-    &:before  { 
 
-      font-family: "@{font-name}"; 
-      font-size: 40px; 
-      display: inline-block; 
-      content: @flex-direction-nav-icon-prev;
-      color: @flex-direction-nav-icon-color;
-      text-shadow: @flex-direction-nav-icon-text-shadow;
-
+    &:before {
+      font-size:15px;
+      line-height: 20px;
+      display:inline-block
     }
 
-    &.flex-next:before { 
+    @include icon($arrow-left);
 
-      content: @flex-direction-nav-icon-next;
-
+    &.flex-next {
+      @include icon($arrow-right);
     }
-*/
   }
 
 
   .flex-prev { 
-
-    left: -50px;
+    left: 10px;
 
   }
   .flex-next { 
-    
-    right: -50px; 
+    right: 10px; 
     text-align: right;
-
   }
 
-/*
   .flexslider:hover &{
     
+    .flex-prev,
+    .flex-next {
+      opacity: 0.7; 
+      &:hover {
+        opacity: 1;
+      }
+
+    }
+    /*
     .flex-prev { 
-
-      opacity: 0.7; 
       left: 10px;
-
-      &:hover{
-        
-        opacity: 1;
-
-      }
-
     }
-    
     .flex-next { 
-
-      opacity: 0.7; 
       right: 10px;
-
-      &:hover{
-        
-        opacity: 1;
-        
-      }
-
     }
+    */
 
   }
-  */
+
 
 
   .flex-disabled { 
-
     opacity: 0!important; 
     filter: alpha(opacity=0); 
     cursor: default;
-
   }
 }
 
@@ -265,12 +201,10 @@ $flex-viewport-loading-max-height:    300px;
   text-align: center;
 
   li {
-    
     margin: 0 6px; 
     display: inline-block; 
     zoom: 1; 
     *display: inline;
-
   }
 
 }
@@ -284,30 +218,27 @@ $flex-viewport-loading-max-height:    300px;
 
   a {
 
-    width: 11px; 
-    height: 11px; 
+    width: 9px; 
+    height: 9px; 
     display: block; 
-    background: #666; 
-    background: rgba(0,0,0,0.5); 
+    background: $dark-gray; 
     cursor: pointer; 
     text-indent: -9999px;
+    opacity: .5;
 
-    box-shadow: 0, 0, 3px, rgba(0,0,0,0.3), inset;
-    border-radius: 20px;
+    border-radius: 18px;
+    transition: background-color .3s ease, opacity .3s ease;
 
     &:hover { 
-
-      background: #333; 
-      background: rgba(0,0,0,0.7);
+      opacity: 1;
+      background: $dark-gray;
 
     }
 
     &.flex-active { 
-
-      background: #000;
-      background: rgba( 0, 0, 0, 0.9 );
+      background: $color-primary;
+      opacity: 1;
       cursor: default;
-
     }
   }
 }
@@ -346,25 +277,5 @@ $flex-viewport-loading-max-height:    300px;
     opacity: 1; 
     cursor: default;
 
-  }
-}
-
-@include breakpoint($md) {
-
-  .flex-direction-nav {
-
-    .flex-prev { 
-
-      opacity: 1; 
-      left: 10px;
-
-    }
-
-    .flex-next { 
-
-      opacity: 1; 
-      right: 10px;
-
-    }
   }
 }

@@ -75,7 +75,9 @@ $(document).ready(function() {
 	grid_list_init();
 
 	$('.flexslider').flexslider({
-		animation: 'slide'
+		animation: 'slide',
+		//animationLoop: false,
+		slideshow: false,
 	});
 
 	$('#primary-nav')
