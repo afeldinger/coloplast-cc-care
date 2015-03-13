@@ -1,6 +1,16 @@
+{{#if active}}
+<li class="active">
+{{else}}
 <li>
+{{/if}}
 	<a href="{{link}}">{{title}}</a>
-
+	{{#if teaser}}
+	<div class="teaser">
+		<h2>{{title}}</h2>
+		<p>{{teaser}}</p>
+		<a class="more-link" href="{{link}}"><span>Read more </span><span class="icon"></span></a>
+	</div>
+	{{/if}}
 	{{#if sections}}
 	<ul>
 	{{#each sections}}

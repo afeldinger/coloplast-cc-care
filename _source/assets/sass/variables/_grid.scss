@@ -1,14 +1,15 @@
 @import "_typography.scss";
 
 
-$content-margin: (30px / $base-font-size) * 1rem;;
+$content-margin: (30px / $base-font-size) * 1rem;
+$content-margin-em: (30px / $base-font-size) * 1em;
 
-$xs: 30rem;
-$sm: 45rem;
-$md: 60rem;
-$lg: (1000px / $base-font-size) * 1rem;
-$lg-bp: $lg + 2 * $content-margin;
+$xs: 30em;
+$sm: 45em;
+$md: 60em;
+$lg: (1000px / $base-font-size) * 1em;
+$lg-bp: $lg + 2 * $content-margin-em ;
 
 $grids: 12;
-$gutters: 1/3; //(20px / $base-font-size) * 1rem;
+$gutters: 1/3; //(20px / $base-font-size) * 1em;
 //$gutters: add-gutter(1/10 at $md);

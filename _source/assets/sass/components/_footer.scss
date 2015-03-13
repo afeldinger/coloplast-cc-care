@@ -1,7 +1,25 @@
 
 footer#page-footer {
+	position:relative;
 	width:100%;
 
+	a.top {
+		position: absolute;
+		top:10px;
+		right:$content-margin;
+
+		span:first-child {
+			display:none;
+		}
+		span.icon {
+			@include icon($arrow-up);
+			font-size: 6px;
+			line-height: 20px;
+			width: 20px;
+			height: 20px;
+			text-align: right;
+		}
+	}
 
 	.main-footer {
 		background: $dark-gray;
@@ -23,15 +41,12 @@ footer#page-footer {
 
 
 		ul {
-			display:inline;
-			float:left;
 			margin: 0;
 			padding: 0;
 			list-style: none;
 		}
 		li {
-			display:inline; 
-			float:left;
+			display: block;
 			margin: rhythm(1) 0;
 			padding: 0;
 			@include adjust-font-size-to($size-xs);
@@ -39,17 +54,6 @@ footer#page-footer {
 
 			a {
 				text-decoration: underline;
-			}
-
-
-			&:nth-child(n+2) {
-				&:before {
-					content: '-';
-					display:inline;
-					float:left;
-					margin:0 6px;
-
-				}
 			}
 		}
 		a {
@@ -61,7 +65,6 @@ footer#page-footer {
 		}
 	}
 	
-
 
 	section.call-us,
 	section.order-sample,
@@ -146,10 +149,33 @@ footer#page-footer {
 	}
 	
 }
+@include breakpoint($xs, true) {
+	footer#page-footer {
 
+		.secondary-footer {
+			ul {
+				display:inline; 
+				float:left;
+			}
+			li {
+				display:inline; 
+				float:left;
+
+				&:nth-child(n+2) {
+					&:before {
+						content: '-';
+						display:inline;
+						float:left;
+						margin:0 6px;
+
+					}
+				}
+			}
+		}
+	}
+}
 @include breakpoint($sm, true) {
 	footer#page-footer {
-		margin-top: rhythm(5);
 
 		.main-footer {
 			.content-wrapper {

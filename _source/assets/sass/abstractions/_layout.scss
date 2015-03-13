@@ -1,7 +1,32 @@
 
-@mixin divider-shadow() {
-	position: relative;
+%divider-shadow {
 
+	@include background-image(
+		linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,0) 30%)
+	);
+	background-image: 
+		linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,0) 30%), 
+		radial-gradient(100% 10px at 50% 2px, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0) 50%);
+	z-index: 5;
+
+}
+
+%divider-shadow-before {
+	position: relative;
+	&:before {
+		position:absolute;
+		content: '';
+		left:0;
+		width: 100%;
+		top: 0;
+		height:8px;
+
+		@extend %divider-shadow;
+	}
+}
+
+%divider-shadow-after {
+	position: relative;
 	&:after {
 		position:absolute;
 		content: '';
@@ -10,16 +35,8 @@
 		bottom: -8px;
 		height:8px;
 
-
-		@include background-image(
-			linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,0) 30%)
-		);
-		background-image: 
-			linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,0) 30%), 
-			radial-gradient(100% 10px at 50% 2px, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0) 50%);
-		z-index: 5;
+		@extend %divider-shadow;
 	}
-
 }
 
 @mixin full-width-bg($args...) {
@@ -54,4 +71,14 @@
 @mixin visually-not-hidden($left: auto) {
 	position: static;
 	left: $left;
+}
+
+
+@mixin icon-on-element($char) {
+
+  &:before {
+	@include icon-font-family($char);
+	@include icon-font();
+	@include icon-content($char);
+  }
 }

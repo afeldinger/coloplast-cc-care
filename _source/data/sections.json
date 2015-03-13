@@ -64,6 +64,7 @@
 	{
 		"title": "Lifestyle",
 		"link": "section.html",
+		"active": "true",
 		"sections" : [
 			{
 				"title": "Lifestyle section 1",
@@ -94,64 +95,27 @@
 	},
 	{
 		"title": "Solutions",
-		"link": "section.html",
+		"link": "solutions.html",
 		"sections" : [
 			{
 				"title": "Solutions section 1",
 				"teaser": "Perferendis maxime minima neque, fugit ex dignissimos deserunt dolores aut magnam veritatis eos perspiciatis corrupti praesentium at voluptatem. Eligendi obcaecati unde laborum.",
-				"link": "article.html"
+				"link": "section.html"
 			},
 			{
 				"title": "Solutions section 2",
 				"teaser": "Non, quisquam quos ratione eum reprehenderit rem enim vitae ex vel officia, nulla recusandae, nostrum sint, corporis ab architecto repellat. Accusamus, illo?",
-				"link": "article.html"
+				"link": "section.html"
 			},
 			{
 				"title": "Solutions section 3",
 				"teaser": "Neque soluta sint fugiat fugit sunt omnis rem reiciendis dolor, iste voluptate voluptas impedit assumenda dolorum numquam quaerat atque quos voluptatibus ullam!",
-				"link": "article.html"
-			},
-			{
-				"title": "Solutions section 4",
-				"teaser": "Ut dicta fuga eveniet, odio nisi dolor repellendus, numquam voluptatum, magni cupiditate repellat dolore amet nobis assumenda molestiae maxime. Vitae, veritatis, consequuntur.",
-				"link": "article.html"
-			},
-			{
-				"title": "Solutions section 5",
-				"teaser": "Praesentium excepturi vitae aliquid cumque voluptate aliquam pariatur, quaerat a perferendis atque dolore eligendi facilis corporis temporibus accusamus vero dicta. Repellendus, debitis.",
-				"link": "article.html"
+				"link": "section.html"
 			}
 		]
 	},
 	{
 		"title": "About Coloplast",
-		"link": "section.html",
-		"sections" : [
-			{
-				"title": "About section 1",
-				"teaser": "Minima, numquam nobis culpa nostrum repudiandae inventore, debitis, laboriosam animi aliquam laudantium, sunt nam commodi voluptatibus alias accusantium ab officia natus itaque.",
-				"link": "article.html"
-			},
-			{
-				"title": "About section 2",
-				"teaser": "Debitis molestiae saepe dolorem quae earum? Deleniti similique earum recusandae error, ducimus corporis atque, nihil, in reprehenderit beatae esse dignissimos accusantium nisi.",
-				"link": "article.html"
-			},
-			{
-				"title": "About section 3",
-				"teaser": "Aspernatur sed enim, dolorem animi, aliquam magnam. Debitis iure odit iste nulla minima iusto magnam blanditiis repellendus rem itaque, nisi atque, neque!",
-				"link": "article.html"
-			},
-			{
-				"title": "About section 4",
-				"teaser": "Ab tempore ipsum eum est placeat nemo vero blanditiis possimus fugit provident, ipsa id, aspernatur velit. Harum laboriosam, ullam culpa et praesentium!",
-				"link": "article.html"
-			},
-			{
-				"title": "About section 5",
-				"teaser": "Temporibus eos iure dolore, quas id facere omnis ducimus aperiam debitis, earum sint rerum labore sit, quae recusandae, harum ipsum ad. Quaerat?",
-				"link": "article.html"
-			}
-		]
+		"link": "section.html"
 	}
 ]

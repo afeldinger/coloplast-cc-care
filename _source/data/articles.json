@@ -3,7 +3,7 @@
 		"type": "article",
 		"title": "5 steps to keeping your skin healthy",
 		"teaser": "Hic dolor maxime debitis delectus nesciunt provident rem autem aut porro.",
-		"thumb": "http://lorempixel.com/326/260/people/1/",
+		"thumb": "http://lorempixel.com/326/260/people/9/",
 		"gender": ["female"],
 		"category": ["self care"]
 	},
@@ -29,7 +29,7 @@
 		"teaser": "Ex repudiandae ullam vitae excepturi libero eos aut delectus.",
 		"thumb": "http://lorempixel.com/326/260/people/4/",
 		"gender": ["male"],
-		"category": ["tools"]
+		"category": ["tools", "self care"]
 	},
 	{
 		"type": "video",

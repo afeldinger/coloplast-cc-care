@@ -3,11 +3,74 @@
 	<h2>{{grid_title}}</h2>
 {{/if}}
 
-{{#if show_filters}}
+
 	<aside class="filters">
-		filters
+		<form>
+		<fieldset class="personal">
+			<div class="radio-group">
+				<label class="radio" for="gender-female">
+					<input id="gender-female" name="filter--gender" type="radio" value="female">
+					<span class="icon icon-gender-female"></span>
+					Female
+				</label>
+				<label class="radio" for="gender-male">
+					<input id="gender-male" name="filter--gender" type="radio" value="male">
+					<span class="icon icon-gender-male"></span>
+					Male
+				</label>
+			<div>
+			<div class="checkbox-group">
+
+				<label class="checkbox" for="mobility-wheelchair">
+					<input id="mobility-wheelchair" name="filter--mobility" type="checkbox" value="wheelchair">
+					I use a wheelchair
+				</label>
+			</div>
+		</fieldset>
+	
+	{{#if show_filters}}
+		<fieldset class="categories">
+
+			<div class="checkbox-group categories-toggle">
+				<label class="checkbox" for="show-categories">
+					<input id="show-categories" name="show-categories" type="checkbox" value="true">
+					<span class="icon icon-plus"></span>
+					Filter by category
+				</label>
+			</div>
+
+			<div class="checkbox-group categories">
+				<label class="checkbox" for="category-self-care">
+					<input id="category-self-care" name="filter--category" type="checkbox" value="self-care">
+					Self care
+				</label>
+				<label class="checkbox" for="category-travel">
+					<input id="category-travel" name="filter--category" type="checkbox" value="travel">
+					Travel
+				</label>
+				<label class="checkbox" for="category-children">
+					<input id="category-children" name="filter--category" type="checkbox" value="children">
+					Children
+				</label>
+				<label class="checkbox" for="category-tools">
+					<input id="category-tools" name="filter--category" type="checkbox" value="tools">
+					Tools
+				</label>
+				<label class="checkbox" for="category-exercise">
+					<input id="category-exercise" name="filter--category" type="checkbox" value="exercise">
+					Exercise
+				</label>
+				<label class="checkbox" for="category-catheters">
+					<input id="category-catheters" name="filter--category" type="checkbox" value="catheters">
+					Catheters
+				</label>
+			</div>
+
+			<button id="category-reset" class="link">Reset filters</button>
+		</fieldset>
+	{{/if}}
+		</form>
 	</aside>
-{{/if}}
 	
 	<ul class="list-items"> 
 	{{#eachProperty articles}}

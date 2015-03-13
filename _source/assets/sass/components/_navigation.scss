@@ -1,22 +1,48 @@
 
 nav.primary {
-	
+	display:none;
+
+	margin:58px (-$content-margin) 0;
+	padding: $content-margin - rhythm(1);
 	font-family: $font-header;
 
+	@extend %divider-shadow-before;
+
+
+	&.active {
+		display:block;
+	}
+
+	.teaser {
+		display:none;
+		h2 {
+			@include adjust-font-size-to($size-lg);
+		}
+		p {
+			@include adjust-font-size-to($size-sm);
+		}
+	}
+
 	> ul {
-		display:inline;
-		float:right;
-		margin: 0;
+		margin: -(rhythm(2)) 0 0;
 		padding: 0;
 		list-style: none;
 	
-
-		> li {
-			@include visually-hidden;
+		
+		li {
 
 		    &.active > a {
-		    	color: $color-primary;
+		    	border-left:4px solid $color-primary;
+		    	margin-left: -4px;
 		    }
+
+			&.over > a {
+				background: $light-gray;
+			}
+		}
+
+		> li {			
+			margin-top:rhythm(2);
 
 		    &.has-icon {
 		    	display: table-cell;
@@ -31,38 +57,113 @@ nav.primary {
 			> a {
 				position:relative;
 				display:block;
-				text-align: center;
+				text-align: left;
 				color: $color-text-body;
-				padding: 0px 10px rhythm(2);
-				line-height: 28px;
+				padding: rhythm(1) rhythm(2);
 			}
+			
 
+			&.over > a {
+				background: transparent;
+				border-left: 4px solid $color-primary;
+				margin-left: -4px;
+				&:hover {
+					background: $light-gray;
+				}
+			}
+			> ul {
+
+				margin:0;
+				padding:0;
+				list-style:none;
+
+				> li {
+					display:block;
+
+					> a {
+						display:block;
+						padding: rhythm(1) rhythm(2);
+						@include adjust-font-size-to($size-sm);
+						color: inherit;
+					}
+					
+				}
+
+
+			}
 		}
+
 	}
 
 
 }
 
-nav.primary-small {
-	
+.nav-btn {
+	position: absolute;
+	top: 18px;
+	right: $content-margin;
+
+	a {
+		color: $color-text-body;
+
+		&:hover {
+			color: $color-primary;
+		}
+
+		span:first-child {
+			@include visually-hidden;
+		}
+
+		.icon {
+			@include icon($navbars);
+		}
+
+		&.active {
+			.icon {
+				@include icon($tree);
+			}
+		}
+	}
 }
 
 @include breakpoint($md, true) {
 
 	nav.primary {
+		position: static;
+		display:block;
+		left: auto;
+		width: auto;
+		margin:0;
+		padding: 40px 110px 0 150px;
+
 
 		> ul {
 			display: table;
 			float: none;
 			width: 100%;
+			margin: 0;
 		
 			> li {
-
-				@include visually-not-hidden();
+				
+				margin-top: 0;
 				display: table-cell;
 
-				&.nav-btn {
-					@include visually-hidden;
+				& > a {
+					position:relative;
+					text-align: center;
+					line-height: 26px;
+					padding: 0px 10px 10px;
+					border-bottom: 4px solid transparent;
+				}
+				&.over > a,
+				&.active > a {
+					border-left:0;
+					margin-left:0;
+					border-bottom:4px solid $color-primary;
+					z-index: 12;
+				}
+				&.over > a:hover {
+					background: transparent;
 				}
 
 
@@ -91,51 +192,31 @@ nav.primary-small {
 					background: #fff;
 					border-radius: 0 0 4px 4px;
 					z-index:10;
-
-					margin:0;
-					padding:4px 0 0;
-					list-style:none;
+					overflow:hidden;
 
 					> li {
-						display:block;
-
+						width: 40%;
 						> a {
-							display:block;
 							padding: rhythm(2) rhythm(2);
-							@include adjust-font-size-to($size-sm);
-							color: inherit;
 						}
 
 						&.over {
-							> a {
-								background: $light-gray;
+							> .teaser {
+								position: absolute;
+								display:block;
+								width:50%;
+								right: 0;
+								bottom: 0;
+								padding: rhythm(2) rhythm(2) rhythm(2) 10%;
 							}
 						}
-
-						
 					}
 
 
-				}
-
-				&:nth-child(n+3) {
-					> ul {
-
-					}
 				}
 
 
 				&.over {
-
-
-					> a {
-
-						position:relative;
-						border-bottom:4px solid $color-primary;
-						z-index:12;
-
-					}
-
 					ul {
 						display: block;
 					}
@@ -144,6 +225,10 @@ nav.primary-small {
 		}
 
 
+	}
+
+	.nav-btn {
+		display: none;
 	}
 }
 

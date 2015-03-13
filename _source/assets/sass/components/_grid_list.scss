@@ -2,6 +2,57 @@
 
 
 .grid-list {
+	overflow:visible;
+	.filters {
+		position:relative;
+		z-index:10;
+
+		
+		form {
+			margin:0;
+			padding:0;
+		}
+
+		fieldset.personal {
+			display:inline;
+			float:left;
+		}
+
+		fieldset.categories {
+
+			display:inline;
+			float:right;
+
+			> * {
+				display:none;
+
+				&.categories-toggle {
+					display:block;
+				}
+			}
+
+			&.active {
+
+				position:absolute;
+				float:none;
+				display:block;
+				width: 100%;
+				left: 0;
+				padding: $content-margin 0;
+				background: #fff;
+
+				> * {
+					display:block;
+					margin: 0 $content-margin;
+				}
+
+
+			}
+
+
+		}
+	}
+
 	li {
 		color: $color-text-body;
 
@@ -221,7 +272,8 @@
 			
 			
 			&.type-survey {
-				background: $color-primary;
+				background: $color-background;
+				box-shadow: inset 0 0 0 1px $color-borders;
 			}
 			&.type-cta {
 				background: $color-primary;

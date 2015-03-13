@@ -6,13 +6,15 @@ header#page-header {
 
 	background-color: #fff;
 	@include background-image(linear-gradient(to bottom, #fff 0%, #fff 50%, #fefefe 51%, #f3f3f3 100%));
+	background-size: 100% 58px;
+	background-repeat: no-repeat;
 /*
 	background: 
 
 		linear-gradient(to bottom, #fff 0%, #fff 50%, #fefefe 51%, #f3f3f3 100%), 
 		#fff;
 */
-	@include divider-shadow();
+	@extend %divider-shadow-after;
 	
 	.brand-primary {
 		display: inline;
@@ -60,17 +62,13 @@ header#page-header {
 		}
 	}
 
-	nav.primary {
-		display: block;
-		padding: 18px 0 0 150px;
-	}
-
 }
 
 @include breakpoint($md, true) {
 
 	header#page-header {
 		height:80px;
+		background-size: 100% 100%;
 
 		.brand-primary {
 			padding-top: 37px;
@@ -80,11 +78,6 @@ header#page-header {
 			@include visually-not-hidden;
 			padding-top: 23px;
 		}
-
-		nav.primary {
-			padding: 40px 110px 0 150px;
-		}
-
 	}
 
 }

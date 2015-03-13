@@ -1,18 +1,13 @@
 
 .hero {
-
+	-webkit-backface-visibility: hidden;
 	margin-top:0;
-	margin-left:0;
-	margin-right:0;	
+	margin-left:auto;
+	margin-right:auto;	
 
 	background-repeat: no-repeat;
 	background-position: 50% 0px;
 
-	@include divider-shadow();
-	
-	.content-wrapper {
-		position:relative;
-	}
 	
 	.elm-image {
 		img {
@@ -22,36 +17,73 @@
 		}
 	}
 	
-	
-	.elm-content {
-		//@include float-span(5, 1, omega);
-		position:absolute;
-		top: 60px;
+	h1 {
+		@include adjust-font-size-to($size-xxxl);
+	}
+	p,
+	ul,
+	ol {
+		font-family: $font-header;
+		/*
+		@include adjust-font-size-to($size-lg);
+		@include adjust-leading-to(4);
+		*/
+	}
+
+	li:nth-child(n+2) {
+		margin-top: rhythm(2);
 	}
 	
+	.checkmarks {
+		li:before {
+			color: $color-primary;
+		}
+	}
 
 }
-@include breakpoint($md, true) {
+
+@include breakpoint($sm, true) {
 	.hero {
-		margin-left: auto;
-		margin-right: auto;
+
+		.content-wrapper {
+			position:relative;
+		}
+		.elm-content {
+			//@include float-span(5, 1, omega);
+			position:absolute;
+			top: 50%;
+			transform: translate3d(0,-50%,0);
+			text-shadow: 0 0 5px rgba(255,255,255,.2), 0 0 30px rgba(0,0,0,.9);
+		}
 	}
-}
-@include breakpoint($lg, true) {
+} 
+
+@include breakpoint($lg-bp, true) {
 	.hero {
 		background-size: cover;
 		background-position: 50% 50%;
+		overflow: hidden;
 		
+		max-height: 500px;
+
 
 		&:before{
 			content: "";
 			display: block;
-			padding-top: 39.5%; 	/* initial ratio of 1:1*/
+			padding-top: 37.26%;
 		}
+
 
 		.content-wrapper {
 			position:absolute;
-			top:0;
+			top:50%;
+			left:50%;
+			margin-top: -197.5px;
+			margin-left: -($lg/2+$content-margin-em);
+			margin-right: 0;
 		}
+
+		
+
 	}
 }

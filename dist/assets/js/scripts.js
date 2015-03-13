@@ -134,8 +134,50 @@ $(document).ready(function() {
 		)
 //		.clone().removeClass('primary').addClass('primary-small').appendTo($('#page-header .content-wrapper'))
 	;
+	$('.nav-btn a').click(function(e) {
+		e.preventDefault();
+		$(this).add($('#primary-nav')).toggleClass('active');
+	});
 
+	$('.filters').each(function() {
+		
+		var targets = $(this).siblings('ul').find('li');
 
+		$(this).find('#show-categories').change(function() {
+			$(this).parents('fieldset:first').toggleClass('active', $(this).prop('checked'));
+		});
+
+		$(this).find('input[name^="filter"]').change(function() {
+
+			var filters = new Array();
+			var targets_filtered = targets;
+			$('input[name^="filter"]:checked').each(function() {
+				//filters[this.name][filters[this.name].length] = '.' + this.name + '--' + this.value;
+				targets_filtered = targets_filtered.filter()
+			});
+
+			for(var k in filters) {
+				alert(k + ': ' + filters[k]);
+			}
+		});
+		
+
+/*
+		$(this).find('input[name="categories"]').change(function() {
+			var targets = $(this).parents('.filters:first').siblings('ul').find('li');
+			var categories = $('input[name="categories"]:checked').map(function () {
+				return '.filter--category--' + this.value;
+			}).get().join(', ');
+
+			if (categories === '') {
+				targets.show();
+			} else {
+				targets.hide().filter(categories).show();
+			}
+
+		});
+*/
+	});
 
 });
 
