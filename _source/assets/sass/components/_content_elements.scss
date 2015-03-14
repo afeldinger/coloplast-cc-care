@@ -1,5 +1,4 @@
 
-
 .content-block {
 	clear:both;
 	@include clearfix;
@@ -31,7 +30,7 @@ ul.checkmarks {
 	li {
 		padding-left: 0.8em;
 
-		@include icon-on-element($arrow-right);
+		@include icon-on-element($checkmark);
 		&:before {
 			position:relative;
 			left: -0.8em;

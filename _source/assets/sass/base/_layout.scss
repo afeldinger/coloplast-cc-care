@@ -18,6 +18,8 @@ body {
 
 
 
+
+
 .content-wrapper {
 	margin-left:auto;
 	margin-right:auto;
@@ -26,6 +28,14 @@ body {
 	text-align:left;
 	max-width: $lg;
 	@include clearfix;
+}
+
+@include breakpoint($sm, true) {
+	body {
+		> .hero + * {
+			margin-top: rhythm(2);
+		}
+	}
 }
 
 /*

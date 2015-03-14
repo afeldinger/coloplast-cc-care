@@ -32,3 +32,15 @@
 .icon-tree {
 	@include icon($tree);
 }
+.icon-plus {
+	@include icon($plus);
+}
+.icon-gender-female {
+	@include icon($gender-female);
+}
+.icon-gender-male {
+	@include icon($gender-male);
+}
+.icon-checkmark {
+	@include icon($checkmark);
+}

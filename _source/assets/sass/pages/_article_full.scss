@@ -229,6 +229,29 @@
 	}
 }
 
+.banner {
+	background: $color-background;
+	
+	.content-wrapper {
+		margin-top:rhythm(4);
+		padding-top: rhythm(6);
+		padding-bottom: rhythm(6);
+	}
+
+	h1 {
+		@include adjust-font-size-to($size-xxxl);
+	}
+
+	.elm-content {
+		float:none;
+		width: auto;
+		margin:0 auto;
+		max-width: 636px;
+	}
+
+}
+
+
 
 .related {
 	background-color: $color-background;

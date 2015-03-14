@@ -4,65 +4,86 @@
 		"title": "5 steps to keeping your skin healthy",
 		"teaser": "Hic dolor maxime debitis delectus nesciunt provident rem autem aut porro.",
 		"thumb": "http://lorempixel.com/326/260/people/9/",
-		"gender": ["female"],
-		"category": ["self care"]
+		"filter": {
+			"gender": ["female"],
+			"category": ["self care"],
+			"mobility": ["wheelchair"]
+		}
 	},
 	{
 		"type": "article",
 		"title": "Travel with confidence",
 		"teaser": "Doloribus fugit hic nihil officiis enim amet eius aperiam cupiditate sapiente.",
 		"thumb": "http://lorempixel.com/326/260/people/2/",
-		"gender": ["male"],
-		"category": ["travel"]
+		"filter": {
+			"gender": ["male"],
+			"category": ["travel"],
+			"mobility": ["wheelchair"]
+		}
 	},
 	{
 		"type": "article",
 		"title": "How to support your child?",
 		"teaser": "Nesciunt, corrupti, facere! Ab laborum adipisci suscipit architecto.",
 		"thumb": "http://lorempixel.com/326/260/people/3/",
-		"gender": ["male", "female"],
-		"category": ["children"]
+		"filter": {
+			"gender": ["male", "female"],
+			"category": ["children"],
+			"mobility": ["wheelchair"]
+		}
 	},
 	{
 		"type": "article",
 		"title": "Take charge of your bladder",
 		"teaser": "Ex repudiandae ullam vitae excepturi libero eos aut delectus.",
 		"thumb": "http://lorempixel.com/326/260/people/4/",
-		"gender": ["male"],
-		"category": ["tools", "self care"]
+		"filter": {
+			"gender": ["male"],
+			"category": ["tools", "self care"],
+			"mobility": ["wheelchair"]
+		}
 	},
 	{
 		"type": "video",
 		"title": "Getting back to exercising",
 		"teaser": "Atque rerum, quae ipsum maxime omnis suscipit. Facilis, ipsam sed.",
-		"thumb": "http://lorempixel.com/326/260/people/5/",
-		"gender": ["male"],
-		"category": ["exercise"]
+		"thumb": "http://lorempixel.com/661/260/people/5/",
+		"filter": {
+			"gender": ["male"],
+			"category": ["exercise"]
+		}
 	},
 	{
 		"type": "survey",
 		"title": "How do you take care of your bladder?",
-		"gender": ["male"],
-		"category": ["survey"],
 		"options": [
 			"Pelvic floor exercises",
 			"Bladder retraining",
 			"Consider what I eat/drink"
-		]
+		],
+		"filter": {
+			"gender": ["male"],
+			"category": ["survey"],
+			"mobility": ["wheelchair"]
+		}
 	},
 	{
 		"type": "article",
 		"title": "Is it a pen? Is it a lipstick?",
 		"teaser": "Quos rem, corporis maiores enim eaque placeat architecto quisquam.",
 		"thumb": "http://lorempixel.com/326/260/people/6/",
-		"gender": ["female"],
-		"category": ["catheters"]
+		"filter": {
+			"gender": ["female"],
+			"category": ["catheters"]
+		}
 	},
 	{
 		"type": "cta",
 		"title": "Get your personal support programme",
 		"link_text": "Sign up here",
-		"gender": ["male"],
-		"category": ["forms"]
+		"filter": {
+			"gender": ["male"],
+			"category": ["forms"]
+		}
 	}
 ]

@@ -120,7 +120,7 @@ nav.primary {
 
 		&.active {
 			.icon {
-				@include icon($tree);
+				@include icon($close);
 			}
 		}
 	}

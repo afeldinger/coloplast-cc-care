@@ -24,11 +24,11 @@
               <a href="section.html">The basics</a>
               <ul>
                 <li>
-                  <a href="article.html">Basics section 1</a>
+                  <a href="product.html">Sample product page</a>
                   <div class="teaser">
-                    <h2>Basics section 1</h2>
-                    <p>Necessitatibus temporibus distinctio repellendus praesentium officiis sapiente eligendi deserunt, culpa fugit quae suscipit quod asperiores, vel nam velit perspiciatis labore, optio neque?</p>
-                    <a class="more-link" href="article.html">
+                    <h2>Sample product page</h2>
+                    <p>This link contains a sample product page layout</p>
+                    <a class="more-link" href="product.html">
                       <span>Read more </span>
                       <span class="icon"></span>
                     </a>
@@ -201,45 +201,10 @@
               </ul>
             </li>
             <li>
-              <a href="solutions.html">Solutions</a>
-              <ul>
-                <li>
-                  <a href="section.html">Solutions section 1</a>
-                  <div class="teaser">
-                    <h2>Solutions section 1</h2>
-                    <p>Perferendis maxime minima neque, fugit ex dignissimos deserunt dolores aut magnam veritatis eos perspiciatis corrupti praesentium at voluptatem. Eligendi obcaecati unde laborum.</p>
-                    <a class="more-link" href="section.html">
-                      <span>Read more </span>
-                      <span class="icon"></span>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <a href="section.html">Solutions section 2</a>
-                  <div class="teaser">
-                    <h2>Solutions section 2</h2>
-                    <p>Non, quisquam quos ratione eum reprehenderit rem enim vitae ex vel officia, nulla recusandae, nostrum sint, corporis ab architecto repellat. Accusamus, illo?</p>
-                    <a class="more-link" href="section.html">
-                      <span>Read more </span>
-                      <span class="icon"></span>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <a href="section.html">Solutions section 3</a>
-                  <div class="teaser">
-                    <h2>Solutions section 3</h2>
-                    <p>Neque soluta sint fugiat fugit sunt omnis rem reiciendis dolor, iste voluptate voluptas impedit assumenda dolorum numquam quaerat atque quos voluptatibus ullam!</p>
-                    <a class="more-link" href="section.html">
-                      <span>Read more </span>
-                      <span class="icon"></span>
-                    </a>
-                  </div>
-                </li>
-              </ul>
+              <a href="section.html">Solutions</a>
             </li>
             <li>
-              <a href="section.html">About Coloplast</a>
+              <a href="about.html">About Coloplast</a>
             </li>
           </ul>
         </nav>
@@ -272,30 +237,30 @@
         <aside class="filters">
           <form>
             <fieldset class="personal">
-              <div class="radio-group">
-                <label class="radio" for="gender-female">
+              <div class="radio-group icon-buttons">
+                <label class="input-radio" for="gender-female">
                   <input id="gender-female" name="filter--gender" type="radio" value="female">
                   <span class="icon icon-gender-female"></span>
-                  Female
+                  <span class="label">Female</span>
                 </label>
-                <label class="radio" for="gender-male">
+                <label class="input-radio" for="gender-male">
                   <input id="gender-male" name="filter--gender" type="radio" value="male">
                   <span class="icon icon-gender-male"></span>
-                  Male
+                  <span class="label">Male</span>
                 </label>
-                <div>
-                  <div class="checkbox-group">
-                    <label class="checkbox" for="mobility-wheelchair">
-                      <input id="mobility-wheelchair" name="filter--mobility" type="checkbox" value="wheelchair"> I use a wheelchair
-                    </label>
-                  </div>
-                </div>
+              </div>
+              <div class="checkbox-group input-buttons">
+                <label class="input-checkbox" for="mobility-wheelchair">
+                  <input id="mobility-wheelchair" name="filter--mobility" type="checkbox" value="wheelchair">
+                  <span class="icon icon-checkmark"></span>
+                  <span class="label">I use a wheelchair</span>
+                </label>
               </div>
             </fieldset>
           </form>
         </aside>
         <ul class="list-items">
-          <li class="type-article filter--category--self-care filter--gender--female">
+          <li class="type-article filter--gender--female filter--mobility--wheelchair filter--category--self-care">
             <div class="elm-image">
               <a href="article.html">
                 <img src="http://lorempixel.com/326/260/people/9/">
@@ -311,7 +276,7 @@
 	</a>
             </div>
           </li>
-          <li class="type-article filter--category--travel filter--gender--male">
+          <li class="type-article filter--gender--male filter--mobility--wheelchair filter--category--travel">
             <div class="elm-image">
               <a href="article.html">
                 <img src="http://lorempixel.com/326/260/people/2/">
@@ -327,7 +292,7 @@
 	</a>
             </div>
           </li>
-          <li class="type-article filter--category--children filter--gender--male filter--gender--female">
+          <li class="type-article filter--gender--male filter--gender--female filter--mobility--wheelchair filter--category--children">
             <div class="elm-image">
               <a href="article.html">
                 <img src="http://lorempixel.com/326/260/people/3/">
@@ -343,7 +308,7 @@
 	</a>
             </div>
           </li>
-          <li class="type-article filter--category--tools filter--category--self-care filter--gender--male">
+          <li class="type-article filter--gender--male filter--mobility--wheelchair filter--category--tools filter--category--self-care">
             <div class="elm-image">
               <a href="article.html">
                 <img src="http://lorempixel.com/326/260/people/4/">
@@ -359,11 +324,11 @@
 	</a>
             </div>
           </li>
-          <li class="type-video filter--category--exercise filter--gender--male">
+          <li class="type-video filter--gender--male filter--category--exercise">
             <div class="elm-image">
               <!-- <span class="icon icon-media-play"></span> -->
               <a href="article.html">
-                <img src="http://lorempixel.com/326/260/people/5/">
+                <img src="http://lorempixel.com/661/260/people/5/">
               </a>
             </div>
             <div class="elm-content">
@@ -376,7 +341,7 @@
 	</a>
             </div>
           </li>
-          <li class="type-survey filter--category--survey filter--gender--male">
+          <li class="type-survey filter--gender--male filter--mobility--wheelchair filter--category--survey">
             <div class="elm-content">
               <h2>How do you take care of your bladder?</h2>
               <form>
@@ -392,7 +357,7 @@
               </form>
             </div>
           </li>
-          <li class="type-article filter--category--catheters filter--gender--female">
+          <li class="type-article filter--gender--female filter--category--catheters">
             <div class="elm-image">
               <a href="article.html">
                 <img src="http://lorempixel.com/326/260/people/6/">
@@ -408,7 +373,7 @@
 	</a>
             </div>
           </li>
-          <li class="type-cta filter--category--forms filter--gender--male">
+          <li class="type-cta filter--gender--male filter--category--forms">
             <div class="elm-content">
               <h2>Get your personal support programme</h2>
               <a href="article.html" class="more-link">

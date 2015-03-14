@@ -4,9 +4,9 @@
 		"link": "section.html",
 		"sections" : [
 			{
-				"title": "Basics section 1",
-				"teaser": "Necessitatibus temporibus distinctio repellendus praesentium officiis sapiente eligendi deserunt, culpa fugit quae suscipit quod asperiores, vel nam velit perspiciatis labore, optio neque?",
-				"link": "article.html"
+				"title": "Sample product page",
+				"teaser": "This link contains a sample product page layout",
+				"link": "product.html"
 			},
 			{
 				"title": "Basics section 2",
@@ -95,27 +95,10 @@
 	},
 	{
 		"title": "Solutions",
-		"link": "solutions.html",
-		"sections" : [
-			{
-				"title": "Solutions section 1",
-				"teaser": "Perferendis maxime minima neque, fugit ex dignissimos deserunt dolores aut magnam veritatis eos perspiciatis corrupti praesentium at voluptatem. Eligendi obcaecati unde laborum.",
-				"link": "section.html"
-			},
-			{
-				"title": "Solutions section 2",
-				"teaser": "Non, quisquam quos ratione eum reprehenderit rem enim vitae ex vel officia, nulla recusandae, nostrum sint, corporis ab architecto repellat. Accusamus, illo?",
-				"link": "section.html"
-			},
-			{
-				"title": "Solutions section 3",
-				"teaser": "Neque soluta sint fugiat fugit sunt omnis rem reiciendis dolor, iste voluptate voluptas impedit assumenda dolorum numquam quaerat atque quos voluptatibus ullam!",
-				"link": "section.html"
-			}
-		]
+		"link": "section.html"
 	},
 	{
 		"title": "About Coloplast",
-		"link": "section.html"
+		"link": "about.html"
 	}
 ]

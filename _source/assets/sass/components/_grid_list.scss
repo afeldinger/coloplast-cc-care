@@ -6,8 +6,99 @@
 	.filters {
 		position:relative;
 		z-index:10;
+		overflow:hidden;
 
 		
+		&.show-categories {
+			fieldset.personal {
+				display:none;
+				
+				label {
+
+					.icon {
+						@include adjust-font-size-to($size-xxl);	
+					}
+					
+					&.checked {
+						background:#fff;
+					}
+
+				}
+			}
+			fieldset.categories {
+				position:relative;
+				float:none;
+				display:block;
+				left: 0;
+				padding: $content-margin 0;
+				background: #fff;
+				border-radius: $border-radius-md;
+
+				> * {
+					display:block;
+					margin: 0 $content-margin;
+				}
+
+				.categories {
+					@include clearfix;
+					margin-right: rhythm(8);
+
+					label {
+						@include float-span(3);
+						box-sizing: border-box;
+						background: $light-gray;
+						text-align: center;
+
+						&.checked {
+							color:#fff;
+							background: $color-primary;
+						}
+						&:nth-child(n+5) {
+							margin-top: gutter-span();
+						}
+						&:nth-child(4n+4) {
+							@include float-span(3, 'last');
+						}
+					}
+				}
+
+				.categories-toggle {
+					position: absolute;
+					top:0px;
+					right:0px;
+					margin:0;
+					
+					label.checked {
+						padding:0;
+						background: transparent;
+
+						.label {
+							display:none;
+						}
+						.icon {
+							margin:0;
+							font-size: inherit;
+							background: transparent;
+							color: $color-primary;
+							&:before {
+								@include icon-content($close);
+							}
+						}
+					}
+				}
+
+				#category-reset {
+					display:inline;
+					float:right;
+					margin:0 10px;
+					border:0;
+					background:transparent;
+					color: $color-primary;
+				}
+
+			}
+		}
+
 		form {
 			margin:0;
 			padding:0;
@@ -16,6 +107,16 @@
 		fieldset.personal {
 			display:inline;
 			float:left;
+			
+			& > div {
+				display: table-cell;
+			}
+			label {
+				display: inline-block;
+				float:left;
+				margin-right: 14px;
+
+			}
 		}
 
 		fieldset.categories {
@@ -25,29 +126,28 @@
 
 			> * {
 				display:none;
-
-				&.categories-toggle {
-					display:block;
-				}
 			}
-
-			&.active {
-
-				position:absolute;
-				float:none;
+			
+			> .categories-toggle {
 				display:block;
-				width: 100%;
-				left: 0;
-				padding: $content-margin 0;
-				background: #fff;
+				
+				label {
+					padding-right:0;
 
-				> * {
-					display:block;
-					margin: 0 $content-margin;
+					.icon {
+						float:right;
+						background: $color-primary;
+						margin-left: 18px;
+						color: #fff;
+						width:48px;
+						text-align: center;
+						font-size: 28px;
+					}
 				}
-
-
 			}
+
+
+
 
 
 		}
@@ -125,17 +225,26 @@
 			position:absolute;
 			left:-9999em;
 		}
+	}
 		
-		@include breakpoint($sm, true) {
+	@include breakpoint($sm, true) {
+
+		li {
 			position:relative; 
 			margin-bottom: gutter-span();
 			color: #fff;
 			overflow:hidden;
 
+			@include float-span(4);
+
+			&.last {
+				margin-right:0 !important;
+			}
+
 			&:before{
 				content: "";
 				display: block;
-				padding-top: 79.75%; 	/* initial ratio of 1:1*/
+				padding-top: 260 / 322 * 100%;
 			}
 
 			&:nth-child(n+2) {
@@ -165,7 +274,7 @@
 				text-shadow: 0 0 2px rgba(0,0,0,.3);
 				
 				.category {
-					margin: rhythm(2) 9% rhythm(1);
+					margin: rhythm(2) 0 rhythm(1);
 				}
 
 				h2 {
@@ -174,7 +283,7 @@
 					align-items: center;
 					height:50px;
 					*/
-					margin: rhythm(2) 9% rhythm(1);
+					margin: rhythm(2) 0 rhythm(1);
 					color: inherit;
 					@include adjust-font-size-to($size-lg);
 					@include adjust-leading-to(25px/$base-line-height, $size-lg);
@@ -185,8 +294,16 @@
 					display:none;
 				}
 				a.more-link {
-					margin: 0 9%;
+					margin: 0;
 					border-bottom: 0;
+				}
+
+				.category,
+				h2,
+				p,
+				a.more-link {
+					margin-left: (30 / 322 * 100%);
+					margin-right: (30 / 322 * 100%);
 				}
 
 			}
@@ -259,18 +376,25 @@
 
 			}
 
+			&.type-video {
+				@include float-span(8);
 
-			&:nth-child(3n+1) {
-				@include float-span(4, 'first');
+				.category,
+				h2,
+				p,
+				a.more-link {
+					margin-left: (30 / 661 * 100%);
+					margin-right: (30 / 661 * 100%);
+				}
+
+
+
+				&:before {
+					padding-top: 260 / 661 * 100%;
+				}
+
+				
 			}
-			&:nth-child(3n+2) {
-				@include float-span(4);
-			}
-			&:nth-child(3n+3) {
-				@include float-span(4, 'last');
-			}
-			
-			
 			&.type-survey {
 				background: $color-background;
 				box-shadow: inset 0 0 0 1px $color-borders;

@@ -1,0 +1,103 @@
+
+
+.input-button {
+	@extend %button;
+	background: #fff;
+	color:$color-text-body;
+	height: 48px;
+	line-height:48px;
+	padding: 0 18px;
+	overflow:hidden;
+
+	.icon {
+		line-height: inherit;
+	}
+	
+	input {
+		position:absolute;
+		left: -9999em;
+		opacity: 0;
+	}
+
+}
+
+
+
+.input-buttons label {
+	@extend .input-button;
+}
+
+.icon-button {
+	@extend .input-button;
+	text-align: center;
+	width: 48px;
+	padding:0;
+
+	.label {
+		display:none;
+	}
+}
+
+.icon-buttons label {
+	@extend .icon-button;
+}
+
+
+label {
+	
+	.icon + .label {
+		margin-left:0.4em;
+	}
+
+	.icon-checkmark {
+		width: 20px;
+		height: 20px;
+		border: 1px solid $color-borders;
+		border-radius: $border-radius-sm;
+
+		&:before {
+			opacity: 0;
+		}
+	}
+
+	.icon-gender-male:before,
+	.icon-gender-female:before {
+		font-size: 28px;
+	}
+	.icon-gender-male:before {
+		@include icon-content($gender-male-outline);
+	}
+	.icon-gender-female:before {
+		@include icon-content($gender-female-outline);
+	}
+
+	&.checked {
+		.icon-checkmark {
+			&:before {
+				opacity: 1;
+			}
+		}
+
+		.icon-gender-male,
+		.icon-gender-female {
+			color: $color-primary;
+		}
+		.icon-gender-male:before {
+			@include icon-content($gender-male);
+		}
+		.icon-gender-female:before {
+			@include icon-content($gender-female);
+		}
+	}
+
+}
+
+.radio-group,
+.checkbox-group {
+	clear:both;
+
+	-webkit-touch-callout: none;
+	user-select: none;
+
+
+}

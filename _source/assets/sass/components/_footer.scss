@@ -5,7 +5,7 @@ footer#page-footer {
 
 	a.top {
 		position: absolute;
-		top:10px;
+		top:rhythm(3);
 		right:$content-margin;
 
 		span:first-child {
@@ -21,6 +21,27 @@ footer#page-footer {
 		}
 	}
 
+	h2 {
+		@include adjust-font-size-to($size-lg);
+		margin: rhythm(1) 0;
+		//padding-bottom: rhythm(1);
+		border-bottom: 1px solid $color-borders;
+	}
+	p {
+		margin: rhythm(1) 0;
+		@include adjust-font-size-to($size-sm);
+		@include adjust-leading-to(3);
+	}
+
+	.icon {
+		display:block;
+		font-size:32px;
+		line-height:1em;
+		margin-top: rhythm(2);
+		color:inherit;
+	}
+
+
 	.main-footer {
 		background: $dark-gray;
 		color: #fff;
@@ -33,6 +54,8 @@ footer#page-footer {
 		.button {
 			background: $light-gray;
 			color: $dark-gray;
+			@include adjust-font-size-to($size-sm);
+			@include adjust-leading-to(4);
 		}
 	}
 
@@ -72,23 +95,7 @@ footer#page-footer {
 		margin: rhythm(4) 0;
 	}
 
-	h2 {
-		margin: rhythm(1) 0;
-		padding-bottom: rhythm(1);
-		border-bottom: 1px solid $color-borders;
-	}
-
-	.icon {
-		display:block;
-		font-size:32px;
-		line-height:1em;
-		margin-top: rhythm(2);
-		color:inherit;
-	}
-
-
 	section.social {
-		
 
 		ul {
 			display:inline;
@@ -126,7 +133,7 @@ footer#page-footer {
 			display:inline;
 			float:left;
 
-			font-size: 15px;
+			font-size: 18px;
 			width: 30px;
 			height: 30px;
 			line-height: 30px;
@@ -179,15 +186,19 @@ footer#page-footer {
 
 		.main-footer {
 			.content-wrapper {
-				max-width:$md;
+				max-width:760px / $base-font-size * 1em;
 			}
+		}
+
+		h2 {
+			margin: 0;
 		}
 
 		.icon {
 			font-size: 36px;
 			width: 40px;
 			text-align: center;
-			margin-top: rhythm(2);
+			margin-top: -1 * rhythm(1);
 		}
 
 		section.call-us,
@@ -222,6 +233,7 @@ footer#page-footer {
 				@include adjust-font-size-to($size-md);
 				font-weight: $bold;
 				margin-bottom:rhythm(1);
+				border-bottom: 0;
 			}
 
 			ul {
@@ -232,11 +244,6 @@ footer#page-footer {
 		}
 
 
-		h2 {
-			margin: rhythm(3) 0;
-			border-bottom: 0;
-			padding-bottom: 0;
-		}
 
 		.secondary-footer {
 			ul {

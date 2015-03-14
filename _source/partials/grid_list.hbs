@@ -7,23 +7,23 @@
 	<aside class="filters">
 		<form>
 		<fieldset class="personal">
-			<div class="radio-group">
-				<label class="radio" for="gender-female">
+			<div class="radio-group icon-buttons">
+				<label class="input-radio" for="gender-female">
 					<input id="gender-female" name="filter--gender" type="radio" value="female">
 					<span class="icon icon-gender-female"></span>
-					Female
+					<span class="label">Female</span>
 				</label>
-				<label class="radio" for="gender-male">
+				<label class="input-radio" for="gender-male">
 					<input id="gender-male" name="filter--gender" type="radio" value="male">
 					<span class="icon icon-gender-male"></span>
-					Male
+					<span class="label">Male</span>
 				</label>
-			<div>
-			<div class="checkbox-group">
-
-				<label class="checkbox" for="mobility-wheelchair">
+			</div>
+			<div class="checkbox-group input-buttons">
+				<label class="input-checkbox" for="mobility-wheelchair">
 					<input id="mobility-wheelchair" name="filter--mobility" type="checkbox" value="wheelchair">
-					I use a wheelchair
+					<span class="icon icon-checkmark"></span>
+					<span class="label">I use a wheelchair</span>
 				</label>
 			</div>
 		</fieldset>
@@ -31,38 +31,42 @@
 	{{#if show_filters}}
 		<fieldset class="categories">
 
-			<div class="checkbox-group categories-toggle">
+			<div class="checkbox-group input-buttons categories-toggle">
 				<label class="checkbox" for="show-categories">
 					<input id="show-categories" name="show-categories" type="checkbox" value="true">
 					<span class="icon icon-plus"></span>
-					Filter by category
+					<span class="label">
+						Filter by category
+						<span id="show-categories-count"></span>
+					</span>
+					
 				</label>
 			</div>
 
-			<div class="checkbox-group categories">
+			<div class="checkbox-group input-buttons categories">
 				<label class="checkbox" for="category-self-care">
 					<input id="category-self-care" name="filter--category" type="checkbox" value="self-care">
-					Self care
+					<span class="label">Self care</span>
 				</label>
 				<label class="checkbox" for="category-travel">
 					<input id="category-travel" name="filter--category" type="checkbox" value="travel">
-					Travel
+					<span class="label">Travel</span>
 				</label>
 				<label class="checkbox" for="category-children">
 					<input id="category-children" name="filter--category" type="checkbox" value="children">
-					Children
+					<span class="label">Children</span>
 				</label>
 				<label class="checkbox" for="category-tools">
 					<input id="category-tools" name="filter--category" type="checkbox" value="tools">
-					Tools
+					<span class="label">Tools</span>
 				</label>
 				<label class="checkbox" for="category-exercise">
 					<input id="category-exercise" name="filter--category" type="checkbox" value="exercise">
-					Exercise
+					<span class="label">Exercise</span>
 				</label>
 				<label class="checkbox" for="category-catheters">
 					<input id="category-catheters" name="filter--category" type="checkbox" value="catheters">
-					Catheters
+					<span class="label">Catheters</span>
 				</label>
 			</div>
 
@@ -76,12 +80,16 @@
 	{{#eachProperty articles}}
 		<li class="
 			type-{{value.type}} 
-		{{#each value.category}}
-			filter--category--{{hyphenate this}} 
-		{{/each}}
-		{{#each value.gender}}
-			filter--gender--{{hyphenate this}}
-		{{/each}}
+
+			{{#each value.filter.gender}}
+				filter--gender--{{hyphenate this}}
+			{{/each}}
+			{{#each value.filter.mobility}}
+				filter--mobility--{{hyphenate this}}
+			{{/each}}
+			{{#each value.filter.category}}
+				filter--category--{{hyphenate this}}
+			{{/each}}
 		">
 			{{#is value.type "survey"}}
 				{{partial 'grid_list_item_survey' value}}

@@ -1,10 +1,33 @@
 Active
-	no data-attributes - classname-based filters		
-	external survey function?
+	About page
+	Form styling
+	Forms
+		Order sample form
+		Signup form
+		Contact page
+		Profile pages
+
+	Grid items
+		CTA grid item styling
+		Video player
+		Re-sort on filter
+
+
+	Temp icons
+		Sign up
+		Facts
 
 
 
 Completed
 	no svgs - use icon font/image sprites instead
 	absolute links to static assets
+	no data-attributes - classname-based filters
+
+	Grid items
+		Video item - 2col
 	
+
+Phase 2
+
+	external survey function?
