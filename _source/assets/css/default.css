@@ -554,7 +554,8 @@ a .icon {
 }
 
 ul.checkmarks li {
-  padding-left: 0.8em;
+  position: relative;
+  padding-left: 2em;
 }
 ul.checkmarks li:before {
   font-family: "cc-icons";
@@ -569,7 +570,168 @@ ul.checkmarks li:before {
 }
 ul.checkmarks li:before {
   position: relative;
-  left: -0.8em;
+  float: left;
+  margin-left: -2em;
+  margin-top: 0.4em;
+}
+
+.filters {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+.filters.show-categories fieldset.personal {
+  display: none;
+}
+.filters.show-categories fieldset.personal label .icon {
+  font-size: 30px;
+  font-size: 2rem;
+  line-height: 36px;
+  line-height: 2.4rem;
+}
+.filters.show-categories fieldset.personal label.checked {
+  background: #fff;
+}
+.filters.show-categories fieldset.categories {
+  position: relative;
+  float: none;
+  display: block;
+  left: 0;
+  padding: 2rem 0 1rem;
+  margin-top: 0;
+  background: #fff;
+  border-radius: 4px;
+}
+.filters.show-categories fieldset.categories > * {
+  display: block;
+  margin: 0 2rem;
+}
+.filters.show-categories fieldset.categories .categories {
+  overflow: hidden;
+  *zoom: 1;
+  margin-right: 3.2rem;
+}
+.filters.show-categories fieldset.categories .categories label {
+  display: block;
+  box-sizing: border-box;
+  background: #f0f0f0;
+  text-align: center;
+  margin-bottom: 1.69492%;
+}
+.filters.show-categories fieldset.categories .categories label.checked {
+  color: #fff;
+  background: #00b2ce;
+}
+.filters.show-categories fieldset.categories .categories-toggle {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 0;
+}
+.filters.show-categories fieldset.categories .categories-toggle label.checked {
+  padding: 0;
+  background: transparent;
+}
+.filters.show-categories fieldset.categories .categories-toggle label.checked .label {
+  display: none;
+}
+.filters.show-categories fieldset.categories .categories-toggle label.checked .icon {
+  margin: 0;
+  font-size: inherit;
+  background: transparent;
+  color: #00b2ce;
+}
+.filters.show-categories fieldset.categories .categories-toggle label.checked .icon:before {
+  content: "";
+}
+.filters.show-categories fieldset.categories #category-reset {
+  display: inline;
+  float: right;
+  margin: 0 10px;
+  border: 0;
+  background: transparent;
+  color: #00b2ce;
+}
+.filters form {
+  margin: 0;
+  padding: 0;
+}
+.filters fieldset + fieldset {
+  margin-top: 14px;
+}
+.filters fieldset.personal > div {
+  display: inline-block;
+  float: left;
+  clear: none;
+}
+.filters fieldset.personal label {
+  display: inline-block;
+  float: left;
+  margin-right: 14px;
+}
+.filters fieldset.categories {
+  display: block;
+}
+.filters fieldset.categories > * {
+  display: none;
+}
+.filters fieldset.categories > .categories-toggle {
+  display: block;
+}
+.filters fieldset.categories > .categories-toggle label {
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+.filters fieldset.categories > .categories-toggle label .label {
+  display: inline-block;
+  margin: 0;
+  padding: 0 18px;
+}
+.filters fieldset.categories > .categories-toggle label .icon {
+  float: right;
+  background: #00b2ce;
+  color: #fff;
+  width: 48px;
+  text-align: center;
+  font-size: 28px;
+}
+@media (min-width: 30em) {
+  .filters fieldset.categories > .categories-toggle label {
+    width: auto;
+  }
+}
+@media (min-width: 45em) {
+  .filters fieldset + fieldset {
+    margin-top: 0;
+  }
+  .filters fieldset.personal {
+    display: inline;
+    float: left;
+  }
+  .filters fieldset.categories {
+    display: inline;
+    float: right;
+  }
+  .filters.show-categories fieldset.categories .categories {
+    overflow: hidden;
+    *zoom: 1;
+    margin-right: 3.2rem;
+  }
+  .filters.show-categories fieldset.categories .categories label {
+    width: 23.72881%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 1.69492%;
+    box-sizing: border-box;
+  }
+  .filters.show-categories fieldset.categories .categories label:nth-child(4n+4) {
+    width: 23.72881%;
+    clear: right;
+    float: right;
+    margin-right: 0;
+  }
 }
 
 .flex-container a:hover,
@@ -1142,132 +1304,6 @@ label.checked .icon-gender-female:before {
 }
 .grid-list {
   overflow: visible;
-}
-.grid-list .filters {
-  position: relative;
-  z-index: 10;
-  overflow: hidden;
-}
-.grid-list .filters.show-categories fieldset.personal {
-  display: none;
-}
-.grid-list .filters.show-categories fieldset.personal label .icon {
-  font-size: 30px;
-  font-size: 2rem;
-  line-height: 36px;
-  line-height: 2.4rem;
-}
-.grid-list .filters.show-categories fieldset.personal label.checked {
-  background: #fff;
-}
-.grid-list .filters.show-categories fieldset.categories {
-  position: relative;
-  float: none;
-  display: block;
-  left: 0;
-  padding: 2rem 0;
-  background: #fff;
-  border-radius: 4px;
-}
-.grid-list .filters.show-categories fieldset.categories > * {
-  display: block;
-  margin: 0 2rem;
-}
-.grid-list .filters.show-categories fieldset.categories .categories {
-  overflow: hidden;
-  *zoom: 1;
-  margin-right: 3.2rem;
-}
-.grid-list .filters.show-categories fieldset.categories .categories label {
-  width: 23.72881%;
-  clear: right;
-  float: left;
-  margin-left: 0;
-  margin-right: 1.69492%;
-  box-sizing: border-box;
-  background: #f0f0f0;
-  text-align: center;
-}
-.grid-list .filters.show-categories fieldset.categories .categories label.checked {
-  color: #fff;
-  background: #00b2ce;
-}
-.grid-list .filters.show-categories fieldset.categories .categories label:nth-child(n+5) {
-  margin-top: 1.69492%;
-}
-.grid-list .filters.show-categories fieldset.categories .categories label:nth-child(4n+4) {
-  width: 23.72881%;
-  clear: right;
-  float: right;
-  margin-right: 0;
-}
-.grid-list .filters.show-categories fieldset.categories .categories-toggle {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  margin: 0;
-}
-.grid-list .filters.show-categories fieldset.categories .categories-toggle label.checked {
-  padding: 0;
-  background: transparent;
-}
-.grid-list .filters.show-categories fieldset.categories .categories-toggle label.checked .label {
-  display: none;
-}
-.grid-list .filters.show-categories fieldset.categories .categories-toggle label.checked .icon {
-  margin: 0;
-  font-size: inherit;
-  background: transparent;
-  color: #00b2ce;
-}
-.grid-list .filters.show-categories fieldset.categories .categories-toggle label.checked .icon:before {
-  content: "";
-}
-.grid-list .filters.show-categories fieldset.categories #category-reset {
-  display: inline;
-  float: right;
-  margin: 0 10px;
-  border: 0;
-  background: transparent;
-  color: #00b2ce;
-}
-.grid-list .filters form {
-  margin: 0;
-  padding: 0;
-}
-.grid-list .filters fieldset.personal {
-  display: inline;
-  float: left;
-}
-.grid-list .filters fieldset.personal > div {
-  display: table-cell;
-}
-.grid-list .filters fieldset.personal label {
-  display: inline-block;
-  float: left;
-  margin-right: 14px;
-}
-.grid-list .filters fieldset.categories {
-  display: inline;
-  float: right;
-}
-.grid-list .filters fieldset.categories > * {
-  display: none;
-}
-.grid-list .filters fieldset.categories > .categories-toggle {
-  display: block;
-}
-.grid-list .filters fieldset.categories > .categories-toggle label {
-  padding-right: 0;
-}
-.grid-list .filters fieldset.categories > .categories-toggle label .icon {
-  float: right;
-  background: #00b2ce;
-  margin-left: 18px;
-  color: #fff;
-  width: 48px;
-  text-align: center;
-  font-size: 28px;
 }
 .grid-list li {
   color: #707070;

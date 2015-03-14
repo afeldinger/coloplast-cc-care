@@ -1,5 +1,4 @@
 Active
-	About page
 	Form styling
 	Forms
 		Order sample form
@@ -23,6 +22,7 @@ Completed
 	no svgs - use icon font/image sprites instead
 	absolute links to static assets
 	no data-attributes - classname-based filters
+	About page
 
 	Grid items
 		Video item - 2col

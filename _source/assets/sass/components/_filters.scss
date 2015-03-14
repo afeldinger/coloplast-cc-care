@@ -1,0 +1,194 @@
+
+
+.filters {
+	position:relative;
+	z-index:10;
+	overflow:hidden;
+
+	
+	&.show-categories {
+		fieldset.personal {
+			display:none;
+			
+			label {
+
+				.icon {
+					@include adjust-font-size-to($size-xxl);	
+				}
+				
+				&.checked {
+					background:#fff;
+				}
+
+			}
+		}
+		fieldset.categories {
+			position:relative;
+			float:none;
+			display:block;
+			left: 0;
+			padding: $content-margin 0 ($content-margin/2);
+			margin-top:0;
+			background: #fff;
+			border-radius: $border-radius-md;
+
+			> * {
+				display:block;
+				margin: 0 $content-margin;
+			}
+
+			.categories {
+				@include clearfix;
+				margin-right: rhythm(8);
+
+				label {
+					display:block;
+					box-sizing: border-box;
+					background: $light-gray;
+					text-align: center;
+					margin-bottom: gutter-span();
+
+					&.checked {
+						color:#fff;
+						background: $color-primary;
+					}
+
+				}
+			}
+
+			.categories-toggle {
+				position: absolute;
+				top:0px;
+				right:0px;
+				margin:0;
+				
+				label.checked {
+					padding:0;
+					background: transparent;
+
+					.label {
+						display:none;
+					}
+					.icon {
+						margin:0;
+						font-size: inherit;
+						background: transparent;
+						color: $color-primary;
+						&:before {
+							@include icon-content($close);
+						}
+					}
+				}
+			}
+
+			#category-reset {
+				display:inline;
+				float:right;
+				margin:0 10px;
+				border:0;
+				background:transparent;
+				color: $color-primary;
+			}
+
+		}
+	}
+
+	form {
+		margin:0;
+		padding:0;
+	}
+	fieldset + fieldset {
+		margin-top: 14px;
+	}
+	fieldset.personal {
+
+		& > div {
+			display: inline-block;
+			float:left;
+			clear:none;
+		}
+		label {
+			display: inline-block;
+			float:left;
+			margin-right: 14px;
+		}
+	}
+
+	fieldset.categories {
+		display:block;
+
+		> * {
+			display:none;
+		}
+		
+		> .categories-toggle {
+			display:block;
+			
+			label {
+				padding: 0;
+				width: 100%;
+				text-align:center;
+				.label {
+					display:inline-block;
+					margin: 0;
+					padding: 0 18px;
+				}
+				.icon {
+					float:right;
+					background: $color-primary;
+					color: #fff;
+					width:48px;
+					text-align: center;
+					font-size: 28px;
+				}
+			}
+		}
+	}
+
+
+	@include breakpoint($xs, true) {
+		
+		fieldset.categories {		
+			> .categories-toggle {
+				label {
+					width: auto;
+				}
+			}
+		}
+	}
+	@include breakpoint($sm, true) {
+		fieldset + fieldset {
+			margin-top:0;
+		}
+		fieldset.personal {
+			display:inline;
+			float:left;
+		}
+
+		fieldset.categories {
+
+			display:inline;
+			float:right;
+		}
+
+		&.show-categories {
+
+			fieldset.categories {
+
+				.categories {
+					@include clearfix;
+					margin-right: rhythm(8);
+				
+					label {
+						@include float-span(3);
+						box-sizing: border-box;
+
+						&:nth-child(4n+4) {
+							@include float-span(3, 'last');
+						}
+					}
+				}
+			}
+		}
+	}
+}
