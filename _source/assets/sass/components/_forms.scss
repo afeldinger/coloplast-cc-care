@@ -1,16 +1,3 @@
-.contact-page {
-
-
-}
-
-@include breakpoint($md) {
-	.contact-page {
-		.contact-info {
-			@include grid-span(6, 1)
-		}
-		.contact-form {
-			@include grid-span(6, 7);
-		}
-
-	}
+.form-signup {
+	text-align:left;
 }

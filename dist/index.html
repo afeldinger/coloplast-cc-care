@@ -243,20 +243,20 @@
           <form>
             <fieldset class="personal">
               <div class="radio-group icon-buttons">
-                <label class="input-radio" for="gender-female">
-                  <input id="gender-female" name="filter--gender" type="radio" value="female">
+                <label class="input-radio" for="filter-gender-female">
+                  <input id="filter-gender-female" name="filter--gender" type="radio" value="female">
                   <span class="icon icon-gender-female"></span>
                   <span class="label">Female</span>
                 </label>
-                <label class="input-radio" for="gender-male">
-                  <input id="gender-male" name="filter--gender" type="radio" value="male">
+                <label class="input-radio" for="filter-gender-male">
+                  <input id="filter-gender-male" name="filter--gender" type="radio" value="male">
                   <span class="icon icon-gender-male"></span>
                   <span class="label">Male</span>
                 </label>
               </div>
               <div class="checkbox-group input-buttons">
-                <label class="input-checkbox" for="mobility-wheelchair">
-                  <input id="mobility-wheelchair" name="filter--mobility" type="checkbox" value="wheelchair">
+                <label class="input-checkbox" for="filter-mobility-wheelchair">
+                  <input id="filter-mobility-wheelchair" name="filter--mobility" type="checkbox" value="wheelchair">
                   <span class="icon icon-checkmark"></span>
                   <span class="label">I use a wheelchair</span>
                 </label>
@@ -274,32 +274,32 @@
                 </label>
               </div>
               <div class="checkbox-group input-buttons categories">
-                <label class="checkbox" for="category-self-care">
-                  <input id="category-self-care" name="filter--category" type="checkbox" value="self-care">
+                <label class="checkbox" for="filter-category-self-care">
+                  <input id="filter-category-self-care" name="filter--category" type="checkbox" value="self-care">
                   <span class="label">Self care</span>
                 </label>
-                <label class="checkbox" for="category-travel">
-                  <input id="category-travel" name="filter--category" type="checkbox" value="travel">
+                <label class="checkbox" for="filter-category-travel">
+                  <input id="filter-category-travel" name="filter--category" type="checkbox" value="travel">
                   <span class="label">Travel</span>
                 </label>
-                <label class="checkbox" for="category-children">
-                  <input id="category-children" name="filter--category" type="checkbox" value="children">
+                <label class="checkbox" for="filter-category-children">
+                  <input id="filter-category-children" name="filter--category" type="checkbox" value="children">
                   <span class="label">Children</span>
                 </label>
-                <label class="checkbox" for="category-tools">
-                  <input id="category-tools" name="filter--category" type="checkbox" value="tools">
+                <label class="checkbox" for="filter-category-tools">
+                  <input id="filter-category-tools" name="filter--category" type="checkbox" value="tools">
                   <span class="label">Tools</span>
                 </label>
-                <label class="checkbox" for="category-exercise">
-                  <input id="category-exercise" name="filter--category" type="checkbox" value="exercise">
+                <label class="checkbox" for="filter-category-exercise">
+                  <input id="filter-category-exercise" name="filter--category" type="checkbox" value="exercise">
                   <span class="label">Exercise</span>
                 </label>
-                <label class="checkbox" for="category-catheters">
-                  <input id="category-catheters" name="filter--category" type="checkbox" value="catheters">
+                <label class="checkbox" for="filter-category-catheters">
+                  <input id="filter-category-catheters" name="filter--category" type="checkbox" value="catheters">
                   <span class="label">Catheters</span>
                 </label>
               </div>
-              <button id="category-reset" class="link">Reset filters</button>
+              <button id="filter-category-reset" class="link">Reset filters</button>
             </fieldset>
           </form>
         </aside>
@@ -429,6 +429,52 @@
         </ul>
       </section>
     </div>
+    <!--<div class="form-signup">
+	<form id="form-signup" name="signup">
+	<fieldset class="personal-info form-compact">
+		<label class="input-text" for="signup-firstname">
+			<div class="label">First name</div>
+			<input type="text" id="signup-firstname" name="firstname">
+		</label>
+		<label class="input-text" for="signup-lastname">
+			<div class="label">Last name</div>
+			<input type="text" id="signup-lastname" name="last-name">
+		</label>
+		<label class="input-text" for="signup-email">
+			<div class="label">E-mail address</div>
+			<input type="text" id="signup-email" name="email">
+		</label>
+		<label class="input-text" for="signup-zip">
+			<div class="label">Zip code</div>
+			<input type="text" id="signup-zip" name="zip">
+		</label>
+	</fieldset>
+	<fieldset class="gender-mobility">
+		<div class="radio-group icon-buttons">
+			<label class="input-radio" for="signup-gender-female">
+				<input id="signup-gender-female" name="gender" type="radio" value="female">
+				<span class="icon icon-gender-female"></span>
+				<span class="label">Female</span>
+			</label>
+			<label class="input-radio" for="signup-gender-male">
+				<input id="signup-gender-male" name="gender" type="radio" value="male">
+				<span class="icon icon-gender-male"></span>
+				<span class="label">Male</span>
+			</label>
+		</div>
+		<div class="checkbox-group input-buttons">
+			<label class="input-checkbox" for="signup-mobility-wheelchair">
+				<input id="signup-mobility-wheelchair" name="mobility" type="checkbox" value="wheelchair">
+				<span class="icon icon-checkmark"></span>
+				<span class="label">I use a wheelchair</span>
+			</label>
+		</div>
+	</fieldset>
+	<button class="input-submit type="submit">
+		Sign up
+	</button>
+	</form>
+</div>-->
     <footer id="page-footer">
       <section class="main-footer">
         <div class="content-wrapper">
@@ -454,7 +500,7 @@
           </section>
           <section class="social">
             <h2>Connect</h2>
-            <ul>
+            <ul class="social">
               <li>
                 <a href="#">
                   <span>Facebook</span>

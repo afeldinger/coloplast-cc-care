@@ -1,5 +1,21 @@
 
 
+%input-text {
+	position:relative;
+
+	input,
+	textarea {
+	  	width:100%;
+		padding: 10px;
+		outline: none;
+		border-radius: 4px;
+		border:0;
+		margin:0;
+
+	}
+}
+
+
 .input-button {
 	@extend %button;
 	background: #fff;
@@ -42,9 +58,34 @@
 	@extend .icon-button;
 }
 
+.form-row {
+	@include float-span(12);
+}
 
 label {
-	
+	@include float-span(12);
+
+	margin-bottom: gutter-span();
+
+	@include breakpoint($sm) {
+		&.md {
+			@include float-span(6);
+
+		}
+		&.md:last-child {
+			@include float-span(6, 'last');
+		}
+	}
+
+	.label {
+		@include adjust-font-size-to($base-font-size);
+		line-height: 1em;
+	}
+
+	.optional {
+		color: $dark-gray;
+	}
+
 	.icon + .label {
 		margin-left:0.4em;
 	}
@@ -92,6 +133,50 @@ label {
 
 }
 
+
+input,
+textarea {
+	@include adjust-font-size-to($base-font-size);
+	@include adjust-leading-to(3);
+	display:block;
+}
+
+button {
+	@extend .button;
+	min-width:180px;
+}
+
+
+.input-text {
+	@extend %input-text;
+
+	.label {
+		position:absolute;
+		top:11px;
+		left:11px;
+
+	}
+
+	&.focus,
+	&.has-value {
+		.label {
+			top:0px;
+			@include adjust-font-size-to($size-xs);
+		}
+	}
+
+}
+
+.input-textarea {
+	@extend .input-text;
+
+	textarea {
+		display:block;
+		height:120px;
+	}
+}
+
+
 .radio-group,
 .checkbox-group {
 	clear:both;
@@ -99,5 +184,9 @@ label {
 	-webkit-touch-callout: none;
 	user-select: none;
 
+}
 
+.button-group {
+	@include float-span(12);
+	margin-top: 1em;
 }

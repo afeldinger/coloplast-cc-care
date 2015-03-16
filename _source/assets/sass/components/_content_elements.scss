@@ -40,3 +40,64 @@ ul.checkmarks {
 		}
 	}
 }
+
+
+ul.social {
+	display:inline;
+	float:left;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: rhythm(4);
+	padding:0;
+	list-style:none;
+
+	li {
+		display:inline;
+		float:left;
+		color:$dark-gray;
+
+		&:nth-child(n+2) {
+			margin-left:5px;
+		}
+
+		a {
+			color: $dark-gray;
+			&:hover {
+				color:$color-primary;
+				.icon {
+					box-shadow:inset 0px 0px 0px 1px $color-primary;
+				}
+			}
+		}
+	}
+
+
+	span:first-child {
+		position:absolute;
+		left: -999em;
+	}
+	.icon {
+		display:inline;
+		float:left;
+
+		font-size: 18px;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		margin:0;
+		border-radius: 15px;
+		overflow:hidden;
+		box-shadow:inset 0px 0px 0px 1px $dark-gray;
+	}
+	.icon-social-twitter {
+		//font-size:12px;
+	}
+	.icon-social-youtube {
+		//font-size:18px;
+	}
+	.icon-social-googleplus {
+		//line-height: 32px;
+	}
+
+}

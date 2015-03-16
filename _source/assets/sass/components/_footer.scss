@@ -13,7 +13,7 @@ footer#page-footer {
 		}
 		span.icon {
 			@include icon($arrow-up);
-			font-size: 6px;
+			font-size: 1em;
 			line-height: 20px;
 			width: 20px;
 			height: 20px;
@@ -33,13 +33,6 @@ footer#page-footer {
 		@include adjust-leading-to(3);
 	}
 
-	.icon {
-		display:block;
-		font-size:32px;
-		line-height:1em;
-		margin-top: rhythm(2);
-		color:inherit;
-	}
 
 
 	.main-footer {
@@ -94,26 +87,23 @@ footer#page-footer {
 	section.social {
 		margin: rhythm(4) 0;
 	}
-
+	
+	section.call-us,
+	section.order-sample {
+		.icon {
+			display:block;
+			font-size:32px;
+			line-height:1em;
+			margin-top: rhythm(2);
+			color:inherit;
+		}
+	}
 	section.social {
-
-		ul {
-			display:inline;
-			float:left;
-			margin-left: 0;
-			margin-right: 0;
-			margin-bottom: rhythm(4);
-			padding:0;
-			list-style:none;
+				
+		ul.social {
 
 			li {
-				display:inline;
-				float:left;
 				color:rgba(255,255,255,.5);
-
-				&:nth-child(n+2) {
-					margin-left:5px;
-				}
 
 				a {
 					&:hover {
@@ -124,35 +114,12 @@ footer#page-footer {
 					}
 				}
 			}
-		}
-		span:first-child {
-			position:absolute;
-			left: -999em;
-		}
-		.icon {
-			display:inline;
-			float:left;
 
-			font-size: 18px;
-			width: 30px;
-			height: 30px;
-			line-height: 30px;
-			text-align: center;
-			margin:0;
-			border-radius: 15px;
-			overflow:hidden;
-			box-shadow:inset 0px 0px 0px 2px rgba(255,255,255,.5);
-		}
-		.icon-social-twitter {
-			font-size:12px;
-		}
-		.icon-social-youtube {
-			font-size:18px;
-		}
-		.icon-social-googleplus {
-			line-height: 32px;
-		}
+			.icon {
+				box-shadow:inset 0px 0px 0px 2px rgba(255,255,255,.5);
+			}
 
+		}
 	}
 	
 }
@@ -194,13 +161,6 @@ footer#page-footer {
 			margin: 0;
 		}
 
-		.icon {
-			font-size: 36px;
-			width: 40px;
-			text-align: center;
-			margin-top: -1 * rhythm(1);
-		}
-
 		section.call-us,
 		section.order-sample {
 			
@@ -208,12 +168,16 @@ footer#page-footer {
 				margin-left:50px;
 			}
 
+
 			.icon {
 				display:inline;
 				position:relative;
 				float:left;
 				margin-left:0px;
-
+				margin-top: -1 * rhythm(1);
+				font-size: 36px;
+				width: 40px;
+				text-align: center;
 			}
 		}
 

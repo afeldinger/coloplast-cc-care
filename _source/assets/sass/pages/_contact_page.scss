@@ -1,0 +1,35 @@
+.contact-page {
+
+	h2 {
+		@include adjust-font-size-to($size-xxl);
+		@include adjust-leading-to(7);
+		border-bottom: 1px solid $color-borders-light;
+	}
+
+
+	.contact-info,
+	.contact-form {
+		@include clearfix;
+		margin-bottom: 2em;
+	}
+
+}
+
+@include breakpoint($md) {
+	.contact-page {
+		.contact-info,
+		.contact-form {
+			margin-bottom: 0;
+		}
+		.contact-info {
+			@include grid-span(5, 1)
+		}
+		.contact-form {
+			h2 {
+				border:0;
+			}
+			@include grid-span(6, 7);
+		}
+
+	}
+}

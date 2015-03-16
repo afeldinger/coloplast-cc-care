@@ -1,33 +1,43 @@
 
 
 <form>
-	<label for="firstname">
-		First name
-		<input type="text" id="firstname" name="firstname" />
-	</label>
-	<label for="lastname">
-		Last name
-		<input type="text" id="lastname" name="lastname" />
-	</label>
-	<label for="email">
-		E-mail
-		<input type="email" id="email" name="email" />
-	</label>
-	<label for="phone">
-		Phone number
-		<input type="tel" id="phone" name="phone" />
-	</label>
+	<div class="row">
+		<label class="input-text md" for="contact-firstname">
+			<div class="label">First name</div>
+			<input type="text" id="contact-firstname" name="firstname" />
+		</label>
+		<label class="input-text md" for="contact-lastname">
+			<div class="label">Last name</div>
+			<input type="text" id="contact-lastname" name="lastname" />
+		</label>
+	</div>
+	<div class="row">
+		<label class="input-text md" for="contact-email">
+			<div class="label">E-mail</div>
+			<input type="email" id="contact-email" name="email" />
+		</label>
+		<label class="input-text md" for="contact-phone">
+			<div class="label">Phone number <span class="optional">(optional)</span></div>
+			<input type="tel" id="contact-phone" name="phone" />
+		</label>
+	</div>
+	<div class="row">
+		<label class="input-text" for="contact-subject">
+			<div class="label">Subject</div>
+			<input type="text" id="contact-subject" name="subject" />
+		</label>
+	</div>
+	<div class="row">
+		<label class="input-textarea" for="contact-message">
+			<div class="label">Your message ...</div>
+			<textarea id="contact-message" name="message"></textarea>
+		</label>
+	</div>
 
-	<label for="subject">
-		Subject
-		<input type="text" id="subject" name="subject" />
-	</label>
-	<label for="message">
-		Your message ...
-		<textarea id="message" name="message"></textarea>
-	</label>
+	<div class="button-group">
 
-	<button type="submit">
-		Send
-	</button>
+		<button class="input-submit" type="submit">
+			Send
+		</button>
+	</div>
 </form>
