@@ -1616,33 +1616,53 @@ button {
   display: none;
 }
 
-#sticky-signup {
+#signup-form-trigger {
+  color: #fff;
+  background: #00b2ce;
+  margin-bottom: -rhythm(6);
+}
+#signup-form-trigger a.trigger {
   display: none;
-  position: fixed;
-  left: 0;
-  top: 30%;
   border-radius: 0 4px 4px 0;
   padding: 10px;
-  color: #fff;
   font-size: 12px;
   font-size: 0.8rem;
   line-height: 18px;
   line-height: 1.2rem;
   font-weight: 600;
   text-align: center;
-  background: #00b2ce;
   z-index: 20;
+  color: inherit;
 }
-#sticky-signup .icon {
+#signup-form-trigger a.trigger .icon {
   display: block;
   width: 100%;
   text-align: center;
   font-size: 28px;
   line-height: 36px;
 }
-@media (min-width: 66.66667em) {
-  #sticky-signup {
+#signup-form-trigger .elm-content {
+  text-align: left;
+  color: inherit;
+  padding: 2rem;
+}
+#signup-form-trigger h2,
+#signup-form-trigger p,
+#signup-form-trigger a {
+  color: inherit;
+}
+@media (min-width: 45em) {
+  #signup-form-trigger {
+    position: fixed;
+    left: 0;
+    top: 30%;
+    z-index: 20;
+  }
+  #signup-form-trigger a.trigger {
     display: block;
+  }
+  #signup-form-trigger .elm-content {
+    display: none;
   }
 }
 
@@ -1850,11 +1870,11 @@ button {
   .grid-list li .elm-content .category,
   .grid-list li .elm-content h2,
   .grid-list li .elm-content p,
-  .grid-list li .elm-content a.more-link,
+  .grid-list li .elm-content > a,
   .grid-list li .elm-content-over .category,
   .grid-list li .elm-content-over h2,
   .grid-list li .elm-content-over p,
-  .grid-list li .elm-content-over a.more-link {
+  .grid-list li .elm-content-over > a {
     margin-left: 9.31677%;
     margin-right: 9.31677%;
   }
@@ -1918,7 +1938,7 @@ button {
   }
   .grid-list li.over .elm-content-over h2,
   .grid-list li.over .elm-content-over p,
-  .grid-list li.over .elm-content-over a.more-link {
+  .grid-list li.over .elm-content-over > a {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
@@ -1932,7 +1952,7 @@ button {
   .grid-list li.type-video .category,
   .grid-list li.type-video h2,
   .grid-list li.type-video p,
-  .grid-list li.type-video a.more-link {
+  .grid-list li.type-video > a {
     margin-left: 4.53858%;
     margin-right: 4.53858%;
   }
@@ -1945,6 +1965,30 @@ button {
   }
   .grid-list li.type-cta {
     background: #00b2ce;
+  }
+  .grid-list li.type-cta .elm-content {
+    bottom: 0;
+    background: transparent;
+  }
+  .grid-list li.type-cta .elm-content h2 {
+    font-size: 30px;
+    font-size: 2rem;
+    line-height: 36px;
+    line-height: 2.4rem;
+    weight: 300;
+  }
+  .grid-list li.type-cta .elm-content a {
+    font-size: 18px;
+    font-size: 1.2rem;
+    line-height: 24px;
+    line-height: 1.6rem;
+    weight: 300;
+  }
+  .grid-list li.type-cta .elm-content h2,
+  .grid-list li.type-cta .elm-content p,
+  .grid-list li.type-cta .elm-content a {
+    color: #fff;
+    text-shadow: none;
   }
 }
 @media (min-width: 45em) and (min-width: 60em) {

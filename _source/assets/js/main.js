@@ -41,15 +41,15 @@ function grid_list_init() {
 			$(this).data('position', i);
 
 
-			$(this).filter(':has(a.more-link)')
+			$(this).filter(':has(a)')
 			.hover(function() {
 				$(this).addClass('over');
 			}, function() {
 				$(this).removeClass('over');
 			}).click(function(e) {
-				e.stopPropagation();
-				location.href = $(this).find('a.more-link').attr('href');
-			}).find('.elm-content').clone().removeClass('elm-content').addClass('elm-content-over').appendTo(this);
+				//e.stopPropagation();
+				$(this).find('a').filter(':last')[0].click();
+			}).filter(':has(a.more-link)').find('.elm-content').clone().removeClass('elm-content').addClass('elm-content-over').appendTo(this);
 
 		});
 	});

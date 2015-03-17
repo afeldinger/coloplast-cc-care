@@ -1,29 +1,56 @@
 
-#sticky-signup {
-	display:none;
-	position:fixed;
-	left:0;
-	top: 30%;
-	border-radius: 0 4px 4px 0;
-	padding:10px;
+#signup-form-trigger {
+	
 	color:#fff;
-	@include adjust-font-size-to($size-sm);
-	font-weight: $bold;
-	text-align: center;
 	background: $color-primary;
-	z-index:20;
+	margin-bottom: -rhythm(6);
 
-	.icon {
-		display:block;
-		width:100%;
+	a.trigger {
+		display:none;
+		border-radius: 0 4px 4px 0;
+		padding:10px;
+		@include adjust-font-size-to($size-sm);
+		font-weight: $bold;
 		text-align: center;
-		font-size:28px;
-		line-height:36px;
+		z-index:20;
+		color: inherit;
+
+		.icon {
+			display:block;
+			width:100%;
+			text-align: center;
+			font-size:28px;
+			line-height:36px;
+		}
 	}
 
+	.elm-content {
+		text-align: left;
+		color: inherit;
+		padding: $content-margin;
 
-	@include breakpoint($lg) {
-		display:block;
+	}
+
+	h2,
+	p,
+	a {
+		color:inherit;
+	}	
+
+	@include breakpoint($sm) {
+		position:fixed;
+		left:0;
+		top: 30%;
+		z-index:20;
+
+		a.trigger {
+			display:block;	
+		}
+
+		.elm-content {
+			display:none;
+		}
+		
 	}
 }
 

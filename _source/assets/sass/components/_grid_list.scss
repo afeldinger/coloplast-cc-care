@@ -152,7 +152,7 @@
 				.category,
 				h2,
 				p,
-				a.more-link {
+				> a {
 					margin-left: (30 / 322 * 100%);
 					margin-right: (30 / 322 * 100%);
 				}
@@ -219,7 +219,7 @@
 					
 					h2,
 					p,
-					a.more-link {
+					> a {
 						transform: translate3d(0,0,0);
 					}
 				}
@@ -233,7 +233,7 @@
 				.category,
 				h2,
 				p,
-				a.more-link {
+				> a {
 					margin-left: (30 / 661 * 100%);
 					margin-right: (30 / 661 * 100%);
 				}
@@ -252,6 +252,27 @@
 			}
 			&.type-cta {
 				background: $color-primary;
+				
+				.elm-content {
+					bottom:0;
+					background:transparent;
+					
+					h2 {
+						@include adjust-font-size-to($size-xxl);
+						weight: $light;
+					}
+					a {
+						@include adjust-font-size-to($size-lg);
+						weight: $light;
+					}
+
+					h2,
+					p,
+					a {
+						color:#fff;
+						text-shadow: none;
+					}
+				}
 			}
 
 		}
