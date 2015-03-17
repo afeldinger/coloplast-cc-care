@@ -1,4 +1,5 @@
 allow from all
+Options +Indexes
 
 AddOutputFilterByType DEFLATE text/plain
 AddOutputFilterByType DEFLATE text/html

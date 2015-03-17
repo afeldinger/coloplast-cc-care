@@ -165,7 +165,7 @@ button {
 	&.focus,
 	&.has-value {
 		.label {
-			top:0px;
+			top:-1px;
 			@include adjust-font-size-to($size-xs);
 		}
 	}

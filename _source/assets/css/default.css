@@ -55,6 +55,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+/*
+$grids: 12;
+$gutters: 1/3; //(20px / $base-font-size) * 1em;
+//$gutters: add-gutter(1/10 at $md);
+*/
 nav.primary:before, header#page-header:after {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjIiLz48c3RvcCBvZmZzZXQ9IjMwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
   background-size: 100%;
@@ -758,14 +763,14 @@ a .icon {
 }
 @media (min-width: 45em) {
   .content-block .elm-image {
-    width: 49.15254%;
+    width: 49.01961%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
     clear: none;
   }
   .content-block .elm-content {
-    width: 49.15254%;
+    width: 49.01961%;
     float: right;
     margin-left: 0;
     margin-right: 0;
@@ -880,7 +885,7 @@ ul.social .icon {
   box-sizing: border-box;
   background: #f0f0f0;
   text-align: center;
-  margin-bottom: 1.69492%;
+  margin-bottom: 1.96078%;
 }
 .filters.show-categories fieldset.categories .categories label.checked {
   color: #fff;
@@ -983,15 +988,15 @@ ul.social .icon {
     margin-right: 3.2rem;
   }
   .filters.show-categories fieldset.categories .categories label {
-    width: 23.72881%;
+    width: 23.52941%;
     clear: right;
     float: left;
     margin-left: 0;
-    margin-right: 1.69492%;
+    margin-right: 1.96078%;
     box-sizing: border-box;
   }
   .filters.show-categories fieldset.categories .categories label:nth-child(4n+4) {
-    width: 23.72881%;
+    width: 23.52941%;
     clear: right;
     float: right;
     margin-right: 0;
@@ -1393,24 +1398,24 @@ footer#page-footer section.social ul.social .icon {
     text-align: center;
   }
   footer#page-footer section.call-us {
-    width: 32.20339%;
+    width: 32.02614%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
     clear: none;
   }
   footer#page-footer section.order-sample {
-    width: 32.20339%;
+    width: 32.02614%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
   }
   footer#page-footer section.social {
-    width: 32.20339%;
+    width: 32.02614%;
     float: left;
     margin-right: -100%;
-    margin-left: 33.89831%;
+    margin-left: 33.98693%;
     clear: none;
     margin-top: 2.4rem;
     text-align: center;
@@ -1489,18 +1494,18 @@ label {
   clear: right;
   float: right;
   margin-right: 0;
-  margin-bottom: 1.69492%;
+  margin-bottom: 1.96078%;
 }
 @media (min-width: 45em) {
   label.md {
-    width: 49.15254%;
+    width: 49.01961%;
     clear: right;
     float: left;
     margin-left: 0;
-    margin-right: 1.69492%;
+    margin-right: 1.96078%;
   }
   label.md:last-child {
-    width: 49.15254%;
+    width: 49.01961%;
     clear: right;
     float: right;
     margin-right: 0;
@@ -1579,7 +1584,7 @@ button {
   left: 11px;
 }
 .input-text.focus .label, .focus.input-textarea .label, .input-text.has-value .label, .has-value.input-textarea .label {
-  top: 0px;
+  top: -1px;
   font-size: 10px;
   font-size: 0.66667rem;
   line-height: 18px;
@@ -1600,7 +1605,7 @@ button {
 
 .form-compact {
   overflow: hidden;
-  margin-bottom: 1.69492%;
+  margin-bottom: 1.96078%;
   padding: 0 20px;
   background: #fff;
   border-radius: 4px;
@@ -1861,14 +1866,14 @@ button {
 @media (min-width: 45em) {
   .grid-list li {
     position: relative;
-    margin-bottom: 1.69492%;
+    margin-bottom: 1.96078%;
     color: #fff;
     overflow: hidden;
-    width: 32.20339%;
+    width: 32.02614%;
     clear: right;
     float: left;
     margin-left: 0;
-    margin-right: 1.69492%;
+    margin-right: 1.96078%;
   }
   .grid-list li.last {
     margin-right: 0 !important;
@@ -2008,11 +2013,11 @@ button {
             transform: translate3d(0, 0, 0);
   }
   .grid-list li.type-video {
-    width: 66.10169%;
+    width: 66.01307%;
     clear: right;
     float: left;
     margin-left: 0;
-    margin-right: 1.69492%;
+    margin-right: 1.96078%;
   }
   .grid-list li.type-video .category,
   .grid-list li.type-video h2,
@@ -2026,6 +2031,7 @@ button {
   }
   .grid-list li.type-survey {
     background: #f5f5f5;
+    box-shadow: inset 0 0 0 1px #bcbcbc;
   }
   .grid-list li.type-cta {
     background: #00b2ce;
@@ -3259,7 +3265,7 @@ nav.primary > ul > li > ul > li > a {
     display: table-cell;
     vertical-align: top;
     text-align: left;
-    padding-right: 1.69492%;
+    padding-right: 1.96078%;
     margin-top: 0;
   }
   .features .icon {
@@ -3338,14 +3344,14 @@ nav.primary > ul > li > ul > li > a {
     margin-bottom: 0;
   }
   .contact-page .contact-info {
-    width: 40.67797%;
+    width: 40.52288%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
     clear: none;
   }
   .contact-page .contact-form {
-    width: 49.15254%;
+    width: 49.01961%;
     float: right;
     margin-left: 0;
     margin-right: 0;

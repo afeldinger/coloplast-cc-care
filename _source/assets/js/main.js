@@ -64,7 +64,7 @@ function grid_list_init() {
 			$(this).parents('.filters').toggleClass('show-categories', $(this).prop('checked'));
 		});
 
-		$(this).find('#category-reset').click(function(e) {
+		$(this).find('#filter-category-reset').click(function(e) {
 			e.preventDefault();
 			$(this).parents('.categories:first').find('input[name^="filter"]').prop('checked', false).filter(':first').change();
 		});
