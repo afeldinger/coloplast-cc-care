@@ -9,7 +9,7 @@
 	<div class="category">{{filter.category}}</div>
 	<h2>{{title}}</h2>
 	<p>{{teaser}}</p>
-	<a href="article.html" class="more-link">
+	<a href="{{#if link}}{{link}}{{else}}article.html{{/if}}" class="more-link">
 		Read more
 		<span class="icon"></span>
 	</a>

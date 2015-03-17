@@ -97,6 +97,18 @@ h3 {
     margin: rhythm(1) 0;
 }
 
+h4 {
+    @include adjust-font-size-to($size-md);
+    margin: rhythm(1) 0;
+}
+
+h5 {
+    @include adjust-font-size-to($size-md);
+    margin: rhythm(1) 0;
+    color: $color-primary;
+}
+
+
 p,
 ul,
 ol {

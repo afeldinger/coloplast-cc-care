@@ -1,7 +1,7 @@
 
 <div class="elm-content">
 	<h2>{{title}}</h2>
-	<a href="article.html" class="more-link">
+	<a href="{{#if link}}{{link}}{{else}}article.html{{/if}}">
 		{{link_text}}
 		<span class="icon icon-arrow-right"></span>
 	</a>

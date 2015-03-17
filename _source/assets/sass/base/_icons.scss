@@ -44,3 +44,7 @@
 .icon-checkmark {
 	@include icon($checkmark);
 }
+
+.icon-sign-up {
+	@include icon($sign-up);
+}

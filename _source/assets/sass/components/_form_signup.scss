@@ -1,0 +1,73 @@
+
+#sticky-signup {
+	display:none;
+	position:fixed;
+	left:0;
+	top: 30%;
+	border-radius: 0 4px 4px 0;
+	padding:10px;
+	color:#fff;
+	@include adjust-font-size-to($size-sm);
+	font-weight: $bold;
+	text-align: center;
+	background: $color-primary;
+	z-index:20;
+
+	.icon {
+		display:block;
+		width:100%;
+		text-align: center;
+		font-size:28px;
+		line-height:36px;
+	}
+
+
+	@include breakpoint($lg) {
+		display:block;
+	}
+}
+
+#signup-form-overlay {
+	
+    box-sizing: border-box;
+
+	display:none;
+
+	background: $color-background;
+	text-align: left;
+
+	h1,
+	h2 {
+		&:first-child {
+			margin-top:0;
+		}
+	}
+
+	@include layout($gutter: 2) {
+		label {
+			margin-bottom: gutter-span();
+		}
+
+		.radio-group {
+			@include grid-span(4,1);
+
+			.input-radio {
+				&:first-child {
+					@include grid-span(6,1);
+				}
+				&:last-child {
+					@include grid-span(6,7);
+				}
+			}
+		}
+		.checkbox-group {
+			@include grid-span(8,5);
+		}
+	}
+		
+
+	#colorbox & {
+		display:block;
+	}
+
+}

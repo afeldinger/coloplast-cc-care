@@ -119,7 +119,7 @@ $(document).ready(function() {
 	    }
 	});
 */
-	
+
 	grid_list_init();
 
 	// init flexsliders on page
@@ -173,6 +173,22 @@ $(document).ready(function() {
 		;
 	});
 
+	// manages form submission and confirmation display
+	$('form').filter(function() {
+		return $(this).next('.form-confirmation').length;
+	}).submit(function(e) {
+		e.preventDefault();
+
+		$(this).hide().next('.form-confirmation').show();
+
+	});
+
+	$('a[href="#signup-form-overlay"]').colorbox({
+		inline:true, 
+		width:'100%', 
+		maxWidth:'450px',
+
+	});
 
 });
 

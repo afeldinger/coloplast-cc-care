@@ -80,6 +80,7 @@
 	{
 		"type": "cta",
 		"title": "Get your personal support programme",
+		"link": "#signup-form-overlay",
 		"link_text": "Sign up here",
 		"filter": {
 			"gender": ["male"],

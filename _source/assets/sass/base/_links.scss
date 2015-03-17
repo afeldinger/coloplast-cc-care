@@ -10,4 +10,29 @@
 	color: #fff;
 	border-radius:4px;
 	background: $color-primary;
+	text-align: center;
+}
+
+
+ul.text-buttons {
+	margin-left:0;
+	margin-right:0;
+	padding-left:0;
+	padding-right:0;
+	list-style:none;
+
+	li {
+		margin:0;
+
+		& + li {
+			margin-top: rhythm(2);
+		}
+	}
+
+	a {
+		@extend %button;
+		display:block;
+		@include adjust-leading-to(3);
+		padding: rhythm(2) rhythm(6);
+	}
 }

@@ -11,7 +11,7 @@
     <header id="page-header">
       <div class="content-wrapper">
         <h1 class="brand-primary">
-          <a href="index.html">
+          <a href="frontpage.html">
             <span>Coloplast</span>
           </a>
         </h1>
@@ -308,52 +308,78 @@
         </div>
       </div>
     </section>
-    <!--<div class="form-signup">
-	<form id="form-signup" name="signup">
-	<fieldset class="personal-info form-compact">
-		<label class="input-text" for="signup-firstname">
-			<div class="label">First name</div>
-			<input type="text" id="signup-firstname" name="firstname">
-		</label>
-		<label class="input-text" for="signup-lastname">
-			<div class="label">Last name</div>
-			<input type="text" id="signup-lastname" name="last-name">
-		</label>
-		<label class="input-text" for="signup-email">
-			<div class="label">E-mail address</div>
-			<input type="text" id="signup-email" name="email">
-		</label>
-		<label class="input-text" for="signup-zip">
-			<div class="label">Zip code</div>
-			<input type="text" id="signup-zip" name="zip">
-		</label>
-	</fieldset>
-	<fieldset class="gender-mobility">
-		<div class="radio-group icon-buttons">
-			<label class="input-radio" for="signup-gender-female">
-				<input id="signup-gender-female" name="gender" type="radio" value="female">
-				<span class="icon icon-gender-female"></span>
-				<span class="label">Female</span>
-			</label>
-			<label class="input-radio" for="signup-gender-male">
-				<input id="signup-gender-male" name="gender" type="radio" value="male">
-				<span class="icon icon-gender-male"></span>
-				<span class="label">Male</span>
-			</label>
-		</div>
-		<div class="checkbox-group input-buttons">
-			<label class="input-checkbox" for="signup-mobility-wheelchair">
-				<input id="signup-mobility-wheelchair" name="mobility" type="checkbox" value="wheelchair">
-				<span class="icon icon-checkmark"></span>
-				<span class="label">I use a wheelchair</span>
-			</label>
-		</div>
-	</fieldset>
-	<button class="input-submit type="submit">
-		Sign up
-	</button>
-	</form>
-</div>-->
+    <a id="sticky-signup" href="#signup-form-overlay">
+      <span class="icon icon-sign-up"></span>
+      <span>Sign up</span>
+    </a>
+    <div id="signup-form-overlay">
+      <form id="form-signup" name="signup">
+        <h1>Sign up now</h1>
+        <div class="form-row">
+          <label class="input-text" for="signup-firstname">
+            <div class="label">First name</div>
+            <input type="text" id="signup-firstname" name="firstname">
+          </label>
+        </div>
+        <div class="form-row">
+          <label class="input-text" for="signup-lastname">
+            <div class="label">Last name</div>
+            <input type="text" id="signup-lastname" name="last-name">
+          </label>
+        </div>
+        <div class="form-row">
+          <label class="input-text" for="signup-email">
+            <div class="label">E-mail address</div>
+            <input type="text" id="signup-email" name="email">
+          </label>
+        </div>
+        <div class="form-row">
+          <label class="input-text" for="signup-zip">
+            <div class="label">Zip code</div>
+            <input type="text" id="signup-zip" name="zip">
+          </label>
+        </div>
+        <div class="form-row">
+          <div class="radio-group icon-buttons">
+            <label class="input-radio" for="signup-gender-female">
+              <input id="signup-gender-female" name="gender" type="radio" value="female">
+              <span class="icon icon-gender-female"></span>
+              <span class="label">Female</span>
+            </label>
+            <label class="input-radio" for="signup-gender-male">
+              <input id="signup-gender-male" name="gender" type="radio" value="male">
+              <span class="icon icon-gender-male"></span>
+              <span class="label">Male</span>
+            </label>
+          </div>
+          <div class="checkbox-group input-buttons">
+            <label class="input-checkbox" for="signup-mobility-wheelchair">
+              <input id="signup-mobility-wheelchair" name="mobility" type="checkbox" value="wheelchair">
+              <span class="icon icon-checkmark"></span>
+              <span class="label">I use a wheelchair</span>
+            </label>
+          </div>
+        </div>
+        <div class="button-group">
+          <button class="input-submit type=" submit>
+            Sign up
+          </button>
+        </div>
+      </form>
+      <div class="form-confirmation">
+        <h1>Thank you for signing up</h1>
+        <p>
+          The more we know about you, the more we can help. If you have the time to answer some extra questions
+        </p>
+        <h5>Please choose one of the options below.</h5>
+        <ul class="text-buttons">
+          <li><a href="#">I am having bladder issues</a>
+          </li>
+          <li><a href="#">I am caring for someone with bladder issues</a>
+          </li>
+        </ul>
+      </div>
+    </div>
     <footer id="page-footer">
       <section class="main-footer">
         <div class="content-wrapper">
