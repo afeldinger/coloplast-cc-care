@@ -1,0 +1,32 @@
+.mfp-wrap {
+	margin-top:0;
+}
+
+.mfp-popup {
+	position:relative;
+	margin:0 auto;
+	padding:40px;
+	
+	width: 100%;
+	max-width:450px;
+	
+	text-align: left;
+
+	overflow:hidden;
+	background: #fff;
+
+	.mfp-close {
+		top:10px;
+		right:10px;
+		min-width: 0;
+	}
+
+	@include breakpoint($xs) {
+		padding:70px;
+	}
+}
+
+.mfp-form-popup {
+	@extend .mfp-popup;
+	background: $color-background;
+}

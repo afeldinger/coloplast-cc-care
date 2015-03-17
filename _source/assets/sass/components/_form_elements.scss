@@ -41,6 +41,9 @@
 
 .input-buttons label {
 	@extend .input-button;
+	&.input-checkbox {
+		padding:0;
+	}
 }
 
 .icon-button {
@@ -58,11 +61,6 @@
 	@extend .icon-button;
 }
 
-
-
-.form-row {
-	@include float-span(12);
-}
 
 label {
 	@include float-span(12);
@@ -184,6 +182,37 @@ button {
 }
 
 
+
+.form-row {
+	@include float-span(12);
+}
+
+.form-compact {
+	overflow: hidden;
+	margin-bottom: gutter-span();
+	padding: 0 20px;
+	background:#fff;
+	border-radius: $border-radius-md;
+
+	label {
+		margin-bottom:0;
+		border-radius:0;
+		border-bottom: 1px solid $color-borders-light;
+
+
+		&.input-text,
+		&.input-textarea {
+			.label {
+				left:0;
+			}
+			input {
+				padding-left:0;
+				padding-right:0;
+			}
+		}
+	}
+}
+
 .radio-group,
 .checkbox-group {
 	clear:both;
@@ -194,11 +223,23 @@ button {
 }
 
 .button-group {
-	@include float-span(12);
+	@include grid-span(12);
 	margin-top: 1em;
 }
 
 
 .form-confirmation {
 	display:none;
+}
+
+.disclaimer {
+	margin-top:rhythm(2);
+	@include grid-span(12);
+	@include adjust-font-size-to($size-sm);
+	@include adjust-leading-to(2);
+
+	a {
+		color: inherit;
+		text-decoration: underline;
+	}
 }

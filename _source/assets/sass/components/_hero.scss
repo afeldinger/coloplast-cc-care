@@ -17,26 +17,39 @@
 		}
 	}
 	
-	h1 {
-		@include adjust-font-size-to($size-xxxl);
-	}
-	p,
-	ul,
-	ol {
-		font-family: $font-header;
-		/*
-		@include adjust-font-size-to($size-lg);
-		@include adjust-leading-to(4);
-		*/
+	.elm-content {
+		h1 {
+			@include adjust-font-size-to($size-xxxl);
+		}
+		p,
+		ul,
+		ol {
+			font-family: $font-header;
+			/*
+			@include adjust-font-size-to($size-lg);
+			@include adjust-leading-to(4);
+			*/
+		}
+
+		li:nth-child(n+2) {
+			margin-top: rhythm(2);
+		}
+
+		.checkmarks {
+			li:before {
+				color: $color-primary;
+			}
+		}
 	}
 
-	li:nth-child(n+2) {
-		margin-top: rhythm(2);
-	}
-	
-	.checkmarks {
-		li:before {
-			color: $color-primary;
+	.form-signup {
+		form,
+		.form-confirmation {
+			display:none;
+		}
+
+		.signup-cta-content {
+			display:block;
 		}
 	}
 
@@ -44,17 +57,75 @@
 
 @include breakpoint($sm, true) {
 	.hero {
+		position:relative;
+		overflow: hidden;
+
 
 		.content-wrapper {
 			position:relative;
 		}
 		.elm-content {
-			//@include float-span(5, 1, omega);
 			position:absolute;
-			top: 50%;
-			transform: translate3d(0,-50%,0);
+			top: 10%;
 			text-shadow: 0 0 5px rgba(255,255,255,.2), 0 0 30px rgba(0,0,0,.9);
+
+			
+			h1,
+			p,
+			ul,
+			ol {
+				color:#fff;
+			}
+			.checkmarks li:before {
+				color:inherit;
+			}
 		}
+		.form-signup {
+			position:absolute;
+			display:block;
+			top:0;
+			right:0;
+			width:325px;
+			padding:30px;
+			height:100%;
+			background: rgba(255,255,255,0.7);
+
+			form h1,
+			form h2 {
+				margin-bottom:rhythm(1);
+			}
+			
+			.button-group {
+				margin-top: 0;
+				overflow: hidden;
+			}
+
+			button {
+				@include grid-span(12);
+			}
+
+			.disclaimer {
+				@include grid-span(12);
+				margin-top: rhythm(2);
+				text-align: center;
+			}
+
+			form {
+				display:block;
+			}
+			.signup-cta-content {
+				display:none;
+			}
+		}
+		
+	}
+} 
+
+@include breakpoint($md, true) {
+	.hero {
+		.elm-content {
+			top: 20%;
+		}	
 	}
 } 
 
@@ -76,13 +147,15 @@
 
 		.content-wrapper {
 			position:absolute;
-			top:50%;
+			top:0;
 			left:50%;
-			margin-top: -197.5px;
+			height:100%;
 			margin-left: -($lg/2);
 			margin-right: 0;
 		}
 
+		.elm-content {
+		}
 		
 
 	}

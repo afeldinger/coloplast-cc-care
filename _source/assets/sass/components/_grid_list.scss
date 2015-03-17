@@ -233,7 +233,7 @@
 				.category,
 				h2,
 				p,
-				> a {
+				a.more-link {
 					margin-left: (30 / 661 * 100%);
 					margin-right: (30 / 661 * 100%);
 				}
@@ -248,7 +248,7 @@
 			}
 			&.type-survey {
 				background: $color-background;
-				box-shadow: inset 0 0 0 1px $color-borders;
+				//box-shadow: inset 0 0 0 1px $color-borders;
 			}
 			&.type-cta {
 				background: $color-primary;
@@ -256,15 +256,8 @@
 				.elm-content {
 					bottom:0;
 					background:transparent;
+					padding-bottom:rhythm(2);
 					
-					h2 {
-						@include adjust-font-size-to($size-xxl);
-						weight: $light;
-					}
-					a {
-						@include adjust-font-size-to($size-lg);
-						weight: $light;
-					}
 
 					h2,
 					p,
@@ -272,6 +265,22 @@
 						color:#fff;
 						text-shadow: none;
 					}
+
+					h2 {
+						@include adjust-font-size-to($size-xl);
+						weight: $light;
+					}
+					a {
+						@include adjust-font-size-to($size-lg);
+						weight: $light;
+					}
+
+					@include breakpoint($md, true) {
+						h2 {
+							@include adjust-font-size-to($size-xxl);
+						}
+					}
+
 				}
 			}
 

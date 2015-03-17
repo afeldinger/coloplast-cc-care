@@ -179,15 +179,26 @@ $(document).ready(function() {
 	}).submit(function(e) {
 		e.preventDefault();
 
-		$(this).hide().next('.form-confirmation').show();
+		var frm = $(this);
+		var url = $(this).attr('action')? $(this).attr('action') : location.href;
+		var data = $(this).serializeArray();
+
+		$.post(
+			url,
+			data,
+			function() {
+				console.log('form submitted');
+				frm.hide().next('.form-confirmation').show();
+			}
+		);
+
+		//console.log(action);
+		//
 
 	});
 
-	$('a[href="#signup-form-overlay"]').colorbox({
-		inline:true, 
-		width:'100%', 
-		maxWidth:'450px',
-
+	$('a[href="#signup-form-overlay"]').magnificPopup({
+		type:'inline', 
 	});
 
 });

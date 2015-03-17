@@ -24,13 +24,6 @@
 		}
 	}
 
-	.elm-content {
-		text-align: left;
-		color: inherit;
-		padding: $content-margin;
-
-	}
-
 	h2,
 	p,
 	a {
@@ -47,22 +40,42 @@
 			display:block;	
 		}
 
-		.elm-content {
-			display:none;
-		}
-		
 	}
 }
 
-#signup-form-overlay {
-	
-    box-sizing: border-box;
 
-	display:none;
-
-	background: $color-background;
+.form-signup-cta {
 	text-align: left;
+	color: #fff;
+	background: $color-primary;
+	padding: $content-margin;
 
+	
+	h2,
+	p,
+	a {
+		color:inherit;
+	}	
+
+	.form-signup & {
+		margin: rhythm(6) (-$content-margin) 0;
+	}
+
+	@include breakpoint($sm, true) {
+		display:none;
+	}
+
+}
+
+#signup-form-overlay {
+	@extend .mfp-form-popup;
+
+	#colorbox & {
+		display:block;
+	}
+}
+
+.form-signup {
 	h1,
 	h2 {
 		&:first-child {
@@ -74,7 +87,13 @@
 		label {
 			margin-bottom: gutter-span();
 		}
-
+		
+		.form-compact {
+			label {
+				margin-bottom:0;
+			}
+			margin-bottom: gutter-span();
+		}
 		.radio-group {
 			@include grid-span(4,1);
 
@@ -90,11 +109,13 @@
 		.checkbox-group {
 			@include grid-span(8,5);
 		}
+
+		button {
+			@include adjust-font-size-to($size-xl);
+			@include adjust-leading-to(7);
+		}
 	}
 		
 
-	#colorbox & {
-		display:block;
-	}
 
 }
