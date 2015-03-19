@@ -4,9 +4,11 @@
 {{/if}}
 
 
+{{#if show_filters}}
+
 	<aside class="filters">
 		<form>
-		<fieldset class="personal">
+		<fieldset class="personal gender-mobility">
 			<div class="radio-group icon-buttons">
 				<label class="input-radio" for="filter-gender-female">
 					<input id="filter-gender-female" name="filter--gender" type="radio" value="female">
@@ -28,7 +30,7 @@
 			</div>
 		</fieldset>
 	
-	{{#if show_filters}}
+	{{#is show_filters 'categories'}}
 		<fieldset class="categories">
 
 			<div class="checkbox-group input-buttons categories-toggle">
@@ -72,9 +74,11 @@
 
 			<button id="filter-category-reset" class="link">Reset filters</button>
 		</fieldset>
-	{{/if}}
+	{{/is}}
 		</form>
 	</aside>
+
+{{/if}}
 	
 	<ul class="list-items"> 
 	{{#eachProperty articles}}

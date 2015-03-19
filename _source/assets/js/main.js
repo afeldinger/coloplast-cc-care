@@ -197,7 +197,7 @@ $(document).ready(function() {
 
 	});
 
-	$('a[href="#signup-form-overlay"]').magnificPopup({
+	$('a[href="#signup-form-overlay"], a[href="#form-order-sample-overlay"]').magnificPopup({
 		type:'inline', 
 	});
 

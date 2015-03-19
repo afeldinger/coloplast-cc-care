@@ -7,7 +7,6 @@
 
 	a.trigger {
 		display:none;
-		border-radius: 0 4px 4px 0;
 		padding:10px;
 		@include adjust-font-size-to($size-sm);
 		font-weight: $bold;
@@ -35,6 +34,7 @@
 		left:0;
 		top: 30%;
 		z-index:20;
+		border-radius: 0 4px 4px 0;
 
 		a.trigger {
 			display:block;	
@@ -83,39 +83,67 @@
 		}
 	}
 
-	@include layout($gutter: 2) {
+
+	.form-compact {
 		label {
-			margin-bottom: gutter-span();
+			margin-bottom:0;
 		}
-		
-		.form-compact {
-			label {
-				margin-bottom:0;
-			}
-			margin-bottom: gutter-span();
-		}
-		.radio-group {
-			@include grid-span(4,1);
+		margin-bottom: $form-spacing;
+	}
 
-			.input-radio {
-				&:first-child {
-					@include grid-span(6,1);
-				}
-				&:last-child {
-					@include grid-span(6,7);
-				}
-			}
-		}
-		.checkbox-group {
-			@include grid-span(8,5);
-		}
-
+	.button-group {
 		button {
+			width:100%;
 			@include adjust-font-size-to($size-xl);
 			@include adjust-leading-to(7);
 		}
 	}
-		
+
+}
+
+#signup-form-hero {
+	label {
+		margin-bottom: $form-spacing-sm;
+	}
+
+	.form-compact {
+		label {
+			margin-bottom:0;
+		}
+		margin-bottom: $form-spacing-sm;
+	}
+	.input-buttons label {
+		min-height:0;
+		padding-left:28px;
+		padding-right:8px;
+		line-height: rhythm(2);
+	}
+	.icon-buttons label {
+		width: 42px;
+		margin-right: $form-spacing-sm;
+		&:last-child {
+			margin-right:0;
+		}
+	}
+	.input-buttons label,
+	.icon-buttons label {
+		height: 34px;
+		line-height: 34px;
+
+		.icon-gender-male:before,
+		.icon-gender-female:before {
+			font-size:22px;
+		}
+	}
+
+	.gender-mobility {
+		@include breakpoint($xs) {
+			.radio-group + .checkbox-group {
+				margin-left: $form-spacing-sm;
+				width: calc(100% - (2 * (42px + #{$form-spacing-sm})));
+			}
+		}
+	}
 
 
 }

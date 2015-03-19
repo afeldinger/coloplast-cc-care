@@ -63,9 +63,9 @@ ul.social {
 		a {
 			color: $dark-gray;
 			&:hover {
-				color:$color-primary;
+				color:$medium-gray;
 				.icon {
-					box-shadow:inset 0px 0px 0px 1px $color-primary;
+					box-shadow:inset 0px 0px 0px 1px $medium-gray;
 				}
 			}
 		}

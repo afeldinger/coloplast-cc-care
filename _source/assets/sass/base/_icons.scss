@@ -32,6 +32,32 @@
 .icon-tree {
 	@include icon($tree);
 }
+
+.icon-feature-curved-tip {
+	@include icon($feature-curved-tip);
+}
+.icon-feature-discrete {
+	@include icon($feature-discrete);
+}
+.icon-feature-easy-open {
+	@include icon($feature-easy-open);
+}
+.icon-feature-easy-use {
+	@include icon($feature-easy-use);
+}
+.icon-feature-hygenic {
+	@include icon($feature-hygenic);
+}
+.icon-feature-instant {
+	@include icon($feature-instant);
+}
+.icon-feature-preconnected {
+	@include icon($feature-preconnected);
+}
+.icon-feature-size-variety {
+	@include icon($feature-size-variety);
+}
+
 .icon-plus {
 	@include icon($plus);
 }

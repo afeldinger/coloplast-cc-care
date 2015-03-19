@@ -30,3 +30,8 @@
 	@extend .mfp-popup;
 	background: $color-background;
 }
+
+.mfp-form-wide-popup {
+	@extend .mfp-form-popup;
+	max-width: 830px;
+}

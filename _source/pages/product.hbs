@@ -8,8 +8,8 @@ page_type: product
 
 
 
-<article class="article-full type-product">
-	<header class="article-header" style="">
+<div class="article-full type-product">
+	<div class="article-header" style="">
 		<div class="content-wrapper">
 			<div class="content-block">
 				<div class="elm-image">
@@ -17,16 +17,16 @@ page_type: product
 				</div>
 				<div class="elm-content">
 					<h1>
-						SpeediCath® Compact for women
+						SpeediCath<sup>®</sup> Compact for women
 					</h1>
 				</div>
 				<div class="elm-actions">
-					<a class="button" href="#">Order free sample</a>
+					<a class="button" href="#form-order-sample-overlay">Order free sample</a>
 				</div>
 			</div>
 		</div>
-	</header>
-	<section class="main-content">
+	</div>
+	<div class="main-content">
 		<div class="content-block">
 
 			<div class="elm-image inline-left">
@@ -42,30 +42,41 @@ page_type: product
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
 		</div>
-	</section>
-	<section class="features">
+	</div>
+	<div class="features">
+<!-- 
+Available feature icons: 
+icon-feature-curved-tip
+icon-feature-discrete
+icon-feature-easy-open
+icon-feature-easy-use
+icon-feature-hygenic
+icon-feature-instant
+icon-feature-preconnected
+icon-feature-size-variety
+-->
 		<div class="content-wrapper">
 			<ul>
 				<li>
-					<span class="icon icon-tree"></span>
+					<span class="icon icon-feature-easy-use"></span>
 					<h2>Easy grip</h2>
 					<p>The easy-grip handle allows for hygienic non-touch insertion and control </p>
 				</li>
 				<li>
-					<span class="icon icon-tree"></span>
+					<span class="icon icon-feature-instant"></span>
 					<h2>Ready to use</h2>
 					<p>Instantly ready to use due to the unique hydrophilic coating</p>
 				</li>
 				<li>
-					<span class="icon icon-tree"></span>
+					<span class="icon icon-feature-hygenic"></span>
 					<h2>Environmental</h2>
 					<p>PVC- and phthalate-free limiting the environmental impact.</p>
 				</li>
 
 			</ul>
 		</div>
-	</section>
-	<section class="facts">
+	</div>
+	<div class="facts">
 		<h1>Facts & tips</h1>
 		<div class="flexslider">
 			<ul class="slides">
@@ -79,10 +90,10 @@ page_type: product
 				<li>Aenean pretium tincidunt dui, a luctus augue convallis eu. Ut enim risus, dictum non felis vel, eleifend commodo orci.</li>
 			</ul>
 		</div>
-	</section>
-</article>
+	</div>
+</div>
 
-<section class="related">
+<div class="related">
 	<div class="content-wrapper">
 		<div class="flexslider">
 			<ul class="slides">
@@ -113,10 +124,11 @@ page_type: product
 			</ul>
 		</div>
 	</div>
-</section>
+</div>
 
 
 <div class="content-wrapper">
 	{{>grid_list}}
 </div>
 
+{{>form_order_sample}}

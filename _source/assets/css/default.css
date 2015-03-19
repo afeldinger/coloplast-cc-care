@@ -215,7 +215,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-box-open:before {
-  content: "";
+  content: "";
 }
 
 .icon-social-facebook {
@@ -288,6 +288,118 @@ img {
   content: "";
 }
 
+.icon-feature-curved-tip {
+  font-family: "cc-icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-feature-curved-tip:before {
+  content: "";
+}
+
+.icon-feature-discrete {
+  font-family: "cc-icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-feature-discrete:before {
+  content: "";
+}
+
+.icon-feature-easy-open {
+  font-family: "cc-icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-feature-easy-open:before {
+  content: "";
+}
+
+.icon-feature-easy-use {
+  font-family: "cc-icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-feature-easy-use:before {
+  content: "";
+}
+
+.icon-feature-hygenic {
+  font-family: "cc-icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-feature-hygenic:before {
+  content: "";
+}
+
+.icon-feature-instant {
+  font-family: "cc-icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-feature-instant:before {
+  content: "";
+}
+
+.icon-feature-preconnected {
+  font-family: "cc-icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-feature-preconnected:before {
+  content: "";
+}
+
+.icon-feature-size-variety {
+  font-family: "cc-icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-feature-size-variety:before {
+  content: "";
+}
+
 .icon-plus {
   font-family: "cc-icons";
   speak: none;
@@ -341,7 +453,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-checkmark:before {
-  content: "";
+  content: "";
 }
 
 .icon-sign-up {
@@ -585,6 +697,17 @@ a .icon {
   align: absmiddle;
 }
 
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+  font-size: .6em;
+}
+
+sub {
+  top: 0.4em;
+}
+
 .category {
   font-size: 12px;
   font-weight: 300;
@@ -737,7 +860,7 @@ a .icon {
   text-transform: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
-  content: "";
+  content: "";
 }
 #cboxClose:before {
   display: block;
@@ -791,7 +914,7 @@ ul.checkmarks li:before {
   text-transform: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
-  content: "";
+  content: "";
 }
 ul.checkmarks li:before {
   position: relative;
@@ -821,10 +944,10 @@ ul.social li a {
   color: #707070;
 }
 ul.social li a:hover {
-  color: #00b2ce;
+  color: #ccc;
 }
 ul.social li a:hover .icon {
-  box-shadow: inset 0px 0px 0px 1px #00b2ce;
+  box-shadow: inset 0px 0px 0px 1px #ccc;
 }
 ul.social span:first-child {
   position: absolute;
@@ -911,7 +1034,7 @@ ul.social .icon {
   color: #00b2ce;
 }
 .filters.show-categories fieldset.categories .categories-toggle label.checked .icon:before {
-  content: "";
+  content: "";
 }
 .filters.show-categories fieldset.categories #filter-category-reset {
   display: inline;
@@ -1098,7 +1221,7 @@ html[xmlns] .flexslider .slides {
   display: inline-block;
 }
 .flex-direction-nav a:before {
-  content: "";
+  content: "";
 }
 .flex-direction-nav a.flex-next {
   font-family: "cc-icons";
@@ -1111,7 +1234,7 @@ html[xmlns] .flexslider .slides {
   -webkit-font-smoothing: antialiased;
 }
 .flex-direction-nav a.flex-next:before {
-  content: "";
+  content: "";
 }
 .flex-direction-nav .flex-prev {
   left: 10px;
@@ -1268,7 +1391,7 @@ footer#page-footer a.top span.icon {
   text-align: right;
 }
 footer#page-footer a.top span.icon:before {
-  content: "";
+  content: "";
 }
 footer#page-footer h2 {
   font-size: 18px;
@@ -1353,10 +1476,10 @@ footer#page-footer section.social ul.social li a:hover {
   color: #fff;
 }
 footer#page-footer section.social ul.social li a:hover .icon {
-  box-shadow: inset 0px 0px 0px 2px #fff;
+  box-shadow: inset 0px 0px 0px 1px #fff;
 }
 footer#page-footer section.social ul.social .icon {
-  box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.5);
 }
 
 @media (min-width: 30em) {
@@ -1445,6 +1568,12 @@ footer#page-footer section.social ul.social .icon {
     margin-right: auto;
   }
 }
+label, .form-row, .button-group, .disclaimer {
+  display: inline;
+  float: left;
+  width: 100%;
+}
+
 .input-text, .input-textarea {
   position: relative;
 }
@@ -1452,7 +1581,7 @@ footer#page-footer section.social ul.social .icon {
 .input-text textarea,
 .input-textarea textarea {
   width: 100%;
-  padding: 10px;
+  padding: 11px;
   outline: none;
   border-radius: 4px;
   border: 0;
@@ -1462,9 +1591,11 @@ footer#page-footer section.social ul.social .icon {
 .input-button, .input-buttons label, .icon-button, .icon-buttons label {
   background: #fff;
   color: #707070;
-  height: 48px;
-  line-height: 48px;
+  height: 40px;
+  line-height: 40px;
   padding: 0 18px;
+  margin-bottom: 15px;
+  text-align: left;
   overflow: hidden;
 }
 .input-button .icon, .input-buttons label .icon, .icon-button .icon, .icon-buttons label .icon {
@@ -1476,13 +1607,29 @@ footer#page-footer section.social ul.social .icon {
   opacity: 0;
 }
 
+.input-buttons label {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.input-buttons label .icon {
+  padding-top: 0;
+}
+.input-buttons label:before {
+  display: none;
+}
 .input-buttons label.input-checkbox {
-  padding: 0;
+  padding-left: 34px;
+}
+.input-buttons label.input-checkbox .icon {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-left: -20px;
 }
 
 .icon-button, .icon-buttons label {
   text-align: center;
-  width: 48px;
+  width: 40px;
   padding: 0;
 }
 .icon-button .label, .icon-buttons label .label {
@@ -1490,25 +1637,18 @@ footer#page-footer section.social ul.social .icon {
 }
 
 label {
-  width: 100%;
-  clear: right;
-  float: right;
-  margin-right: 0;
-  margin-bottom: 1.96078%;
+  margin-bottom: 15px;
 }
 @media (min-width: 45em) {
   label.md {
-    width: 49.01961%;
-    clear: right;
+    display: inline;
     float: left;
-    margin-left: 0;
-    margin-right: 1.96078%;
+    clear: none;
+    width: 48%;
+    width: calc((100% - 15px) / 2);
   }
   label.md:last-child {
-    width: 49.01961%;
-    clear: right;
     float: right;
-    margin-right: 0;
   }
 }
 label .label {
@@ -1527,11 +1667,15 @@ label .icon + .label {
 label .icon-checkmark {
   width: 20px;
   height: 20px;
+  line-height: 20px;
+  text-align: center;
   border: 1px solid #bcbcbc;
   border-radius: 2px;
 }
 label .icon-checkmark:before {
   opacity: 0;
+  -webkit-transition: opacity .2s;
+          transition: opacity .2s;
 }
 label .icon-gender-male:before,
 label .icon-gender-female:before {
@@ -1549,6 +1693,8 @@ label.checked .icon-checkmark:before {
 label.checked .icon-gender-male,
 label.checked .icon-gender-female {
   color: #00b2ce;
+  -webkit-transition: color .2s;
+          transition: color .2s;
 }
 label.checked .icon-gender-male:before {
   content: "";
@@ -1578,13 +1724,45 @@ button {
   }
 }
 
+.input-checkbox {
+  position: relative;
+  min-height: 40px;
+  padding: 11px 0 11px 48px;
+  line-height: 18px;
+  line-height: 1.2rem;
+}
+.input-checkbox:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background: #fff;
+}
+.input-checkbox .icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 5;
+}
+.input-checkbox input {
+  position: absolute;
+  left: -9999em;
+  opacity: 0;
+}
+
 .input-text .label, .input-textarea .label {
   position: absolute;
   top: 11px;
   left: 11px;
+  -webkit-transition: top .1s, font-size .1s, color .1s;
+          transition: top .1s, font-size .1s, color .1s;
 }
 .input-text.focus .label, .focus.input-textarea .label, .input-text.has-value .label, .has-value.input-textarea .label {
   top: -1px;
+  color: #ccc;
   font-size: 10px;
   font-size: 0.66667rem;
   line-height: 18px;
@@ -1597,15 +1775,24 @@ button {
 }
 
 .form-row {
-  width: 100%;
-  clear: right;
-  float: right;
-  margin-right: 0;
+  clear: both;
+}
+
+@media (min-width: 45em) {
+  .form-col {
+    display: inline;
+    float: left;
+    width: 45%;
+    width: calc((100% - 70px) / 2);
+  }
+  .form-col:nth-of-type(2n+2) {
+    float: right;
+  }
 }
 
 .form-compact {
   overflow: hidden;
-  margin-bottom: 1.96078%;
+  margin-bottom: 15px;
   padding: 0 20px;
   background: #fff;
   border-radius: 4px;
@@ -1622,6 +1809,9 @@ button {
   padding-left: 0;
   padding-right: 0;
 }
+.form-compact .form-row:last-child label {
+  border-bottom: 0;
+}
 
 .radio-group,
 .checkbox-group {
@@ -1632,14 +1822,26 @@ button {
       -ms-user-select: none;
           user-select: none;
 }
-
-.button-group {
-  width: 100%;
-  float: right;
-  margin-left: 0;
+.radio-group.icon-buttons label,
+.checkbox-group.icon-buttons label {
+  margin-right: 15px;
+}
+.radio-group.icon-buttons label:last-child,
+.checkbox-group.icon-buttons label:last-child {
   margin-right: 0;
-  clear: none;
-  margin-top: 1em;
+}
+
+@media (min-width: 30em) {
+  .gender-mobility .radio-group {
+    float: left;
+    clear: none;
+  }
+  .gender-mobility .radio-group + .checkbox-group {
+    clear: none;
+    margin-left: 15px;
+    width: calc(100% - (2 * (40px + 15px)));
+    float: right;
+  }
 }
 
 .form-confirmation {
@@ -1648,11 +1850,6 @@ button {
 
 .disclaimer {
   margin-top: 0.8rem;
-  width: 100%;
-  float: right;
-  margin-left: 0;
-  margin-right: 0;
-  clear: none;
   font-size: 12px;
   font-size: 0.8rem;
   line-height: 18px;
@@ -1665,6 +1862,25 @@ button {
   text-decoration: underline;
 }
 
+#colorbox #form-order-sample-overlay {
+  display: block;
+}
+
+.form-order-sample {
+  text-align: left;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+.form-order-sample .button-group button {
+  width: 100%;
+  font-size: 22px;
+  font-size: 1.46667rem;
+  line-height: 30px;
+  line-height: 2rem;
+  line-height: 42px;
+  line-height: 2.8rem;
+}
+
 #signup-form-trigger {
   color: #fff;
   background: #00b2ce;
@@ -1672,7 +1888,6 @@ button {
 }
 #signup-form-trigger a.trigger {
   display: none;
-  border-radius: 0 4px 4px 0;
   padding: 10px;
   font-size: 12px;
   font-size: 0.8rem;
@@ -1701,6 +1916,7 @@ button {
     left: 0;
     top: 30%;
     z-index: 20;
+    border-radius: 0 4px 4px 0;
   }
   #signup-form-trigger a.trigger {
     display: block;
@@ -1735,50 +1951,60 @@ button {
 .form-signup h2:first-child {
   margin-top: 0;
 }
-.form-signup label {
-  margin-bottom: 5.88235%;
-}
 .form-signup .form-compact {
-  margin-bottom: 5.88235%;
+  margin-bottom: 15px;
 }
 .form-signup .form-compact label {
   margin-bottom: 0;
 }
-.form-signup .radio-group {
-  width: 29.41176%;
-  float: left;
-  margin-right: -100%;
-  margin-left: 0;
-  clear: none;
-}
-.form-signup .radio-group .input-radio:first-child {
-  width: 47.05882%;
-  float: left;
-  margin-right: -100%;
-  margin-left: 0;
-  clear: none;
-}
-.form-signup .radio-group .input-radio:last-child {
-  width: 47.05882%;
-  float: right;
-  margin-left: 0;
-  margin-right: 0;
-  clear: none;
-}
-.form-signup .checkbox-group {
-  width: 64.70588%;
-  float: right;
-  margin-left: 0;
-  margin-right: 0;
-  clear: none;
-}
-.form-signup button {
+.form-signup .button-group button {
+  width: 100%;
   font-size: 22px;
   font-size: 1.46667rem;
   line-height: 30px;
   line-height: 2rem;
   line-height: 42px;
   line-height: 2.8rem;
+}
+
+#signup-form-hero label {
+  margin-bottom: 10px;
+}
+#signup-form-hero .form-compact {
+  margin-bottom: 10px;
+}
+#signup-form-hero .form-compact label {
+  margin-bottom: 0;
+}
+#signup-form-hero .input-buttons label {
+  min-height: 0;
+  padding-left: 28px;
+  padding-right: 8px;
+  line-height: 0.8rem;
+}
+#signup-form-hero .icon-buttons label {
+  width: 42px;
+  margin-right: 10px;
+}
+#signup-form-hero .icon-buttons label:last-child {
+  margin-right: 0;
+}
+#signup-form-hero .input-buttons label,
+#signup-form-hero .icon-buttons label {
+  height: 34px;
+  line-height: 34px;
+}
+#signup-form-hero .input-buttons label .icon-gender-male:before,
+#signup-form-hero .input-buttons label .icon-gender-female:before,
+#signup-form-hero .icon-buttons label .icon-gender-male:before,
+#signup-form-hero .icon-buttons label .icon-gender-female:before {
+  font-size: 22px;
+}
+@media (min-width: 30em) {
+  #signup-form-hero .gender-mobility .radio-group + .checkbox-group {
+    margin-left: 10px;
+    width: calc(100% - (2 * (42px + 10px)));
+  }
 }
 
 .form-signup {
@@ -1853,7 +2079,7 @@ button {
 }
 .grid-list li .elm-content a.more-link .icon:before,
 .grid-list li .elm-content-over a.more-link .icon:before {
-  content: "";
+  content: "";
 }
 .grid-list li .elm-content a.more-link:hover,
 .grid-list li .elm-content-over a.more-link:hover {
@@ -2229,6 +2455,14 @@ header#page-header .brand-secondary span {
     padding: 30px;
     height: 100%;
     background: rgba(255, 255, 255, 0.7);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .hero .form-signup form h1,
   .hero .form-signup form h2 {
@@ -2695,7 +2929,7 @@ img.mfp-img {
   margin-top: 0;
 }
 
-.mfp-popup, .mfp-form-popup, #signup-form-overlay {
+.mfp-popup, .mfp-form-popup, #signup-form-overlay, .mfp-form-wide-popup, #form-order-sample-overlay {
   position: relative;
   margin: 0 auto;
   padding: 40px;
@@ -2705,19 +2939,23 @@ img.mfp-img {
   overflow: hidden;
   background: #fff;
 }
-.mfp-popup .mfp-close, .mfp-form-popup .mfp-close, #signup-form-overlay .mfp-close {
+.mfp-popup .mfp-close, .mfp-form-popup .mfp-close, #signup-form-overlay .mfp-close, .mfp-form-wide-popup .mfp-close, #form-order-sample-overlay .mfp-close {
   top: 10px;
   right: 10px;
   min-width: 0;
 }
 @media (min-width: 30em) {
-  .mfp-popup, .mfp-form-popup, #signup-form-overlay {
+  .mfp-popup, .mfp-form-popup, #signup-form-overlay, .mfp-form-wide-popup, #form-order-sample-overlay {
     padding: 70px;
   }
 }
 
-.mfp-form-popup, #signup-form-overlay {
+.mfp-form-popup, #signup-form-overlay, .mfp-form-wide-popup, #form-order-sample-overlay {
   background: #f5f5f5;
+}
+
+.mfp-form-wide-popup, #form-order-sample-overlay {
+  max-width: 830px;
 }
 
 nav.primary {
@@ -2840,7 +3078,7 @@ nav.primary > ul > li > ul > li > a {
   -webkit-font-smoothing: antialiased;
 }
 .nav-btn a.active .icon:before {
-  content: "";
+  content: "";
 }
 
 @media (min-width: 60em) {
@@ -3317,7 +3555,7 @@ nav.primary > ul > li > ul > li > a {
   line-height: 44px;
   width: 44px;
   height: 44px;
-  box-shadow: inset 0 0 0 3px #00b2ce;
+  box-shadow: inset 0 0 0 1px #00b2ce;
   border-radius: 44px;
   margin-left: -22px;
 }

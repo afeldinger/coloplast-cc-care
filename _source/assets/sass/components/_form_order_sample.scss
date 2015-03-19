@@ -1,0 +1,23 @@
+
+
+#form-order-sample-overlay {
+	@extend .mfp-form-wide-popup;
+
+	#colorbox & {
+		display:block;
+	}
+}
+
+.form-order-sample {
+	text-align:left;
+	background: $color-background;
+	overflow:hidden;
+
+	.button-group {
+		button {
+			width:100%;
+			@include adjust-font-size-to($size-xl);
+			@include adjust-leading-to(7);
+		}
+	}
+}

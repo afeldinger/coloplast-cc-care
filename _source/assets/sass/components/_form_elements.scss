@@ -1,4 +1,12 @@
 
+$form-spacing: 		15px;
+$form-spacing-sm:	10px;
+
+%form-row-clear {
+	display:inline;
+	float:left;
+	width:100%;
+}
 
 %input-text {
 	position:relative;
@@ -6,7 +14,7 @@
 	input,
 	textarea {
 	  	width:100%;
-		padding: 10px;
+		padding: 11px;
 		outline: none;
 		border-radius: 4px;
 		border:0;
@@ -20,9 +28,11 @@
 	@extend %button;
 	background: #fff;
 	color:$color-text-body;
-	height: 48px;
-	line-height:48px;
+	height: 40px;
+	line-height:40px;
 	padding: 0 18px;
+	margin-bottom: $form-spacing;
+	text-align: left;
 	overflow:hidden;
 
 	.icon {
@@ -41,15 +51,32 @@
 
 .input-buttons label {
 	@extend .input-button;
+	padding-top:0;
+	padding-bottom:0;
+
+	.icon {
+		padding-top:0;
+	}
+
+	&:before {
+		display:none;
+	}
 	&.input-checkbox {
-		padding:0;
+		padding-left: 34px;
+		
+		.icon {
+			position:relative;
+			top:0;
+			left:0;
+			margin-left:-20px;
+		}
 	}
 }
 
 .icon-button {
 	@extend .input-button;
 	text-align: center;
-	width: 48px;
+	width: 40px;
 	padding:0;
 
 	.label {
@@ -63,17 +90,19 @@
 
 
 label {
-	@include float-span(12);
-
-	margin-bottom: gutter-span();
+	@extend %form-row-clear;
+	margin-bottom: $form-spacing;
 
 	@include breakpoint($sm) {
 		&.md {
-			@include float-span(6);
-
+			display:inline;
+			float:left;
+			clear:none;
+			width:48%;
+			width: calc((100% - #{$form-spacing}) / 2);
 		}
 		&.md:last-child {
-			@include float-span(6, 'last');
+			float:right;
 		}
 	}
 
@@ -93,11 +122,14 @@ label {
 	.icon-checkmark {
 		width: 20px;
 		height: 20px;
+		line-height: 20px;
+		text-align:center;
 		border: 1px solid $color-borders;
 		border-radius: $border-radius-sm;
 
 		&:before {
 			opacity: 0;
+			transition: opacity .2s;
 		}
 	}
 
@@ -122,6 +154,7 @@ label {
 		.icon-gender-male,
 		.icon-gender-female {
 			color: $color-primary;
+			transition: color .2s;
 		}
 		.icon-gender-male:before {
 			@include icon-content($gender-male);
@@ -152,6 +185,38 @@ button {
 }
 
 
+.input-checkbox {
+	position:relative;
+	min-height:40px;
+	padding: 11px 0 11px 48px;
+	@include adjust-leading-to(3);
+
+	&:before {
+		position: absolute;
+		content:'';
+		top:0;
+		left:0;
+		width: 40px;
+		height: 40px;
+		border-radius: $border-radius-md;
+		background:#fff;
+	}
+	
+	.icon {
+		position:absolute;
+		top:10px;
+		left:10px;
+		z-index:5;
+	}
+
+	input {
+		position:absolute;
+		left: -9999em;
+		opacity: 0;
+	}
+
+}
+
 .input-text {
 	@extend %input-text;
 
@@ -159,6 +224,7 @@ button {
 		position:absolute;
 		top:11px;
 		left:11px;
+		transition: top .1s, font-size .1s, color .1s;
 
 	}
 
@@ -166,6 +232,7 @@ button {
 	&.has-value {
 		.label {
 			top:-1px;
+			color: $medium-gray;
 			@include adjust-font-size-to($size-xs);
 		}
 	}
@@ -184,12 +251,26 @@ button {
 
 
 .form-row {
-	@include float-span(12);
+	@extend %form-row-clear;
+	clear:both;
+}
+.form-col {
+	@include breakpoint($sm) {
+
+		display:inline;
+		float:left;
+		width: 45%;
+		width: calc((100% - 70px) / 2);
+
+		&:nth-of-type(2n+2) {
+			float:right;
+		}	
+	}
 }
 
 .form-compact {
 	overflow: hidden;
-	margin-bottom: gutter-span();
+	margin-bottom: $form-spacing;
 	padding: 0 20px;
 	background:#fff;
 	border-radius: $border-radius-md;
@@ -211,20 +292,49 @@ button {
 			}
 		}
 	}
+
+	.form-row:last-child {
+		label {
+			border-bottom: 0;
+		}
+	}
+
 }
 
 .radio-group,
 .checkbox-group {
 	clear:both;
-
 	-webkit-touch-callout: none;
 	user-select: none;
 
+	&.icon-buttons label {
+		margin-right: $form-spacing;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+}
+
+.gender-mobility {
+
+	@include breakpoint($xs) {
+		.radio-group {
+			float:left;
+			clear:none;
+		}
+		.radio-group + .checkbox-group {
+			clear:none;
+			margin-left: $form-spacing;
+			width: calc(100% - (2 * (40px + #{$form-spacing})));
+			float: right;
+		}
+	}
 }
 
 .button-group {
-	@include grid-span(12);
-	margin-top: 1em;
+	@extend %form-row-clear;
 }
 
 
@@ -233,8 +343,8 @@ button {
 }
 
 .disclaimer {
+	@extend %form-row-clear;
 	margin-top:rhythm(2);
-	@include grid-span(12);
 	@include adjust-font-size-to($size-sm);
 	@include adjust-leading-to(2);
 
