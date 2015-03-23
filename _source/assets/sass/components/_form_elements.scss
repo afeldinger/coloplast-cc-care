@@ -404,6 +404,22 @@ button {
 }
 
 
+.input-select {
+	display:block;
+	min-width: 100%;
+
+    @include breakpoint($xs) {
+    	display:inline-block;
+    	min-width: 240px;	
+    }
+}
+
+.select-group .input-select {
+
+	@include breakpoint($xs) {
+		min-width: 0;	
+	}
+}
 
 .dk-select, .dk-select-multi {
     position: relative;
@@ -412,13 +428,7 @@ button {
 	@include adjust-font-size-to($base-font-size);
     line-height: 43px;
     width: 100%;
-    min-width: 240px;
     cursor: pointer; 
-}
-
-.select-group .dk-select,
-.select-group .dk-select-multi {
-	min-width: 0;
 }
 
 .dk-selected {

@@ -538,6 +538,13 @@ button {
   text-align: center;
 }
 
+a.button {
+  min-width: 180px;
+}
+a.button:hover {
+  color: #fff;
+}
+
 ul.text-buttons {
   margin-left: 0;
   margin-right: 0;
@@ -2096,6 +2103,23 @@ button {
   text-decoration: underline;
 }
 
+.input-select {
+  display: block;
+  min-width: 100%;
+}
+@media (min-width: 30em) {
+  .input-select {
+    display: inline-block;
+    min-width: 240px;
+  }
+}
+
+@media (min-width: 30em) {
+  .select-group .input-select {
+    min-width: 0;
+  }
+}
+
 .dk-select, .dk-select-multi {
   position: relative;
   display: inline-block;
@@ -2106,13 +2130,7 @@ button {
   line-height: 1.6rem;
   line-height: 43px;
   width: 100%;
-  min-width: 240px;
   cursor: pointer;
-}
-
-.select-group .dk-select,
-.select-group .dk-select-multi {
-  min-width: 0;
 }
 
 .dk-selected {
