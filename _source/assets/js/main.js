@@ -1,3 +1,5 @@
+(function(){
+
 /*
 // Create the state-indicator element
 var indicator = document.createElement('div');
@@ -272,10 +274,6 @@ $(document).ready(function() {
 
 	});
 
-	$('a[href="#signup-form-overlay"], a[href="#form-order-sample-overlay"]').magnificPopup({
-		type:'inline', 
-	});
-
 
     $('select:visible').dropkick({
         mobile: true,
@@ -307,5 +305,12 @@ $(document).ready(function() {
         }
     });
 
+
+	$('a[href="#signup-form-overlay"], a[href="#form-order-sample-overlay"]').magnificPopup({
+		type:'inline', 
+	});
+
 });
 
+
+})();

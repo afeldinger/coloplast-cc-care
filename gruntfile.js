@@ -164,8 +164,14 @@ module.exports = function(grunt) {
     concat: { 
       js: {
           src: [
-              '_source/assets/js/libs/*.js', // All JS in the libs folder
-              '_source/assets/js/*.js'  // Custom JS files
+              //'_source/assets/js/libs/*.js', // All JS in the libs folder
+              //'_source/assets/js/libs/dropkick/*.js', // All JS in the libs folder
+              //'_source/assets/js/*.js'  // Custom JS files
+              '_source/assets/js/libs/jquery-*.js',
+              '_source/assets/js/libs/jquery.flexslider-min.js',
+              '_source/assets/js/libs/jquery.magnific*.js',
+              '_source/assets/js/libs/dropkick/dropkick.js',
+              '_source/assets/js/main.js',
           ],
           dest: 'dist/assets/js/scripts.js',
       },
@@ -313,6 +319,7 @@ module.exports = function(grunt) {
             {
               match: /(\.\.\/_source\/assets\/|_source\/assets\/|assets\/)/g,
               replacement: 'http://git.krympevaerk.dk/coloplast_cc/dist/assets/',
+              //replacement: '/magnetix/coloplast/dist/assets/',
             },
           ]
         },
@@ -345,14 +352,13 @@ module.exports = function(grunt) {
     'prettify', 
     'imagemin',
     'svgmin',
-    'concat',
-    'cssmin',
-    'uglify',
     'useminPrepare', 
+    'concat:js',
+    'cssmin',
+    'uglify:js',
     'usemin',
     'copy:dist',
     'replace:dist',
-
   ]);
 
 };
