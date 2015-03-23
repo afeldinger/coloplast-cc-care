@@ -53,6 +53,11 @@
 
 @include establish-baseline;
 
+*, *:before, *:after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 body,
 table,
 thead,
@@ -94,7 +99,7 @@ h2 {
 
 h3 {
     @include adjust-font-size-to($size-lg);
-    margin: rhythm(1) 0;
+    margin: rhythm(2) 0 rhythm(2);
 }
 
 h4 {
@@ -158,4 +163,15 @@ sub { top: 0.4em; }
     font-weight: 300;
     text-transform:uppercase;
     @include adjust-leading-to(2);
+}
+
+hr {
+    display:inline;
+    float:left;
+    clear:both;
+    width:100%;
+    height: 1px;
+    border: 0;
+    border-bottom: 1px solid $medium-gray;
+    margin: rhythm(4) 0;
 }

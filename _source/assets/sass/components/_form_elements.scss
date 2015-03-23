@@ -1,6 +1,9 @@
 
-$form-spacing: 		15px;
-$form-spacing-sm:	10px;
+
+input,
+textarea {
+	color: $color-text-body;
+}
 
 %form-row-clear {
 	display:inline;
@@ -14,7 +17,7 @@ $form-spacing-sm:	10px;
 	input,
 	textarea {
 	  	width:100%;
-		padding: 11px;
+		padding: $field-padding-v $field-padding-h;
 		outline: none;
 		border-radius: 4px;
 		border:0;
@@ -30,7 +33,7 @@ $form-spacing-sm:	10px;
 	color:$color-text-body;
 	height: 40px;
 	line-height:40px;
-	padding: 0 18px;
+	padding: $button-padding-v $button-padding-h;
 	margin-bottom: $form-spacing;
 	text-align: left;
 	overflow:hidden;
@@ -39,12 +42,6 @@ $form-spacing-sm:	10px;
 		line-height: inherit;
 	}
 	
-	input {
-		position:absolute;
-		left: -9999em;
-		opacity: 0;
-	}
-
 }
 
 
@@ -54,6 +51,8 @@ $form-spacing-sm:	10px;
 	padding-top:0;
 	padding-bottom:0;
 
+	transition: background-color .3s;
+
 	.icon {
 		padding-top:0;
 	}
@@ -61,7 +60,8 @@ $form-spacing-sm:	10px;
 	&:before {
 		display:none;
 	}
-	&.input-checkbox {
+
+	&.has-icon.input-checkbox {
 		padding-left: 34px;
 		
 		.icon {
@@ -69,6 +69,12 @@ $form-spacing-sm:	10px;
 			top:0;
 			left:0;
 			margin-left:-20px;
+		}
+	}
+
+	&:not(.has-icon) {
+		&.checked {
+			background: $medium-gray;
 		}
 	}
 }
@@ -94,15 +100,32 @@ label {
 	margin-bottom: $form-spacing;
 
 	@include breakpoint($sm) {
-		&.md {
+		&.sm {
 			display:inline;
 			float:left;
+			clear:none;
+			width:32%;
+			margin-right:1%;
+
+			&:nth-of-type(3n+3) {
+				float:right;
+				clear:right;
+			}
+		}
+
+		&.md {
+			display:inline;
+			float:right;
 			clear:none;
 			width:48%;
 			width: calc((100% - #{$form-spacing}) / 2);
 		}
-		&.md:last-child {
-			float:right;
+		&.md:first-child {
+			float:left;
+		}
+
+		&.lg {
+			width: 60%;
 		}
 	}
 
@@ -112,7 +135,7 @@ label {
 	}
 
 	.optional {
-		color: $dark-gray;
+		opacity: .7;
 	}
 
 	.icon + .label {
@@ -176,20 +199,37 @@ textarea {
 
 button {
 	@extend .button;
+	font-family: $font-header;
+	font-weight: $light;
 	width:100%;
+	cursor: pointer;
 
 	@include breakpoint($xs, true) {
 		width:auto;
-		min-width: 180px;
+		min-width: 210px;
 	}
 }
 
+.input-checkbox,
+.input-radio {
 
-.input-checkbox {
 	position:relative;
 	min-height:40px;
-	padding: 11px 0 11px 48px;
+	padding: $field-padding-h 0;
+	text-align:left;
 	@include adjust-leading-to(3);
+    cursor: pointer; 
+
+	input {
+		position:absolute;
+		left: -9999em;
+		opacity: 0;
+	}
+
+}
+.input-checkbox {
+
+	padding-left:48px;
 
 	&:before {
 		position: absolute;
@@ -209,12 +249,6 @@ button {
 		z-index:5;
 	}
 
-	input {
-		position:absolute;
-		left: -9999em;
-		opacity: 0;
-	}
-
 }
 
 .input-text {
@@ -231,7 +265,7 @@ button {
 	&.focus,
 	&.has-value {
 		.label {
-			top:-1px;
+			top:-2px;
 			color: $medium-gray;
 			@include adjust-font-size-to($size-xs);
 		}
@@ -302,12 +336,19 @@ button {
 }
 
 .radio-group,
-.checkbox-group {
+.checkbox-group,
+.select-group {
 	clear:both;
 	-webkit-touch-callout: none;
 	user-select: none;
 
-	&.icon-buttons label {
+	&.input-buttons label {
+		width: auto;
+		min-width: 100px;
+		text-align: center;
+	}
+
+	label {
 		margin-right: $form-spacing;
 
 		&:last-child {
@@ -328,13 +369,21 @@ button {
 			clear:none;
 			margin-left: $form-spacing;
 			width: calc(100% - (2 * (40px + #{$form-spacing})));
-			float: right;
+			float: left;
+
+			label {
+				width:100%;
+			}
 		}
 	}
 }
 
 .button-group {
 	@extend %form-row-clear;
+	button {
+		@include adjust-font-size-to($size-xl);
+		@include adjust-leading-to(7);
+	}
 }
 
 
@@ -351,5 +400,222 @@ button {
 	a {
 		color: inherit;
 		text-decoration: underline;
+	}
+}
+
+
+
+.dk-select, .dk-select-multi {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+	@include adjust-font-size-to($base-font-size);
+    line-height: 43px;
+    width: 100%;
+    min-width: 240px;
+    cursor: pointer; 
+}
+
+.select-group .dk-select,
+.select-group .dk-select-multi {
+	min-width: 0;
+}
+
+.dk-selected {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    border-radius: $border-radius-md;
+    padding: 0 1.5em 0 $field-padding-h;
+    text-overflow: ellipsis; 
+
+	@include icon-on-element($arrow-down);
+
+	&:before {
+	    position: absolute;
+	    display: block;
+	    right: 0;
+	    top: 50%;
+	    margin: -0.7em $field-padding-h 0 0;
+	    font-size:1em;
+		color: $color-primary;
+	}
+}
+
+.dk-selected-disabled {
+    color: $medium-gray }
+
+.dk-select .dk-select-options {
+    position: absolute;
+    display: none;
+    left: 0; }
+
+.dk-select-open-up .dk-select-options {
+    border-radius: $border-radius-md $border-radius-md 0 0;
+    border-bottom:3px solid $color-primary;
+    margin-bottom: -1px;
+    bottom: 100%; }
+
+.dk-select-open-down .dk-select-options {
+    border-radius: 0 0 $border-radius-md $border-radius-md;
+    border-top:3px solid $color-primary;
+    margin-top: -1px;
+    top: 100%; }
+
+.dk-select-multi .dk-select-options {
+    max-height: 10em; }
+
+.dk-select-options {
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+    border-radius: $border-radius-md;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 10.5em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.dk-option-selected {
+    background-color: $light-gray;
+}
+
+.dk-select-options-highlight .dk-option-selected {
+    background-color: transparent;
+    color: inherit; 
+}
+
+.dk-option {
+    padding: 0.5em $field-padding-h;
+    @include adjust-font-size-to($size-sm);
+    transition: background-color .2s;
+}
+
+.dk-select-options .dk-option-highlight {
+    background-color: $light-gray;
+}
+
+.dk-select-options .dk-option-disabled {
+    color: $medium-gray;
+    background-color: transparent; }
+
+.dk-optgroup {
+    padding: 0.25em 0;
+    margin-top: 0.25em; 
+
+	& + .dk-option {
+	    margin-top: 0.25em; 
+	}
+	& + .dk-optgroup {
+	    border-top-width: 0;
+	    margin-top: 0; 
+	}
+	&:nth-child(2) {
+	    padding-top: 0;
+	    border-top: none;
+	    margin-top: 0; 
+	}
+	&:last-child {
+	    border-bottom-width: 0;
+	    margin-bottom: 0;
+	    padding-bottom: 0; 
+	}
+}
+
+.dk-optgroup-label {
+    padding: 0 0.5em 0.25em;
+    font-weight: bold;
+    width: 100%; 
+}
+
+.dk-optgroup-options {
+    list-style: none;
+    padding-left: 0; 
+
+    li {
+    	padding-left: 1.2em; 
+	}
+}
+
+
+.dk-select-open-up .dk-selected {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.dk-select-open-down .dk-selected {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.dk-select-open-up .dk-selected, 
+.dk-select-open-down .dk-selected {
+    @include icon-on-element($arrow-up);
+
+    &:before {
+    	margin-top: -0.3em;
+    }
+}
+
+
+.dk-select-open-up .dk-select-options, 
+.dk-select-open-down .dk-select-options, 
+.dk-select-multi:focus .dk-select-options {
+    display: block;
+    opacity: 1;
+}
+
+.dk-select-multi:hover, 
+.dk-select-multi:focus,
+.dk-selected:focus {
+    outline: none;
+}
+
+.dk-select-disabled {
+    opacity: 0.6;
+    color: $medium-gray;
+    cursor: not-allowed; 
+}
+
+select[data-dkcacheid] {
+    display: none; 
+}
+
+
+.click-to-edit {
+	
+	label:not(.over) {
+		&,
+		input,
+		&.input-checkbox:before {
+			background-color: transparent;
+		}
+
+		&.input-text.has-value .label,
+		&.input-textarea.has-value .label {
+			opacity: 0;
+		}
+
+		&.checked .icon {
+			color: $color-text-body;
+		}
+	}
+	label.input-text.over,
+	label.input-textarea.over {
+		@include icon-on-element($pencil);
+
+		&:before {
+			position:absolute;
+			right:0.6em;
+			top: 50%;
+			margin-top: -0.5em;
+			color: $color-primary;
+		}
 	}
 }

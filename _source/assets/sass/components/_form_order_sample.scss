@@ -16,8 +16,6 @@
 	.button-group {
 		button {
 			width:100%;
-			@include adjust-font-size-to($size-xl);
-			@include adjust-leading-to(7);
 		}
 	}
 }

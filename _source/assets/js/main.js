@@ -15,6 +15,49 @@ function state_indicator_change(state) {
 }
 */
 
+
+// detect if legacy browser ( <= IE9) : from http://stackoverflow.com/a/16657946		
+var legacy = (function(){
+	var undef,rv = 0; // Return value assumes failure.
+	var ua = window.navigator.userAgent;
+	var msie = ua.indexOf('MSIE ');
+	if (msie > 0) {
+		// IE 10 or older => return version number
+		rv = parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+		if (rv >= 10)  {
+			rv = undef;
+		}
+	}
+	return ((rv > 0) ? 1 : undef);
+}());
+
+if (legacy) {
+	$('body').addClass('legacy');
+}
+
+// Returns a function, that, as long as it continues to be invoked, will not
+// be triggered. The function will be called after it stops being called for
+// N milliseconds. If `immediate` is passed, trigger the function on the
+// leading edge, instead of the trailing.
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) {
+				func.apply(context, args);
+			}
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) {
+			func.apply(context, args);
+		}
+	};
+}
+
 function grid_list_sort() {
 	$('.grid-list .list-items').each(function() {
 		var pos = 0;
@@ -105,20 +148,42 @@ function grid_list_init() {
 	grid_list_sort();
 }
 
+var lastScrollTop = 0;
+var ccScrollListener = debounce(function() {
+	if (lastScrollTop !== $(window).scrollTop()) {
+		lastScrollTop = $(window).scrollTop();
+
+		// Detect page top
+		$('body').toggleClass('scroll-top', (lastScrollTop<=0));
+
+		// Detect page bottom
+		$('body').toggleClass('scroll-near-bottom', (lastScrollTop + $(window).height() >= $(document).height()-100));
+
+		// Detect page bottom
+		$('body').toggleClass('scroll-bottom', (lastScrollTop + $(window).height() === $(document).height()));
+
+	}
+	
+}, 20);
+window.addEventListener('scroll', ccScrollListener);
+
+$('body').addClass('scroll-top');
+
+/*
+var ccResizeListener = debounce(function() {
+	console.log('resize - ' + lastDeviceState);
+    var state = getDeviceState();
+    if(state !== lastDeviceState) {
+        // Save the new state as current and announce change
+        lastDeviceState = state;
+        state_indicator_change(state);
+    }
+}, 250);
+window.addEventListener('resize', ccResizeListener);
+*/
 
 
 $(document).ready(function() {
-/*
-	lastDeviceState = getDeviceState();
-	$(window).smartresize(function() {
-	    var state = getDeviceState();
-	    if(state !== lastDeviceState) {
-	        // Save the new state as current and announce change
-	        lastDeviceState = state;
-	        state_indicator_change(state);
-	    }
-	});
-*/
 
 	grid_list_init();
 
@@ -166,12 +231,22 @@ $(document).ready(function() {
 	$(':input').focus(function() {
 		$(this).parents('label').addClass('focus');
 	}).blur(function() {
-
 		$(this).parents('label')
 			.removeClass('focus')
 			.toggleClass('has-value', $(this).val()!=='')
 		;
+	}).each(function() {
+		$(this).parents('label').toggleClass('has-value', $(this).val()!=='');
 	});
+
+	$('label').hover(
+		function() {
+			$(this).addClass('over');
+		}, 
+		function() {
+			$(this).removeClass('over');
+		}
+	).filter(':has(.icon)').addClass('has-icon');
 
 	// manages form submission and confirmation display
 	$('form').filter(function() {
@@ -200,6 +275,37 @@ $(document).ready(function() {
 	$('a[href="#signup-form-overlay"], a[href="#form-order-sample-overlay"]').magnificPopup({
 		type:'inline', 
 	});
+
+
+    $('select:visible').dropkick({
+        mobile: true,
+        menuSpeed: 'fast',
+        initialize: function() {
+            var $select = $(this.data.elem);
+            var widestOptionWidth = 0;
+            var togglerWidth = 45 + 50 + 10;
+            togglerWidth = 70;
+            var origWidth = $select.parents('.selectbox').width();
+
+            $(this.data.select).data('dropkick', this);
+
+            $select.find('.dk-select-options').show().css('width', 'auto').children().each(function(i, option) {
+                var optionWidth = $(option).width();
+
+                if (optionWidth > widestOptionWidth) {
+                    widestOptionWidth = optionWidth;
+                }
+
+            }).removeAttr('style');
+
+            $select.find('.dk-select-options').removeAttr('style');
+
+            if (widestOptionWidth + togglerWidth > origWidth) {
+                $select.parent().width(widestOptionWidth + togglerWidth);
+            }
+
+        }
+    });
 
 });
 

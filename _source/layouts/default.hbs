@@ -15,7 +15,10 @@
 {{>header}}
 {{ body }}
 
-{{>form_signup_step1}}
+{{#isnt show_signup false}}
+	{{>form_signup_step1}}
+{{/isnt}}
+
 {{>footer}}
 
 
@@ -23,7 +26,8 @@
 <script src="{{assets}}/js/libs/jquery-1.11.1.min.js"></script>
 <script src="{{assets}}/js/libs/jquery.flexslider-min.js"></script>
 <script src="{{assets}}/js/libs/jquery.magnific-min.js"></script>
-<script src="{{assets}}/js/libs/jquery-debounce.js"></script>
+<script src="{{assets}}/js/libs/dropkick/dropkick.js"></script>
+<script src="{{assets}}/js/libs/dropkick/jquery.dropkick.min.js"></script>
 <script src="{{assets}}/js/main.js"></script>
 <!-- endbuild -->
 

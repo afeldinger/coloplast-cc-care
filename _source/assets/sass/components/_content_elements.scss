@@ -62,6 +62,8 @@ ul.social {
 
 		a {
 			color: $dark-gray;
+			transition-property: color, box-shadow;
+			transition-duration: .3s;
 			&:hover {
 				color:$medium-gray;
 				.icon {

@@ -98,20 +98,7 @@
 		padding:0;
 	}
 	fieldset + fieldset {
-		margin-top: 14px;
-	}
-	fieldset.personal {
-
-		& > div {
-			display: inline-block;
-			float:left;
-			clear:none;
-		}
-		label {
-			display: inline-block;
-			float:left;
-			margin-right: 14px;
-		}
+		margin-top: $form-spacing;
 	}
 
 	fieldset.categories {
