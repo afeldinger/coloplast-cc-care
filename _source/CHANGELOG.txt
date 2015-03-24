@@ -1,0 +1,12 @@
+
+**************************************************************************
+*
+*  This file contains all changes to HTML code since 2015-03-24,		
+*  and is used to track code edits with regards to implementation		
+*  in Eloqua by DemandGen team.		
+*  		
+*  For any questions, contact Anders Feldinger af@andersfeldinger.dk	
+* 
+**************************************************************************
+
+

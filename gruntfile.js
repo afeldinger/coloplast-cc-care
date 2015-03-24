@@ -295,6 +295,12 @@ module.exports = function(grunt) {
           cwd: '_source/assets/fonts/', 
           src: ['*.{svg,woff,eot,ttf}'],
           dest: 'dist/assets/fonts/',
+        },
+        {
+          expand: true,
+          flatten: true,
+          src: '_source/CHANGELOG.txt',
+          dest: 'dist/',
         }],
       },
 
