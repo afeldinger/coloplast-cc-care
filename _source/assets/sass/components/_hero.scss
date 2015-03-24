@@ -42,16 +42,6 @@
 		}
 	}
 
-	.form-signup {
-		form,
-		.form-confirmation {
-			display:none;
-		}
-
-		.signup-cta-content {
-			display:block;
-		}
-	}
 
 }
 
@@ -78,45 +68,6 @@
 			}
 			.checkmarks li:before {
 				color:inherit;
-			}
-		}
-		.form-signup {
-			position:absolute;
-			display:block;
-			top:0;
-			right:$content-margin;
-			width:325px;
-			padding:30px;
-			height:100%;
-			background: rgba(255,255,255,0.7);
-			display:flex;
-			align-items: center;
-
-			form h1,
-			form h2 {
-				margin-bottom:rhythm(1);
-			}
-			
-			.button-group {
-				margin-top: 0;
-				overflow: hidden;
-			}
-
-			button {
-				@include grid-span(12);
-			}
-
-			.disclaimer {
-				@include grid-span(12);
-				margin-top: rhythm(2);
-				text-align: center;
-			}
-
-			form {
-				display:block;
-			}
-			.signup-cta-content {
-				display:none;
 			}
 		}
 		

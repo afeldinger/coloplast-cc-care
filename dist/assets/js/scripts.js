@@ -3321,9 +3321,12 @@ $(document).ready(function() {
     });
 
 
-	$('a[href="#signup-form-overlay"], a[href="#form-order-sample-overlay"]').magnificPopup({
-		type:'inline', 
+    // Handle lightbox links
+	$('a[href="#signup-form-overlay"], a[href="#form-order-sample-overlay"]').magnificPopup();
+	$('a[href*="vimeo.com"], a[href*="youtube.com"]').magnificPopup({
+		type: 'iframe',
 	});
+
 
 });
 

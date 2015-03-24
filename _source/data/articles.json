@@ -48,23 +48,20 @@
 		"title": "Getting back to exercising",
 		"teaser": "Atque rerum, quae ipsum maxime omnis suscipit. Facilis, ipsam sed.",
 		"thumb": "http://lorempixel.com/661/260/people/5/",
+		"link": "https://vimeo.com/59976336",
 		"filter": {
 			"gender": ["male"],
 			"category": ["exercise"]
 		}
 	},
 	{
-		"type": "survey",
-		"title": "How do you take care of your bladder?",
-		"options": [
-			"Pelvic floor exercises",
-			"Bladder retraining",
-			"Consider what I eat/drink"
-		],
+		"type": "article",
+		"title": "Rights and reimbursements",
+		"teaser": "Quos rem, corporis maiores enim eaque placeat architecto quisquam.",
+		"thumb": "http://lorempixel.com/326/260/nature/3/",
 		"filter": {
-			"gender": ["male"],
-			"category": ["survey"],
-			"mobility": ["wheelchair"]
+			"gender": ["female"],
+			"category": ["catheters"]
 		}
 	},
 	{

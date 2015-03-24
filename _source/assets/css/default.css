@@ -2449,6 +2449,13 @@ select[data-dkcacheid] {
   display: block;
 }
 
+#signup-form-hero form,
+#signup-form-hero .form-confirmation {
+  display: none;
+}
+#signup-form-hero .signup-cta-content {
+  display: block;
+}
 #signup-form-hero label {
   margin-bottom: 10px;
 }
@@ -2487,6 +2494,57 @@ select[data-dkcacheid] {
   #signup-form-hero .gender-mobility .radio-group + .checkbox-group {
     margin-left: 10px;
     width: calc(100% - (2 * (34px + 10px)));
+  }
+}
+@media (min-width: 45em) {
+  #signup-form-hero {
+    position: absolute;
+    display: block;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    top: 0;
+    right: 2rem;
+    width: 325px;
+    padding: 30px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #signup-form-hero form h1,
+  #signup-form-hero form h2 {
+    margin-bottom: 0.4rem;
+  }
+  #signup-form-hero .button-group {
+    margin-top: 0;
+    overflow: hidden;
+  }
+  #signup-form-hero button {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+  }
+  #signup-form-hero .disclaimer {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    margin-top: 0.8rem;
+    text-align: center;
+  }
+  #signup-form-hero form {
+    display: block;
+    max-width: 265px;
+  }
+  #signup-form-hero .signup-cta-content {
+    display: none;
   }
 }
 
@@ -2895,13 +2953,6 @@ header#page-header .brand-secondary span {
 .hero .elm-content .checkmarks li:before {
   color: #00b2ce;
 }
-.hero .form-signup form,
-.hero .form-signup .form-confirmation {
-  display: none;
-}
-.hero .form-signup .signup-cta-content {
-  display: block;
-}
 
 @media (min-width: 45em) {
   .hero {
@@ -2924,54 +2975,6 @@ header#page-header .brand-secondary span {
   }
   .hero .elm-content .checkmarks li:before {
     color: inherit;
-  }
-  .hero .form-signup {
-    position: absolute;
-    display: block;
-    top: 0;
-    right: 2rem;
-    width: 325px;
-    padding: 30px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.7);
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .hero .form-signup form h1,
-  .hero .form-signup form h2 {
-    margin-bottom: 0.4rem;
-  }
-  .hero .form-signup .button-group {
-    margin-top: 0;
-    overflow: hidden;
-  }
-  .hero .form-signup button {
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0;
-    clear: none;
-  }
-  .hero .form-signup .disclaimer {
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0;
-    clear: none;
-    margin-top: 0.8rem;
-    text-align: center;
-  }
-  .hero .form-signup form {
-    display: block;
-  }
-  .hero .form-signup .signup-cta-content {
-    display: none;
   }
 }
 @media (min-width: 60em) {
