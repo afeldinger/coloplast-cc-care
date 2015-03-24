@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Profile page</title>
+    <title>Profile page - caregiver</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <link rel="stylesheet" href="http://git.krympevaerk.dk/coloplast_cc/dist/assets/css/default.min.css">
@@ -259,6 +259,20 @@
                 <input type="text" id="profile-lastname" name="lastname" value="Smith">
               </label>
             </div>
+            <div class="form-row">
+              <label class="input-text" for="profile-email">
+                <div class="label">E-mail</div>
+                <input type="email" id="profile-email" name="email">
+              </label>
+            </div>
+            <hr>
+            <h2>Please tell us more about the person you take care of</h2>
+            <div class="form-row">
+              <label class="input-text" for="profile-receiver-firstname">
+                <div class="label">First name</div>
+                <input type="text" id="profile-receiver-firstname" name="receiver-firstname" value="Jane">
+              </label>
+            </div>
             <div class="form-row radio-group icon-buttons">
               <label class="input-radio" for="profile-gender-female">
                 <input id="profile-gender-female" name="gender" type="radio" value="female">
@@ -275,19 +289,11 @@
               <label class="input-checkbox" for="profile-mobility-wheelchair">
                 <input id="profile-mobility-wheelchair" name="mobility" type="checkbox" value="wheelchair">
                 <span class="icon icon-checkmark"></span>
-                <span class="label">I use a wheelchair</span>
+                <span class="label">The person uses a wheelchair</span>
               </label>
             </div>
-            <div class="form-row">
-              <label class="input-text" for="profile-email">
-                <div class="label">E-mail</div>
-                <input type="email" id="profile-email" name="email">
-              </label>
-            </div>
-            <hr>
-            <h2>Please tell us more about you</h2>
             <div class="form-row select-group">
-              <h3>When is your date of birth?</h3>
+              <h3>When is the person's birthday?</h3>
               <label class="input-select" for="profile-birthdate-year">
                 <select id="profile-birthdate-year" name="year">
                   <option value="">Year</option>
@@ -352,7 +358,7 @@
               </label>
             </div>
             <div class="form-row">
-              <h3>How long have you been using a catheter</h3>
+              <h3>How long has the person been using a catheter</h3>
               <label class="input-select" for="profile-catheter-history">
                 <select id="profile-catheter-history" name="catheter-history">
                   <option value="">Please choose here...</option>
@@ -364,7 +370,7 @@
               </label>
             </div>
             <div class="form-row">
-              <h3>What is the cause of your incontinence symptoms?</h3>
+              <h3>What is the cause of the person's incontinence symptoms?</h3>
               <label class="input-select" for="profile-symptoms-cause">
                 <select id="profile-symptoms-cause" name="symptoms-cause">
                   <option value="">Please choose here...</option>
@@ -378,7 +384,7 @@
             <hr>
             <h2>Your daily life</h2>
             <div class="form-row">
-              <h3>Are you currently employed?</h3>
+              <h3>Is the person currently employed?</h3>
               <div class="radio-group input-buttons">
                 <label class="input-radio" for="profile-currently-employed-yes">
                   <input id="profile-currently-employed-yes" name="currently-employed" type="radio" value="yes">
@@ -391,7 +397,7 @@
               </div>
             </div>
             <div class="form-row">
-              <h3>Do you live with a partner?</h3>
+              <h3>Does the person live with a partner?</h3>
               <div class="radio-group input-buttons">
                 <label class="input-radio" for="profile-partner-yes">
                   <input id="profile-partner-yes" name="partner" type="radio" value="yes">
@@ -404,7 +410,7 @@
               </div>
             </div>
             <div class="form-row">
-              <h3>Do you participate in sports or fitness?</h3>
+              <h3>Does the person participate in sports or fitness?</h3>
               <div class="radio-group input-buttons">
                 <label class="input-radio" for="profile-fitness-yes">
                   <input id="profile-fitness-yes" name="fitness" type="radio" value="yes" checked="checked">
@@ -417,7 +423,7 @@
               </div>
             </div>
             <div class="form-row">
-              <h3>Which incontinence product are you currently using?</h3>
+              <h3>Which incontinence product is the person currently using?</h3>
               <label class="input-select" for="profile-current-solution">
                 <select id="profile-current-solution" name="current-solution">
                   <option value="">Please choose here...</option>
@@ -429,7 +435,7 @@
               </label>
             </div>
             <div class="form-row">
-              <h3>Select the brand of catheter you use</h3>
+              <h3>Select the brand of catheter in use</h3>
               <label class="input-select" for="profile-current-brand">
                 <select id="profile-current-brand" name="current-brand">
                   <option value="">Please choose here...</option>
