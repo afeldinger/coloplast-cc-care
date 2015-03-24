@@ -307,11 +307,30 @@ $(document).ready(function() {
 
 
     // Handle lightbox links
+
+	var usage_msg = '<h2>Usage instructions</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
+
+
 	$('a[href="#signup-form-overlay"], a[href="#form-order-sample-overlay"]').magnificPopup();
 	$('a[href*="vimeo.com"], a[href*="youtube.com"]').magnificPopup({
 		type: 'iframe',
-	});
 
+		iframe: {
+			markup: '<div class="mfp-iframe-scaler">'+
+				'<div class="mfp-close"></div>'+
+				'<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+				'<div class="mfp-messagetrigger"></div>' +
+				'<div class="mfp-message"></div>'+
+				'</div>'
+		},
+			callbacks: {
+				markupParse: function(template, values, item) {
+					values.messagetrigger = '<span class="icon icon-info"></span>Usage instructions';
+					values.message = usage_msg;
+				}
+		}
+
+	});
 
 });
 
