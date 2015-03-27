@@ -10,3 +10,8 @@
 **************************************************************************
 
 
+2015-03-27
+
+ *  Changed markup for main navigation items, so they support not having links on sections.
+    Use <a class="nav-item"> for items with links and <div class="nav-item"> for items with no links
+

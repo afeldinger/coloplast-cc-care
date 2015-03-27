@@ -434,6 +434,58 @@ button {
     }
     .mfp-close {
       top: -40px;
+      width: 40px;
+    }
+    .mfp-message {
+      position:absolute;
+      top:-34px;
+      left:0;
+      width:100%;
+
+      .message-trigger {
+        position:absolute;
+        top:0;
+        left:0;
+        color:#fff;
+
+        .icon {
+          display:inline-block;
+          width: 2em;
+          height: 2em;
+          font-size:1em;
+          line-height:2em;
+          text-align:center;
+          border-radius: 1em;
+          margin-right: 8px;
+          box-shadow:inset 0px 0px 0px 1px #fff;
+        }
+      }
+
+      .message {
+        display:none;
+      }
+
+      &:hover,
+      &.over {
+        right:0;
+        bottom:0;
+
+        .message {
+          position:static;
+          display:block;
+          margin-top:34px;
+          height:100%;
+          height: calc(100% - 34px);
+          @include adjust-font-size-to($size-sm);
+          @include adjust-leading-to(3);
+          padding: $content-margin;
+          color:#fff;
+          background:rgba(0,0,0,.7);
+          overflow-y: auto;
+
+
+        }
+      }
     }
   }
   .mfp-iframe-scaler {

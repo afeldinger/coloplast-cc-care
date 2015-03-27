@@ -31,12 +31,12 @@ nav.primary {
 		
 		li {
 
-		    &.active > a {
+		    &.active > .nav-title {
 		    	border-left:4px solid $color-primary;
 		    	margin-left: -4px;
 		    }
 
-			&.over > a {
+			&.over > a.nav-title {
 				background: $light-gray;
 			}
 		}
@@ -54,7 +54,7 @@ nav.primary {
 			}
 
 
-			> a {
+			> .nav-title {
 				position:relative;
 				display:block;
 				text-align: left;
@@ -63,13 +63,13 @@ nav.primary {
 			}
 			
 
-			&.over > a {
+			&.over > .nav-title {
 				background: transparent;
 				border-left: 4px solid $color-primary;
 				margin-left: -4px;
-				&:hover {
-					background: $light-gray;
-				}
+			}
+			&.over > a.nav-title:hover {
+				background: $light-gray;
 			}
 			> ul {
 
@@ -80,7 +80,7 @@ nav.primary {
 				> li {
 					display:block;
 
-					> a {
+					> .nav-title {
 						display:block;
 						padding: rhythm(1) rhythm(2);
 						@include adjust-font-size-to($size-sm);
@@ -148,27 +148,31 @@ nav.primary {
 				margin-top: 0;
 				display: table-cell;
 
-				& > a {
+				& > .nav-title {
 					position:relative;
 					text-align: center;
 					line-height: 26px;
 					padding: 0px 10px 10px;
 					border-bottom: 4px solid transparent;
 				}
-				&.over > a,
-				&.active > a {
+				&.over > .nav-title,
+				&.active > .nav-title {
 					border-left:0;
 					margin-left:0;
 					border-bottom:4px solid $color-primary;
 					z-index: 12;
 				}
-				&.over > a:hover {
-					background: transparent;
+				&.over > .nav-title,
+				&.over > a.nav-title {
+					&,
+					&:hover {
+						background-color: transparent;
+					}
 				}
 
 
-				& > a:after,
-				&:first-child > a:before {
+				& > .nav-title:after,
+				&:first-child > .nav-title:before {
 					position:absolute;
 					content: ' ';
 					top: -3px;
@@ -179,7 +183,7 @@ nav.primary {
 						linear-gradient(to bottom, rgba($color-borders, 0), rgba($color-borders, .1) 20%, $color-borders 50%, rgba($color-borders, .9) 80%, rgba($color-borders, 0))
 					);
 				}
-				&:first-child > a:before {
+				&:first-child > .nav-title:before {
 					right: auto;
 					left: 0;
 				}
@@ -197,7 +201,7 @@ nav.primary {
 
 					> li {
 						width: 40%;
-						> a {
+						> .nav-title {
 							padding: rhythm(2) rhythm(2);
 						}
 

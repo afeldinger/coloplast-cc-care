@@ -3,7 +3,11 @@
 {{else}}
 <li>
 {{/if}}
-	<a href="{{link}}">{{title}}</a>
+	{{#if link}}
+		<a class="nav-title" href="{{link}}">{{title}}</a>
+	{{else}}
+		<div class="nav-title">{{title}}</div>
+	{{/if}}
 	{{#if teaser}}
 	<div class="teaser">
 		<h2>{{title}}</h2>

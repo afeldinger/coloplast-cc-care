@@ -3109,7 +3109,10 @@ function grid_list_init() {
 			}).click(function(e) {
 				//e.stopPropagation();
 				$(this).find('a').filter(':last')[0].click();
-			}).filter(':has(a.more-link)').find('.elm-content').clone().removeClass('elm-content').addClass('elm-content-over').appendTo(this);
+			}).filter(':has(a.more-link)').each(function() {
+				$(this).find('.elm-content').clone().removeClass('elm-content').addClass('elm-content-over').appendTo(this);
+				//$(this).find('.elm-image').clone().appendTo($(this).find('.elm-content'));
+			});
 
 		});
 	});
@@ -3323,10 +3326,12 @@ $(document).ready(function() {
 
     // Handle lightbox links
 
-	var usage_msg = '<h2>Usage instructions</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-
-
 	$('a[href="#signup-form-overlay"], a[href="#form-order-sample-overlay"]').magnificPopup();
+
+
+	var video_msg = '<div class="message-trigger"><span class="icon icon-info"></span><span>Important Safety Information</span></div>'+
+	'<div class="message"><p><strong>Important Safety Information:</strong>  SpeediCath® catheters are indicated for use by patients with chronic urine retention and patients with a post void residual volume (PVR) due to neurogenic and non-neurogenic voiding dysfunction. The catheter is inserted into the urethra to reach the bladder allowing urine to drain. There is a separate SpeediCath Compact Set device intended for either males or females only.</p><p>SpeediCath catheters are available by prescription only. Patients performing self-catheterization should follow the advice of, and direct questions about use of the product to, their medical professional. Before using the device, carefully read the product labels and information accompanying the device including the instructions for use which contain additional safety information. The SpeediCath catheter is for single-use only; discard it after use. If you experience symptoms of a urinary tract infection, or are unable to pass the catheter into the bladder, contact your healthcare professional. The risk information provided here is not comprehensive. To learn more, talk to your healthcare provider.</p></div>';
+	
 	$('a[href*="vimeo.com"], a[href*="youtube.com"]').magnificPopup({
 		type: 'iframe',
 
@@ -3334,14 +3339,12 @@ $(document).ready(function() {
 			markup: '<div class="mfp-iframe-scaler">'+
 				'<div class="mfp-close"></div>'+
 				'<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
-				'<div class="mfp-messagetrigger"></div>' +
 				'<div class="mfp-message"></div>'+
 				'</div>'
 		},
 			callbacks: {
 				markupParse: function(template, values, item) {
-					values.messagetrigger = '<span class="icon icon-info"></span>Usage instructions';
-					values.message = usage_msg;
+					values.message = video_msg;
 				}
 		}
 

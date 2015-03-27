@@ -158,6 +158,10 @@ sup, sub {
 }
 sub { top: 0.4em; }
 
+strong {
+    font-weight: $bold;
+}
+
 .category {
     font-size: $size-sm;
     font-weight: 300;

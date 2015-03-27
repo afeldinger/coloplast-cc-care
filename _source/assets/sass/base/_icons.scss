@@ -28,7 +28,12 @@
 	@include icon($social-youtube);
 }
 
-
+.icon-media-play {
+	@include icon($tree);
+}
+.icon-info {
+	@include icon($tree);
+}
 .icon-tree {
 	@include icon($tree);
 }

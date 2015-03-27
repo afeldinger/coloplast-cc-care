@@ -1,7 +1,6 @@
 [
 	{
 		"title": "The basics",
-		"link": "section.html",
 		"sections" : [
 			{
 				"title": "How the bladder works",
@@ -22,7 +21,6 @@
 	},
 	{
 		"title": "Routines",
-		"link": "section.html",
 		"sections" : [
 			{
 				"title": "Establishing sound routines",
@@ -38,7 +36,6 @@
 	},
 	{
 		"title": "Lifestyle",
-		"link": "section.html",
 		"active": "true",
 		"sections" : [
 			{
@@ -95,7 +92,7 @@
 		]
 	},
 	{
-		"title": "About Coloplast",
+		"title": "Coloplast",
 		"link": "about.html",
 		"sections" : [
 			{
