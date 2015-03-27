@@ -8,7 +8,11 @@
 	<p>{{teaser}}</p>
 	
 	<a href="{{default link 'article.html'}}" class="more-link">
+	{{#is type 'video'}}
+		View video
+	{{else}}
 		Read more
+	{{/is}}
 		<span class="icon"></span>
 	</a>
 </div>

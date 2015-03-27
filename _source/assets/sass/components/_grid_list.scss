@@ -73,7 +73,9 @@
 
 		&.type-video {
 			a.more-link .icon {
-				@include icon($tree);
+				@include icon($media-play);
+				font-size: inherit;
+				line-height: inherit;
 			}
 		}
 
@@ -166,6 +168,11 @@
 				}
 
 			}
+			.elm-content {
+				a.more-link:hover {
+					color: inherit;
+				}
+			}
 			.elm-content-over {
 				z-index:10;
 				background:#fff;
@@ -256,8 +263,8 @@
 							display:block;
 							right: 30px;
 							top: 50%;
-							margin-top: -($size-xxl / 2);
-							@include adjust-font-size-to($size-xxl);
+							margin-top: -($size-xxxl / 2);
+							@include adjust-font-size-to($size-xxxl);
 							fill: #000;
 							opacity: .8;
 							z-index:5;

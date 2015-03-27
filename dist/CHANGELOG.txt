@@ -12,6 +12,20 @@
 
 2015-03-27
 
- *  Changed markup for main navigation items, so they support not having links on sections.
-    Use <a class="nav-item"> for items with links and <div class="nav-item"> for items with no links
+	Navigation:
 
+	 *  Changed markup for main navigation items, so they support not having links on sections.
+	    Use <a class="nav-item"> for items with links and <div class="nav-item"> for items with no links
+
+	 *  Changed section title "About Coloplast" to "Coloplast"
+
+	Footer:
+
+	 *  Removed <section class="social"> from footer, due to lack of relevant links
+
+	Video tiles:
+
+	 *  Removed <span class="icon icon-media-playback"> from video tiles. Safety information for overlay
+	    is temporarily hardcoded in english in the javascript. This needs to change for phase 2
+
+	 *  Changed link text from "Read more" to "View video"

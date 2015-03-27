@@ -215,7 +215,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-box-open:before {
-  content: "";
+  content: "";
 }
 
 .icon-social-facebook {
@@ -285,7 +285,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-media-play:before {
-  content: "";
+  content: "";
 }
 
 .icon-info {
@@ -299,7 +299,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-info:before {
-  content: "";
+  content: "";
 }
 
 .icon-tree {
@@ -327,7 +327,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-feature-curved-tip:before {
-  content: "";
+  content: "";
 }
 
 .icon-feature-discrete {
@@ -341,7 +341,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-feature-discrete:before {
-  content: "";
+  content: "";
 }
 
 .icon-feature-easy-open {
@@ -355,7 +355,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-feature-easy-open:before {
-  content: "";
+  content: "";
 }
 
 .icon-feature-easy-use {
@@ -369,7 +369,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-feature-easy-use:before {
-  content: "";
+  content: "";
 }
 
 .icon-feature-hygenic {
@@ -383,7 +383,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-feature-hygenic:before {
-  content: "";
+  content: "";
 }
 
 .icon-feature-instant {
@@ -397,7 +397,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-feature-instant:before {
-  content: "";
+  content: "";
 }
 
 .icon-feature-preconnected {
@@ -411,7 +411,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-feature-preconnected:before {
-  content: "";
+  content: "";
 }
 
 .icon-feature-size-variety {
@@ -425,7 +425,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-feature-size-variety:before {
-  content: "";
+  content: "";
 }
 
 .icon-plus {
@@ -453,7 +453,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-gender-female:before {
-  content: "";
+  content: "";
 }
 
 .icon-gender-male {
@@ -467,7 +467,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-gender-male:before {
-  content: "";
+  content: "";
 }
 
 .icon-checkmark {
@@ -481,7 +481,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 .icon-checkmark:before {
-  content: "";
+  content: "";
 }
 
 .icon-sign-up {
@@ -915,7 +915,7 @@ hr {
   text-transform: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
-  content: "";
+  content: "";
 }
 #cboxClose:before {
   display: block;
@@ -969,7 +969,7 @@ ul.checkmarks li:before {
   text-transform: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
-  content: "";
+  content: "";
 }
 ul.checkmarks li:before {
   position: relative;
@@ -1093,7 +1093,7 @@ ul.social .icon {
   color: #00b2ce;
 }
 .filters.show-categories fieldset.categories .categories-toggle label.checked .icon:before {
-  content: "";
+  content: "";
 }
 .filters.show-categories fieldset.categories #filter-category-reset {
   display: inline;
@@ -1270,7 +1270,7 @@ html[xmlns] .flexslider .slides {
   display: inline-block;
 }
 .flex-direction-nav a:before {
-  content: "";
+  content: "";
 }
 .flex-direction-nav a.flex-next {
   font-family: "cc-icons";
@@ -1283,7 +1283,7 @@ html[xmlns] .flexslider .slides {
   -webkit-font-smoothing: antialiased;
 }
 .flex-direction-nav a.flex-next:before {
-  content: "";
+  content: "";
 }
 .flex-direction-nav .flex-prev {
   left: 10px;
@@ -1440,7 +1440,7 @@ footer#page-footer a.top span.icon {
   text-align: right;
 }
 footer#page-footer a.top span.icon:before {
-  content: "";
+  content: "";
 }
 footer#page-footer h2 {
   font-size: 18px;
@@ -1675,6 +1675,20 @@ footer#page-footer section.social ul.social .icon {
     display: inline-block;
     float: none;
     margin: 0 auto;
+  }
+  footer#page-footer section.call-us {
+    width: 32.02614%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 8.49673%;
+    clear: none;
+  }
+  footer#page-footer section.order-sample {
+    width: 32.02614%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 59.47712%;
+    clear: none;
   }
   footer#page-footer .secondary-footer ul {
     float: right;
@@ -1922,10 +1936,10 @@ label .icon-gender-female:before {
   font-size: 28px;
 }
 label .icon-gender-male:before {
-  content: "";
+  content: "";
 }
 label .icon-gender-female:before {
-  content: "";
+  content: "";
 }
 label.checked .icon-checkmark:before {
   opacity: 1;
@@ -1937,10 +1951,10 @@ label.checked .icon-gender-female {
           transition: color .2s;
 }
 label.checked .icon-gender-male:before {
-  content: "";
+  content: "";
 }
 label.checked .icon-gender-female:before {
-  content: "";
+  content: "";
 }
 
 input,
@@ -2184,7 +2198,7 @@ button {
   text-transform: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
-  content: "";
+  content: "";
 }
 .dk-selected:before {
   position: absolute;
@@ -2324,7 +2338,7 @@ button {
   text-transform: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
-  content: "";
+  content: "";
 }
 .dk-select-open-up .dk-selected:before,
 .dk-select-open-down .dk-selected:before {
@@ -2639,7 +2653,7 @@ select[data-dkcacheid] {
 }
 .grid-list li .elm-content a.more-link .icon:before,
 .grid-list li .elm-content-over a.more-link .icon:before {
-  content: "";
+  content: "";
 }
 .grid-list li .elm-content a.more-link:hover,
 .grid-list li .elm-content-over a.more-link:hover {
@@ -2661,9 +2675,11 @@ select[data-dkcacheid] {
   text-transform: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
+  font-size: inherit;
+  line-height: inherit;
 }
 .grid-list li.type-video a.more-link .icon:before {
-  content: "";
+  content: "";
 }
 @media (min-width: 45em) {
   .grid-list li {
@@ -2758,6 +2774,9 @@ select[data-dkcacheid] {
     margin-left: 9.31677%;
     margin-right: 9.31677%;
   }
+  .grid-list li .elm-content a.more-link:hover {
+    color: inherit;
+  }
   .grid-list li .elm-content-over {
     z-index: 10;
     background: #fff;
@@ -2848,11 +2867,11 @@ select[data-dkcacheid] {
     display: block;
     right: 30px;
     top: 50%;
-    margin-top: -15px;
-    font-size: 30px;
-    font-size: 2rem;
-    line-height: 36px;
-    line-height: 2.4rem;
+    margin-top: -25px;
+    font-size: 50px;
+    font-size: 3.33333rem;
+    line-height: 54px;
+    line-height: 3.6rem;
     fill: #000;
     opacity: .8;
     z-index: 5;
@@ -3676,7 +3695,7 @@ nav.primary > ul > li > ul > li > .nav-title {
   -webkit-font-smoothing: antialiased;
 }
 .nav-btn a.active .icon:before {
-  content: "";
+  content: "";
 }
 
 @media (min-width: 60em) {

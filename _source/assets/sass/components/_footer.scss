@@ -221,6 +221,14 @@ footer#page-footer {
 		}
 
 
+		section.call-us {
+			@include grid-span(4,2);
+		}
+		section.order-sample {
+			@include grid-span(4,8);
+		}
+
+
 
 		.secondary-footer {
 			ul {

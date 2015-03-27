@@ -29,10 +29,10 @@
 }
 
 .icon-media-play {
-	@include icon($tree);
+	@include icon($media-play);
 }
 .icon-info {
-	@include icon($tree);
+	@include icon($info);
 }
 .icon-tree {
 	@include icon($tree);
