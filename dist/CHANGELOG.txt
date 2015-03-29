@@ -1,31 +1,31 @@
 
 **************************************************************************
 *
-*  This file contains all changes to HTML code since 2015-03-24,		
-*  and is used to track code edits with regards to implementation		
-*  in Eloqua by DemandGen team.		
-*  		
-*  For any questions, contact Anders Feldinger af@andersfeldinger.dk	
+*  This file contains all changes to HTML code since 2015-03-24,        
+*  and is used to track code edits with regards to implementation       
+*  in Eloqua by DemandGen team.     
+*       
+*  For any questions, contact Anders Feldinger af@andersfeldinger.dk    
 * 
 **************************************************************************
 
 
 2015-03-27
 
-	Navigation:
+  Navigation:
 
-	 *  Changed markup for main navigation items, so they support not having links on sections.
-	    Use <a class="nav-item"> for items with links and <div class="nav-item"> for items with no links
+   *  Changed markup for main navigation items, so they support not having links on sections.
+      Use <a class="nav-item"> for items with links and <div class="nav-item"> for items with no links
 
-	 *  Changed section title "About Coloplast" to "Coloplast"
+   *  Changed section title "About Coloplast" to "Coloplast"
 
-	Footer:
+  Footer:
 
-	 *  Removed <section class="social"> from footer, due to lack of relevant links
+   *  Removed <section class="social"> from footer, due to lack of relevant links
 
-	Video tiles:
+  Video tiles:
 
-	 *  Removed <span class="icon icon-media-playback"> from video tiles. Safety information for overlay
-	    is temporarily hardcoded in english in the javascript. This needs to change for phase 2
+   *  Removed <span class="icon icon-media-playback"> from video tiles. Safety information for overlay
+      is temporarily hardcoded in english in the javascript. This needs to change for phase 2
 
-	 *  Changed link text from "Read more" to "View video"
+   *  Changed link text from "Read more" to "View video"

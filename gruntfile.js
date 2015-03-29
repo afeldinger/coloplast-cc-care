@@ -84,6 +84,7 @@ module.exports = function(grunt) {
           'handlebars-helper-partial',
           'handlebars-helper-autolink',
           'handlebars-helper-isactive',
+          './_source/helpers/*.js',
         ],
         
         collections: [

@@ -133,6 +133,9 @@ label {
 		@include adjust-font-size-to($base-font-size);
 		line-height: 1em;
 	}
+	.label-value {
+		display:none;
+	}
 
 	.optional {
 		opacity: .7;
@@ -283,6 +286,11 @@ button {
 }
 
 
+.form-page {
+	&:nth-child(n+2) {
+		margin-top: rhythm(8);
+	}
+}
 
 .form-row {
 	@extend %form-row-clear;
@@ -356,6 +364,49 @@ button {
 		}
 	}
 
+}
+
+.input-group.compact-group {
+	clear:both;
+	-webkit-touch-callout: none;
+	user-select: none;
+
+	label {
+		text-align: center;
+	}
+
+	@include breakpoint($xs) {
+		display: table;
+		table-layout: fixed;
+		width:100%;
+		min-height: 40px;
+		clear:both;
+		margin-bottom: $form-spacing;
+
+		label {
+			display: table-cell;
+			float:none;
+			width:2%;
+			min-width:0;
+			height: auto;
+			line-height: normal;
+			vertical-align: middle;
+			padding: rhythm(1);
+			margin: 0;
+
+			border-radius:0;
+
+			&:first-child {
+				border-radius: $border-radius-md 0 0 $border-radius-md;
+			}
+			&:last-child {
+				border-radius: 0 $border-radius-md $border-radius-md 0;
+			}
+			&:nth-of-type(n+1) {
+				border-left: 1px solid $color-background;
+			}
+		}
+	}
 }
 
 .gender-mobility {

@@ -1,0 +1,90 @@
+
+.form-quality-of-life {
+
+	.label-group {
+		display:none;
+	}
+
+	.input-group-label {
+		color: $color-text-body;
+	}
+
+	label {
+		background: $color-primary;
+		color: #fff;
+
+		&.checked {
+			background: #fff !important;
+			color:$color-text-body;
+		}
+	}
+
+	@include breakpoint($xs) {
+
+		label {
+			.label {
+				@include adjust-font-size-to($size-sm);
+			}
+			/*
+			.label {
+				display:none;
+			}
+			.label-value {
+				display:block;
+			}
+			*/
+		}
+	}
+	@include breakpoint($sm) {
+		h1,
+		h2 {
+			clear:both;
+		}
+		.label-group {
+
+			display: table;
+			table-layout: fixed;
+			width:100%;
+			margin-top: rhythm(3);
+			margin-bottom: rhythm(3);
+
+			@include grid-span(6,7);
+			clear:both;
+
+			.label {
+				display: table-cell;
+				width: 2%;
+				text-align: center;
+				vertical-align: bottom;
+				@include adjust-font-size-to($size-sm);
+			}
+		}
+
+
+		label {
+			.label {
+				@include adjust-font-size-to($size-md);
+				display:none;
+			}
+			.label-value {
+				display:block;
+			}
+		}
+		.input-group-label {
+			min-height: 40px;
+			margin-top:0;
+			margin-bottom: $form-spacing;
+			padding: 8px rhythm(2);
+			@include grid-span(6,1);
+			@include adjust-font-size-to($base-font-size);
+			font-family: $font-body;
+			background: #fff;
+			border-radius: $border-radius-md;
+		}
+		.compact-group {
+			@include grid-span(6,7);
+		}
+
+	}
+
+}

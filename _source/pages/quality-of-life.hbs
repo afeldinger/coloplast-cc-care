@@ -1,0 +1,94 @@
+---
+layout: default.hbs
+title: Qualiveen Questionnaire
+page_type: form
+show_signup: false
+form_sections:
+ - s_label: Everyday questions
+   s_questions:
+    - q_key: q1
+      q_label: In general, do your bladder problems complicate your life?
+    - q_key: q2
+      q_label: Are you bothered by the time spent passing urine or realizing catheterization?
+    - q_key: q3
+      q_label: Do you worry about your bladder problems worsening?
+    - q_key: q4
+      q_label: Do you worry about smelling of urine?
+    - q_key: q5
+      q_label: Do you feel worried because of your bladder problems?
+    - q_key: q6
+      q_label: Do you feel embarrassed because of your bladder problems?
+   s_answers: ['Not at all', 'Slightly', 'Moderately', 'Quite a bit', 'Extremely']
+ - s_questions:
+    - q_key: q7
+      q_label: Is your life regulated by your bladder problems? 
+    - q_key: q8
+      q_label: Can you go out without planning anything in advance?
+   s_answers: ['Never', 'Rarely', 'From time to time', 'Often', 'Always']
+---
+
+
+<div class="content-wrapper">
+
+  <div class="content-block">
+    <div class="elm-image">
+      <img src="http://lorempixel.com/470/220/people/1/" alt="Image text" border="0">
+    </div>
+    <div class="elm-content">
+      <h1>Your bladder problems and how you pass urine at present</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="form-page">
+
+  <form name="form-quality-of-life" class="form-quality-of-life">
+    {{#each form_sections}}
+      {{#if s_label}}
+      <h2>{{s_label}}</h2>
+      {{/if}}
+      <div class="label-group">
+      {{#each s_answers}}
+        <span class="label">{{this}}</span>
+      {{/each}}
+      </div>
+
+      {{#eachOptions s_questions s_answers=s_answers}}
+      
+        <div class="form-row">
+          <h3 class="input-group-label">
+            {{this.value.q_label}}
+          </h3>
+          <div class="input-group input-buttons compact-group">
+            {{#eachOptions this.options.s_answers q_key=this.value.q_key}}
+
+            <label class="input-radio" for="{{this.options.q_key}}-{{this.key}}">
+              <input id="{{this.options.q_key}}-{{this.key}}" name="{{this.options.q_key}}" type="radio" value="{{this.key}}">
+              <span class="label">{{this.value}}</span>
+              <span class="label label-value">{{key}}</span>
+            </label>
+
+            {{/eachOptions}}
+
+          </div>
+        </div>
+      {{/eachOptions}}
+      
+      <hr />
+    {{/each}}
+
+    <div class="button-group">
+
+      <button class="input-submit" type="submit">
+        Submit answers
+      </button>
+    </div>
+  </form>
+  </div>
+</div>

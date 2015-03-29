@@ -5,39 +5,89 @@
 	background: $color-primary;
 	margin-bottom: -rhythm(6);
 
-	a.trigger {
-		display:none;
-		padding:10px;
-		@include adjust-font-size-to($size-sm);
-		font-weight: $bold;
-		text-align: center;
-		z-index:20;
-		color: inherit;
-
-		.icon {
-			display:block;
-			width:100%;
-			text-align: center;
-			font-size:28px;
-			line-height:36px;
-		}
-	}
 
 	h2,
 	p,
 	a {
 		color:inherit;
-	}	
+	}
+
+	a.trigger {
+		display:none;
+		transition: all .1s;
+
+		.icon {
+			transition: all .1s;
+		}
+	}
 
 	@include breakpoint($sm) {
 		position:fixed;
 		left:0;
 		top: 30%;
 		z-index:20;
-		border-radius: 0 4px 4px 0;
+		background: transparent;
 
 		a.trigger {
-			display:block;	
+			display:block;
+			padding:10px;
+			@include adjust-font-size-to($size-sm);
+			line-height: normal;
+			font-weight: $bold;
+			text-align: center;
+			z-index:20;
+			color: inherit;
+			background: $color-primary;
+			border-radius: 0 4px 4px 0;
+			transform: scale(.6) translate(-6px, 0);
+			transform-origin: center left;
+			opacity:.6;
+
+			.icon {
+				display:block;
+				text-align: center;
+				font-size:28px;
+				line-height:36px;
+			}
+
+			span:nth-of-type(2) {
+				display:block;
+				position:relative;
+				opacity: 0;
+				height:0;
+				overflow: hidden;
+			}
+
+			&:hover {
+				transform: scale(1) translate(0, 0);
+				opacity: 1;
+
+				span:nth-of-type(2) {
+					opacity: 1;
+					height: auto;
+				}
+			}
+		}
+	}
+
+
+	@include breakpoint($lg) {
+
+		a.trigger {
+			transform: scale(1) translate(0, 0);
+			padding:10px;
+			@include adjust-font-size-to($size-sm);
+			opacity: 1;
+
+			.icon {
+				font-size:28px;
+				line-height:36px;
+			}
+
+			span:nth-of-type(2) {
+				opacity: 1;
+				height: auto;
+			}
 		}
 
 	}
