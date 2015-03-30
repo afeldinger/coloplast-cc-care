@@ -4,7 +4,7 @@ title: Qualiveen Questionnaire
 page_type: form
 show_signup: false
 form_sections:
- - s_label: Everyday questions
+ - s_body: <p><strong>Please answer all the questions by ticking the appropriate box</strong></p>
    s_questions:
     - q_key: q1
       q_label: In general, do your bladder problems complicate your life?
@@ -50,9 +50,10 @@ form_sections:
 
   <form name="form-quality-of-life" class="form-quality-of-life">
     {{#each form_sections}}
-      {{#if s_label}}
-      <h2>{{s_label}}</h2>
-      {{/if}}
+
+      {{{s_label}}}
+      {{{s_body}}}
+
       <div class="label-group">
       {{#each s_answers}}
         <span class="label">{{this}}</span>
