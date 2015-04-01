@@ -19,6 +19,13 @@
 		}
 	}
 
+	.reference {
+		margin: rhythm(4) 0;
+		@include adjust-font-size-to($size-sm);
+		text-align: right;
+
+	}
+
 	@include breakpoint($xs) {
 
 		label {

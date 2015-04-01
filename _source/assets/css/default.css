@@ -2172,6 +2172,9 @@ button {
   }
 }
 
+.button-group {
+  overflow: hidden;
+}
 .button-group button {
   font-size: 22px;
   font-size: 1.46667rem;
@@ -4467,6 +4470,14 @@ html, body {
 .form-quality-of-life label.checked {
   background: #fff !important;
   color: #707070;
+}
+.form-quality-of-life .reference {
+  margin: 1.6rem 0;
+  font-size: 12px;
+  font-size: 0.8rem;
+  line-height: 18px;
+  line-height: 1.2rem;
+  text-align: right;
 }
 @media (min-width: 30em) {
   .form-quality-of-life label {

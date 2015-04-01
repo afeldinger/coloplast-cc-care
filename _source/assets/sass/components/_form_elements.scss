@@ -431,6 +431,7 @@ button {
 
 .button-group {
 	@extend %form-row-clear;
+	overflow: hidden;
 	button {
 		@include adjust-font-size-to($size-xl);
 		@include adjust-leading-to(7);
