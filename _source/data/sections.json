@@ -85,8 +85,13 @@
 				"link": "article.html"
 			},
 			{
-				"title": "Rights & Reimbursements",
-				"teaser": "Dolor dolorem necessitatibus temporibus sint accusantium at, similique ut, vero explicabo! Cupiditate corrupti, ipsa inventore quas dolorem quaerat ad ullam dolor voluptatibus!",
+				"title": "Rights and reimbursement",
+				"teaser": "Your catheters, your choice. Know your rights",
+				"link": "article.html"
+			},
+			{
+				"title": "Facts about reimbursement",
+				"teaser": "FAQ, common terms and coverage types",
 				"link": "article.html"
 			}
 		]
@@ -97,17 +102,17 @@
 		"sections" : [
 			{
 				"title": "About us",
-				"teaser": "Quae officia, enim, corrupti sit repudiandae ipsum quam praesentium ullam temporibus aspernatur accusantium, mollitia iste reprehenderit, aliquid aperiam dolor? Temporibus, vero, asperiores!",
+				"teaser": "Who is Coloplast? Get to know more about what we do besides developing catheters.",
 				"link": "article.html"
 			},
 			{
 				"title": "Innovation",
-				"teaser": "Dolor dolorem necessitatibus temporibus sint accusantium at, similique ut, vero explicabo! Cupiditate corrupti, ipsa inventore quas dolorem quaerat ad ullam dolor voluptatibus!",
+				"teaser": "Thorough testing and quality control are among the requirements that go with the development of each catheter.",
 				"link": "article.html"
 			},
 			{
 				"title": "Contact us",
-				"teaser": "Dolor dolorem necessitatibus temporibus sint accusantium at, similique ut, vero explicabo! Cupiditate corrupti, ipsa inventore quas dolorem quaerat ad ullam dolor voluptatibus!",
+				"teaser": "Do you have questions? We are ready to help you.",
 				"link": "contact-us.html"
 			}
 		]

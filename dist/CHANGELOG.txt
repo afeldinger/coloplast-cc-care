@@ -9,6 +9,20 @@
 * 
 **************************************************************************
 
+2015-04-01
+
+  Footer:
+
+   *  Changed text in product section
+
+  Navigation:
+
+   *  Added description text to the remaining five items. Coloplast approval of text still pending
+
+  Quality of Life form
+
+   *  Removed text section at the top of the page due to lack of content, leaving only the header and the form itself
+
 2015-03-30
 
   Footer:

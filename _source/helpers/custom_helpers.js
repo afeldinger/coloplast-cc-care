@@ -63,14 +63,12 @@ module.exports.register = function (Handlebars, options) {
     Handlebars.registerHelper('eachOptions', function(collection, options) {
 		var accum = '';
 		for(var key in collection) {
-
-
 			var context = {}
 			context.key = key;
 			context.value = collection[key];
 			context.options = options.hash;
 
-			console.log(JSON.stringify (context)); 
+			//console.log(JSON.stringify (context)); 
 			accum += options.fn( context );
 		}
 		return accum;
