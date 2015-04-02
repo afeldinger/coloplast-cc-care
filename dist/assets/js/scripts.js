@@ -3323,6 +3323,9 @@ $(document).ready(function() {
         }
     });
 
+    // Embed hero signup form into hero
+    $('#signup-form-hero').appendTo($('section.hero:first .content-wrapper'));
+
 
     // Handle lightbox links
 

@@ -9,6 +9,11 @@
 * 
 **************************************************************************
 
+2015-04-02
+
+  Frontpage hero signup:
+   *  Moved signup form outside of hero section, as per request from Alex
+
 2015-04-01
 
   Footer:
