@@ -2065,7 +2065,7 @@ button {
 .form-compact {
   overflow: hidden;
   margin-bottom: 15px;
-  padding: 0 20px;
+  padding: 0;
   background: #fff;
   border-radius: 4px;
 }
@@ -2075,11 +2075,11 @@ button {
   border-bottom: 1px solid #e8e8e8;
 }
 .form-compact label.input-text .label, .form-compact label.input-textarea .label, .form-compact label.input-textarea .label {
-  left: 0;
+  left: 20px;
 }
 .form-compact label.input-text input, .form-compact label.input-textarea input, .form-compact label.input-textarea input {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .form-compact .form-row:last-child label {
   border-bottom: 0;
@@ -2450,6 +2450,30 @@ select[data-dkcacheid] {
   top: 50%;
   margin-top: -0.5em;
   color: #00b2ce;
+}
+
+.input-text.input-error .error, .input-error.input-textarea .error,
+.input-textarea.input-error .error {
+  background-color: #e87f7f;
+}
+.input-text.input-error .label, .input-error.input-textarea .label,
+.input-textarea.input-error .label {
+  color: #fff !important;
+}
+
+.input-checkbox.input-error:before {
+  background-color: #e87f7f;
+}
+.input-checkbox.input-error .icon-checkmark {
+  border-color: #fff;
+}
+
+.input-buttons .input-checkbox.input-error,
+.input-buttons .input-radio.input-error,
+.icon-buttons .input-checkbox.input-error,
+.icon-buttons .input-radio.input-error {
+  background: #e87f7f;
+  color: #fff;
 }
 
 #colorbox #form-order-sample-overlay {

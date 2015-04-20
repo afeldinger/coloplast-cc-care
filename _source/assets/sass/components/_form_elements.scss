@@ -313,7 +313,7 @@ button {
 .form-compact {
 	overflow: hidden;
 	margin-bottom: $form-spacing;
-	padding: 0 20px;
+	padding: 0;
 	background:#fff;
 	border-radius: $border-radius-md;
 
@@ -326,11 +326,11 @@ button {
 		&.input-text,
 		&.input-textarea {
 			.label {
-				left:0;
+				left:20px;
 			}
 			input {
-				padding-left:0;
-				padding-right:0;
+				padding-left:20px;
+				padding-right:20px;
 			}
 		}
 	}
@@ -678,6 +678,42 @@ select[data-dkcacheid] {
 			top: 50%;
 			margin-top: -0.5em;
 			color: $color-primary;
+		}
+	}
+}
+
+// Errors
+.input-text,
+.input-textarea {
+	&.input-error {	
+		.error {
+			background-color: $error-background;
+		}
+		.label {
+			color: $error-foreground !important;
+		}
+	}
+}
+
+.input-checkbox {
+	&.input-error {
+		&:before {
+			background-color: $error-background;
+		}
+		.icon-checkmark {
+			border-color: $error-foreground;
+		}
+
+	}
+}
+
+.input-buttons,
+.icon-buttons {
+	.input-checkbox,
+	.input-radio {
+		&.input-error {
+			background: $error-background;
+			color: $error-foreground;
 		}
 	}
 }

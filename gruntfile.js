@@ -9,7 +9,7 @@ module.exports = function(grunt) {
           livereload: true,
       },
       scripts: {
-        files: ['_source/assets/js/**/*.js'],
+        files: ['_source/assets/js/*.js'],
         tasks: ['jshint'],
         options: {
             spawn: false,
@@ -159,7 +159,10 @@ module.exports = function(grunt) {
       options: {
         jshintrc: '.jshintrc'
       },
-      all: ['_source/assets/js/{,**/}*.js', '!_source/assets/js/libs/**/*.js']
+      all: [
+        '_source/assets/js/{,**/}*.js', 
+        '!_source/assets/js/{libs,localization}/**/*.js'
+      ]
     },
 
     concat: { 

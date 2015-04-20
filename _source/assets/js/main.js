@@ -253,7 +253,101 @@ $(document).ready(function() {
 		}
 	).filter(':has(.icon)').addClass('has-icon');
 
+
 	// manages form submission and confirmation display
+	$('form').each(function() {
+		$(this).validate({
+			rules: {
+				firstname: 'required',
+				'first-name': 'required',
+				lastname: 'required',
+				'last-name': 'required',
+				email: {
+					required: true,
+					email: true,
+				},
+				gender: 'required',
+				subject: 'required',
+				message: 'required',
+				phone: 'required',
+				address1: 'required',
+				address2: 'required',
+				state: 'required',
+				city: 'required',
+				zip: 'required',
+				'accept-legal': 'required',
+			},
+			highlight: function(element, errorClass, validClass) {
+	            if(element.type === 'radio') {
+	                $(element.form).find('[name="' + element.name + '"]').each(function(){
+	                    var $this = $(this);
+	                    $this.addClass(errorClass).removeClass(validClass);
+	                    $this.closest('label').addClass('input-' + errorClass);
+	                });
+	            } else {
+					$(element).addClass(errorClass).removeClass(validClass);
+					$(element).closest('label').addClass('input-' + errorClass);
+	            }
+
+			},
+			unhighlight: function(element, errorClass, validClass) {
+	            if(element.type === 'radio') {
+	                $(element.form).find('[name="' + element.name + '"]').each(function(){
+	                    var $this = $(this);
+	                    $this.removeClass(errorClass).addClass(validClass);
+	                    $this.closest('label').removeClass('input-' + errorClass);
+	                });
+	            } else {
+					$(element).removeClass(errorClass).addClass(validClass);
+					$(element).closest('label').removeClass('input-' + errorClass);
+				}
+			},
+			errorPlacement: function(error, element) {
+				return true;
+			},
+			submitHandler: function(form) {
+				// Form has .form-confirmation - use jquery.post to submit form and display confirmation
+				if ($(this).next('.form-confirmation').length >= 0) {
+
+					var frm = $(form);
+					var url = frm.attr('action')? frm.attr('action') : location.href;
+					var data = frm.serializeArray();
+
+					console.log('Form request:', url, data);
+
+					$.post(
+						url,
+						data,
+						function(response, status) {
+							console.log('Form response:', status);
+							frm.hide().next('.form-confirmation').show();
+						}
+					);
+
+
+
+				} 
+				// No .form-confirmation: default to standard submit handler
+				else {
+					console.log('No form confirmation - submit form');
+					form.submit();
+				}
+			},
+		});
+
+		// phone not required on contact page
+		$('#contact-phone', this).each(function() {
+			$(this).rules('remove');
+		});
+
+		// has care receiver field - remove rule for gender
+		if ($('#profile-receiver-firstname', this).length) {
+			$('input[name="gender"]', this).each(function() {
+				$(this).rules('remove');
+			});
+		}
+	});
+	/*
 	$('form').filter(function() {
 		return $(this).next('.form-confirmation').length;
 	}).submit(function(e) {
@@ -266,8 +360,8 @@ $(document).ready(function() {
 		$.post(
 			url,
 			data,
-			function() {
-				console.log('form submitted');
+			function(response, status) {
+				console.log('Form response:', status);
 				frm.hide().next('.form-confirmation').show();
 			}
 		);
@@ -276,6 +370,7 @@ $(document).ready(function() {
 		//
 
 	});
+*/	
 
 
     $('select:visible').dropkick({
