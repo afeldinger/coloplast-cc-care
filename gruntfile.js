@@ -175,6 +175,7 @@ module.exports = function(grunt) {
               '_source/assets/js/libs/jquery.flexslider-min.js',
               '_source/assets/js/libs/jquery.magnific*.js',
               '_source/assets/js/libs/dropkick/dropkick.js',
+              '_source/assets/js/libs/jquery.validate.min.js',
               '_source/assets/js/main.js',
           ],
           dest: 'dist/assets/js/scripts.js',
