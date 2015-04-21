@@ -30,6 +30,7 @@ nav.primary {
 	
 		
 		li {
+			margin-left:0;
 
 		    &.active > .nav-title {
 		    	border-left:4px solid $color-primary;

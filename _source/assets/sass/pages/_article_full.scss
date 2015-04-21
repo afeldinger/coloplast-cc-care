@@ -11,9 +11,14 @@ html, body {
 	.main-content {
 		@extend .content-wrapper;
 		text-align:left;
+
+		h1 {
+			@extend h2;
+		}
 	}
 
-	> *:nth-child(n+2) {
+	> *:nth-child(n+2),
+	> .dynBlock > *:nth-child(n+2) {
 		margin-top: rhythm(6);
 	}
 }

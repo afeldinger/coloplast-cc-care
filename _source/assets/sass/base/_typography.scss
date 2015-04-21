@@ -117,7 +117,8 @@ h5 {
 p,
 ul,
 ol {
-	margin: rhythm(2) 0;
+	margin-top: rhythm(2);
+    margin-bottom: rhythm(2);
 
     &:first-child {
         margin-top:0;
@@ -130,6 +131,17 @@ ol {
         margin-top: rhythm(3)
     }
 }
+ul,
+ol {
+    list-style: disc;
+    li {
+        margin-left: 1.6em;
+        display: list-item;
+
+    }
+}
+
+
 
 a {
 	text-decoration: none;
@@ -161,7 +173,9 @@ sub { top: 0.4em; }
 strong {
     font-weight: $bold;
 }
-
+em {
+    font-style: italic;
+}
 .category {
     font-size: $size-sm;
     font-weight: 300;

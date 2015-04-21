@@ -1,6 +1,6 @@
 @charset "UTF-8";
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, .article-full .main-content h1, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -651,6 +651,7 @@ body {
 
 h1,
 h2,
+.article-full .main-content h1,
 h3,
 h4,
 h5,
@@ -669,7 +670,7 @@ h1 {
   color: #00b2ce;
 }
 
-h2 {
+h2, .article-full .main-content h1 {
   font-size: 22px;
   font-size: 1.46667rem;
   line-height: 30px;
@@ -706,22 +707,35 @@ h5 {
 p,
 ul,
 ol {
-  margin: 0.8rem 0;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 p:first-child,
 ul:first-child,
 ol:first-child {
   margin-top: 0;
 }
-p + h2,
+p + h2, .article-full .main-content p + h1,
 ul + h2,
-ol + h2 {
+.article-full .main-content ul + h1,
+ol + h2,
+.article-full .main-content ol + h1 {
   margin-top: 1.2rem;
 }
 p + h3,
 ul + h3,
 ol + h3 {
   margin-top: 1.2rem;
+}
+
+ul,
+ol {
+  list-style: disc;
+}
+ul li,
+ol li {
+  margin-left: 1.6em;
+  display: list-item;
 }
 
 a {
@@ -750,6 +764,10 @@ sub {
 
 strong {
   font-weight: 600;
+}
+
+em {
+  font-style: italic;
 }
 
 .category {
@@ -1442,7 +1460,7 @@ footer#page-footer a.top span.icon {
 footer#page-footer a.top span.icon:before {
   content: "";
 }
-footer#page-footer h2 {
+footer#page-footer h2, footer#page-footer .article-full .main-content h1, .article-full .main-content footer#page-footer h1 {
   font-size: 18px;
   font-size: 1.2rem;
   line-height: 24px;
@@ -1463,7 +1481,7 @@ footer#page-footer .main-footer {
   background: #707070;
   color: #fff;
 }
-footer#page-footer .main-footer h2,
+footer#page-footer .main-footer h2, footer#page-footer .main-footer .article-full .main-content h1, .article-full .main-content footer#page-footer .main-footer h1,
 footer#page-footer .main-footer a {
   color: inherit;
 }
@@ -1619,7 +1637,7 @@ footer#page-footer section.social ul.social .icon {
   footer#page-footer .main-footer .content-wrapper, footer#page-footer .main-footer .article-full .main-content, .article-full footer#page-footer .main-footer .main-content, footer#page-footer .main-footer .facts {
     max-width: 50.66667em;
   }
-  footer#page-footer h2 {
+  footer#page-footer h2, footer#page-footer .article-full .main-content h1, .article-full .main-content footer#page-footer h1 {
     margin: 0;
     font-weight: 400;
   }
@@ -1662,7 +1680,7 @@ footer#page-footer section.social ul.social .icon {
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
   }
-  footer#page-footer section.social h2 {
+  footer#page-footer section.social h2, footer#page-footer section.social .article-full .main-content h1, .article-full .main-content footer#page-footer section.social h1 {
     font-size: 15px;
     font-size: 1rem;
     line-height: 24px;
@@ -1712,8 +1730,10 @@ footer#page-footer section.social ul.social .icon {
     -webkit-transition: -webkit-transform .2s;
             transition: transform .2s;
   }
-  body:not(.legacy) footer#page-footer section.call-us h2,
-  body:not(.legacy) footer#page-footer section.order-sample h2 {
+  body:not(.legacy) footer#page-footer section.call-us h2, body:not(.legacy) footer#page-footer section.call-us .article-full .main-content h1, .article-full .main-content body:not(.legacy) footer#page-footer section.call-us h1,
+  body:not(.legacy) footer#page-footer section.order-sample h2,
+  body:not(.legacy) footer#page-footer section.order-sample .article-full .main-content h1,
+  .article-full .main-content body:not(.legacy) footer#page-footer section.order-sample h1 {
     border-bottom-width: 0px;
     -webkit-transition: border .2s;
             transition: border .2s;
@@ -1766,10 +1786,16 @@ footer#page-footer section.social ul.social .icon {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-  .scroll-near-bottom footer#page-footer:hover section.call-us h2,
+  .scroll-near-bottom footer#page-footer:hover section.call-us h2, .scroll-near-bottom footer#page-footer:hover section.call-us .article-full .main-content h1, .article-full .main-content .scroll-near-bottom footer#page-footer:hover section.call-us h1,
   .scroll-near-bottom footer#page-footer:hover section.order-sample h2,
+  .scroll-near-bottom footer#page-footer:hover section.order-sample .article-full .main-content h1,
+  .article-full .main-content .scroll-near-bottom footer#page-footer:hover section.order-sample h1,
   .scroll-near-bottom footer#page-footer .over section.call-us h2,
-  .scroll-near-bottom footer#page-footer .over section.order-sample h2 {
+  .scroll-near-bottom footer#page-footer .over section.call-us .article-full .main-content h1,
+  .article-full .main-content .scroll-near-bottom footer#page-footer .over section.call-us h1,
+  .scroll-near-bottom footer#page-footer .over section.order-sample h2,
+  .scroll-near-bottom footer#page-footer .over section.order-sample .article-full .main-content h1,
+  .article-full .main-content .scroll-near-bottom footer#page-footer .over section.order-sample h1 {
     border-bottom-width: 1px;
   }
   .scroll-near-bottom footer#page-footer:hover section.call-us > *:nth-child(n+3),
@@ -2494,7 +2520,7 @@ select[data-dkcacheid] {
   background: #00b2ce;
   margin-bottom: -rhythm(6);
 }
-#signup-form-trigger h2,
+#signup-form-trigger h2, #signup-form-trigger .article-full .main-content h1, .article-full .main-content #signup-form-trigger h1,
 #signup-form-trigger p,
 #signup-form-trigger a {
   color: inherit;
@@ -2590,7 +2616,7 @@ select[data-dkcacheid] {
   background: #00b2ce;
   padding: 2rem;
 }
-.form-signup-cta h2,
+.form-signup-cta h2, .form-signup-cta .article-full .main-content h1, .article-full .main-content .form-signup-cta h1,
 .form-signup-cta p,
 .form-signup-cta a {
   color: inherit;
@@ -2608,7 +2634,9 @@ select[data-dkcacheid] {
   text-align: left;
 }
 .form-signup h1:first-child,
-.form-signup h2:first-child {
+.form-signup h2:first-child,
+.form-signup .article-full .main-content h1:first-child,
+.article-full .main-content .form-signup h1:first-child {
   margin-top: 0;
 }
 .form-signup .form-compact {
@@ -2692,7 +2720,9 @@ select[data-dkcacheid] {
             align-items: center;
   }
   #signup-form-hero form h1,
-  #signup-form-hero form h2 {
+  #signup-form-hero form h2,
+  #signup-form-hero form .article-full .main-content h1,
+  .article-full .main-content #signup-form-hero form h1 {
     margin-bottom: 0.4rem;
   }
   #signup-form-hero .button-group {
@@ -2747,8 +2777,10 @@ select[data-dkcacheid] {
   margin: 0.8rem 0;
   color: inherit;
 }
-.grid-list li .elm-content h2,
-.grid-list li .elm-content-over h2 {
+.grid-list li .elm-content h2, .grid-list li .elm-content .article-full .main-content h1, .article-full .main-content .grid-list li .elm-content h1,
+.grid-list li .elm-content-over h2,
+.grid-list li .elm-content-over .article-full .main-content h1,
+.article-full .main-content .grid-list li .elm-content-over h1 {
   margin: 0.4rem 0;
 }
 .grid-list li .elm-content p,
@@ -2866,8 +2898,10 @@ select[data-dkcacheid] {
   .grid-list li .elm-content-over .category {
     margin: 0.8rem 0 0.4rem;
   }
-  .grid-list li .elm-content h2,
-  .grid-list li .elm-content-over h2 {
+  .grid-list li .elm-content h2, .grid-list li .elm-content .article-full .main-content h1, .article-full .main-content .grid-list li .elm-content h1,
+  .grid-list li .elm-content-over h2,
+  .grid-list li .elm-content-over .article-full .main-content h1,
+  .article-full .main-content .grid-list li .elm-content-over h1 {
     /*
     display:flex;
     align-items: center;
@@ -2895,10 +2929,14 @@ select[data-dkcacheid] {
   }
   .grid-list li .elm-content .category,
   .grid-list li .elm-content h2,
+  .grid-list li .elm-content .article-full .main-content h1,
+  .article-full .main-content .grid-list li .elm-content h1,
   .grid-list li .elm-content p,
   .grid-list li .elm-content > a,
   .grid-list li .elm-content-over .category,
   .grid-list li .elm-content-over h2,
+  .grid-list li .elm-content-over .article-full .main-content h1,
+  .article-full .main-content .grid-list li .elm-content-over h1,
   .grid-list li .elm-content-over p,
   .grid-list li .elm-content-over > a {
     margin-left: 9.31677%;
@@ -2920,7 +2958,7 @@ select[data-dkcacheid] {
   .grid-list li .elm-content-over .category {
     display: none;
   }
-  .grid-list li .elm-content-over h2 {
+  .grid-list li .elm-content-over h2, .grid-list li .elm-content-over .article-full .main-content h1, .article-full .main-content .grid-list li .elm-content-over h1 {
     display: block;
     height: auto;
     color: #00b2ce;
@@ -2965,7 +3003,7 @@ select[data-dkcacheid] {
   .grid-list li.over .elm-content-over {
     bottom: 0;
   }
-  .grid-list li.over .elm-content-over h2,
+  .grid-list li.over .elm-content-over h2, .grid-list li.over .elm-content-over .article-full .main-content h1, .article-full .main-content .grid-list li.over .elm-content-over h1,
   .grid-list li.over .elm-content-over p,
   .grid-list li.over .elm-content-over > a {
     -webkit-transform: translate3d(0, 0, 0);
@@ -2980,6 +3018,8 @@ select[data-dkcacheid] {
   }
   .grid-list li.type-video .category,
   .grid-list li.type-video h2,
+  .grid-list li.type-video .article-full .main-content h1,
+  .article-full .main-content .grid-list li.type-video h1,
   .grid-list li.type-video p,
   .grid-list li.type-video a.more-link {
     margin-left: 4.53858%;
@@ -3021,13 +3061,13 @@ select[data-dkcacheid] {
     background: transparent;
     padding-bottom: 0.8rem;
   }
-  .grid-list li.type-cta .elm-content h2,
+  .grid-list li.type-cta .elm-content h2, .grid-list li.type-cta .elm-content .article-full .main-content h1, .article-full .main-content .grid-list li.type-cta .elm-content h1,
   .grid-list li.type-cta .elm-content p,
   .grid-list li.type-cta .elm-content a {
     color: #fff;
     text-shadow: none;
   }
-  .grid-list li.type-cta .elm-content h2 {
+  .grid-list li.type-cta .elm-content h2, .grid-list li.type-cta .elm-content .article-full .main-content h1, .article-full .main-content .grid-list li.type-cta .elm-content h1 {
     font-size: 22px;
     font-size: 1.46667rem;
     line-height: 30px;
@@ -3043,7 +3083,7 @@ select[data-dkcacheid] {
   }
 }
 @media (min-width: 45em) and (min-width: 55em) {
-  .grid-list li.type-cta .elm-content h2 {
+  .grid-list li.type-cta .elm-content h2, .grid-list li.type-cta .elm-content .article-full .main-content h1, .article-full .main-content .grid-list li.type-cta .elm-content h1 {
     font-size: 30px;
     font-size: 2rem;
     line-height: 36px;
@@ -3051,7 +3091,7 @@ select[data-dkcacheid] {
   }
 }
 @media (min-width: 45em) and (min-width: 55em) {
-  .grid-list .elm-content h2 {
+  .grid-list .elm-content h2, .grid-list .elm-content .article-full .main-content h1, .article-full .main-content .grid-list .elm-content h1 {
     font-size: 22px;
     font-size: 1.46667rem;
     line-height: 30px;
@@ -3717,7 +3757,7 @@ nav.primary.active {
 nav.primary .teaser {
   display: none;
 }
-nav.primary .teaser h2 {
+nav.primary .teaser h2, nav.primary .teaser .article-full .main-content h1, .article-full .main-content nav.primary .teaser h1 {
   font-size: 18px;
   font-size: 1.2rem;
   line-height: 24px;
@@ -3733,6 +3773,9 @@ nav.primary > ul {
   margin: -0.8rem 0 0;
   padding: 0;
   list-style: none;
+}
+nav.primary > ul li {
+  margin-left: 0;
 }
 nav.primary > ul li.active > .nav-title {
   border-left: 4px solid #00b2ce;
@@ -3994,7 +4037,8 @@ html, body {
 .article-full .main-content {
   text-align: left;
 }
-.article-full > *:nth-child(n+2) {
+.article-full > *:nth-child(n+2),
+.article-full > .dynBlock > *:nth-child(n+2) {
   margin-top: 2.4rem;
 }
 
@@ -4442,7 +4486,7 @@ html, body {
   margin-left: -22px;
 }
 
-.contact-page h2 {
+.contact-page h2, .contact-page .article-full .main-content h1, .article-full .main-content .contact-page h1 {
   font-size: 30px;
   font-size: 2rem;
   line-height: 36px;
@@ -4477,7 +4521,7 @@ html, body {
     margin-right: 0;
     clear: none;
   }
-  .contact-page .contact-form h2 {
+  .contact-page .contact-form h2, .contact-page .contact-form .article-full .main-content h1, .article-full .main-content .contact-page .contact-form h1 {
     border: 0;
   }
 }
@@ -4523,7 +4567,9 @@ html, body {
 }
 @media (min-width: 45em) {
   .form-quality-of-life h1,
-  .form-quality-of-life h2 {
+  .form-quality-of-life h2,
+  .form-quality-of-life .article-full .main-content h1,
+  .article-full .main-content .form-quality-of-life h1 {
     clear: both;
   }
   .form-quality-of-life .label-group {
@@ -4590,7 +4636,9 @@ html, body {
   margin-bottom: 3.2rem;
 }
 .form-page h1,
-.form-page h2 {
+.form-page h2,
+.form-page .article-full .main-content h1,
+.article-full .main-content .form-page h1 {
   color: #00b2ce;
   font-size: 30px;
   font-size: 2rem;
