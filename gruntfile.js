@@ -295,18 +295,26 @@ module.exports = function(grunt) {
 
     copy: {
       dist: {
-        files: [{
-          expand: true, 
-          cwd: '_source/assets/fonts/', 
-          src: ['*.{svg,woff,eot,ttf}'],
-          dest: 'dist/assets/fonts/',
-        },
-        {
-          expand: true,
-          flatten: true,
-          src: '_source/CHANGELOG.txt',
-          dest: 'dist/',
-        }],
+        files: [
+          {
+            expand: true, 
+            cwd: '_source/assets/fonts/', 
+            src: ['*.{svg,woff,eot,ttf}'],
+            dest: 'dist/assets/fonts/',
+          },
+          {
+            expand: true, 
+            cwd: '_source/assets/js/libs/', 
+            src: ['jquery-*.js'],
+            dest: 'dist/assets/js/libs/',
+          },
+          {
+            expand: true,
+            flatten: true,
+            src: '_source/CHANGELOG.txt',
+            dest: 'dist/',
+          }
+        ],
       },
 
     },
