@@ -190,6 +190,11 @@ window.addEventListener('resize', ccResizeListener);
 
 $(document).ready(function() {
 
+	if ($('body').hasClass('init-processed')) {
+		return;
+	}
+	$('body').addClass('init-processed');
+
 	grid_list_init();
 
 	// init flexsliders on page
