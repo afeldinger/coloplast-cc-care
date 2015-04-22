@@ -9,6 +9,17 @@
 * 
 **************************************************************************
 
+
+2015-04-22
+
+  Main template
+  * jquery removed from minified script file, as per request from Alex
+  * jquery added as individual script link
+
+  Article page
+  * <div class="dynBlock"> wrapper element added to mimic Eloqua output
+  * sample content blocks for styling purposes only
+
 2015-04-20
 
   Contact page:

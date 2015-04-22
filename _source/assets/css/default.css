@@ -4029,6 +4029,10 @@ html, body {
 	height: 100%;
 }
 */
+.dynBlock {
+  margin: 0;
+}
+
 .article-full {
   margin-top: 0;
   text-align: center;
@@ -4037,8 +4041,7 @@ html, body {
 .article-full .main-content {
   text-align: left;
 }
-.article-full > *:nth-child(n+2),
-.article-full > .dynBlock > *:nth-child(n+2) {
+.article-full > *:nth-child(n+2) {
   margin-top: 2.4rem;
 }
 

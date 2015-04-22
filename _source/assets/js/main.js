@@ -257,26 +257,6 @@ $(document).ready(function() {
 	// manages form submission and confirmation display
 	$('form').each(function() {
 		$(this).validate({
-			rules: {
-				firstname: 'required',
-				'first-name': 'required',
-				lastname: 'required',
-				'last-name': 'required',
-				email: {
-					required: true,
-					email: true,
-				},
-				gender: 'required',
-				subject: 'required',
-				message: 'required',
-				phone: 'required',
-				address1: 'required',
-				address2: 'required',
-				state: 'required',
-				city: 'required',
-				zip: 'required',
-				'accept-legal': 'required',
-			},
 			highlight: function(element, errorClass, validClass) {
 	            if(element.type === 'radio') {
 	                $(element.form).find('[name="' + element.name + '"]').each(function(){
@@ -333,6 +313,29 @@ $(document).ready(function() {
 					form.submit();
 				}
 			},
+		});
+
+		// required fields
+		var fields = new Array(
+			':input[id$="firstname"]',
+			':input[id$="first-name"]',
+			':input[id$="lastname"]',
+			':input[id$="last-name"]',
+			':input[id$="email"]',
+			':input[id*="gender"]',
+			':input[id$="subject"]',
+			':input[id$="message"]',
+			':input[id$="phone"]',
+			':input[id$="address1"]',
+			':input[id$="address2"]',
+			':input[id$="state"]',
+			':input[id$="city"]',
+			':input[id$="zip"]',
+			':input[id$="accept-legal"]'
+		).join(', ');
+
+		$(fields, this).each(function() {
+			$(this).rules('add','required');
 		});
 
 		// phone not required on contact page

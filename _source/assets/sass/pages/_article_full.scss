@@ -3,6 +3,9 @@ html, body {
 	height: 100%;
 }
 */
+.dynBlock {
+	margin:0;
+}
 .article-full {
 	margin-top:0;
 	text-align:center;
@@ -17,8 +20,7 @@ html, body {
 		}
 	}
 
-	> *:nth-child(n+2),
-	> .dynBlock > *:nth-child(n+2) {
+	> *:nth-child(n+2) {
 		margin-top: rhythm(6);
 	}
 }

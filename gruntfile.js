@@ -171,7 +171,7 @@ module.exports = function(grunt) {
               //'_source/assets/js/libs/*.js', // All JS in the libs folder
               //'_source/assets/js/libs/dropkick/*.js', // All JS in the libs folder
               //'_source/assets/js/*.js'  // Custom JS files
-              '_source/assets/js/libs/jquery-*.js',
+              //'_source/assets/js/libs/jquery-*.js', // jquery core
               '_source/assets/js/libs/jquery.flexslider-min.js',
               '_source/assets/js/libs/jquery.magnific*.js',
               '_source/assets/js/libs/dropkick/dropkick.js',
