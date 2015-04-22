@@ -3336,30 +3336,24 @@ $(document).ready(function() {
 
 		// required fields
 		var fields = new Array(
-			':input[id$="firstname"]',
-			':input[id$="first-name"]',
-			':input[id$="lastname"]',
-			':input[id$="last-name"]',
-			':input[id$="email"]',
-			':input[id*="gender"]',
-			':input[id$="subject"]',
-			':input[id$="message"]',
-			':input[id$="phone"]',
-			':input[id$="address1"]',
-			':input[id$="address2"]',
-			':input[id$="state"]',
-			':input[id$="city"]',
-			':input[id$="zip"]',
-			':input[id$="accept-legal"]'
+			':input[id$="-firstname"]',
+			':input[id$="-first-name"]',
+			':input[id$="-lastname"]',
+			':input[id$="-last-name"]',
+			':input[id$="-email"]',
+			':input[id*="-gender"]',
+			':input[id$="-message"]',
+			':input[id$="-phone"]',
+			':input[id$="-address1"]',
+			':input[id$="-address2"]',
+			':input[id$="-state"]',
+			':input[id$="-city"]',
+			':input[id$="-zip"]',
+			':input[id$="-accept-legal"]'
 		).join(', ');
 
 		$(fields, this).each(function() {
 			$(this).rules('add','required');
-		});
-
-		// phone not required on contact page
-		$('#contact-phone', this).each(function() {
-			$(this).rules('remove');
 		});
 
 		// has care receiver field - remove rule for gender

@@ -4173,6 +4173,14 @@ html, body {
   margin-left: 0;
   margin-right: 9.43396%;
 }
+.type-article .main-content .content-block .elm-image.inline-right {
+  clear: right;
+  width: 45.28302%;
+  clear: right;
+  float: right;
+  margin-right: 0;
+  margin-left: 9.43396%;
+}
 .type-article .main-content .content-block .elm-content {
   width: auto;
   float: none;
