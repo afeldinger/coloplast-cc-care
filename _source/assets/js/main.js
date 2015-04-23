@@ -488,7 +488,7 @@ $(window).load(function() {
 	});
 
 	// remove empty tags
-	$('.elm-content').find('h1, h2, h3, h4, p').filter(':empty').remove();
+	//$('.elm-content').find('h1, h2, h3, h4, p').filter(':empty').remove();
 });
 
 
