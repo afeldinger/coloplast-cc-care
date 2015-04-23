@@ -3503,7 +3503,7 @@ $(document).ready(function() {
 	});
 
 });
-
+/*
 $(window).load(function() {
 
 	$('.article-full.type-article').find('img').each(function() {
@@ -3515,6 +3515,6 @@ $(window).load(function() {
 		}
 	});
 });
-
+*/
 
 })();
