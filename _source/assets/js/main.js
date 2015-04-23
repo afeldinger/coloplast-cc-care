@@ -279,28 +279,18 @@ $(document).ready(function() {
 			var days = date.getDate();
 			var dk = day.data('dropkick');
 
+
 			while(dk.length > 0) {
 				dk.remove(dk.length-1);
 			}
 
-			dk.add(new Option(dk.firstOption.text, 'none'));
+			dk.appendOpt(new Option(dk.firstOption.text));
+
 			for (var i=1; i<=days; i++) {
 				var str = $.leftPad(i,2);
-				dk.add(new Option(str, str));
+				var opt = new Option(str, str);
+				dk.appendOpt(opt);
 			}
-
-
-			/*
-			day.prop('options').length = 1;
-			for(var i=1; i<=days; i++) {
-				var str = $.leftPad(i,2);
-				day.append($('<option />').val(str).text(str));	
-			}
-*/
-
-//			var dk = day.data('dropkick');
-//			dk.refresh();
-
 
 		});
 	});
@@ -422,7 +412,6 @@ $(document).ready(function() {
 	});
 */	
 
-
     $('select:visible').dropkick({
         mobile: true,
         menuSpeed: 'fast',
@@ -452,10 +441,6 @@ $(document).ready(function() {
             if (widestOptionWidth + togglerWidth > origWidth) {
                 $select.parent().width(widestOptionWidth + togglerWidth);
             }
-
-        },
-        change: function() {
-        	console.log(this);
         }
     });
 
@@ -481,10 +466,10 @@ $(document).ready(function() {
 				'<div class="mfp-message"></div>'+
 				'</div>'
 		},
-			callbacks: {
-				markupParse: function(template, values, item) {
-					values.message = video_msg;
-				}
+		callbacks: {
+			markupParse: function(template, values, item) {
+				values.message = video_msg;
+			}
 		}
 
 	});
@@ -492,7 +477,7 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
-
+	// temporary image layout fix
 	$('.article-full.type-article').find('img').each(function() {
 		var img = $(this);
 		if (img.width() > img.height()) {
@@ -501,6 +486,9 @@ $(window).load(function() {
 			img.closest('.elm-image').removeClass('full-width inline-right').addClass('inline-left');
 		}
 	});
+
+	// remove empty tags
+	$('.elm-content').find('h1, h2, h3, h4, p').filter(':empty').remove();
 });
 
 

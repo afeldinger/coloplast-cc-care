@@ -163,6 +163,45 @@
 
         // Emulate some of HTMLSelectElement's methods
 
+
+        appendOpt: function( elem ) {
+
+            var text, option, i;
+
+            if ( typeof elem === "string" ) {
+                text = elem;
+                elem = document.createElement("option");
+                elem.text = text;
+            }
+
+            if ( elem.nodeName === "OPTION" ) {
+                option = _.create( "li", {
+                    "class": "dk-option",
+                    "data-value": elem.value,
+                    "innerHTML": elem.text,
+                    "role": "option",
+                    "aria-selected": "false",
+                    "id": "dk" + this.data.cacheID + "-" + ( elem.id || elem.value.replace( " ", "-" ) )
+                });
+
+                _.addClass( option, elem.className );
+                this.length += 1;
+
+                if ( elem.disabled ) {
+                    _.addClass( option, "dk-option-disabled" );
+                    option.setAttribute( "aria-disabled", "true" );
+                }
+
+                this.data.select.add( elem );
+                this.data.elem.lastChild.appendChild( option );
+
+                option.addEventListener( "mouseover", this );
+
+                this.options.push( option );
+
+            }
+        },
+
         /**
          * Adds an element to the select
          * @param {Node}         elem   HTMLOptionElement
