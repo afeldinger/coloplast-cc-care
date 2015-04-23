@@ -95,7 +95,7 @@ function grid_list_init() {
 				//e.stopPropagation();
 				$(this).find('a').filter(':last')[0].click();
 			}).filter(':has(a.more-link)').each(function() {
-				$(this).find('.elm-content').clone().removeClass('elm-content').addClass('elm-content-over').appendTo(this);
+				$(this).find('.elm-content').not(':has(.elm-content-over)').clone().removeClass('elm-content').addClass('elm-content-over').appendTo(this);
 				//$(this).find('.elm-image').clone().appendTo($(this).find('.elm-content'));
 			});
 
@@ -186,14 +186,16 @@ var ccResizeListener = debounce(function() {
 }, 250);
 window.addEventListener('resize', ccResizeListener);
 */
-
+$.leftPad = function(i,l,s) {
+	var o = i.toString();
+	if (!s) { s = '0'; }
+	while (o.length < l) {
+		o = s + o;
+	}
+	return o;
+};
 
 $(document).ready(function() {
-
-	if ($('body').hasClass('init-processed')) {
-		return;
-	}
-	$('body').addClass('init-processed');
 
 	grid_list_init();
 
@@ -258,6 +260,46 @@ $(document).ready(function() {
 		}
 	).filter(':has(.icon)').addClass('has-icon');
 
+	$('.date-group').each(function() {
+		$('select[id$="year"], select[id$="month"]', this).change(function() {
+			var group = $(this).closest('.date-group');
+			var year = $('select[id$="year"]', group);
+			var month = $('select[id$="month"]', group);
+			var day = $('select[id$="day"]', group);
+
+			var date = new Date();
+			var curDay = day.val()? parseInt(day.val()) : date.getDate();
+			date.setFullYear(
+				year.val()? year.val() : date.getFullYear(),
+				month.val()? parseInt(month.val()) : date.getMonth()+1,
+				0
+			);
+			var days = date.getDate();
+			var dk = day.data('dropkick');
+
+			while(dk.length > 0) {
+				dk.remove(0);
+			}
+			dk.add(new Option(dk.firstOption.text, ''));
+			for (var i=1; i<=days; i++) {
+				var str = $.leftPad(i,2);
+				dk.add(new Option(str, str));
+			}
+
+			/*
+			day.prop('options').length = 1;
+			for(var i=1; i<=days; i++) {
+				var str = $.leftPad(i,2);
+				day.append($('<option />').val(str).text(str));	
+			}
+*/
+
+//			var dk = day.data('dropkick');
+//			dk.refresh();
+
+
+		});
+	});
 
 	// manages form submission and confirmation display
 	$('form').each(function() {
@@ -292,19 +334,20 @@ $(document).ready(function() {
 			},
 			submitHandler: function(form) {
 				// Form has .form-confirmation - use jquery.post to submit form and display confirmation
+				/*
 				if ($(this).next('.form-confirmation').length >= 0) {
 
 					var frm = $(form);
 					var url = frm.attr('action')? frm.attr('action') : location.href;
 					var data = frm.serializeArray();
 
-					console.log('Form request:', url, data);
+					//console.log('Form request:', url, data);
 
 					$.post(
 						url,
 						data,
 						function(response, status) {
-							console.log('Form response:', status);
+							//console.log('Form response:', status);
 							frm.hide().next('.form-confirmation').show();
 						}
 					);
@@ -314,9 +357,10 @@ $(document).ready(function() {
 				} 
 				// No .form-confirmation: default to standard submit handler
 				else {
-					console.log('No form confirmation - submit form');
+					//console.log('No form confirmation - submit form');
 					form.submit();
 				}
+				*/
 			},
 		});
 
@@ -385,7 +429,10 @@ $(document).ready(function() {
             togglerWidth = 70;
             var origWidth = $select.parents('.selectbox').width();
 
+            this.firstOption = this.data.select.options[0]? this.data.select.options[0] : null;
+
             $(this.data.select).data('dropkick', this);
+
 
             $select.find('.dk-select-options').show().css('width', 'auto').children().each(function(i, option) {
                 var optionWidth = $(option).width();
@@ -402,6 +449,9 @@ $(document).ready(function() {
                 $select.parent().width(widestOptionWidth + togglerWidth);
             }
 
+        },
+        change: function() {
+        	console.log(this);
         }
     });
 

@@ -9,6 +9,10 @@
 * 
 **************************************************************************
 
+2015-04-23
+
+  Product page
+  * Corrected nesting for .form-step-1 in order product sample form, as per Claudia's findings
 
 2015-04-22
 

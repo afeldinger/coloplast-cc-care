@@ -27,8 +27,11 @@
 }
 
 ul.checkmarks {
+	list-style:none;
+
 	li {
 		position:relative;
+		margin-left: 0;
 		padding-left: 2em;
 
 		@include icon-on-element($checkmark);

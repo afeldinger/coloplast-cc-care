@@ -974,8 +974,12 @@ hr {
   }
 }
 
+ul.checkmarks {
+  list-style: none;
+}
 ul.checkmarks li {
   position: relative;
+  margin-left: 0;
   padding-left: 2em;
 }
 ul.checkmarks li:before {
@@ -2343,6 +2347,7 @@ button {
 }
 
 .dk-option {
+  margin-left: 0;
   padding: 0.5em 11px;
   font-size: 12px;
   font-size: 0.8rem;
