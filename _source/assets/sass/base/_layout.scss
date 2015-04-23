@@ -17,7 +17,8 @@ body {
 		background-color: #fff;
 	}
 
-	> * + * {
+	> * + *,
+	> .dynBlock > * + * {
 		margin-top: rhythm(6);
 	}
 }

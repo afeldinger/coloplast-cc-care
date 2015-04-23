@@ -515,7 +515,8 @@ body {
 body.page-article, body.page-product {
   background-color: #fff;
 }
-body > * + * {
+body > * + *,
+body > .dynBlock > * + * {
   margin-top: 2.4rem;
 }
 
@@ -939,6 +940,10 @@ hr {
   display: block;
   width: 22px;
   height: 22px;
+}
+
+.dynBlock {
+  margin: 0;
 }
 
 .content-block {
@@ -4034,10 +4039,6 @@ html, body {
 	height: 100%;
 }
 */
-.dynBlock {
-  margin: 0;
-}
-
 .article-full {
   margin-top: 0;
   text-align: center;
@@ -4045,6 +4046,9 @@ html, body {
 }
 .article-full .main-content {
   text-align: left;
+}
+.article-full .main-content h1 {
+  margin-top: 1.2rem;
 }
 .article-full > *:nth-child(n+2) {
   margin-top: 2.4rem;
@@ -4161,6 +4165,7 @@ html, body {
   margin-right: auto;
 }
 .type-article .main-content .content-block .elm-image {
+  margin-top: 1.2rem;
   margin-bottom: 1.6rem;
 }
 .type-article .main-content .content-block .elm-image.full-width {
@@ -4169,6 +4174,9 @@ html, body {
   margin-left: 0;
   margin-right: 0;
   clear: none;
+}
+.type-article .main-content .content-block .elm-image.full-width img {
+  width: 100%;
 }
 .type-article .main-content .content-block .elm-image.inline-left {
   clear: left;
