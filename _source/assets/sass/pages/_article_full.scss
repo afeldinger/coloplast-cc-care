@@ -19,7 +19,7 @@ html, body {
 	}
 
 	> *:nth-child(n+2) {
-		margin-top: rhythm(6);
+		margin-top: rhythm(7);
 	}
 }
 
@@ -115,15 +115,24 @@ html, body {
 					.elm-image {
 						position:relative;
 						@include grid-span(1,2);
-						height: 645px;
+						
+						//height: 600px;
 						overflow:hidden;
 
 						transition-property: position,margin,transform,top,right,bottom,left,opacity;
 						transition-duration: 0.5s;
 
+
+						&:before{
+							content: "";
+							display: block;
+							padding-top: 600px / 465px * 100%;
+						}
+
 						img {
 							position: absolute;
 							opacity:1;
+							top:0;
 							left: 50%;
 							height: 100%;
 							transform: translate(-50%,0);
@@ -354,8 +363,8 @@ html, body {
 	
 	.content-wrapper > *,
 	.content-wrapper > .flexslider .slides > li {
-		margin-top: rhythm(6);
-		margin-bottom: rhythm(6);
+		margin-top: rhythm(8);
+		margin-bottom: rhythm(8);
 	}
 
 	.content-wrapper > .flexslider {

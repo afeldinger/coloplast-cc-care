@@ -3532,7 +3532,7 @@ $(document).ready(function() {
 
 $(window).load(function() {
 	// temporary image layout fix
-	$('.article-full.type-article').find('img').each(function() {
+	$('.article-full.type-article .main-content').find('img').each(function() {
 		var img = $(this);
 		if (img.width() > img.height()) {
 			img.closest('.elm-image').removeClass('inline-left inline-right').addClass('full-width');
