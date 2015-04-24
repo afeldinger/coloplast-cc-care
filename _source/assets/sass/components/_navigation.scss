@@ -137,6 +137,9 @@ nav.primary {
 		margin:0;
 		padding: 40px 110px 0 150px;
 
+		&:before {
+			display:none;
+		}
 
 		> ul {
 			display: table;

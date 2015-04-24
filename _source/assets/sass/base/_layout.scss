@@ -33,7 +33,7 @@ body {
 	padding-left:$content-margin;
 	padding-right:$content-margin;
 	text-align:left;
-	max-width: $lg;
+	max-width: $lg + (2 * $content-margin-em);
 	@include clearfix;
 }
 
