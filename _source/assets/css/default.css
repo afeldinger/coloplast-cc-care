@@ -3960,6 +3960,11 @@ nav.primary > ul > li > ul > li > .nav-title {
     position: relative;
     z-index: 20;
   }
+  nav.primary > ul > li > ul > li.active > .nav-title {
+    border-left: 0;
+    margin-left: 0;
+    font-weight: 600;
+  }
   nav.primary > ul > li > ul > li > .teaser {
     position: absolute;
     display: none;

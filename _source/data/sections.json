@@ -56,7 +56,8 @@
 			{
 				"title": "Socializing",
 				"teaser": "Do you have plans for this evening, tomorrow or the weekend? Be able to enjoy your social calendar while maintaining a healthy IC routine.",
-				"link": "article.html"
+				"link": "article.html",
+				"active": "true"
 			},
 			{
 				"title": "Sexuality",

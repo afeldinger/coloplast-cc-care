@@ -213,11 +213,19 @@ nav.primary {
 
 					> li {
 						//width: 30%;
+
 						> .nav-title {
 							padding: rhythm(2) rhythm(2);
 							position:relative;
 							z-index:20;
 						}
+
+					    &.active > .nav-title {
+					    	border-left:0;
+					    	margin-left:0;
+					    	font-weight: $bold;
+					    }
+					    
 
 						> .teaser {
 							position: absolute;
