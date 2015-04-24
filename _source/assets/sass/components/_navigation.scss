@@ -148,7 +148,7 @@ nav.primary {
 			margin: 0;
 		
 			> li {
-				
+				position:relative;
 				margin-top: 0;
 				display: table-cell;
 
@@ -192,20 +192,27 @@ nav.primary {
 					left: 0;
 				}
 
+				$menu-teaser-width: 300px;
+
 				> ul {
 					position:absolute;
 					display:none;
 					top: 100%;
 					right: auto;
-					width:420px;
-					min-height:200px;
+					width: 100%;
+					min-height: 100%;
+					//width:420px;
 					background: #fff;
-					border-radius: 0 0 4px 4px;
+					border-radius: 0 0 $border-radius-md $border-radius-md;
 					z-index:10;
-					overflow:hidden;
+
+					&.over {
+						min-height:240px;
+						border-radius: 0 0 0 $border-radius-md;
+					}
 
 					> li {
-						width: 30%;
+						//width: 30%;
 						> .nav-title {
 							padding: rhythm(2) rhythm(2);
 							position:relative;
@@ -215,14 +222,24 @@ nav.primary {
 						> .teaser {
 							position: absolute;
 							display:none;
-							width:70%;
-							right: 0;
-							bottom: 0;
-							padding: 0 rhythm(5) 0 10px;
+							//width:70%;
+							//right: 0;
+							//bottom: 0;
+							//padding: 0 rhythm(5) 0 10px;
 
+							width: $menu-teaser-width;
+							top:0;
+							left: 100%;
+							min-height: 100%;
+							padding: rhythm(3) rhythm(4) rhythm(11);
+							background: #fff;
+							border-radius: 0 0 $border-radius-md 0;
 
 							a.more-link {
+								position: absolute;
 								display:block;
+								bottom:0;
+								width: $menu-teaser-width - (2 * 4 * 6px);
 								border-top: 1px solid $color-borders;
 								text-indent: -999em;
 								color: inherit;
@@ -257,8 +274,21 @@ nav.primary {
 				&:nth-of-type(n+4) {
 					> ul {
 						//right: calc((100% - #{$lg}) / 2);
-						right: 140px;
-						right: calc(#{$content-margin} + 110px);
+						//right: 140px;
+						//right: calc(#{$content-margin} + 110px);
+
+						&.over {
+							border-radius: 0 0 $border-radius-md 0;
+						}
+
+						> li {
+							.teaser {
+								left: -1 * $menu-teaser-width;
+								border-radius: 0 0 0 $border-radius-md;
+							}
+						}
+
+
 					}
 				}
 
@@ -286,7 +316,7 @@ nav.primary {
 			> li {
 				&:nth-of-type(n+4) {
 					> ul {
-						right: calc((100% - #{$lg}) / 2 + 110px + #{$content-margin});
+						//right: calc((100% - #{$lg-bp}) / 2 + 110px + #{$content-margin});
 					}
 				}
 			}

@@ -3177,6 +3177,9 @@ header#page-header .brand-secondary span {
     height: 80px;
     background-size: 100% 100%;
   }
+  header#page-header .content-wrapper, header#page-header .article-full .main-content, .article-full header#page-header .main-content, header#page-header .facts {
+    overflow: visible;
+  }
   header#page-header .brand-primary {
     padding-top: 37px;
   }
@@ -3900,6 +3903,7 @@ nav.primary > ul > li > ul > li > .nav-title {
     margin: 0;
   }
   nav.primary > ul > li {
+    position: relative;
     margin-top: 0;
     display: table-cell;
   }
@@ -3941,15 +3945,15 @@ nav.primary > ul > li > ul > li > .nav-title {
     display: none;
     top: 100%;
     right: auto;
-    width: 420px;
-    min-height: 200px;
+    width: 100%;
+    min-height: 100%;
     background: #fff;
     border-radius: 0 0 4px 4px;
     z-index: 10;
-    overflow: hidden;
   }
-  nav.primary > ul > li > ul > li {
-    width: 30%;
+  nav.primary > ul > li > ul.over {
+    min-height: 240px;
+    border-radius: 0 0 0 4px;
   }
   nav.primary > ul > li > ul > li > .nav-title {
     padding: 0.8rem 0.8rem;
@@ -3959,13 +3963,19 @@ nav.primary > ul > li > ul > li > .nav-title {
   nav.primary > ul > li > ul > li > .teaser {
     position: absolute;
     display: none;
-    width: 70%;
-    right: 0;
-    bottom: 0;
-    padding: 0 2rem 0 10px;
+    width: 300px;
+    top: 0;
+    left: 100%;
+    min-height: 100%;
+    padding: 1.2rem 1.6rem 4.4rem;
+    background: #fff;
+    border-radius: 0 0 4px 0;
   }
   nav.primary > ul > li > ul > li > .teaser a.more-link {
+    position: absolute;
     display: block;
+    bottom: 0;
+    width: 252px;
     border-top: 1px solid #bcbcbc;
     text-indent: -999em;
     color: inherit;
@@ -3996,9 +4006,12 @@ nav.primary > ul > li > ul > li > .nav-title {
   nav.primary > ul > li > ul > li.over > .teaser {
     display: block;
   }
-  nav.primary > ul > li:nth-of-type(n+4) > ul {
-    right: 140px;
-    right: calc(2rem + 110px);
+  nav.primary > ul > li:nth-of-type(n+4) > ul.over {
+    border-radius: 0 0 4px 0;
+  }
+  nav.primary > ul > li:nth-of-type(n+4) > ul > li .teaser {
+    left: -300px;
+    border-radius: 0 0 0 4px;
   }
   nav.primary > ul > li.over ul {
     display: block;
@@ -4006,11 +4019,6 @@ nav.primary > ul > li > ul > li > .nav-title {
 
   .nav-btn {
     display: none;
-  }
-}
-@media (min-width: 66.66667em) {
-  nav.primary > ul > li:nth-of-type(n+4) > ul {
-    right: calc((100% - 66.66667em) / 2 + 110px + 2rem);
   }
 }
 .state-indicator {

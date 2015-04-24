@@ -3262,7 +3262,7 @@ $(document).ready(function() {
 
 	// set hover classes in navigation
 	$('#primary-nav')
-		.find('li').hover(
+		.find('ul, li').hover(
 			function() {
 				$(this).addClass('over');
 			},
