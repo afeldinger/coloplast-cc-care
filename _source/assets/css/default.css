@@ -2835,7 +2835,8 @@ select[data-dkcacheid] {
 .grid-list li .elm-content-over a.more-link:hover {
   color: #00b2ce;
 }
-.grid-list li .elm-content .elm-image {
+.grid-list li .elm-content img.blur,
+.grid-list li .elm-content-over img.blur {
   display: none;
 }
 .grid-list li .elm-content-over {
@@ -2888,15 +2889,13 @@ select[data-dkcacheid] {
     bottom: 0;
   }
   .grid-list li .elm-image img {
-    width: 100%;
-  }
-  .grid-list li .elm-content .elm-image {
-    display: block;
-    top: auto;
-    -webkit-filter: blur(5px);
-            filter: blur(5px);
-    -webkit-backface-visibility: visible;
-            backface-visibility: visible;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
   }
   .grid-list li .elm-content,
   .grid-list li .elm-content-over {
@@ -2905,7 +2904,7 @@ select[data-dkcacheid] {
     min-height: 100px;
     bottom: 0;
     z-index: 5;
-    background: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
   }
   .grid-list li .elm-content .category,
@@ -2956,8 +2955,29 @@ select[data-dkcacheid] {
     margin-left: 9.31677%;
     margin-right: 9.31677%;
   }
+  .grid-list li .elm-content {
+    background: rgba(0, 0, 0, 0.4);
+  }
   .grid-list li .elm-content a.more-link:hover {
     color: inherit;
+  }
+  .grid-list li .elm-content img.blur {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-filter: blur(10px) brightness(0.6);
+            filter: blur(10px) brightness(0.6);
+    -webkit-transform: scale(1.06);
+        -ms-transform: scale(1.06);
+            transform: scale(1.06);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    z-index: -2;
   }
   .grid-list li .elm-content-over {
     z-index: 10;

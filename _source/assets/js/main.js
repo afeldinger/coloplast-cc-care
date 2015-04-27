@@ -98,7 +98,7 @@ function grid_list_init() {
 				//$(this).find('.elm-content').clone().removeClass('elm-content').addClass('elm-content-over').appendTo(this);
 				$(this).find('.elm-content-over').remove();
 				$(this).find('.elm-content').clone().removeClass('elm-content').addClass('elm-content-over').appendTo(this);
-				//$(this).find('.elm-image').clone().appendTo($(this).find('.elm-content'));
+				$(this).find('.elm-image img').clone().addClass('blur').prependTo($(this).find('.elm-content'));
 			});
 
 		});
