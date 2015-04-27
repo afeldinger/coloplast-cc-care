@@ -2767,8 +2767,12 @@ select[data-dkcacheid] {
 .grid-list {
   overflow: visible;
 }
+.grid-list ul {
+  list-style: none;
+}
 .grid-list li {
   color: #707070;
+  margin-left: 0;
 }
 .grid-list li:nth-child(n+2) {
   margin-top: 2.4rem;
@@ -3760,8 +3764,12 @@ img.mfp-img {
 
 nav.primary {
   display: none;
+  /*
+  	margin:58px (-$content-margin) 0;
+  	padding: $content-margin;
+  	*/
   margin: 58px -2rem 0;
-  padding: 1.6rem;
+  padding: 0;
   font-family: "HelveticaNeueW01", Helvetica, arial, sans-serif;
 }
 nav.primary.active {
@@ -3783,22 +3791,27 @@ nav.primary .teaser p {
   line-height: 1.2rem;
 }
 nav.primary > ul {
-  margin: -0.8rem 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
 nav.primary > ul li {
-  margin-left: 0;
+  margin: 0;
+  border-top: 1px solid #f5f5f5;
 }
-nav.primary > ul li.active > .nav-title {
-  border-left: 4px solid #00b2ce;
-  margin-left: -4px;
+nav.primary > ul li:first:nth-of-type(1) {
+  border-width: 0;
 }
-nav.primary > ul li.over > a.nav-title {
-  background: #f0f0f0;
+nav.primary > ul li .nav-title {
+  color: #00b2ce;
+  padding: 0.8rem 2rem;
+  text-align: left;
+}
+nav.primary > ul li.active > .nav-title, nav.primary > ul li.over > .nav-title {
+  color: #707070;
 }
 nav.primary > ul > li {
-  margin-top: 0.8rem;
+  border-color: #fff;
 }
 nav.primary > ul > li.has-icon {
   display: table-cell;
@@ -3812,19 +3825,10 @@ nav.primary > ul > li.has-icon span:first-child {
 nav.primary > ul > li > .nav-title {
   position: relative;
   display: block;
-  text-align: left;
-  color: #707070;
-  padding: 0.4rem 0.8rem;
-}
-nav.primary > ul > li.over > .nav-title {
-  background: transparent;
-  border-left: 4px solid #00b2ce;
-  margin-left: -4px;
-}
-nav.primary > ul > li.over > a.nav-title:hover {
-  background: #f0f0f0;
+  background: #f5f5f5;
 }
 nav.primary > ul > li > ul {
+  display: none;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -3834,12 +3838,6 @@ nav.primary > ul > li > ul > li {
 }
 nav.primary > ul > li > ul > li > .nav-title {
   display: block;
-  padding: 0.4rem 0.8rem;
-  font-size: 12px;
-  font-size: 0.8rem;
-  line-height: 18px;
-  line-height: 1.2rem;
-  color: inherit;
 }
 
 .nav-btn {
@@ -3884,6 +3882,39 @@ nav.primary > ul > li > ul > li > .nav-title {
   content: "";
 }
 
+@media (min-width: 0) and (max-width: 55em) {
+  nav.primary > ul > li {
+    position: relative;
+    cursor: pointer;
+  }
+  nav.primary > ul > li:before {
+    font-family: "cc-icons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    content: "";
+  }
+  nav.primary > ul > li:before {
+    position: absolute;
+    right: 0;
+    padding: 0.8rem 2rem 0.8rem 4rem;
+    line-height: inherit;
+    z-index: 20;
+  }
+  nav.primary > ul > li .nav-title {
+    padding-right: 4rem;
+  }
+  nav.primary > ul > li.expanded:before {
+    content: "";
+  }
+  nav.primary > ul > li.expanded > ul {
+    display: block;
+  }
+}
 @media (min-width: 55em) {
   nav.primary {
     position: static;
@@ -3902,9 +3933,11 @@ nav.primary > ul > li > ul > li > .nav-title {
     width: 100%;
     margin: 0;
   }
+  nav.primary > ul li {
+    border: none;
+  }
   nav.primary > ul > li {
     position: relative;
-    margin-top: 0;
     display: table-cell;
   }
   nav.primary > ul > li > .nav-title {
@@ -3913,6 +3946,8 @@ nav.primary > ul > li > ul > li > .nav-title {
     line-height: 26px;
     padding: 0px 10px 10px;
     border-bottom: 4px solid transparent;
+    color: #707070;
+    background: transparent;
   }
   nav.primary > ul > li.over > .nav-title, nav.primary > ul > li.active > .nav-title {
     border-left: 0;
@@ -3959,6 +3994,11 @@ nav.primary > ul > li > ul > li > .nav-title {
     padding: 0.8rem 0.8rem;
     position: relative;
     z-index: 20;
+    font-size: 12px;
+    font-size: 0.8rem;
+    line-height: 18px;
+    line-height: 1.2rem;
+    color: inherit;
   }
   nav.primary > ul > li > ul > li.active > .nav-title {
     border-left: 0;

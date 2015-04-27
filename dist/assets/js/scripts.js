@@ -3270,6 +3270,9 @@ $(document).ready(function() {
 				$(this).removeClass('over');
 			}
 		)
+		.click(function() {
+			$(this).toggleClass('expanded');
+		})
 	;
 
 

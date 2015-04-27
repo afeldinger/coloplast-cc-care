@@ -3,9 +3,14 @@
 
 .grid-list {
 	overflow:visible;
+	
+	ul {
+		list-style:none;
+	}
 
 	li {
 		color: $color-text-body;
+		margin-left:0;
 
 		&:nth-child(n+2) {
 			margin-top: rhythm(6);

@@ -1,9 +1,12 @@
 
 nav.primary {
 	display:none;
-
+/*
 	margin:58px (-$content-margin) 0;
-	padding: $content-margin - rhythm(1);
+	padding: $content-margin;
+	*/
+	margin: 58px -#{$content-margin} 0;
+	padding: 0;
 	font-family: $font-header;
 
 	@extend %divider-shadow-before;
@@ -24,26 +27,34 @@ nav.primary {
 	}
 
 	> ul {
-		margin: -(rhythm(2)) 0 0;
+		margin: 0;
 		padding: 0;
 		list-style: none;
 	
 		
 		li {
-			margin-left:0;
+			margin:0;
+			border-top: 1px solid $lightest-gray;
 
-		    &.active > .nav-title {
-		    	border-left:4px solid $color-primary;
-		    	margin-left: -4px;
+			&:first:nth-of-type(1) {
+				border-width: 0;
+			}
+
+			.nav-title {
+				color: $color-primary;
+				padding: rhythm(2) $content-margin;
+				text-align: left;
+			}
+
+		    &.active > .nav-title,
+		    &.over > .nav-title {
+		    	color: $color-text-body;
 		    }
 
-			&.over > a.nav-title {
-				background: $light-gray;
-			}
 		}
 
-		> li {			
-			margin-top:rhythm(2);
+		> li {
+			border-color: #fff;
 
 		    &.has-icon {
 		    	display: table-cell;
@@ -58,21 +69,13 @@ nav.primary {
 			> .nav-title {
 				position:relative;
 				display:block;
-				text-align: left;
-				color: $color-text-body;
-				padding: rhythm(1) rhythm(2);
+				background: $lightest-gray;
 			}
 			
 
-			&.over > .nav-title {
-				background: transparent;
-				border-left: 4px solid $color-primary;
-				margin-left: -4px;
-			}
-			&.over > a.nav-title:hover {
-				background: $light-gray;
-			}
+
 			> ul {
+				display:none;
 
 				margin:0;
 				padding:0;
@@ -83,9 +86,6 @@ nav.primary {
 
 					> .nav-title {
 						display:block;
-						padding: rhythm(1) rhythm(2);
-						@include adjust-font-size-to($size-sm);
-						color: inherit;
 					}
 					
 				}
@@ -127,6 +127,41 @@ nav.primary {
 	}
 }
 
+@include breakpoint(0 $md, true) {
+	nav.primary > ul {
+		
+		> li {
+			@include icon-on-element($arrow-down);
+			position:relative;
+			cursor: pointer;
+
+			&:before {
+				position:absolute;
+				right: 0;
+				padding: rhythm(2) $content-margin rhythm(2) rhythm(10);
+				line-height: inherit;
+				z-index:20;
+			}
+
+			.nav-title {
+				padding-right: 2 * $content-margin;
+			}
+		}
+
+		> li.expanded {
+			&:before {
+				@include icon-content($arrow-up);
+			}
+
+			> ul {
+				display:block;
+			}
+
+
+		}
+	}
+
+}
 @include breakpoint($md, true) {
 
 	nav.primary {
@@ -146,10 +181,13 @@ nav.primary {
 			float: none;
 			width: 100%;
 			margin: 0;
+			
+			li {
+				border: none;
+			}
 		
 			> li {
 				position:relative;
-				margin-top: 0;
 				display: table-cell;
 
 				& > .nav-title {
@@ -158,6 +196,8 @@ nav.primary {
 					line-height: 26px;
 					padding: 0px 10px 10px;
 					border-bottom: 4px solid transparent;
+					color: $color-text-body;
+					background: transparent;
 				}
 				&.over > .nav-title,
 				&.active > .nav-title {
@@ -212,12 +252,13 @@ nav.primary {
 					}
 
 					> li {
-						//width: 30%;
 
 						> .nav-title {
 							padding: rhythm(2) rhythm(2);
 							position:relative;
 							z-index:20;
+							@include adjust-font-size-to($size-sm);
+							color: inherit;
 						}
 
 					    &.active > .nav-title {
@@ -230,10 +271,6 @@ nav.primary {
 						> .teaser {
 							position: absolute;
 							display:none;
-							//width:70%;
-							//right: 0;
-							//bottom: 0;
-							//padding: 0 rhythm(5) 0 10px;
 
 							width: $menu-teaser-width;
 							top:0;
@@ -281,9 +318,6 @@ nav.primary {
 
 				&:nth-of-type(n+4) {
 					> ul {
-						//right: calc((100% - #{$lg}) / 2);
-						//right: 140px;
-						//right: calc(#{$content-margin} + 110px);
 
 						&.over {
 							border-radius: 0 0 $border-radius-md 0;
@@ -316,20 +350,3 @@ nav.primary {
 		display: none;
 	}
 }
-@include breakpoint($lg, true) {
-
-	nav.primary {
-
-		> ul {
-			> li {
-				&:nth-of-type(n+4) {
-					> ul {
-						//right: calc((100% - #{$lg-bp}) / 2 + 110px + #{$content-margin});
-					}
-				}
-			}
-		}
-	}
-
-}
-
