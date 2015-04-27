@@ -9,6 +9,11 @@
 * 
 **************************************************************************
 
+2015-04-27
+  Product page
+  * Added header image as inline background on <div class="article-header"> to fix product page layout
+
+
 2015-04-23
 
   Product page

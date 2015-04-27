@@ -71,7 +71,7 @@
 	}
 
 
-	@include breakpoint($lg) {
+	@include breakpoint($lg-bp) {
 
 		a.trigger {
 			transform: scale(1) translate(0, 0);

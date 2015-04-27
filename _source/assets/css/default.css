@@ -548,7 +548,7 @@ body > .dynBlock > * + * {
 	}
 }
 */
-ul.text-buttons a, .input-button, .input-buttons label, .icon-button, .icon-buttons label, .type-product .article-header .content-block .elm-actions a,
+ul.text-buttons a, .input-button, .input-buttons label, .icon-button, .icon-buttons label, .type-product .article-header .elm-actions a, .type-product .article-header-3d .content-block .elm-actions a,
 .button,
 button {
   display: inline-block;
@@ -2598,7 +2598,7 @@ select[data-dkcacheid] {
     height: auto;
   }
 }
-@media (min-width: 66.66667em) {
+@media (min-width: 70.66667em) {
   #signup-form-trigger a.trigger {
     -webkit-transform: scale(1) translate(0, 0);
         -ms-transform: scale(1) translate(0, 0);
@@ -2885,14 +2885,16 @@ select[data-dkcacheid] {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: rgba(0, 255, 0, 0.3);
   }
   .grid-list li .elm-image img {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: auto;
+    width: 100%;
     height: auto;
     min-width: 100%;
     min-height: 100%;
@@ -2966,10 +2968,9 @@ select[data-dkcacheid] {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: auto;
+    width: 100%;
+    max-width: 100%;
     height: auto;
-    min-width: 100%;
-    min-height: 100%;
     -webkit-filter: blur(10px) brightness(0.6);
             filter: blur(10px) brightness(0.6);
     -webkit-transform: scale(1.06);
@@ -3293,7 +3294,7 @@ header#page-header .brand-secondary span {
     top: 0;
     left: 50%;
     height: 100%;
-    margin-left: -33.33333em;
+    margin-left: -35.33333em;
     margin-right: 0;
   }
 }
@@ -4339,22 +4340,44 @@ html, body {
 }
 
 .type-product .article-header {
+  padding: 0;
+}
+.type-product .article-header .content-block {
+  overflow: visible;
+}
+.type-product .article-header .content-block .elm-image {
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
+.type-product .article-header .content-block .elm-image img {
+  width: 100%;
+  opacity: 1;
+}
+.type-product .article-header .elm-actions {
+  position: relative;
+  margin: 1.6rem 0;
+}
+.type-product .article-header .elm-actions a {
+  font-family: "HelveticaNeueW01", Helvetica, arial, sans-serif;
+  font-weight: 300;
+}
+.type-product .article-header-3d {
   text-align: left;
   padding-top: 0;
   padding-bottom: 0;
 }
-.type-product .article-header .content-block {
+.type-product .article-header-3d .content-block {
   position: relative;
   overflow: visible;
 }
-.type-product .article-header .content-block .elm-image,
-.type-product .article-header .content-block .elm-content {
+.type-product .article-header-3d .content-block .elm-image,
+.type-product .article-header-3d .content-block .elm-content {
   width: auto;
   margin: 0;
   float: none;
   clear: none;
 }
-.type-product .article-header .content-block .elm-image {
+.type-product .article-header-3d .content-block .elm-image {
   margin: 0 -2rem;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YwZjBmMCIvPjxzdG9wIG9mZnNldD0iNzEuODE4MSUiIHN0b3AtY29sb3I9IiNmMGYwZjAiLz48c3RvcCBvZmZzZXQ9IjcxLjgxODElIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
   background-size: 100%;
@@ -4362,21 +4385,21 @@ html, body {
   background-image: -webkit-linear-gradient(top, #f0f0f0 0%, #f0f0f0 71.8181%, #ffffff 71.8181%, #ffffff 100%);
   background-image: linear-gradient(to bottom, #f0f0f0 0%, #f0f0f0 71.8181%, #ffffff 71.8181%, #ffffff 100%);
 }
-.type-product .article-header .content-block .elm-image img {
+.type-product .article-header-3d .content-block .elm-image img {
   display: block;
   max-width: 100%;
   opacity: 1;
 }
-.type-product .article-header .content-block .elm-content {
+.type-product .article-header-3d .content-block .elm-content {
   margin-top: -10%;
 }
-.type-product .article-header .content-block .elm-content h1 {
+.type-product .article-header-3d .content-block .elm-content h1 {
   font-size: 50px;
   font-size: 3.33333rem;
   line-height: 54px;
   line-height: 3.6rem;
 }
-.type-product .article-header .content-block .elm-content p {
+.type-product .article-header-3d .content-block .elm-content p {
   font-size: 18px;
   font-size: 1.2rem;
   line-height: 24px;
@@ -4384,18 +4407,58 @@ html, body {
   color: #00b2ce;
   font-weight: 300;
 }
-.type-product .article-header .content-block .elm-actions {
+.type-product .article-header-3d .content-block .elm-actions {
   position: absolute;
   top: 2.4rem;
   width: 100%;
   text-align: center;
 }
-.type-product .article-header .content-block .elm-actions a {
+.type-product .article-header-3d .content-block .elm-actions a {
   font-family: "HelveticaNeueW01", Helvetica, arial, sans-serif;
   font-weight: 300;
 }
+@media (min-width: 0) and (max-width: 45em) {
+  .type-product .article-header {
+    background: none !important;
+  }
+}
 @media (min-width: 45em) {
   .type-product .article-header {
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow: hidden;
+    max-height: 500px;
+  }
+  .type-product .article-header .content-wrapper, .type-product .article-header .article-full .main-content, .article-full .type-product .article-header .main-content, .type-product .article-header .facts {
+    position: relative;
+  }
+  .type-product .article-header .content-wrapper:before, .type-product .article-header .article-full .main-content:before, .article-full .type-product .article-header .main-content:before, .type-product .article-header .facts:before {
+    content: "";
+    display: block;
+    padding-top: 62.5%;
+  }
+  .type-product .article-header .content-block {
+    position: absolute;
+    top: 3.2rem;
+    left: 2rem;
+  }
+  .type-product .article-header .content-block .elm-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .type-product .article-header .content-block .elm-image img {
+    opacity: 0;
+  }
+  .type-product .article-header .content-block .elm-content {
+    position: relative;
+    margin: 0;
+    float: none;
+    width: auto;
+    max-width: 640px;
+  }
+  .type-product .article-header-3d {
     background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YwZjBmMCIvPjxzdG9wIG9mZnNldD0iNzEuODE4MSUiIHN0b3AtY29sb3I9IiNmMGYwZjAiLz48c3RvcCBvZmZzZXQ9IjcxLjgxODElIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
     background-size: 100%;
     background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f0f0f0), color-stop(71.8181%, #f0f0f0), color-stop(71.8181%, #ffffff), color-stop(100%, #ffffff));
@@ -4403,18 +4466,18 @@ html, body {
     background-image: linear-gradient(to bottom, #f0f0f0 0%, #f0f0f0 71.8181%, #ffffff 71.8181%, #ffffff 100%);
     margin-bottom: 4rem;
   }
-  .type-product .article-header .content-block {
+  .type-product .article-header-3d .content-block {
     overflow: hidden;
   }
-  .type-product .article-header .content-block .elm-image {
+  .type-product .article-header-3d .content-block .elm-image {
     background: none;
   }
-  .type-product .article-header .content-block .elm-content {
+  .type-product .article-header-3d .content-block .elm-content {
     position: absolute;
     margin-top: 0;
     top: 9%;
   }
-  .type-product .article-header .content-block .elm-actions {
+  .type-product .article-header-3d .content-block .elm-actions {
     top: auto;
     bottom: 0.8rem;
   }

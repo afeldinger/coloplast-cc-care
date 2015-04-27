@@ -239,6 +239,34 @@ html, body {
 .type-product {
 
 	.article-header {
+		padding:0;
+		
+		.content-block {
+			overflow: visible;
+
+			.elm-image {
+				margin-left: -$content-margin;
+				margin-right: -$content-margin;
+				img {
+					width: 100%;
+					opacity: 1;
+				}
+			}	
+		}
+
+		.elm-actions {
+			position:relative;
+			margin: rhythm(4) 0;
+			a {
+				@extend %button;
+				font-family: $font-header;
+				font-weight: $light;
+			}
+		}
+	}
+
+
+	.article-header-3d {
 		text-align:left;
 		padding-top: 0;
 		padding-bottom: 0;
@@ -293,8 +321,65 @@ html, body {
 			}
 		}
 	}
-	@include breakpoint($sm, true) {
+
+	@include breakpoint(0 $sm, true) {
 		.article-header {
+			background: none !important;
+		}
+	}
+	@include breakpoint($sm, true) {
+
+		.article-header {
+			
+			background-size: cover;
+			background-position: 50% 50%;
+			overflow: hidden;
+			
+			max-height: 500px;
+
+			.content-wrapper {
+				position:relative;
+
+				&:before{
+					content: "";
+					display: block;
+					//padding-top: 37.26%;
+					padding-top: 800px / 1280px * 100%;
+				}
+
+
+			}
+
+			.content-block {
+				position:absolute;
+				top:rhythm(8);
+				left:$content-margin;
+
+				.elm-image {
+					position: absolute;
+					top:0;
+					left:0;
+					width: 100%;
+
+					img {
+						opacity: 0;
+					}
+				}
+				.elm-content {
+					position: relative;
+					margin:0;
+					float:none;
+					width:auto;
+					max-width: 640px;
+				}
+
+
+			}
+
+		}
+
+
+		.article-header-3d {
 			@include background-image(linear-gradient(to bottom, $light-gray 0%, $light-gray 71.8181%, #fff 71.8181%, #fff 100%));
 			margin-bottom: rhythm(10);
 
@@ -314,8 +399,8 @@ html, body {
 					bottom: rhythm(2);
 				}
 			}
-
 		}
+
 		.main-content {
 			@include layout(6 6, $gutter: 1.25) {
 				.content-block {
