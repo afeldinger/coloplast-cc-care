@@ -239,21 +239,23 @@ var ccScrollListener = debounce(function() {
 	
 }, 20);
 window.addEventListener('scroll', ccScrollListener);
-
 $('body').addClass('scroll-top');
 
-/*
+
 var ccResizeListener = debounce(function() {
-	console.log('resize - ' + lastDeviceState);
+	$('.article-full.type-article .article-header').height($(window).height() - $('#page-header').height());
+	/*
     var state = getDeviceState();
     if(state !== lastDeviceState) {
         // Save the new state as current and announce change
         lastDeviceState = state;
         state_indicator_change(state);
     }
-}, 250);
+    */
+}, 100);
 window.addEventListener('resize', ccResizeListener);
-*/
+ccResizeListener();
+
 $.leftPad = function(i,l,s) {
 	var o = i.toString();
 	if (!s) { s = '0'; }
@@ -518,7 +520,7 @@ $(document).ready(function() {
     });
 
     // Embed hero signup form into hero
-    $('#signup-form-hero').appendTo($('section.hero:first .content-wrapper'));
+    $('#signup-form-hero').appendTo($('.hero:first .content-wrapper'));
 
 
     // Handle lightbox links

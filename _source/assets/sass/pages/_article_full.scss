@@ -28,8 +28,7 @@ html, body {
 	background-repeat: no-repeat;
 	background-position: 50% 0;
 	//padding-top: rhythm(2);
-	padding-top: 0;
-	padding-bottom: rhythm(4);
+	//padding-bottom: rhythm(4);
 
 
 	.content-block {
@@ -105,12 +104,26 @@ html, body {
 		}
 	}
 
-	
 	.article-header {
+
 		background-color: $color-background;
 
+
+		@include breakpoint(0 $sm) {
+			height: auto !important;
+
+			.elm-content {
+				overflow:hidden;
+				margin-top: rhythm(4);
+				margin-bottom: rhythm(2);
+
+			}
+		}
+		body:not(.scroll-top) & {
+				height:auto !important;	
+		}
+
 		@include breakpoint($sm, true) {
-		
 			padding-top: 0;
 			padding-bottom: 0;
 			background-image:none !important;
@@ -126,7 +139,6 @@ html, body {
 						position:relative;
 						@include grid-span(1,2);
 						
-						//height: 600px;
 						overflow:hidden;
 
 						transition-property: position,margin,transform,top,right,bottom,left,opacity;
@@ -150,41 +162,66 @@ html, body {
 						}
 
 					}
+
 					.elm-content {
-						position:absolute;
-						bottom: 0;
-						transform: translate(0, -25%);
-						transition: all .5s;
+						position:relative;
+						display:block;
+						//transition: all .5s;
 						@include grid-span(1,1);
+
 					}
 				}
 			}
 
 
-			@include breakpoint($md, true) {
-				.content-block {
-					.elm-content {
-						transform: translate(0, -45%);
-					}
-				}
+		}
+	}
 
+	@include breakpoint($md) {
+		.article-header {
+
+			body:not(.legacy) & {
+				
+				.elm-content {
+					position: absolute;
+					height:100%;
+
+					display:flex;
+					align-items: center;
+					justify-content: center;
+					flex-direction: column;
+
+				}				
 			}
 		}
 	}
-/*
-	.scroll-top:not(.legacy) & {
-		
+	@include breakpoint($sm, true) {
 
-		@include breakpoint($sm, true) {
-			height:100%; 
+		.article-header {
 
-			.article-header {
-				height:100%; 
+			body:not(.scroll-top) & {
+				height:auto !important;			
+			}
+
+			body:not(.legacy) & {
+
+				.elm-content {
+
+					/*
+					top:50%;
+					transform: translate(0, -50%)
+					*/
+				}
+			}
+
+			body.scroll-top:not(.legacy) & {
+
 				position:relative;
+	
 				
 				.content-wrapper,
 				.content-block {
-					position: relative;
+					position: static;
 					overflow: visible;
 					margin:0;
 					padding:0;
@@ -204,6 +241,14 @@ html, body {
 						margin: 0;
 						z-index:5;
 						transform: translate(-50%,-50%);
+						text-align: center;
+
+						text-shadow: 0 0 5px rgba(255,255,255,.2), 0 0 30px rgba(0,0,0,.9);
+
+						h1,
+						h2 {
+							color:#fff;
+						}
 
 						> *:nth-child(n+2) {
 							position:absolute;
@@ -244,7 +289,7 @@ html, body {
 		
 	}
 
-	*/
+
 }
 
 .type-product {
