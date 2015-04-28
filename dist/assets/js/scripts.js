@@ -3150,7 +3150,7 @@ function grid_list_sort() {
 		} else {
 
 			var total_rows = Math.ceil(sgl.length + 2 * dbl.length) / 3;
-			var allowed_single_rows = Math.floor((active.length - dbl.length) / 3);
+			var allowed_single_rows = Math.floor((sgl.length - dbl.length) / 3);
 
 			var sgl_items = sgl.get();
 			var dbl_items = dbl.get();
