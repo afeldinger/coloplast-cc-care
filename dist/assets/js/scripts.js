@@ -3115,22 +3115,88 @@ function debounce(func, wait, immediate) {
 
 function grid_list_sort() {
 	$('.grid-list .list-items').each(function() {
-		var pos = 0;
-		$(this).find('li').removeClass('last').filter(':visible').each(function() {
+		var pos = 0, i, n;
 
-			var cols = 1;
-			if ($(this).hasClass('type-video')) {
-				cols = 2;
-			}
+		var items = $(this).find('li');
+		var active = items.filter(':visible');
+		var sgl = active.not('.type-video');
+		var dbl = active.filter('.type-video');
+		
 
-			pos+= cols;
+		items.hide();
+
+		var use_single_col = false;
+		if (
+			(dbl.length === 0) || // no double-col items
+			(active.length <= 3 && dbl.length > 0) || // only single row of items, but includes double-col item(s)
+			(dbl.length > active.length/2) // too many double-col items
 			
-			if (pos === 3) {
-				pos = 0;
-				$(this).addClass('last');
+		) {
+			use_single_col = true;
+		}
+
+		// set container layout class
+		$(this).toggleClass('single-col', use_single_col);
+
+		// clean up old view 
+		items.removeClass('last pos-1 pos-2 pos-3');
+
+		if (use_single_col) {
+			active.each(function(i) {
+				pos = (i % 3) + 1;
+				$(this).addClass('pos-'+pos);
+				$(this).toggleClass('last', pos===3);
+			});
+		} else {
+
+			var total_rows = Math.ceil(sgl.length + 2 * dbl.length) / 3;
+			var allowed_single_rows = Math.floor((active.length - dbl.length) / 3);
+
+			var sgl_items = sgl.get();
+			var dbl_items = dbl.get();
+			var mixed_rows = 0;
+
+			for (i = 0; i < total_rows; i++) {
+				var row = [];
+
+				// if single rows available
+				if ((i % 2 === 0 && allowed_single_rows > 0) || dbl_items.length === 0) {
+					allowed_single_rows--;
+					for (n = 0; n < 3; n++) {
+						if (sgl_items.length > 0) {
+							row.push(sgl_items.shift());
+						}
+					}
+				} 
+				// mixed row
+				else {
+					if (sgl_items.length > 0) {
+						row.push(sgl_items.shift());
+					}
+
+					if (dbl_items.length > 0) {
+						if (mixed_rows % 2 === 0) {
+							row.push(dbl_items.shift());
+						} else {
+							row.unshift(dbl_items.shift());
+						}
+					}
+					
+
+					mixed_rows++;
+				}
+
+				// append to document in new order and set positioning classes
+				for (n = 0; n < row.length; n++) {
+					pos = (n % 3) + 1;
+					$(this).append($(row[n]).addClass('pos-'+pos).toggleClass('last', pos===row.length));
+				}
 			}
-		});
+		}
+
+		active.show();
 	});
+
 }
 function grid_list_init() {
 
@@ -3144,8 +3210,7 @@ function grid_list_init() {
 				$(this).addClass('over');
 			}, function() {
 				$(this).removeClass('over');
-			}).click(function(e) {
-				//e.stopPropagation();
+			}).click(function() {
 				$(this).find('a').filter(':last')[0].click();
 			}).filter(':has(a.more-link)').each(function() {
 				//$(this).find('.elm-content').clone().removeClass('elm-content').addClass('elm-content-over').appendTo(this);
@@ -3185,12 +3250,13 @@ function grid_list_init() {
 			targets.hide().filter(function() {
 				var visible = true;
 				for(var k in filters) {
-					var filter_str = filters[k].join(',');
-					if ($(this).filter(filter_str).length === 0) {
-						visible = false;
-						break;
+					if (typeof k === 'string') {
+						var filter_str = filters[k].join(',');
+						if ($(this).filter(filter_str).length === 0) {
+							visible = false;
+							break;
+						}
 					}
-
 				}
 				return visible;
 			}).show();
@@ -3327,7 +3393,6 @@ $(document).ready(function() {
 			var day = $('select[id$="day"]', group);
 
 			var date = new Date();
-			var curDay = day.val()? parseInt(day.val()) : date.getDate();
 			date.setFullYear(
 				year.val()? year.val() : date.getFullYear(),
 				month.val()? parseInt(month.val()) : date.getMonth()+1,
@@ -3380,12 +3445,16 @@ $(document).ready(function() {
 					$(element).closest('label').removeClass('input-' + errorClass);
 				}
 			},
-			errorPlacement: function(error, element) {
+			errorPlacement: function() {
 				return true;
 			},
+			submitHandler: function() {
+
+			},
+			/*
 			submitHandler: function(form) {
 				// Form has .form-confirmation - use jquery.post to submit form and display confirmation
-				/*
+
 				if ($(this).next('.form-confirmation').length >= 0) {
 
 					var frm = $(form);
@@ -3411,8 +3480,8 @@ $(document).ready(function() {
 					//console.log('No form confirmation - submit form');
 					form.submit();
 				}
-				*/
 			},
+			*/
 		});
 
 		// required fields
@@ -3524,7 +3593,7 @@ $(document).ready(function() {
 				'</div>'
 		},
 		callbacks: {
-			markupParse: function(template, values, item) {
+			markupParse: function(template, values) {
 				values.message = video_msg;
 			}
 		}
