@@ -2950,8 +2950,8 @@ select[data-dkcacheid] {
     width: 100%;
     max-width: 100%;
     height: auto;
-    -webkit-filter: blur(10px) brightness(0.8);
-            filter: blur(10px) brightness(0.8);
+    -webkit-filter: blur(10px) brightness(0.65);
+            filter: blur(10px) brightness(0.65);
     -webkit-transform: scale(1.06);
         -ms-transform: scale(1.06);
             transform: scale(1.06);
