@@ -2873,7 +2873,6 @@ select[data-dkcacheid] {
     width: 100%;
     height: 100%;
     margin: 0;
-    background: rgba(0, 255, 0, 0.3);
   }
   .grid-list .elm-image img {
     position: absolute;
