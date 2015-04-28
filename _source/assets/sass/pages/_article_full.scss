@@ -27,14 +27,20 @@ html, body {
 	text-align:left;
 	background-repeat: no-repeat;
 	background-position: 50% 0;
-	padding-top: rhythm(2);
+	//padding-top: rhythm(2);
+	padding-top: 0;
 	padding-bottom: rhythm(4);
 
+
 	.content-block {
+		overflow: visible;
+
 		.elm-image {
+			margin-left: -$content-margin;
+			margin-right: -$content-margin;
 			img {
-				max-width: none;
-				opacity: 0;
+				width: 100%;
+				opacity: 1;
 			}
 		}
 		.elm-content {
@@ -48,15 +54,16 @@ html, body {
 			}
 		}
 	}
+
+
+	@include breakpoint(0 $sm, true) {
+		background-image: none !important;
+	}
 }
 
 
 .type-article {
 	
-	.article-header {
-		background-color: $color-background;
-	}
-
 	.main-content {
 		max-width: 636px + (2 * 30px);
 		margin-left: auto;
@@ -100,6 +107,8 @@ html, body {
 
 	
 	.article-header {
+		background-color: $color-background;
+
 		@include breakpoint($sm, true) {
 		
 			padding-top: 0;
@@ -109,6 +118,7 @@ html, body {
 			@include layout(6 6, $gutter:60/68) {
 				.content-block {
 					position: relative;
+					overflow: hidden;
 					margin-top: rhythm(8);
 					margin-bottom: rhythm(8);
 
@@ -135,6 +145,7 @@ html, body {
 							top:0;
 							left: 50%;
 							height: 100%;
+							width: auto;
 							transform: translate(-50%,0);
 						}
 
@@ -322,11 +333,6 @@ html, body {
 		}
 	}
 
-	@include breakpoint(0 $sm, true) {
-		.article-header {
-			background: none !important;
-		}
-	}
 	@include breakpoint($sm, true) {
 
 		.article-header {

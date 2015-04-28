@@ -9,6 +9,10 @@
 * 
 **************************************************************************
 
+2015-04-28
+  Hero
+  * Changed <section> to <div>. Shouldn't affect the implementation, as it has already been changed there.
+
 2015-04-27
   Product page
   * Added header image as inline background on <div class="article-header"> to fix product page layout
