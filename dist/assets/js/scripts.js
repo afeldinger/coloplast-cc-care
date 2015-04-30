@@ -3321,6 +3321,7 @@ $.leftPad = function(i,l,s) {
 function getImageLightness(imageSrc, callback, target) {
     var img = document.createElement("img");
     img.src = imageSrc;
+    img.crossOrigin = "Anonymous";
     img.style.display = "none";
     document.body.appendChild(img, callback);
 
