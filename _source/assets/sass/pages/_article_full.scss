@@ -423,12 +423,24 @@ html, body {
 					width:auto;
 					max-width: 640px;
 
+					transition: color 1s ease;
+
 					text-shadow: 0 0 1px #fff, 0 0 5px rgba(255,255,255,.4), 0 0 20px rgba(255,255,255,.9);
 				}
 
 				.elm-actions {
 					a {
 						box-shadow: 0 0 30px rgba(255,255,255,.5);
+					}
+				}
+
+
+				&.background-light {
+					.elm-content {
+
+						color:#fff;
+
+
 					}
 				}
 

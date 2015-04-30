@@ -66,12 +66,26 @@
 			ul,
 			ol {
 				color:#fff;
+				transition: color 1s ease;
 			}
+
 			.checkmarks li:before {
 				color:inherit;
 			}
 		}
 		
+		&.background-light {
+			.elm-content {
+
+				h1,
+				p,
+				ul,
+				ol {
+					color:$color-primary;
+				}
+
+			}
+		}
 	}
 } 
 
