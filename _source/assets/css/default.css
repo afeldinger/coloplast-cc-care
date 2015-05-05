@@ -3263,10 +3263,15 @@ header#page-header .brand-secondary span {
   background-repeat: no-repeat;
   background-position: 50% 0px;
 }
+.hero .elm-image {
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
 .hero .elm-image img {
   display: block;
   margin: 0 auto;
-  opacity: 0;
+  max-width: 100%;
+  height: auto;
 }
 .hero .elm-content h1 {
   font-size: 50px;
@@ -3290,13 +3295,32 @@ header#page-header .brand-secondary span {
   color: #00b2ce;
 }
 
+@media (min-width: 0) and (max-width: 45em) {
+  .hero {
+    background-image: none !important;
+  }
+}
 @media (min-width: 45em) {
   .hero {
     position: relative;
     overflow: hidden;
+    background-size: cover;
+    background-position: 50% 50%;
+    max-height: 500px;
+  }
+  .hero:before {
+    content: "";
+    display: block;
+    padding-top: 66.65%;
   }
   .hero .content-wrapper, .hero .article-full .main-content, .article-full .hero .main-content, .hero .facts {
-    position: relative;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    margin-right: 0;
+  }
+  .hero .elm-image img {
+    opacity: 0;
   }
   .hero .elm-content {
     position: absolute;
@@ -3328,24 +3352,12 @@ header#page-header .brand-secondary span {
   }
 }
 @media (min-width: 70.66667em) {
-  .hero {
-    background-size: cover;
-    background-position: 50% 50%;
-    overflow: hidden;
-    max-height: 500px;
-  }
   .hero:before {
-    content: "";
-    display: block;
     padding-top: 37.26%;
   }
   .hero .content-wrapper, .hero .article-full .main-content, .article-full .hero .main-content, .hero .facts {
-    position: absolute;
-    top: 0;
     left: 50%;
-    height: 100%;
     margin-left: -35.33333em;
-    margin-right: 0;
   }
 }
 /* Magnific Popup CSS */

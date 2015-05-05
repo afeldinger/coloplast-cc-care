@@ -10,10 +10,13 @@
 
 	
 	.elm-image {
+		margin-left: -$content-margin;
+		margin-right: -$content-margin;
 		img {
 			display:block;
 			margin:0 auto;
-			opacity: 0;
+			max-width: 100%;
+			height: auto;
 		}
 	}
 	
@@ -44,16 +47,44 @@
 
 
 }
-
+@include breakpoint(0 $sm, true) {
+	.hero {
+		background-image: none !important;
+	}
+}
 @include breakpoint($sm, true) {
 	.hero {
 		position:relative;
 		overflow: hidden;
+		background-size: cover;
+		background-position: 50% 50%;
+
+		max-height: 500px;
+
+
+		&:before{
+			content: "";
+			display: block;
+			//padding-top: 37.26%;
+			
+			padding-top: 1333 / 2000 * 100%;
+
+		}
 
 
 		.content-wrapper {
-			position:relative;
+			position:absolute;
+			top:0;
+			height:100%;
+			margin-right: 0;
 		}
+
+		.elm-image {
+			img {
+				opacity: 0;
+			}
+		}
+
 		.elm-content {
 			position:absolute;
 			top: 10%;
@@ -99,32 +130,15 @@
 
 @include breakpoint($lg-bp, true) {
 	.hero {
-		background-size: cover;
-		background-position: 50% 50%;
-		overflow: hidden;
 		
-		max-height: 500px;
-
-
 		&:before{
-			content: "";
-			display: block;
 			padding-top: 37.26%;
 		}
 
 
 		.content-wrapper {
-			position:absolute;
-			top:0;
 			left:50%;
-			height:100%;
 			margin-left: -($lg-bp/2);
-			margin-right: 0;
 		}
-
-		.elm-content {
-		}
-		
-
 	}
 }

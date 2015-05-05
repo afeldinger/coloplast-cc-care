@@ -3358,7 +3358,7 @@ $(document).ready(function() {
 
 	grid_list_init();
 
-
+/*
 	$('.hero, .article-header').filter(':has(.elm-image img)').each(function() {
 		var src = $(this).find('.elm-image img').attr('src');
 		getImageLightness(src, function(brightness, target) {
@@ -3369,7 +3369,7 @@ $(document).ready(function() {
 
 		}, $(this));
 	});
-
+*/
 	
 
 	// init flexsliders on page
