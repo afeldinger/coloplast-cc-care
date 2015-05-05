@@ -2849,14 +2849,34 @@ select[data-dkcacheid] {
     margin-bottom: 1.96078%;
     color: #fff;
     overflow: hidden;
-    width: 32.02614%;
-    clear: right;
-    float: left;
-    margin-left: 0;
-    margin-right: 1.96078%;
+    /*
+    			@include float-span(4);
+    
+    			&.last {
+    				margin-right:0 !important;
+    			}
+    */
   }
-  .grid-list li.last {
-    margin-right: 0 !important;
+  .grid-list li.pos-1 {
+    width: 32.02614%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: left;
+  }
+  .grid-list li.pos-2 {
+    width: 32.02614%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 33.98693%;
+    clear: none;
+  }
+  .grid-list li.pos-3 {
+    width: 32.02614%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: right;
   }
   .grid-list li:before {
     content: "";
@@ -3074,11 +3094,23 @@ select[data-dkcacheid] {
 }
 @media (min-width: 45em) {
   .grid-list .list-items:not(.single-col) .type-video {
+    /*
+    				@include float-span(8);
+    */
+  }
+  .grid-list .list-items:not(.single-col) .type-video.pos-1 {
     width: 66.01307%;
-    clear: right;
     float: left;
+    margin-right: -100%;
     margin-left: 0;
-    margin-right: 1.96078%;
+    clear: left;
+  }
+  .grid-list .list-items:not(.single-col) .type-video.pos-2 {
+    width: 66.01307%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: right;
   }
   .grid-list .list-items:not(.single-col) .type-video:before {
     padding-top: 39.33434%;

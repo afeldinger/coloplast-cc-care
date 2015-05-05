@@ -128,15 +128,15 @@ function grid_list_sort() {
 							row.unshift(dbl_items.shift());
 						}
 					}
-					
 
 					mixed_rows++;
 				}
 
 				// append to document in new order and set positioning classes
+				pos = 1;
 				for (n = 0; n < row.length; n++) {
-					pos = (n % 3) + 1;
 					$(this).append($(row[n]).addClass('pos-'+pos).toggleClass('last', pos===row.length));
+					pos += $(row[n]).is('.type-video')? 2 : 1;
 				}
 			}
 		}

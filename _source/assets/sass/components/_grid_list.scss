@@ -88,11 +88,21 @@
 			margin-bottom: gutter-span();
 			color: #fff;
 			overflow:hidden;
-
+/*
 			@include float-span(4);
 
 			&.last {
 				margin-right:0 !important;
+			}
+*/
+			&.pos-1 {
+				@include isolation-span(4, 1, 'left');
+			}
+			&.pos-2 {
+				@include isolation-span(4, 5);
+			}
+			&.pos-3 {
+				@include isolation-span(4, 9, 'right');
 			}
 
 			&:before{
@@ -313,8 +323,16 @@
 	.list-items:not(.single-col) {
 		.type-video {
 			@include breakpoint($sm, true) {
-
+/*
 				@include float-span(8);
+*/
+				
+				&.pos-1 {
+					@include isolation-span(8, 1, 'left');
+				}
+				&.pos-2 {
+					@include isolation-span(8, 5, 'right');
+				}
 
 				&:before {
 					padding-top: 260 / 661 * 100%;
