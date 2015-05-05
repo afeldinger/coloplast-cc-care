@@ -164,7 +164,7 @@ module.exports = function(grunt) {
         '!_source/assets/js/{libs,localization}/**/*.js'
       ]
     },
-/*
+
     concat: { 
       js: {
           src: [
@@ -188,7 +188,7 @@ module.exports = function(grunt) {
           dest: 'dist/assets/js/scripts.min.js',
       },
     },
-*/
+
     sprite:{
       retina: {
         src: '_source/assets/img/sprites-2x/*.png',
@@ -274,7 +274,7 @@ module.exports = function(grunt) {
             },
         },
     },
-/*
+
     cssmin: {
       target: {
         files: [{
@@ -286,7 +286,7 @@ module.exports = function(grunt) {
         }]
       },
     },
-  */
+
     clean: {
       dist: {
         src: ['dist/*', '!dist/.htaccess'],
@@ -320,7 +320,7 @@ module.exports = function(grunt) {
     },
 
     useminPrepare: {
-      html: 'dist/frontpage.html',
+      html: 'dist/01-frontpage.html',
       options: {
           dest: 'dist/'
       }
@@ -372,14 +372,14 @@ module.exports = function(grunt) {
     'imagemin',
     'svgmin',
     'useminPrepare', 
-    /*
     'concat:js',
     'cssmin',
     'uglify:js',
-    */
+/*
     'concat',
     'cssmin',
     'uglify',
+    */
     'usemin',
     'copy:dist',
     'replace:dist',
