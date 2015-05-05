@@ -357,6 +357,22 @@
 		}
 	}
 
+	.list-items.single-col {
+		.type-video {
+			@include breakpoint($sm, true) {
+				.elm-image,
+				.elm-content {
+					img {
+						margin-left: -50%;
+						width:200%;
+						max-width: none;
+					}
+				}
+			}
+
+		}
+	}
+
 
 	.type-survey {
 		background: $color-background;
