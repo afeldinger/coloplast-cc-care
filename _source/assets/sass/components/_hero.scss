@@ -8,6 +8,8 @@
 	background-repeat: no-repeat;
 	background-position: 50% 0px;
 
+	overflow:hidden;
+
 	
 	.elm-image {
 		margin-left: -$content-margin;
@@ -15,7 +17,7 @@
 		img {
 			display:block;
 			margin:0 auto;
-			max-width: 100%;
+			width: 100%;
 			height: auto;
 		}
 	}
@@ -47,12 +49,12 @@
 
 
 }
-@include breakpoint(0 $sm, true) {
+@include breakpoint(0 $md, true) {
 	.hero {
 		background-image: none !important;
 	}
 }
-@include breakpoint($sm, true) {
+@include breakpoint($md, true) {
 	.hero {
 		position:relative;
 		overflow: hidden;
@@ -80,6 +82,8 @@
 		}
 
 		.elm-image {
+			position:relative;
+			overflow:hidden;
 			img {
 				opacity: 0;
 			}
@@ -88,7 +92,7 @@
 		.elm-content {
 			position:absolute;
 			top: 10%;
-			max-width: 60%;
+			max-width: 55%;
 			text-shadow: 0 0 5px rgba(255,255,255,.2), 0 0 30px rgba(0,0,0,.9);
 
 			
@@ -117,14 +121,6 @@
 
 			}
 		}
-	}
-} 
-
-@include breakpoint($md, true) {
-	.hero {
-		.elm-content {
-			top: 20%;
-		}	
 	}
 } 
 

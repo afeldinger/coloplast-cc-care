@@ -2544,7 +2544,7 @@ select[data-dkcacheid] {
   -webkit-transition: all .1s;
           transition: all .1s;
 }
-@media (min-width: 45em) {
+@media (min-width: 55em) {
   #signup-form-trigger {
     position: fixed;
     left: 0;
@@ -2634,7 +2634,7 @@ select[data-dkcacheid] {
 .form-signup .form-signup-cta {
   margin: 2.4rem -2rem 0;
 }
-@media (min-width: 45em) {
+@media (min-width: 55em) {
   .form-signup-cta {
     display: none;
   }
@@ -2710,7 +2710,7 @@ select[data-dkcacheid] {
     width: calc(100% - (2 * (34px + 10px)));
   }
 }
-@media (min-width: 45em) {
+@media (min-width: 55em) {
   #signup-form-hero {
     position: absolute;
     display: block;
@@ -3262,6 +3262,7 @@ header#page-header .brand-secondary span {
   margin-right: auto;
   background-repeat: no-repeat;
   background-position: 50% 0px;
+  overflow: hidden;
 }
 .hero .elm-image {
   margin-left: -2rem;
@@ -3270,7 +3271,7 @@ header#page-header .brand-secondary span {
 .hero .elm-image img {
   display: block;
   margin: 0 auto;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 .hero .elm-content h1 {
@@ -3295,12 +3296,12 @@ header#page-header .brand-secondary span {
   color: #00b2ce;
 }
 
-@media (min-width: 0) and (max-width: 45em) {
+@media (min-width: 0) and (max-width: 55em) {
   .hero {
     background-image: none !important;
   }
 }
-@media (min-width: 45em) {
+@media (min-width: 55em) {
   .hero {
     position: relative;
     overflow: hidden;
@@ -3319,13 +3320,17 @@ header#page-header .brand-secondary span {
     height: 100%;
     margin-right: 0;
   }
+  .hero .elm-image {
+    position: relative;
+    overflow: hidden;
+  }
   .hero .elm-image img {
     opacity: 0;
   }
   .hero .elm-content {
     position: absolute;
     top: 10%;
-    max-width: 60%;
+    max-width: 55%;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 30px rgba(0, 0, 0, 0.9);
   }
   .hero .elm-content h1,
@@ -3344,11 +3349,6 @@ header#page-header .brand-secondary span {
   .hero.background-light .elm-content ul,
   .hero.background-light .elm-content ol {
     color: #00b2ce;
-  }
-}
-@media (min-width: 55em) {
-  .hero .elm-content {
-    top: 20%;
   }
 }
 @media (min-width: 70.66667em) {

@@ -21,7 +21,7 @@
 		}
 	}
 
-	@include breakpoint($sm) {
+	@include breakpoint($md) {
 		position:fixed;
 		left:0;
 		top: 30%;
@@ -111,7 +111,7 @@
 		margin: rhythm(6) (-$content-margin) 0;
 	}
 
-	@include breakpoint($sm, true) {
+	@include breakpoint($md, true) {
 		display:none;
 	}
 
@@ -210,7 +210,7 @@
 		}
 	}
 
-	@include breakpoint($sm) {
+	@include breakpoint($md) {
 
 
 		position:absolute;
