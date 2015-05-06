@@ -1711,10 +1711,10 @@ footer#page-footer section.social ul.social .icon {
     float: right;
   }
 
-  body:not(.legacy) {
+  .no-legacy.no-touch {
     padding-bottom: 5.6rem;
   }
-  body:not(.legacy) footer#page-footer {
+  .no-legacy.no-touch footer#page-footer {
     position: fixed;
     top: 100%;
     margin-top: 0;
@@ -1724,22 +1724,22 @@ footer#page-footer section.social ul.social .icon {
     transition: -webkit-transform .3s;
     transition: transform .3s;
   }
-  body:not(.legacy) footer#page-footer section.call-us,
-  body:not(.legacy) footer#page-footer section.order-sample {
+  .no-legacy.no-touch footer#page-footer section.call-us,
+  .no-legacy.no-touch footer#page-footer section.order-sample {
     -webkit-transform: translate3d(20%, 0, 0);
             transform: translate3d(20%, 0, 0);
     transition: -webkit-transform .2s;
     transition: transform .2s;
   }
-  body:not(.legacy) footer#page-footer section.call-us h2, body:not(.legacy) footer#page-footer section.call-us .article-full .main-content h1, .article-full .main-content body:not(.legacy) footer#page-footer section.call-us h1,
-  body:not(.legacy) footer#page-footer section.order-sample h2,
-  body:not(.legacy) footer#page-footer section.order-sample .article-full .main-content h1,
-  .article-full .main-content body:not(.legacy) footer#page-footer section.order-sample h1 {
+  .no-legacy.no-touch footer#page-footer section.call-us h2, .no-legacy.no-touch footer#page-footer section.call-us .article-full .main-content h1, .article-full .main-content .no-legacy.no-touch footer#page-footer section.call-us h1,
+  .no-legacy.no-touch footer#page-footer section.order-sample h2,
+  .no-legacy.no-touch footer#page-footer section.order-sample .article-full .main-content h1,
+  .article-full .main-content .no-legacy.no-touch footer#page-footer section.order-sample h1 {
     border-bottom-width: 0px;
     transition: border .2s;
   }
-  body:not(.legacy) footer#page-footer section.call-us > *:nth-child(n+3),
-  body:not(.legacy) footer#page-footer section.order-sample > *:nth-child(n+3) {
+  .no-legacy.no-touch footer#page-footer section.call-us > *:nth-child(n+3),
+  .no-legacy.no-touch footer#page-footer section.order-sample > *:nth-child(n+3) {
     opacity: 0;
     -webkit-transform: translate3d(7%, 20%, 0);
             transform: translate3d(7%, 20%, 0);
@@ -1748,15 +1748,15 @@ footer#page-footer section.social ul.social .icon {
     transition-duration: .3s;
     transition-timing-function: ease;
   }
-  body:not(.legacy) footer#page-footer section.order-sample {
+  .no-legacy.no-touch footer#page-footer section.order-sample {
     -webkit-transform: translate3d(-20%, 0, 0);
             transform: translate3d(-20%, 0, 0);
   }
-  body:not(.legacy) footer#page-footer section.order-sample > *:nth-child(n+3) {
+  .no-legacy.no-touch footer#page-footer section.order-sample > *:nth-child(n+3) {
     -webkit-transform: translate3d(-7%, 20%, 0);
             transform: translate3d(-7%, 20%, 0);
   }
-  body:not(.legacy) footer#page-footer section.social {
+  .no-legacy.no-touch footer#page-footer section.social {
     opacity: 0;
     -webkit-transform: translate3d(0, 20%, 0);
             transform: translate3d(0, 20%, 0);
@@ -1765,50 +1765,49 @@ footer#page-footer section.social ul.social .icon {
     transition-duration: .3s;
     transition-timing-function: ease;
   }
-
-  .scroll-near-bottom footer#page-footer {
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer {
     -webkit-transform: translate3d(0, -65px, 0) !important;
             transform: translate3d(0, -65px, 0) !important;
   }
-  .scroll-near-bottom footer#page-footer:hover,
-  .scroll-near-bottom footer#page-footer .over {
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover,
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over {
     -webkit-transform: translate3d(0, -100%, 0) !important;
             transform: translate3d(0, -100%, 0) !important;
   }
-  .scroll-near-bottom footer#page-footer:hover section.call-us,
-  .scroll-near-bottom footer#page-footer:hover section.order-sample,
-  .scroll-near-bottom footer#page-footer .over section.call-us,
-  .scroll-near-bottom footer#page-footer .over section.order-sample {
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.call-us,
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.order-sample,
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.call-us,
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.order-sample {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-  .scroll-near-bottom footer#page-footer:hover section.call-us h2, .scroll-near-bottom footer#page-footer:hover section.call-us .article-full .main-content h1, .article-full .main-content .scroll-near-bottom footer#page-footer:hover section.call-us h1,
-  .scroll-near-bottom footer#page-footer:hover section.order-sample h2,
-  .scroll-near-bottom footer#page-footer:hover section.order-sample .article-full .main-content h1,
-  .article-full .main-content .scroll-near-bottom footer#page-footer:hover section.order-sample h1,
-  .scroll-near-bottom footer#page-footer .over section.call-us h2,
-  .scroll-near-bottom footer#page-footer .over section.call-us .article-full .main-content h1,
-  .article-full .main-content .scroll-near-bottom footer#page-footer .over section.call-us h1,
-  .scroll-near-bottom footer#page-footer .over section.order-sample h2,
-  .scroll-near-bottom footer#page-footer .over section.order-sample .article-full .main-content h1,
-  .article-full .main-content .scroll-near-bottom footer#page-footer .over section.order-sample h1 {
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.call-us h2, .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.call-us .article-full .main-content h1, .article-full .main-content .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.call-us h1,
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.order-sample h2,
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.order-sample .article-full .main-content h1,
+  .article-full .main-content .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.order-sample h1,
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.call-us h2,
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.call-us .article-full .main-content h1,
+  .article-full .main-content .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.call-us h1,
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.order-sample h2,
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.order-sample .article-full .main-content h1,
+  .article-full .main-content .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.order-sample h1 {
     border-bottom-width: 1px;
   }
-  .scroll-near-bottom footer#page-footer:hover section.call-us > *:nth-child(n+3),
-  .scroll-near-bottom footer#page-footer:hover section.order-sample > *:nth-child(n+3),
-  .scroll-near-bottom footer#page-footer .over section.call-us > *:nth-child(n+3),
-  .scroll-near-bottom footer#page-footer .over section.order-sample > *:nth-child(n+3) {
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.call-us > *:nth-child(n+3),
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.order-sample > *:nth-child(n+3),
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.call-us > *:nth-child(n+3),
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.order-sample > *:nth-child(n+3) {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     transition-delay: .1s;
   }
-  .scroll-near-bottom footer#page-footer:hover section.order-sample > *:nth-child(n+3),
-  .scroll-near-bottom footer#page-footer .over section.order-sample > *:nth-child(n+3) {
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.order-sample > *:nth-child(n+3),
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.order-sample > *:nth-child(n+3) {
     transition-delay: .1s;
   }
-  .scroll-near-bottom footer#page-footer:hover section.social,
-  .scroll-near-bottom footer#page-footer .over section.social {
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.social,
+  .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.social {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
@@ -2602,6 +2601,7 @@ select[data-dkcacheid] {
   color: #fff;
   background: #00b2ce;
   padding: 2rem;
+  cursor: pointer;
 }
 .form-signup-cta h2, .form-signup-cta .article-full .main-content h1, .article-full .main-content .form-signup-cta h1,
 .form-signup-cta p,

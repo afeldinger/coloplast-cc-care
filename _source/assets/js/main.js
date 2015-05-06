@@ -574,6 +574,10 @@ $(document).ready(function() {
     // Embed hero signup form into hero
     $('#signup-form-hero').appendTo($('.hero:first .content-wrapper'));
 
+    $('#signup-form-trigger').find('.form-signup-cta:has(a)').click(function() {
+    	$(this).find('a').trigger('click');
+    });
+
 
     // Handle lightbox links
 
