@@ -18,7 +18,8 @@ function state_indicator_change(state) {
 */
 
 
-// detect if legacy browser ( <= IE9) : from http://stackoverflow.com/a/16657946		
+// detect if legacy browser ( <= IE9) : from http://stackoverflow.com/a/16657946
+/*
 var legacy = (function(){
 	var undef,rv = 0; // Return value assumes failure.
 	var ua = window.navigator.userAgent;
@@ -36,6 +37,7 @@ var legacy = (function(){
 if (legacy) {
 	$('body').addClass('legacy');
 }
+*/
 
 // Returns a function, that, as long as it continues to be invoked, will not
 // be triggered. The function will be called after it stops being called for
@@ -220,6 +222,7 @@ function grid_list_init() {
 	}).change();
 	grid_list_sort();
 }
+grid_list_init();
 
 var lastScrollTop = 0;
 var ccScrollListener = debounce(function() {
@@ -266,21 +269,21 @@ $.leftPad = function(i,l,s) {
 };
 
 function getImageLightness(imageSrc, callback, target) {
-    var img = document.createElement("img");
+    var img = document.createElement('img');
     img.src = imageSrc;
-    img.crossOrigin = "Anonymous";
-    img.style.display = "none";
+    img.crossOrigin = 'Anonymous';
+    img.style.display = 'none';
     document.body.appendChild(img, callback);
 
     var colorSum = 0;
 
     img.onload = function() {
         // create canvas
-        var canvas = document.createElement("canvas");
+        var canvas = document.createElement('canvas');
         canvas.width = this.width;
         canvas.height = this.height;
 
-        var ctx = canvas.getContext("2d");
+        var ctx = canvas.getContext('2d');
         ctx.drawImage(this,0,0);
 
         var imageData = ctx.getImageData(0,0,canvas.width,canvas.height);
@@ -298,12 +301,11 @@ function getImageLightness(imageSrc, callback, target) {
 
         var brightness = Math.floor(colorSum / (this.width*this.height));
         callback(brightness, target);
-    }
+    };
 }
 
 $(document).ready(function() {
 
-	grid_list_init();
 
 /*
 	$('.hero, .article-header').filter(':has(.elm-image img)').each(function() {
