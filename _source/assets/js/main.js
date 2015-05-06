@@ -1,66 +1,3 @@
-(function(){
-
-/*
-// Create the state-indicator element
-var indicator = document.createElement('div');
-indicator.className = 'state-indicator';
-document.body.appendChild(indicator);
-
-// Create a method which returns device state
-function getDeviceState() {
-    return window.getComputedStyle(document.querySelector('.state-indicator'), ':before').getPropertyValue('content');
-}
-
-var lastDeviceState = getDeviceState();
-function state_indicator_change(state) {
-	console.log('Window state: ' + state);
-}
-*/
-
-
-// detect if legacy browser ( <= IE9) : from http://stackoverflow.com/a/16657946
-/*
-var legacy = (function(){
-	var undef,rv = 0; // Return value assumes failure.
-	var ua = window.navigator.userAgent;
-	var msie = ua.indexOf('MSIE ');
-	if (msie > 0) {
-		// IE 10 or older => return version number
-		rv = parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
-		if (rv >= 10)  {
-			rv = undef;
-		}
-	}
-	return ((rv > 0) ? 1 : undef);
-}());
-
-if (legacy) {
-	$('body').addClass('legacy');
-}
-*/
-
-// Returns a function, that, as long as it continues to be invoked, will not
-// be triggered. The function will be called after it stops being called for
-// N milliseconds. If `immediate` is passed, trigger the function on the
-// leading edge, instead of the trailing.
-function debounce(func, wait, immediate) {
-	var timeout;
-	return function() {
-		var context = this, args = arguments;
-		var later = function() {
-			timeout = null;
-			if (!immediate) {
-				func.apply(context, args);
-			}
-		};
-		var callNow = immediate && !timeout;
-		clearTimeout(timeout);
-		timeout = setTimeout(later, wait);
-		if (callNow) {
-			func.apply(context, args);
-		}
-	};
-}
 
 function grid_list_sort() {
 	$('.grid-list .list-items').each(function() {
@@ -147,6 +84,72 @@ function grid_list_sort() {
 	});
 
 }
+
+
+(function(){
+
+/*
+// Create the state-indicator element
+var indicator = document.createElement('div');
+indicator.className = 'state-indicator';
+document.body.appendChild(indicator);
+
+// Create a method which returns device state
+function getDeviceState() {
+    return window.getComputedStyle(document.querySelector('.state-indicator'), ':before').getPropertyValue('content');
+}
+
+var lastDeviceState = getDeviceState();
+function state_indicator_change(state) {
+	console.log('Window state: ' + state);
+}
+*/
+
+
+// detect if legacy browser ( <= IE9) : from http://stackoverflow.com/a/16657946
+/*
+var legacy = (function(){
+	var undef,rv = 0; // Return value assumes failure.
+	var ua = window.navigator.userAgent;
+	var msie = ua.indexOf('MSIE ');
+	if (msie > 0) {
+		// IE 10 or older => return version number
+		rv = parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+		if (rv >= 10)  {
+			rv = undef;
+		}
+	}
+	return ((rv > 0) ? 1 : undef);
+}());
+
+if (legacy) {
+	$('body').addClass('legacy');
+}
+*/
+
+// Returns a function, that, as long as it continues to be invoked, will not
+// be triggered. The function will be called after it stops being called for
+// N milliseconds. If `immediate` is passed, trigger the function on the
+// leading edge, instead of the trailing.
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) {
+				func.apply(context, args);
+			}
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) {
+			func.apply(context, args);
+		}
+	};
+}
+
 function grid_list_init() {
 
 	$('.grid-list .list-items').each(function() {
@@ -267,7 +270,7 @@ $.leftPad = function(i,l,s) {
 	}
 	return o;
 };
-
+/*
 function getImageLightness(imageSrc, callback, target) {
     var img = document.createElement('img');
     img.src = imageSrc;
@@ -303,7 +306,7 @@ function getImageLightness(imageSrc, callback, target) {
         callback(brightness, target);
     };
 }
-
+*/
 $(document).ready(function() {
 
 
