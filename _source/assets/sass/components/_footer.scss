@@ -248,6 +248,7 @@ footer#page-footer {
 			top:100%;
 			margin-top:0;
 			z-index:20;
+			transform: translate3d(0,0,0);
 			transition: transform .3s;
 
 			section.call-us,
@@ -290,11 +291,11 @@ footer#page-footer {
 
 	.scroll-near-bottom {
 		footer#page-footer {
-			transform: translate3d(0, -65px, 0);
+			transform: translate3d(0, -65px, 0) !important;
 
 			&:hover,
 			.over {
-				transform: translate3d(0,-100%,0);
+				transform: translate3d(0,-100%,0) !important;
 
 				
 				section.call-us,

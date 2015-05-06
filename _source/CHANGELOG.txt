@@ -9,6 +9,10 @@
 * 
 **************************************************************************
 
+2015-05-06
+  All pages
+  * Modernizr added to the page header
+
 2015-04-28
   Hero
   * Changed <section> to <div>. Shouldn't affect the implementation, as it has already been changed there.

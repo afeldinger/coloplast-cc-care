@@ -305,7 +305,7 @@ module.exports = function(grunt) {
           {
             expand: true, 
             cwd: '_source/assets/js/libs/', 
-            src: ['jquery-*.js'],
+            src: ['jquery-*.js', 'modernizr.min.js'],
             dest: 'dist/assets/js/libs/',
           },
           {
@@ -327,7 +327,14 @@ module.exports = function(grunt) {
     },
 
     usemin: {
-      html: 'dist/**/*.html',
+      html: 'dist/*.html',
+      options: {
+          assetsDirs: [
+            'dist/assets/',
+            'dist/assets/img',
+            'dist/assets/fonts',
+          ]
+      }
     },
 
 
@@ -371,7 +378,9 @@ module.exports = function(grunt) {
     'prettify', 
     'imagemin',
     'svgmin',
+    'copy:dist',
     'useminPrepare', 
+
     'concat:js',
     'cssmin',
     'uglify:js',
@@ -381,7 +390,6 @@ module.exports = function(grunt) {
     'uglify',
     */
     'usemin',
-    'copy:dist',
     'replace:dist',
   ]);
 

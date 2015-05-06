@@ -1729,6 +1729,8 @@ footer#page-footer section.social ul.social .icon {
     top: 100%;
     margin-top: 0;
     z-index: 20;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
     -webkit-transition: -webkit-transform .3s;
             transition: transform .3s;
   }
@@ -1780,13 +1782,13 @@ footer#page-footer section.social ul.social .icon {
   }
 
   .scroll-near-bottom footer#page-footer {
-    -webkit-transform: translate3d(0, -65px, 0);
-            transform: translate3d(0, -65px, 0);
+    -webkit-transform: translate3d(0, -65px, 0) !important;
+            transform: translate3d(0, -65px, 0) !important;
   }
   .scroll-near-bottom footer#page-footer:hover,
   .scroll-near-bottom footer#page-footer .over {
-    -webkit-transform: translate3d(0, -100%, 0);
-            transform: translate3d(0, -100%, 0);
+    -webkit-transform: translate3d(0, -100%, 0) !important;
+            transform: translate3d(0, -100%, 0) !important;
   }
   .scroll-near-bottom footer#page-footer:hover section.call-us,
   .scroll-near-bottom footer#page-footer:hover section.order-sample,
@@ -4966,7 +4968,7 @@ body:not(.scroll-top) .type-article .article-header {
   }
 }
 
-@media (min-width: 0) and (max-width: 45em) {
+@media (min-width: 0) and (max-width: 55em) {
   .page-section .form-signup-cta {
     display: none;
   }
