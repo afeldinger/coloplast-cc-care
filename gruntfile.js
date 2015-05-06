@@ -164,7 +164,7 @@ module.exports = function(grunt) {
         '!_source/assets/js/{libs,localization}/**/*.js'
       ]
     },
-
+/*
     concat: { 
       js: {
           src: [
@@ -188,7 +188,7 @@ module.exports = function(grunt) {
           dest: 'dist/assets/js/scripts.min.js',
       },
     },
-
+*/
     sprite:{
       retina: {
         src: '_source/assets/img/sprites-2x/*.png',
@@ -263,18 +263,18 @@ module.exports = function(grunt) {
 
 
     autoprefixer: {
-      /*
+
         options: {
           browsers: ['last 2 versions', 'ie>=9']
         },
-      */
+
         dev: {
             files: {
                 '_source/assets/css/default.css': '_source/assets/css/default.css',
             },
         },
     },
-
+/*
     cssmin: {
       target: {
         files: [{
@@ -286,7 +286,7 @@ module.exports = function(grunt) {
         }]
       },
     },
-
+*/
     clean: {
       dist: {
         src: ['dist/*', '!dist/.htaccess'],
@@ -305,7 +305,7 @@ module.exports = function(grunt) {
           {
             expand: true, 
             cwd: '_source/assets/js/libs/', 
-            src: ['jquery-*.js', 'modernizr.min.js'],
+            src: ['jquery-*.js'],
             dest: 'dist/assets/js/libs/',
           },
           {
@@ -320,7 +320,7 @@ module.exports = function(grunt) {
     },
 
     useminPrepare: {
-      html: 'dist/01-frontpage.html',
+      html: 'dist/frontpage.html',
       options: {
           dest: 'dist/'
       }
@@ -343,7 +343,7 @@ module.exports = function(grunt) {
         options: {
           patterns: [
             {
-              match: /(\.\.\/_source\/assets\/|_source\/assets\/|assets\/)/g,
+              match: /(\.tmp\/concat\/assets\/|\.\.\/_source\/assets\/|_source\/assets\/|assets\/)/g,
               replacement: 'http://git.krympevaerk.dk/coloplast_cc/dist/assets/',
               //replacement: '/magnetix/coloplast/dist/assets/',
             },
@@ -380,15 +380,14 @@ module.exports = function(grunt) {
     'svgmin',
     'copy:dist',
     'useminPrepare', 
-
+/*
     'concat:js',
     'cssmin',
     'uglify:js',
-/*
+*/
     'concat',
     'cssmin',
     'uglify',
-    */
     'usemin',
     'replace:dist',
   ]);
