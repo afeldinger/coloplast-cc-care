@@ -3005,14 +3005,14 @@ select[data-dkcacheid] {
     display: block;
     transition-delay: 0.4s;
   }
-  .grid-list li.over {
+  .no-touch .grid-list li.over {
     cursor: pointer;
   }
-  .grid-list li.over .elm-content-over {
+  .no-touch .grid-list li.over .elm-content-over {
     bottom: 0;
   }
-  .grid-list li.over .elm-content-over h2, .grid-list li.over .elm-content-over .article-full .main-content h1, .article-full .main-content .grid-list li.over .elm-content-over h1,
-  .grid-list li.over .elm-content-over p, .grid-list li.over .elm-content-over > a {
+  .no-touch .grid-list li.over .elm-content-over h2, .no-touch .grid-list li.over .elm-content-over .article-full .main-content h1, .article-full .main-content .no-touch .grid-list li.over .elm-content-over h1,
+  .no-touch .grid-list li.over .elm-content-over p, .no-touch .grid-list li.over .elm-content-over > a {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }

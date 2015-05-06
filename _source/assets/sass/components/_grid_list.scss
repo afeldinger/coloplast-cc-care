@@ -251,23 +251,24 @@
 
 		}
 
-		li.over {
-			cursor: pointer;
+		.no-touch & {
+			li.over {
+				cursor: pointer;
 
-			.elm-content {
+				.elm-content {
 
-			}
-			
-			.elm-content-over {
-				bottom: 0;
+				}
 				
-				h2,
-				p,
-				& > a {
-					transform: translate3d(0,0,0);
+				.elm-content-over {
+					bottom: 0;
+					
+					h2,
+					p,
+					& > a {
+						transform: translate3d(0,0,0);
+					}
 				}
 			}
-
 
 		}
 
