@@ -2784,7 +2784,12 @@ select[data-dkcacheid] {
   border-top: 1px solid #bcbcbc;
   border-bottom: 1px solid #bcbcbc;
   text-indent: -999em;
-  color: inherit;
+}
+.grid-list .elm-content a.more-link, .grid-list .elm-content a.more-link:hover, .grid-list .elm-content a.more-link:active,
+.grid-list .elm-content-over a.more-link,
+.grid-list .elm-content-over a.more-link:hover,
+.grid-list .elm-content-over a.more-link:active {
+  color: inherit !important;
 }
 .grid-list .elm-content a.more-link .icon,
 .grid-list .elm-content-over a.more-link .icon {

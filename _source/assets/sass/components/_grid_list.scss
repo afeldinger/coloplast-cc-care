@@ -48,7 +48,12 @@
 			border-top: 1px solid $color-borders;
 			border-bottom: 1px solid $color-borders;
 			text-indent: -999em;
-			color: inherit;
+
+			&,
+			&:hover,
+			&:active {
+				color: inherit !important;
+			}
 
 			
 			.icon {
