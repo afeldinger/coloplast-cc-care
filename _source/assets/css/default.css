@@ -3322,6 +3322,11 @@ header#page-header .brand-secondary span {
     color: #fff;
     transition: color 1s ease;
   }
+  body:not(.page-front) .hero .elm-content p,
+  body:not(.page-front) .hero .elm-content ul,
+  body:not(.page-front) .hero .elm-content ol {
+    max-width: 420px;
+  }
   .hero .elm-content .checkmarks li:before {
     color: inherit;
   }

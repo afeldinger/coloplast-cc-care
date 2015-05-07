@@ -108,6 +108,14 @@
 				transition: color 1s ease;
 			}
 
+			body:not(.page-front) & {
+				p,
+				ul,
+				ol {
+					max-width: 420px;
+				}
+			}
+
 			.checkmarks li:before {
 				color:inherit;
 			}
