@@ -45,6 +45,10 @@
 				color: $color-primary;
 			}
 		}
+
+		ul {
+			@extend ul.checkmarks;
+		}
 	}
 
 
@@ -107,6 +111,7 @@
 			.checkmarks li:before {
 				color:inherit;
 			}
+
 		}
 		
 		&.background-light {

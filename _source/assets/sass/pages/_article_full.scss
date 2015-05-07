@@ -243,7 +243,8 @@ html, body {
 						transform: translate(-50%,-50%);
 						text-align: center;
 
-						text-shadow: 0 0 5px rgba(255,255,255,.2), 0 0 30px rgba(0,0,0,.9);
+						//text-shadow: 0 0 5px rgba(255,255,255,.2), 0 0 30px rgba(0,0,0,.9);
+						text-shadow: 0 0 1px rgba(0,0,0,.2), 0 0 25px rgba(0,0,0,.3);
 
 						h1,
 						h2 {
@@ -425,12 +426,14 @@ html, body {
 
 					transition: color 1s ease;
 
-					text-shadow: 0 0 1px #fff, 0 0 5px rgba(255,255,255,.4), 0 0 20px rgba(255,255,255,.9);
+//					text-shadow: 0 0 1px #fff, 0 0 5px rgba(255,255,255,.4), 0 0 20px rgba(255,255,255,.9);
+					text-shadow: 0 0 2px rgba(255,255,255,.5), 0 0 25px rgba(255,255,255,.3);
 				}
 
 				.elm-actions {
 					a {
-						box-shadow: 0 0 30px rgba(255,255,255,.5);
+						//box-shadow: 0 0 30px rgba(255,255,255,.5);
+						text-shadow: 0 0 2px rgba(255,255,255,.5), 0 0 25px rgba(255,255,255,.3);
 					}
 				}
 
