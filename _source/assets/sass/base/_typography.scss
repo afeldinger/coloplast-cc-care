@@ -131,15 +131,18 @@ ol {
         margin-top: rhythm(3)
     }
 }
-ul,
-ol {
+ul {
     list-style: disc;
-    li {
-        margin-left: 1.6em;
-        display: list-item;
-
-    }
 }
+ol {
+    list-style: decimal;
+}
+li {
+    margin-left: 1.6em;
+    display: list-item;
+
+}
+
 
 
 

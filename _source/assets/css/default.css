@@ -725,12 +725,15 @@ ol + h3 {
   margin-top: 1.2rem;
 }
 
-ul,
-ol {
+ul {
   list-style: disc;
 }
-ul li,
-ol li {
+
+ol {
+  list-style: decimal;
+}
+
+li {
   margin-left: 1.6em;
   display: list-item;
 }
