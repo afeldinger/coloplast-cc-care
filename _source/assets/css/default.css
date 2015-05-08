@@ -3292,12 +3292,13 @@ header#page-header .brand-secondary span {
     overflow: hidden;
     background-size: cover;
     background-position: 50% 50%;
+    min-height: 420px;
     max-height: 500px;
   }
   .hero:before {
     content: "";
     display: block;
-    padding-top: 66.65%;
+    padding-top: 37.26%;
   }
   .hero .content-wrapper, .hero .article-full .main-content, .article-full .hero .main-content, .hero .facts {
     position: absolute;

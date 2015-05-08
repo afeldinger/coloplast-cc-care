@@ -65,15 +65,16 @@
 		background-size: cover;
 		background-position: 50% 50%;
 
+		min-height: 420px;
 		max-height: 500px;
 
 
 		&:before{
 			content: "";
 			display: block;
-			//padding-top: 37.26%;
+			padding-top: 37.26%;
 			
-			padding-top: 1333 / 2000 * 100%;
+			//padding-top: 1333 / 2000 * 100%;
 
 		}
 
