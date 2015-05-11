@@ -36,6 +36,9 @@
 			*/
 		}
 
+		li {
+			@include adjust-leading-to(4);
+		}
 		li:nth-child(n+2) {
 			margin-top: rhythm(2);
 		}
@@ -109,13 +112,13 @@
 				transition: color 1s ease;
 			}
 
-			body:not(.page-front) & {
+			//body:not(.page-front) & {
 				p,
 				ul,
 				ol {
 					max-width: 420px;
 				}
-			}
+			//}
 
 			.checkmarks li:before {
 				color:inherit;

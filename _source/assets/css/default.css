@@ -3274,6 +3274,10 @@ header#page-header .brand-secondary span {
   @include adjust-leading-to(4);
   */
 }
+.hero .elm-content li {
+  line-height: 24px;
+  line-height: 1.6rem;
+}
 .hero .elm-content li:nth-child(n+2) {
   margin-top: 0.8rem;
 }
@@ -3326,9 +3330,9 @@ header#page-header .brand-secondary span {
     color: #fff;
     transition: color 1s ease;
   }
-  body:not(.page-front) .hero .elm-content p,
-  body:not(.page-front) .hero .elm-content ul,
-  body:not(.page-front) .hero .elm-content ol {
+  .hero .elm-content p,
+  .hero .elm-content ul,
+  .hero .elm-content ol {
     max-width: 420px;
   }
   .hero .elm-content .checkmarks li:before {
