@@ -545,6 +545,7 @@ $(document).ready(function() {
     $('select:visible').dropkick({
         mobile: true,
         menuSpeed: 'fast',
+        container: $('#page-header + .content-wrapper:first'),
         initialize: function() {
             var $select = $(this.data.elem);
             var widestOptionWidth = 0;

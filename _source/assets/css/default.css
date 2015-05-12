@@ -2943,8 +2943,11 @@ select[data-dkcacheid] {
     margin-left: 9.31677%;
     margin-right: 9.31677%;
   }
-  .grid-list .elm-content img.blur,
-  .grid-list .elm-content-over img.blur {
+  .grid-list .elm-content {
+    background: rgba(0, 0, 0, 0.4);
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  }
+  .grid-list .elm-content img.blur {
     display: block;
     position: absolute;
     left: 0;
@@ -2961,9 +2964,8 @@ select[data-dkcacheid] {
             backface-visibility: hidden;
     z-index: -2;
   }
-  .grid-list .elm-content {
-    background: rgba(0, 0, 0, 0.4);
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  .no-cssfilters .grid-list .elm-content img.blur {
+    display: none;
   }
   .grid-list .elm-content-over {
     z-index: 10;

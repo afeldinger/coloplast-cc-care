@@ -184,7 +184,16 @@
 				margin-right: (30 / 322 * 100%);
 			}
 
+		}
 
+
+
+
+		.elm-content {
+			background:rgba(0,0,0,.4);
+			text-shadow: 0 0 2px rgba(0,0,0,.3);
+
+			
 			img.blur {
 				display:block;
 				position:absolute;
@@ -197,15 +206,11 @@
 				transform: scale(1.06);
 				backface-visibility: hidden;
 				z-index: -2;
+
+				.no-cssfilters & {
+					display:none;
+				}
 			}
-		}
-
-
-
-
-		.elm-content {
-			background:rgba(0,0,0,.4);
-			text-shadow: 0 0 2px rgba(0,0,0,.3);
 		}
 
 		.elm-content-over {

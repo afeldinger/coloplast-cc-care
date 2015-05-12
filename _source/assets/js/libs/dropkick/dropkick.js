@@ -384,6 +384,14 @@
                 dkTop = _.offset( dk ).top - window.scrollY,
                 dkBottom = window.innerHeight - ( dkTop + dk.offsetHeight );
 
+            if (
+                this.data.settings.container && // container exists
+                this.data.settings.container.offset().top + this.data.settings.container.innerHeight() < window.scrollY + window.innerHeight // container ends before window bottom
+            ) {
+                dkTop = $(dk).offset().top;
+                dkBottom = this.data.settings.container.innerHeight() - dkTop;
+            }
+
             if ( this.isOpen || this.multiple ) return false;
 
             dkOptsList.style.display = "block";
