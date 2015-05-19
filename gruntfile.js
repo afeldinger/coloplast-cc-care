@@ -216,7 +216,11 @@ module.exports = function(grunt) {
             files: [{
                 expand: true,
                 cwd: '_source/assets/img/',
-                src: ['**/*.{png,jpg,gif}'],
+                src: [
+                  '**/*.{png,jpg,gif}',
+                  '!sprites/*',
+                  '!sprites-2x/*'
+                ],
                 dest: 'dist/assets/img/'
             }]
         }
@@ -300,14 +304,17 @@ module.exports = function(grunt) {
             expand: true, 
             cwd: '_source/assets/fonts/', 
             src: ['*.{svg,woff,eot,ttf}'],
+            //src: ['cc-icons.*'],
             dest: 'dist/assets/fonts/',
           },
+          /*
           {
             expand: true, 
             cwd: '_source/assets/js/libs/', 
             src: ['jquery-*.js'],
             dest: 'dist/assets/js/libs/',
           },
+          */
           {
             expand: true,
             flatten: true,
@@ -339,12 +346,13 @@ module.exports = function(grunt) {
 
 
     replace: {
-      dist: {
+      html: {
         options: {
           patterns: [
             {
               match: /(\.tmp\/concat\/assets\/|\.\.\/_source\/assets\/|_source\/assets\/|assets\/)/g,
-              replacement: 'http://git.krympevaerk.dk/coloplast_cc/dist/assets/',
+              //replacement: 'http://git.krympevaerk.dk/coloplast_cc/dist/assets/',
+              replacement: 'assets/',
               //replacement: '/magnetix/coloplast/dist/assets/',
             },
           ]
@@ -354,7 +362,26 @@ module.exports = function(grunt) {
             expand: true, 
             //flatten: true, 
             cwd: 'dist',
-            src: ['**/*.{html,css}'],
+            src: ['**/*.html'],
+            dest: 'dist/.'
+          }
+        ]
+      },
+      css: {
+        options: {
+          patterns: [
+            {
+              match: /(\.tmp\/concat\/assets\/|\.\.\/_source\/assets\/|_source\/assets\/|assets\/)/g,
+              replacement: '../',
+            },
+          ]
+        },
+        files: [
+          {
+            expand: true, 
+            //flatten: true, 
+            cwd: 'dist',
+            src: ['**/*.css'],
             dest: 'dist/.'
           }
         ]
@@ -389,7 +416,8 @@ module.exports = function(grunt) {
     'cssmin',
     'uglify',
     'usemin',
-    'replace:dist',
+    'replace:html',
+    'replace:css'
   ]);
 
 };
