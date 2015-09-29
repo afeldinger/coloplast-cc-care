@@ -42,7 +42,7 @@ module.exports = function(grunt) {
         },
       },
       styles: {
-        files: ['src/assets/sass/**/*.scss'],
+        files: ['_source/assets/sass/**/*.scss'],
         tasks: ['sass:dev', 'autoprefixer:dev'],
         options: {
             spawn: false,
