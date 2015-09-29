@@ -33,13 +33,29 @@ module.exports = function(grunt) {
         tasks: ['font'],
       },
 
-      styles: {
+
+      globbing: {
         files: ['_source/assets/sass/**/*.scss'],
-        tasks: ['compass:dev', 'autoprefixer:dev'],
+        tasks: ['sass_globbing:dev'],
+        options: {
+          event: ['added', 'deleted'],
+        },
+      },
+      styles: {
+        files: ['src/assets/sass/**/*.scss'],
+        tasks: ['sass:dev', 'autoprefixer:dev'],
         options: {
             spawn: false,
         }
       },
+
+//      styles: {
+//        files: ['_source/assets/sass/**/*.scss'],
+//        tasks: ['compass:dev', 'autoprefixer:dev'],
+//        options: {
+//            spawn: false,
+//        }
+//      },
 
       handlebars: {
         files: ['_source/layouts/*.hbs', '_source/partials/**/*.hbs', '_source/pages/*.hbs', '_source/data/*.json'],
@@ -245,7 +261,7 @@ module.exports = function(grunt) {
             }]
         }
     },
-
+/*
     compass: {
       options: {
         config: 'config.rb',
@@ -261,6 +277,44 @@ module.exports = function(grunt) {
         options: {
           environment: 'production'
         }
+      }
+    },
+*/
+
+    // Grunt-sass 
+    sass: {
+      dev: {
+        files: [{
+          expand: true,
+          cwd: '_source/src/assets/sass',
+          src: ['**/*.scss'],
+          dest: 'dist/assets/css',
+          ext: '.css'
+        }]
+      },
+      options: {
+        sourceMap: false,
+        //sourceMap: 'dist/assets/css/default.css.map', 
+        //sourceMapRoot: 'src/assets/sass/',
+        //outFile: 'dist/assets/css',
+        outputStyle: 'nested', 
+        imagePath: "../img/",
+        precision: 2,
+      }
+    },
+
+    sass_globbing: {
+      dev: {
+        files: {
+          '_source/assets/sass/globbing/_variables.scss': '_source/assets/sass/variables/**/*.scss', // handled manually
+          '_source/assets/sass/globbing/_base.scss': '_source/assets/sass/base/**/*.scss',
+          '_source/assets/sass/globbing/_abstractions.scss': '_source/assets/sass/abstractions/*.scss',
+          '_source/assets/sass/globbing/_components.scss': '_source/assets/sass/components/**/*.scss',
+          '_source/assets/sass/globbing/_pages.scss': '_source/assets/sass/pages/**/*.scss',
+        },
+      },
+      options: {
+        useSingleQuotes: false
       }
     },
 
@@ -395,12 +449,14 @@ module.exports = function(grunt) {
   require('matchdep').filterDev(['grunt-*', 'assemble']).forEach(grunt.loadNpmTasks);
 
   // Default task(s).
-  grunt.registerTask('default', ['assemble', 'compass:dist', 'autoprefixer']);
+  grunt.registerTask('common', ['assemble', 'sass:dev', 'autoprefixer']);
+
+  grunt.registerTask('default', ['common', 'watch']);
 
   // Build minified assets
   grunt.registerTask('build', [
     'clean:dist',
-    'default',
+    'common',
     'htmlmin', 
     'prettify', 
     'imagemin',

@@ -6,8 +6,15 @@
 @import "singularitygs";
 // @import "toolkit-no-css";
 
-@import "variables/**/*";
-@import "abstractions/**/*";
-@import "base/**/*";
-@import "components/**/*";
-@import "pages/**/*";
+//@import "variables/**/*";
+//@import "abstractions/**/*";
+//@import "base/**/*";
+//@import "components/**/*";
+//@import "pages/**/*";
+
+
+@import "globbing/variables";
+@import "globbing/abstractions";
+@import "globbing/base";
+@import "globbing/components";
+@import "globbing/pages";
