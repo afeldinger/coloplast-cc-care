@@ -1,0 +1,28 @@
+
+
+/* Clearfixes */
+@mixin clearfix {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+@mixin legacy-pie-clearfix {
+  &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+  }
+  *zoom: 1;
+}
+
+@mixin pie-clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  *zoom: 1;
+ }

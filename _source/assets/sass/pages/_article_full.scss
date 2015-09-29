@@ -344,7 +344,8 @@ html, body {
 			.elm-image {
 				margin: 0 (-1 * $content-margin);
 
-				@include background-image(linear-gradient(to bottom, $light-gray 0%, $light-gray 71.8181%, #fff 71.8181%, #fff 100%));
+				//@include background-image(linear-gradient(to bottom, $light-gray 0%, $light-gray 71.8181%, #fff 71.8181%, #fff 100%));
+				background-image: linear-gradient(to bottom, $light-gray 0%, $light-gray 71.8181%, #fff 71.8181%, #fff 100%);
 
 				img {
 					display:block;
@@ -454,7 +455,8 @@ html, body {
 
 
 		.article-header-3d {
-			@include background-image(linear-gradient(to bottom, $light-gray 0%, $light-gray 71.8181%, #fff 71.8181%, #fff 100%));
+			//@include background-image(linear-gradient(to bottom, $light-gray 0%, $light-gray 71.8181%, #fff 71.8181%, #fff 100%));
+			background-image: linear-gradient(to bottom, $light-gray 0%, $light-gray 71.8181%, #fff 71.8181%, #fff 100%);
 			margin-bottom: rhythm(10);
 
 			.content-block {

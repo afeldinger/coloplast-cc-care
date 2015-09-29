@@ -5,7 +5,8 @@ header#page-header {
 	z-index:10;
 
 	background-color: #fff;
-	@include background-image(linear-gradient(to bottom, #fff 0%, #fff 50%, #fefefe 51%, #f3f3f3 100%));
+	//@include background-image(linear-gradient(to bottom, #fff 0%, #fff 50%, #fefefe 51%, #f3f3f3 100%));
+	background-image: linear-gradient(to bottom, #fff 0%, #fff 50%, #fefefe 51%, #f3f3f3 100%);
 	background-size: 100% 58px;
 	background-repeat: no-repeat;
 /*

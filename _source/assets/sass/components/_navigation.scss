@@ -223,9 +223,13 @@ nav.primary {
 					right:0;
 					width:1px;
 					height:28px;
+					/*
 					@include background-image(
 						linear-gradient(to bottom, rgba($color-borders, 0), rgba($color-borders, .1) 20%, $color-borders 50%, rgba($color-borders, .9) 80%, rgba($color-borders, 0))
 					);
+					*/
+					background-image: linear-gradient(to bottom, rgba($color-borders, 0), rgba($color-borders, .1) 20%, $color-borders 50%, rgba($color-borders, .9) 80%, rgba($color-borders, 0));
+					
 				}
 				&:first-child > .nav-title:before {
 					right: auto;

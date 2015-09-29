@@ -1,9 +1,16 @@
 
+/*
 @import "compass";
 @import "compass/reset";
 @import "compass/typography/vertical_rhythm";
 @import "breakpoint";
 @import "singularitygs";
+*/
+@import "compass/clearfix";
+@import "compass/singularitygs";
+@import "compass/breakpoint";
+@import "compass/vertical-rhythms";
+
 // @import "toolkit-no-css";
 
 //@import "variables/**/*";

@@ -286,16 +286,16 @@ module.exports = function(grunt) {
       dev: {
         files: [{
           expand: true,
-          cwd: '_source/src/assets/sass',
+          cwd: '_source/assets/sass',
           src: ['**/*.scss'],
-          dest: 'dist/assets/css',
+          dest: '_source/assets/css',
           ext: '.css'
         }]
       },
       options: {
         sourceMap: false,
         //sourceMap: 'dist/assets/css/default.css.map', 
-        //sourceMapRoot: 'src/assets/sass/',
+        //sourceMapRoot: '_source/assets/sass/',
         //outFile: 'dist/assets/css',
         outputStyle: 'nested', 
         imagePath: "../img/",
