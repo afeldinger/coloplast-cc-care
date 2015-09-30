@@ -9,9 +9,17 @@
 * 
 **************************************************************************
 
+2015-09-30
+  Frontpage
+  * Hero and overlay signup forms updated with multistep groups
+
 2015-09-29
   Frontpage
   * Added phone no. field to signup forms step 1, in both hero and cta versions
+
+
+************* Initial Release *************
+
 
 2015-05-06
   All pages

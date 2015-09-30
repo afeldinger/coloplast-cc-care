@@ -440,6 +440,13 @@ button {
 	}
 }
 
+.form-step {
+	display:none;
+	
+	&.active {
+		display:block;
+	}
+}
 
 .form-confirmation {
 	display:none;

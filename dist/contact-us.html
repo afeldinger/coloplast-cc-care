@@ -390,66 +390,104 @@
     </div>
     <div id="signup-form-overlay" class="form-signup mfp-hide">
       <form id="form-signup" name="signup">
-        <h1>Sign up now</h1>
-        <div class="form-row">
-          <label class="input-text" for="signup-firstname">
-            <div class="label">First name</div>
-            <input type="text" id="signup-firstname" name="firstname">
-          </label>
-        </div>
-        <div class="form-row">
-          <label class="input-text" for="signup-lastname">
-            <div class="label">Last name</div>
-            <input type="text" id="signup-lastname" name="last-name">
-          </label>
-        </div>
-        <div class="form-row">
-          <label class="input-text" for="signup-email">
-            <div class="label">E-mail address</div>
-            <input type="email" id="signup-email" name="email">
-          </label>
-        </div>
-        <div class="form-row">
-          <label class="input-text" for="signup-zip">
-            <div class="label">Zip code</div>
-            <input type="text" id="signup-zip" name="zip">
-          </label>
-        </div>
-        <div class="form-row gender-mobility">
-          <div class="radio-group icon-buttons">
-            <label class="input-radio" for="signup-gender-female">
-              <input id="signup-gender-female" name="gender" type="radio" value="female">
-              <span class="icon icon-gender-female"></span>
-              <span class="label">Female</span>
-            </label>
-            <label class="input-radio" for="signup-gender-male">
-              <input id="signup-gender-male" name="gender" type="radio" value="male">
-              <span class="icon icon-gender-male"></span>
-              <span class="label">Male</span>
+        <div class="form-step active">
+          <h1>Sign up now</h1>
+          <div class="form-row">
+            <label class="input-text" for="signup-firstname">
+              <div class="label">First name</div>
+              <input type="text" id="signup-firstname" name="firstname">
             </label>
           </div>
-          <div class="checkbox-group input-buttons">
-            <label class="input-checkbox" for="signup-mobility-wheelchair">
-              <input id="signup-mobility-wheelchair" name="mobility" type="checkbox" value="wheelchair">
+          <div class="form-row">
+            <label class="input-text" for="signup-lastname">
+              <div class="label">Last name</div>
+              <input type="text" id="signup-lastname" name="last-name">
+            </label>
+          </div>
+          <div class="form-row">
+            <label class="input-text" for="signup-email">
+              <div class="label">E-mail address</div>
+              <input type="email" id="signup-email" name="email">
+            </label>
+          </div>
+          <div class="form-row">
+            <label class="input-text" for="signup-zip">
+              <div class="label">Zip code</div>
+              <input type="text" id="signup-zip" name="zip">
+            </label>
+          </div>
+          <div class="form-row gender-mobility">
+            <div class="radio-group icon-buttons">
+              <label class="input-radio" for="signup-gender-female">
+                <input id="signup-gender-female" name="gender" type="radio" value="female">
+                <span class="icon icon-gender-female"></span>
+                <span class="label">Female</span>
+              </label>
+              <label class="input-radio" for="signup-gender-male">
+                <input id="signup-gender-male" name="gender" type="radio" value="male">
+                <span class="icon icon-gender-male"></span>
+                <span class="label">Male</span>
+              </label>
+            </div>
+            <div class="checkbox-group input-buttons">
+              <label class="input-checkbox" for="signup-mobility-wheelchair">
+                <input id="signup-mobility-wheelchair" name="mobility" type="checkbox" value="wheelchair">
+                <span class="icon icon-checkmark"></span>
+                <span class="label">I use a wheelchair</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-row">
+            <label class="input-text" for="signup-phone">
+              <div class="label">Phone no. (optional)</div>
+              <input type="text" id="signup-phone" name="phone">
+            </label>
+          </div>
+          <div class="form-row checkbox-group">
+            <label class="input-checkbox" for="signup-phone-is-mobile">
+              <input id="signup-phone-is-mobile" name="phone-is-mobile" type="checkbox" value="1">
               <span class="icon icon-checkmark"></span>
-              <span class="label">I use a wheelchair</span>
+              <span class="label">This is my mobile phone number</span>
             </label>
           </div>
+          <div class="button-group">
+            <button class="input-submit" type="button">
+              Continue
+            </button>
+          </div>
         </div>
-        <div class="form-row">
-          <label class="input-text" for="signup-phone">
-            <div class="label">Phone no. (optional)</div>
-            <input type="text" id="signup-phone" name="phone">
-          </label>
-        </div>
-        <div class="button-group">
-          <button class="input-submit type=" submit>
-            Sign up
-          </button>
-        </div>
-        <div class="disclaimer">
-          <p>By signing up you accept the <a href="#">Terms and Conditions</a>
-          </p>
+        <div class="form-step">
+          <div class="form-row">
+            <h3>Your surgery</h3>
+            <label class="input-select" for="signup-surgery-time">
+              <select id="signup-surgery-time" name="surgery-time">
+                <option value="">Please select</option>
+                <option value="opt1">My surgery was more than three months ago</option>
+                <option value="opt2">My surgery was less than three months ago</option>
+                <option value="opt3">I don't know when I will undergo surgery</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-row">
+            <h3>Describe your stoma</h3>
+            <label class="input-select" for="signup-stoma-type">
+              <select id="signup-stoma-type" name="stoma-type">
+                <option value="">Select type of stoma</option>
+                <option value="opt1">Colostomy (thick stool)</option>
+                <option value="opt2">Illeostomy (liquid stool)</option>
+                <option value="opt3">Urostomy (urine)</option>
+              </select>
+            </label>
+          </div>
+          <div class="button-group">
+            <button class="input-submit type=" submit>
+              Sign up
+            </button>
+          </div>
+          <div class="disclaimer">
+            <p>By signing up you accept the <a href="#">Terms and Conditions</a>
+            </p>
+          </div>
         </div>
       </form>
       <div class="form-confirmation">

@@ -1862,6 +1862,11 @@ button {
     line-height: 42px;
     line-height: 2.8rem; }
 
+.form-step {
+  display: none; }
+  .form-step.active {
+    display: block; }
+
 .form-confirmation {
   display: none; }
 
