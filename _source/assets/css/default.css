@@ -1848,7 +1848,9 @@ button {
     width: calc(100% - (2 * (40px + 15px)));
     float: left; }
     .gender-mobility .radio-group + .checkbox-group label {
-      width: 100%; } }
+      width: 100%;
+      text-align: left;
+      white-space: nowrap; } }
 
 .button-group {
   overflow: hidden; }
