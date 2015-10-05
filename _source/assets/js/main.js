@@ -75,7 +75,7 @@ var cc = (function(){
 
 
 	var ccResizeListener = debounce(function() {
-		$('.article-full.type-article .article-header').height($(window).height() - $('#page-header').height());
+		$('.article-full.type-article .article-header').css('min-height', $(window).height() - $('#page-header').height());
 		/*
 	    var state = getDeviceState();
 	    if(state !== lastDeviceState) {

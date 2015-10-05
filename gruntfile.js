@@ -59,7 +59,7 @@ module.exports = function(grunt) {
 
       handlebars: {
         files: ['_source/layouts/*.hbs', '_source/partials/**/*.hbs', '_source/pages/*.hbs', '_source/data/*.json'],
-        tasks: ['assemble'],
+        tasks: ['assemble', 'htmlmin', 'prettify'],
       },
     },
 
@@ -449,7 +449,7 @@ module.exports = function(grunt) {
   require('matchdep').filterDev(['grunt-*', 'assemble']).forEach(grunt.loadNpmTasks);
 
   // Default task(s).
-  grunt.registerTask('common', ['assemble', 'sass:dev', 'autoprefixer']);
+  grunt.registerTask('common', ['assemble', 'htmlmin', 'prettify', 'sass:dev', 'autoprefixer']);
 
   grunt.registerTask('default', ['common', 'watch']);
 
@@ -457,8 +457,6 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'common',
-    'htmlmin', 
-    'prettify', 
     'imagemin',
     'svgmin',
     'copy:dist',
