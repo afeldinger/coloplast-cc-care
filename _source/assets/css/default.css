@@ -3877,7 +3877,7 @@ html:not(.csstransitions) .type-article,
 
 */ }
         .type-article .article-header .content-wrapper, .type-article .article-header .article-full .main-content, .article-full .type-article .article-header .main-content, .type-article .article-header .facts {
-          position: static;
+          position: relative;
           display: table-cell;
           height: 100%;
           width: 100%;
@@ -3885,7 +3885,8 @@ html:not(.csstransitions) .type-article,
           margin: 0;
           padding: 0;
           vertical-align: middle;
-          text-align: center; }
+          text-align: center;
+          overflow: hidden; }
         .type-article .article-header .content-block {
           position: static;
           max-width: 70.67em;

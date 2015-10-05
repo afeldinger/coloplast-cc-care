@@ -316,7 +316,7 @@ html:not(.csstransitions) .type-article,
 			width: 100%;
 
 			.content-wrapper {
-				position:static;
+				position:relative;
 				display: table-cell;
 				height: 100%;
 				width: 100%;
@@ -325,6 +325,7 @@ html:not(.csstransitions) .type-article,
 				padding:0;
 				vertical-align: middle;
 				text-align: center;
+				overflow: hidden;
 			}
 			.content-block {
 				position:static;
