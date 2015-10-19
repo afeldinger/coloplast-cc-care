@@ -1505,40 +1505,40 @@ footer#page-footer {
         transition-property: opacity, transform;
         transition-duration: .3s;
         transition-timing-function: ease; }
-    .no-legacy.no-touch .scroll-near-bottom footer#page-footer {
+    .no-legacy.no-touch.scroll-near-bottom footer#page-footer {
       -webkit-transform: translate3d(0, -65px, 0) !important;
               transform: translate3d(0, -65px, 0) !important; }
-      .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover,
-      .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over {
+      .no-legacy.no-touch.scroll-near-bottom footer#page-footer:hover,
+      .no-legacy.no-touch.scroll-near-bottom footer#page-footer .over {
         -webkit-transform: translate3d(0, -100%, 0) !important;
                 transform: translate3d(0, -100%, 0) !important; }
-        .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.call-us,
-        .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.order-sample,
-        .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.call-us,
-        .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.order-sample {
+        .no-legacy.no-touch.scroll-near-bottom footer#page-footer:hover section.call-us,
+        .no-legacy.no-touch.scroll-near-bottom footer#page-footer:hover section.order-sample,
+        .no-legacy.no-touch.scroll-near-bottom footer#page-footer .over section.call-us,
+        .no-legacy.no-touch.scroll-near-bottom footer#page-footer .over section.order-sample {
           -webkit-transform: translate3d(0, 0, 0);
                   transform: translate3d(0, 0, 0); }
-          .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.call-us h2,
-          .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.call-us .article-full .main-content h1,
-          .article-full .main-content .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.call-us h1, .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.order-sample h2,
-          .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.order-sample .article-full .main-content h1,
-          .article-full .main-content .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.order-sample h1, .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.call-us h2,
-          .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.call-us .article-full .main-content h1,
-          .article-full .main-content .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.call-us h1, .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.order-sample h2, .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.order-sample .article-full .main-content h1, .article-full .main-content .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.order-sample h1 {
+          .no-legacy.no-touch.scroll-near-bottom footer#page-footer:hover section.call-us h2,
+          .no-legacy.no-touch.scroll-near-bottom footer#page-footer:hover section.call-us .article-full .main-content h1,
+          .article-full .main-content .no-legacy.no-touch.scroll-near-bottom footer#page-footer:hover section.call-us h1, .no-legacy.no-touch.scroll-near-bottom footer#page-footer:hover section.order-sample h2,
+          .no-legacy.no-touch.scroll-near-bottom footer#page-footer:hover section.order-sample .article-full .main-content h1,
+          .article-full .main-content .no-legacy.no-touch.scroll-near-bottom footer#page-footer:hover section.order-sample h1, .no-legacy.no-touch.scroll-near-bottom footer#page-footer .over section.call-us h2,
+          .no-legacy.no-touch.scroll-near-bottom footer#page-footer .over section.call-us .article-full .main-content h1,
+          .article-full .main-content .no-legacy.no-touch.scroll-near-bottom footer#page-footer .over section.call-us h1, .no-legacy.no-touch.scroll-near-bottom footer#page-footer .over section.order-sample h2, .no-legacy.no-touch.scroll-near-bottom footer#page-footer .over section.order-sample .article-full .main-content h1, .article-full .main-content .no-legacy.no-touch.scroll-near-bottom footer#page-footer .over section.order-sample h1 {
             border-bottom-width: 1px; }
-          .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.call-us > *:nth-child(n+3),
-          .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.order-sample > *:nth-child(n+3),
-          .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.call-us > *:nth-child(n+3),
-          .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.order-sample > *:nth-child(n+3) {
+          .no-legacy.no-touch.scroll-near-bottom footer#page-footer:hover section.call-us > *:nth-child(n+3),
+          .no-legacy.no-touch.scroll-near-bottom footer#page-footer:hover section.order-sample > *:nth-child(n+3),
+          .no-legacy.no-touch.scroll-near-bottom footer#page-footer .over section.call-us > *:nth-child(n+3),
+          .no-legacy.no-touch.scroll-near-bottom footer#page-footer .over section.order-sample > *:nth-child(n+3) {
             opacity: 1;
             -webkit-transform: translate3d(0, 0, 0);
                     transform: translate3d(0, 0, 0);
             transition-delay: .1s; }
-        .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.order-sample > *:nth-child(n+3),
-        .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.order-sample > *:nth-child(n+3) {
+        .no-legacy.no-touch.scroll-near-bottom footer#page-footer:hover section.order-sample > *:nth-child(n+3),
+        .no-legacy.no-touch.scroll-near-bottom footer#page-footer .over section.order-sample > *:nth-child(n+3) {
           transition-delay: .1s; }
-        .no-legacy.no-touch .scroll-near-bottom footer#page-footer:hover section.social,
-        .no-legacy.no-touch .scroll-near-bottom footer#page-footer .over section.social {
+        .no-legacy.no-touch.scroll-near-bottom footer#page-footer:hover section.social,
+        .no-legacy.no-touch.scroll-near-bottom footer#page-footer .over section.social {
           opacity: 1;
           -webkit-transform: translate3d(0, 0, 0);
                   transform: translate3d(0, 0, 0); } }
@@ -3594,7 +3594,7 @@ html, body {
 
 			}
 		}
-		body:not(.scroll-top) & {
+		html:not(.scroll-top) & {
 				height:auto !important;	
 		}
 
@@ -3674,11 +3674,11 @@ html, body {
 
 		.article-header {
 
-			body:not(.scroll-top) & {
+			html:not(.scroll-top) & {
 				height:auto !important;			
 			}
 
-			body.scroll-top:not(.legacy) & {
+			html.scroll-top:not(.legacy) & {
 
 				position:relative;
 	
@@ -3792,7 +3792,7 @@ html, body {
 
 /*
 html:not(.csstransitions) .type-article,
-.csstransitions body:not(.scroll-top) .type-article {
+.csstransitions html:not(.scroll-top) .type-article {
 */
 .type-article {
   /*
@@ -3824,7 +3824,8 @@ html:not(.csstransitions) .type-article,
       margin-bottom: 0.8rem; }
     @media (min-width: 0) and (max-width: 45em) {
       .type-article .article-header {
-        min-height: 0 !important; } }
+        min-height: 0 !important;
+        height: auto !important; } }
     @media (min-width: 45em) {
       .type-article .article-header {
         position: relative;
@@ -3970,26 +3971,26 @@ html:not(.csstransitions) .type-article,
           left: -100%;
           width: 54%;
           background: #f5f5f5; }
-        body:not(.scroll-top) .type-article .article-header:before,
-        body:not(.scroll-top) .type-article .article-header:after {
+        html:not(.scroll-top) .type-article .article-header:before,
+        html:not(.scroll-top) .type-article .article-header:after {
           transition-delay: 0s; }
-        body:not(.scroll-top) .type-article .article-header:before {
+        html:not(.scroll-top) .type-article .article-header:before {
           background-color: rgba(255, 255, 255, 0);
           border: 3.2rem solid #f5f5f5; }
-        body:not(.scroll-top) .type-article .article-header:after {
+        html:not(.scroll-top) .type-article .article-header:after {
           left: 0;
           width: 54%;
           height: 100%;
           background: #f5f5f5; }
-        body:not(.scroll-top) .type-article .article-header .elm-content {
+        html:not(.scroll-top) .type-article .article-header .elm-content {
           color: #00b2ce;
           -webkit-transform: translateX(0);
               -ms-transform: translateX(0);
                   transform: translateX(0);
           transition-delay: 0s;
           text-shadow: none; }
-        body:not(.scroll-top) .type-article .article-header .elm-content > h1 + span,
-        body:not(.scroll-top) .type-article .article-header .elm-content > :nth-child(n+2) {
+        html:not(.scroll-top) .type-article .article-header .elm-content > h1 + span,
+        html:not(.scroll-top) .type-article .article-header .elm-content > :nth-child(n+2) {
           -webkit-transform: translate(0);
               -ms-transform: translate(0);
                   transform: translate(0);

@@ -117,7 +117,7 @@ html, body {
 
 			}
 		}
-		body:not(.scroll-top) & {
+		html:not(.scroll-top) & {
 				height:auto !important;	
 		}
 
@@ -197,11 +197,11 @@ html, body {
 
 		.article-header {
 
-			body:not(.scroll-top) & {
+			html:not(.scroll-top) & {
 				height:auto !important;			
 			}
 
-			body.scroll-top:not(.legacy) & {
+			html.scroll-top:not(.legacy) & {
 
 				position:relative;
 	
@@ -286,7 +286,7 @@ html, body {
 
 /*
 html:not(.csstransitions) .type-article,
-.csstransitions body:not(.scroll-top) .type-article {
+.csstransitions html:not(.scroll-top) .type-article {
 */
 .type-article {
 
@@ -304,6 +304,7 @@ html:not(.csstransitions) .type-article,
 
 		@include breakpoint(0 $sm, true) {
 			min-height: 0 !important;
+			height: auto !important;
 		}
 
 		@include breakpoint($sm, true) {
@@ -432,7 +433,7 @@ html:not(.csstransitions) .type-article,
 			}
 
 
-			body:not(.scroll-top) & {
+			html:not(.scroll-top) & {
 
 				&:before,
 				&:after {

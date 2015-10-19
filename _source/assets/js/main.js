@@ -59,23 +59,27 @@ var cc = (function(){
 			lastScrollTop = $(window).scrollTop();
 
 			// Detect page top
-			$('body').toggleClass('scroll-top', (lastScrollTop<=0));
+			$('html').toggleClass('scroll-top', (lastScrollTop<=0));
 
 			// Detect page bottom
-			$('body').toggleClass('scroll-near-bottom', (lastScrollTop + $(window).height() >= $(document).height()-100));
+			$('html').toggleClass('scroll-near-bottom', (lastScrollTop + $(window).height() >= $(document).height()-100));
 
 			// Detect page bottom
-			$('body').toggleClass('scroll-bottom', (lastScrollTop + $(window).height() === $(document).height()));
+			$('html').toggleClass('scroll-bottom', (lastScrollTop + $(window).height() === $(document).height()));
 
 		}
 		
 	}, 20);
 	window.addEventListener('scroll', ccScrollListener);
-	$('body').addClass('scroll-top');
+	ccScrollListener();
+	//$('html').addClass('scroll-top');
 
 
 	var ccResizeListener = debounce(function() {
-		$('.article-full.type-article .article-header').css('min-height', $(window).height() - $('#page-header').height());
+		$('.article-full.type-article .article-header').css('height', ($(window).height() - $('#page-header').height()) + 'px');
+
+
+
 		/*
 	    var state = getDeviceState();
 	    if(state !== lastDeviceState) {
