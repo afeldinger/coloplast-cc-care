@@ -1,6 +1,6 @@
 
 
-header#page-header {
+#page-header {
 	min-height:58px;
 	z-index:10;
 
@@ -67,7 +67,7 @@ header#page-header {
 
 @include breakpoint($md, true) {
 
-	header#page-header {
+	#page-header {
 		height:80px;
 		background-size: 100% 100%;
 

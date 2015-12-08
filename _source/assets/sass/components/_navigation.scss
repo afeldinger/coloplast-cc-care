@@ -1,5 +1,5 @@
 
-nav.primary {
+#primary-nav {
 	display:none;
 /*
 	margin:58px (-$content-margin) 0;
@@ -25,7 +25,8 @@ nav.primary {
 			@include adjust-font-size-to($size-sm);
 		}
 	}
-
+	
+	> div > ul,
 	> ul {
 		margin: 0;
 		padding: 0;
@@ -128,43 +129,46 @@ nav.primary {
 }
 
 @include breakpoint(0 $md, true) {
-	nav.primary > ul {
-		
-		> li {
-			@include icon-on-element($arrow-down);
-			position:relative;
-			cursor: pointer;
+	#primary-nav {
+		> div > ul,
+		> ul {
+			
+			> li {
+				@include icon-on-element($arrow-down);
+				position:relative;
+				cursor: pointer;
 
-			&:before {
-				position:absolute;
-				right: 0;
-				padding: rhythm(2) $content-margin rhythm(2) rhythm(10);
-				line-height: inherit;
-				z-index:20;
+				&:before {
+					position:absolute;
+					right: 0;
+					padding: rhythm(2) $content-margin rhythm(2) rhythm(10);
+					line-height: inherit;
+					z-index:20;
+				}
+
+				.nav-title {
+					padding-right: 2 * $content-margin;
+				}
 			}
 
-			.nav-title {
-				padding-right: 2 * $content-margin;
+			> li.expanded {
+				&:before {
+					@include icon-content($arrow-up);
+				}
+
+				> ul {
+					display:block;
+				}
+
+
 			}
-		}
-
-		> li.expanded {
-			&:before {
-				@include icon-content($arrow-up);
-			}
-
-			> ul {
-				display:block;
-			}
-
-
 		}
 	}
 
 }
 @include breakpoint($md, true) {
 
-	nav.primary {
+	#primary-nav {
 		position: static;
 		display:block;
 		left: auto;
@@ -176,6 +180,7 @@ nav.primary {
 			display:none;
 		}
 
+		> div > ul,
 		> ul {
 			display: table;
 			float: none;

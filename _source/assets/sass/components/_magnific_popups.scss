@@ -35,3 +35,8 @@
 	@extend .mfp-form-popup;
 	max-width: 830px;
 }
+
+.lightbox-message {
+	position:absolute;
+	left:-9999em;
+}

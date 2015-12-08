@@ -649,8 +649,27 @@ var cc = (function(){
 					'</div>'
 			},
 			callbacks: {
-				markupParse: function(template, values) {
-					values.message = video_msg;
+				markupParse: function(template, values, item) {
+					// find closest message
+					var lightbox_msg = [];
+					$.each([
+						item.el,
+						item.el.parent(),
+						item.el.parents('.list-items:first li')
+					], function(i) {
+						lightbox_msg = this.find('.lightbox-message');
+					});
+
+					if (lightbox_msg.length > 0) {
+						values.message = lightbox_msg.filter(':first').html();
+					} else {
+						// Fall back to legacy message, if no message found
+						values.message = video_msg;
+					}
+
+				},
+				open: function() {
+					//console.log(this);
 				}
 			}
 

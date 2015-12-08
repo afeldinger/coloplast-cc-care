@@ -1,5 +1,5 @@
 
-footer#page-footer {
+#page-footer {
 	position:relative;
 	width:100%;
 
@@ -82,14 +82,14 @@ footer#page-footer {
 	}
 	
 
-	section.call-us,
-	section.order-sample,
-	section.social {
+	.call-us,
+	.order-sample,
+	.social {
 		margin: rhythm(4) 0;
 	}
 	
-	section.call-us,
-	section.order-sample {
+	.call-us,
+	.order-sample {
 		.icon {
 			display:block;
 			font-size:32px;
@@ -98,7 +98,7 @@ footer#page-footer {
 			color:inherit;
 		}
 	}
-	section.social {
+	.social {
 				
 		ul.social {
 
@@ -124,7 +124,7 @@ footer#page-footer {
 	
 }
 @include breakpoint($xs, true) {
-	footer#page-footer {
+	#page-footer {
 
 		.secondary-footer {
 			ul {
@@ -161,7 +161,7 @@ footer#page-footer {
 }
 
 @include breakpoint($sm, true) {
-	footer#page-footer {
+	#page-footer {
 
 		.main-footer {
 			.content-wrapper {
@@ -174,8 +174,8 @@ footer#page-footer {
 			font-weight: $normal;
 		}
 
-		section.call-us,
-		section.order-sample {
+		.call-us,
+		.order-sample {
 			
 			> * {
 				margin-left:50px;
@@ -194,13 +194,13 @@ footer#page-footer {
 			}
 		}
 
-		section.call-us {
+		.call-us {
 			@include grid-span(4,1);
 		}
-		section.order-sample {
+		.order-sample {
 			@include grid-span(4,9);
 		}
-		section.social {
+		.social {
 			@include grid-span(4,5);
 			margin-top: rhythm(6);
 			text-align: center;
@@ -221,10 +221,10 @@ footer#page-footer {
 		}
 
 
-		section.call-us {
+		.call-us {
 			@include grid-span(4,2);
 		}
-		section.order-sample {
+		.order-sample {
 			@include grid-span(4,8);
 		}
 
@@ -243,7 +243,7 @@ footer#page-footer {
 
 		padding-bottom: rhythm(14);
 
-		footer#page-footer {
+		#page-footer {
 			position:fixed;
 			top:100%;
 			margin-top:0;
@@ -251,8 +251,8 @@ footer#page-footer {
 			transform: translate3d(0,0,0);
 			transition: transform .3s;
 
-			section.call-us,
-			section.order-sample {
+			.call-us,
+			.order-sample {
 				transform: translate3d(20%, 0, 0);
 				transition: transform .2s;
 
@@ -270,7 +270,7 @@ footer#page-footer {
 
 				}
 			}
-			section.order-sample {
+			.order-sample {
 				transform: translate3d(-20%, 0, 0);
 
 				> *:nth-child(n+3) {
@@ -279,7 +279,7 @@ footer#page-footer {
 			}
 
 
-			section.social {
+			.social {
 				opacity: 0;
 				transform: translate3d(0, 20%, 0);
 				transition-property: opacity, transform;
@@ -290,7 +290,7 @@ footer#page-footer {
 	
 
 		&.scroll-near-bottom {
-			footer#page-footer {
+			#page-footer {
 				transform: translate3d(0, -65px, 0) !important;
 
 				&:hover,
@@ -298,8 +298,8 @@ footer#page-footer {
 					transform: translate3d(0,-100%,0) !important;
 
 					
-					section.call-us,
-					section.order-sample {
+					.call-us,
+					.order-sample {
 						transform: translate3d(0, 0, 0);
 
 						h2 {
@@ -312,13 +312,13 @@ footer#page-footer {
 						}
 					}
 
-					section.order-sample {
+					.order-sample {
 						> *:nth-child(n+3) {
 							transition-delay: .1s;
 						}
 					}
 
-					section.social {
+					.social {
 						opacity: 1;
 						transform: translate3d(0, 0, 0);
 						//transition-delay: .1s;
@@ -330,7 +330,7 @@ footer#page-footer {
 }
 
 @include breakpoint($md, true) {
-	footer#page-footer {
+	#page-footer {
 
 		&:hover {
 			height:auto;
