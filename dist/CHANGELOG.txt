@@ -9,6 +9,12 @@
 * 
 **************************************************************************
 
+
+2015-12-08
+  All pages
+  * All HTML5 elements changed to <div> in header and footer
+  * <div class="lightbox-message"></div> now used to inject localizable strings in magnific popup header
+
 2015-09-30
   Frontpage
   * Hero and overlay signup forms updated with multistep groups
