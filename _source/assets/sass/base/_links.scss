@@ -15,9 +15,14 @@
 
 a.button {
 	min-width:180px;
+
+	&,
+	&:visited,
+	&:active,
 	&:hover {
 		color: #fff;
 	}
+
 }
 
 
@@ -41,6 +46,16 @@ ul.text-buttons {
 		display:block;
 		@include adjust-leading-to(3);
 		padding: rhythm(2) rhythm(6);
+	}
+
+	@include breakpoint($md) {
+		li {
+			text-align: right;
+		}
+		a {
+			display:inline-block;
+			width: auto;
+		}
 	}
 }
 

@@ -22,34 +22,102 @@
 
 	<form id="form-signup" name="signup">
 		<div class="form-step active">
-			<h1>Sign up now</h1>
+			<div class="form-header">
+				<h1>Please fill out details</h1>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis.</p>
+			</div>
 
 			<div class="form-row">
-				<label class="input-text" for="signup-firstname">
+				<label class="input-text sm" for="signup-firstname">
 					<div class="label">First name</div>
 					<input type="text" id="signup-firstname" name="firstname">
 				</label>
-			</div>
-			<div class="form-row">
-				<label class="input-text" for="signup-lastname">
+
+				<label class="input-text sm" for="signup-lastname">
 					<div class="label">Last name</div>
 					<input type="text" id="signup-lastname" name="last-name">
 				</label>
-			</div>
-			<div class="form-row">
-				<label class="input-text" for="signup-email">
+
+				<label class="input-text sm" for="signup-email">
 					<div class="label">E-mail address</div>
 					<input type="email" id="signup-email" name="email">
 				</label>
 			</div>
-			<div class="form-row">
-				<label class="input-text" for="signup-zip">
-					<div class="label">Zip code</div>
-					<input type="text" id="signup-zip" name="zip">
-				</label>
-			</div>
-			<div class="form-row gender-mobility">
-				<div class="radio-group icon-buttons">
+
+
+			<h2>Since when are you using a catheter?</h2>
+			
+			<div class="form-row date-gender-mobility">
+
+				<div class="form-wrapper select-group date-group">
+					<label class="input-select date-year" for="signup-catheterdate-year">
+						<select id="signup-catheterdate-year" name="year">
+							<option value="">Year</option>
+							<option value="2010">2010</option>
+							<option value="2011">2011</option>
+							<option value="2012">2012</option>
+							<option value="2013">2013</option>
+						</select>
+					</label>
+
+					<label class="input-select date-month" for="signup-catheterdate-month">
+						<select id="signup-catheterdate-month" name="month">
+							<option value="">Month</option>
+							<option value="01">January</option>
+							<option value="02">February</option>
+							<option value="03">March</option>
+							<option value="04">April</option>
+							<option value="05">May</option>
+							<option value="06">June</option>
+							<option value="07">July</option>
+							<option value="08">August</option>
+							<option value="09">September</option>
+							<option value="10">October</option>
+							<option value="11">November</option>
+							<option value="12">December</option>
+						</select>
+					</label>
+
+					<label class="input-select date-day" for="signup-catheterdate-day">
+						<select id="signup-catheterdate-day" name="day">
+							<option value="">Day</option>
+							<option value="01">01</option>
+							<option value="02">02</option>
+							<option value="03">03</option>
+							<option value="04">04</option>
+							<option value="05">05</option>
+							<option value="06">06</option>
+							<option value="07">07</option>
+							<option value="08">08</option>
+							<option value="09">09</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+							<option value="31">31</option>
+						</select>
+					</label>
+				</div>
+
+
+				<div class="form-wrapper radio-group icon-buttons">
 					<label class="input-radio" for="signup-gender-female">
 						<input id="signup-gender-female" name="gender" type="radio" value="female">
 						<span class="icon icon-gender-female"></span>
@@ -61,82 +129,88 @@
 						<span class="label">Male</span>
 					</label>
 				</div>
-				<div class="checkbox-group input-buttons">
+
+				<div class="form-wrapper checkbox-group">
 					<label class="input-checkbox" for="signup-mobility-wheelchair">
 						<input id="signup-mobility-wheelchair" name="mobility" type="checkbox" value="wheelchair">
 						<span class="icon icon-checkmark"></span>
 						<span class="label">I use a wheelchair</span>
 					</label>
 				</div>
+
 			</div>
+
 			<div class="form-row">
-				<label class="input-text" for="signup-phone">
-					<div class="label">Phone no. (optional)</div>
-					<input type="text" id="signup-phone" name="phone">
+				<label class="input-text sm" for="signup-address1">
+					<div class="label">Address</div>
+					<input type="text" id="signup-address1" name="address">
+				</label>
+
+				<label class="input-text sm" for="signup-city">
+					<div class="label">City</div>
+					<input type="text" id="signup-city" name="city">
+				</label>
+
+				<label class="input-text sm" for="signup-state">
+					<div class="label">State</div>
+					<input type="text" id="signup-state" name="state">
 				</label>
 			</div>
-			<div class="form-row checkbox-group">
-				<label class="input-checkbox" for="signup-phone-is-mobile">
-					<input id="signup-phone-is-mobile" name="phone-is-mobile" type="checkbox" value="1">
-					<span class="icon icon-checkmark"></span>
-					<span class="label">This is my mobile phone number</span>
+
+			<div class="form-row">
+				<label class="input-text sm" for="signup-zip">
+					<div class="label">Zip code</div>
+					<input type="text" id="signup-zip" name="zip">
+				</label>
+
+				<div class="form-wrapper sm">
+					<label class="input-text sm input--small-bottom-spacing" for="signup-phone-areacode">
+						<input type="text" id="signup-phone-areacode" name="phone-areacode" value="+45" disabled>
+					</label>
+
+					<label class="input-text lg last input--small-bottom-spacing" for="signup-phone">
+						<div class="label">Phone no.</div>
+						<input type="text" id="signup-phone" name="phone">
+					</label>
+
+					<label class="input-checkbox input--small" for="signup-phone-is-mobile">
+						<input id="signup-phone-is-mobile" name="phone-is-mobile" type="checkbox" value="1">
+						<span class="icon icon-checkmark"></span>
+						<span class="label">Phone number is for cell phone</span>
+					</label>
+				</div>
+
+
+				<label class="input-select sm" for="signup-country">
+					<select id="signup-country" name="country" disabled>
+						<option value="">Select country</option>
+						<option value="opt1">UK</option>
+						<option value="opt2" selected>US</option>
+						<option value="opt3">Germany</option>
+					</select>
 				</label>
 			</div>
 
 			<div class="button-group">
 				<button class="input-submit" type="button">
-					Continue
+					Submit
 				</button>
 			</div>
 
-		</div>
-
-		<div class="form-step">
-
-			<div class="form-row">
-				<h3>Your surgery</h3>
-				<label class="input-select" for="signup-surgery-time">
-					<select id="signup-surgery-time" name="surgery-time">
-						<option value="">Please select</option>
-						<option value="opt1">My surgery was more than three months ago</option>
-						<option value="opt2">My surgery was less than three months ago</option>
-						<option value="opt3">I don't know when I will undergo surgery</option>
-					</select>
-				</label>
-			</div>
-			<div class="form-row">
-				<h3>Describe your stoma</h3>
-				<label class="input-select" for="signup-stoma-type">
-					<select id="signup-stoma-type" name="stoma-type">
-						<option value="">Select type of stoma</option>
-						<option value="opt1">Colostomy (thick stool)</option>
-						<option value="opt2">Illeostomy (liquid stool)</option>
-						<option value="opt3">Urostomy (urine)</option>
-					</select>
-				</label>
-			</div>
-			<div class="button-group">
-				<button class="input-submit type="submit">
-					Sign up
-				</button>
-			</div>
-			
-			<div class="disclaimer">
-				<p>By signing up you accept the <a href="#">Terms and Conditions</a></p>
-			</div>
 		</div>
 
 	</form>
 
 	<div class="form-confirmation">
-		<h1>Thank you for signing up</h1>
-		<p>
-			The more we know about you, the more we can help. If you have the time to answer some extra questions
-		</p>
-		<h5>Please choose one of the options below.</h5>
-		<ul class="text-buttons">
-			<li><a href="#">I am having bladder issues</a></li>
-			<li><a href="#">I am caring for someone with bladder issues</a></li>
-		</ul>
+		<div class="form-header">
+			<h1>Thank you for signing up</h1>
+			<p>
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis.
+			</p>
+		</div>
+
+		<div class="button-group">
+			<a class="button popup-close" href="#">Continue</a>
+		</div>
 	</div>
 </div>

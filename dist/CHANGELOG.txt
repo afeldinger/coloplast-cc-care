@@ -10,6 +10,19 @@
 **************************************************************************
 
 
+
+2015-12-15
+  All pages
+  * New <div class="main-content"> wrapping all inner content, to enable overlay background blurring
+
+  Frontpage
+  * Hero and overlay signup form HTML modified to new layouts and behavior
+  * Form added for healthcare professionals
+
+  Profile + Profile-caregiver
+  * Catheter history field changed to year-month-day dropdowns
+
+
 2015-12-08
   All pages
   * All HTML5 elements changed to <div> in header and footer

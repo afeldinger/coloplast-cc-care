@@ -1,6 +1,7 @@
 
 
 var cc = (function(){
+
 	/*
 	// Create the state-indicator element
 	var indicator = document.createElement('div');
@@ -324,6 +325,8 @@ var cc = (function(){
 	grid_filters_init();
 	grid_list_sort();
 
+	
+	var form_handling_disabled = false;
 
 	function document_ready() {
 
@@ -443,6 +446,9 @@ var cc = (function(){
 		// manages form submission and confirmation display
 		$('form').each(function() {
 			$(this).validate({
+        		ignore: [
+        			':hidden:not([data-dkcacheid])'
+        		],
 				highlight: function(element, errorClass, validClass) {
 		            if(element.type === 'radio') {
 		                $(element.form).find('[name="' + element.name + '"]').each(function(){
@@ -451,6 +457,7 @@ var cc = (function(){
 		                    $this.closest('label').addClass('input-' + errorClass);
 		                });
 		            } else {
+		            	console.log($(element));
 						$(element).addClass(errorClass).removeClass(validClass);
 						$(element).closest('label').addClass('input-' + errorClass);
 		            }
@@ -509,6 +516,7 @@ var cc = (function(){
 
 			// required fields
 			var fields = new Array(
+				':input[id*="-catheterdate-"]',
 				':input[id$="-firstname"]',
 				':input[id$="-first-name"]',
 				':input[id$="-lastname"]',
@@ -522,7 +530,10 @@ var cc = (function(){
 				':input[id$="-state"]',
 				':input[id$="-city"]',
 				':input[id$="-zip"]',
-				':input[id$="-accept-legal"]'
+				':input[id$="-accept-legal"]',
+				':input[id$="-organization"]',
+				':input[id$="-title"]',
+				':input[id$="-terms"]'
 			).join(', ');
 
 			$(fields, this).each(function() {
@@ -536,15 +547,50 @@ var cc = (function(){
 				});
 			}
 
+		
+			// Default form control for any other form than the hero signup form
+			if ($(this).parents('#signup-form-hero').length === 0) {
+				$(this).find('button[type=button]').click(function() {
+					if (form_handling_disabled) return;
+
+					var frm = $(this).closest('form');
+					var current_step = $(this).closest('.form-step');
+					var form_complete = current_step.next('.form-step').length === 0;
+					var next_step = (!form_complete)? current_step.next('.form-step') : current_step.siblings('.form-step:first');
+
+					// Validate fields
+					if (!current_step.find(':input').valid()) return;
 
 
-			$(this).find('button[type=button]').click(function() {
-				var current_step = $(this).closest('.form-step');
-				if (current_step.find(':input').valid()) {
-					current_step.removeClass('active').next('.form-step').addClass('active').find('select:visible').dropkick(dk_nested);
-				}
-				
-			});
+					// disable current step, enable next or first step
+					if (current_step !== next_step) {
+						current_step.removeClass('active');
+						next_step.addClass('active').find('select:visible').dropkick(dk_nested);
+					}
+
+					// hide form and show confirmation if on last step
+					if (form_complete) {
+						frm.hide().next('.form-confirmation').show();
+					}
+					
+				});
+			}
+			// Hero signup form
+			else {
+				$(this).find('button[type=button]').click(function(e) {
+					if (form_handling_disabled) return;
+
+					e.preventDefault();
+
+					var current_step = $(this).closest('.form-step');
+
+					// Validate fields
+					if (!current_step.find(':input').valid()) return;
+
+					form_popup('#signup-form-hero-step2');
+				});
+			}
+
 		});
 
 
@@ -552,7 +598,7 @@ var cc = (function(){
 		//$('#signup-form-hero, #signup-form-overlay').find(':input[id$="-phone"]').rules('remove');
 
 		$('#signup-form-hero, #signup-form-overlay').find(':input[id$="-phone"]').each(function() {
-			$(this).rules('remove');
+			//$(this).rules('remove');
 		});
 		/*
 		$('form').filter(function() {
@@ -583,7 +629,7 @@ var cc = (function(){
             var $select = $(this.data.elem);
             var widestOptionWidth = 0;
             var togglerWidth = 45 + 50 + 10;
-            togglerWidth = 70;
+            togglerWidth = 60;
             var origWidth = $select.parents('.selectbox').width();
 
             this.firstOption = this.data.select.options[0]? this.data.select.options[0] : null;
@@ -591,20 +637,22 @@ var cc = (function(){
             $(this.data.select).data('dropkick', this);
 
 
-            $select.find('.dk-select-options').show().css('width', 'auto').children().each(function(i, option) {
-                var optionWidth = $(option).width();
+            if ($select.parents('.select-group').length > 0) {
+	            $select.find('.dk-select-options').show().css('width', 'auto').children().each(function(i, option) {
+	                var optionWidth = $(option).width();
 
-                if (optionWidth > widestOptionWidth) {
-                    widestOptionWidth = optionWidth;
-                }
+	                if (optionWidth > widestOptionWidth) {
+	                    widestOptionWidth = optionWidth;
+	                }
 
-            }).removeAttr('style');
+	            }).removeAttr('style');
 
-            $select.find('.dk-select-options').removeAttr('style');
+	            $select.find('.dk-select-options').removeAttr('style');
 
-            if (widestOptionWidth + togglerWidth > origWidth) {
-                $select.parent().width(widestOptionWidth + togglerWidth);
-            }
+	            if (widestOptionWidth + togglerWidth > origWidth) {
+	                $select.parent().width(widestOptionWidth + togglerWidth);
+	            }
+	        }
         };
 
 		var dk_defaults = {
@@ -617,7 +665,7 @@ var cc = (function(){
 		var dk_nested = {
 	        mobile: true,
 	        menuSpeed: 'fast',
-
+	        initialize: dk_init_func,
 	    };
 	    
 
@@ -633,14 +681,60 @@ var cc = (function(){
 
 	    // Handle lightbox links
 
-		$('a[href="#signup-form-overlay"], a[href="#form-order-sample-overlay"]').magnificPopup();
+	    $('.popup-close').click(function(e) {
+	    	e.preventDefault();
+	    	$.magnificPopup.close();
+	    });
+
+
+		var form_popup = function(src) {
+			$.magnificPopup.open({
+				items: {
+					src: src,
+					type: 'inline'
+				},
+				closeOnBgClick: false,
+				removalDelay: 300,
+				closeBtnInside: false,
+				showCloseBtn: true,
+				callbacks: {
+					beforeOpen: function () {
+						$('.main-content').addClass('popup');
+					},
+					beforeClose: function () {
+						$('.main-content').removeClass('popup');
+					},
+					open: function() {
+						$('select:visible').dropkick(dk_nested);
+					},
+					close: function() {
+						//$('.main-content').css('webkitTransform', 'scale(1)');
+						/*	Silently append and remove a text node	
+							This is the fix that worked for me in the Phonegap/Android application
+							the setTimeout allows a 'tick' to happen in the browser refresh,
+							giving the UI time to update
+						*/
+/*
+						var n = document.createTextNode(' ');
+						$('body').append(n);
+						setTimeout(function(){n.parentNode.removeChild(n)}, 1);
+*/
+					}
+				}
+			});
+		};
+
+		$('a[href="#signup-form-overlay"], a[href="#form-order-sample-overlay"], a[href="#signup-form-hcp"]').on('click', function(e) {
+			e.preventDefault();
+			form_popup($(this).prop('hash'));
+		});
 
 		var video_msg = '<div class="message-trigger"><span class="icon icon-info"></span><span>Important Safety Information</span></div>'+
 		'<div class="message"><p><strong>Important Safety Information:</strong>  SpeediCath® catheters are indicated for use by patients with chronic urine retention and patients with a post void residual volume (PVR) due to neurogenic and non-neurogenic voiding dysfunction. The catheter is inserted into the urethra to reach the bladder allowing urine to drain. There is a separate SpeediCath Compact Set device intended for either males or females only.</p><p>SpeediCath catheters are available by prescription only. Patients performing self-catheterization should follow the advice of, and direct questions about use of the product to, their medical professional. Before using the device, carefully read the product labels and information accompanying the device including the instructions for use which contain additional safety information. The SpeediCath catheter is for single-use only; discard it after use. If you experience symptoms of a urinary tract infection, or are unable to pass the catheter into the bladder, contact your healthcare professional. The risk information provided here is not comprehensive. To learn more, talk to your healthcare provider.</p></div>';
 		
 		$('a[href*="vimeo.com"], a[href*="youtube.com"]').magnificPopup({
 			type: 'iframe',
-
+			closeOnBgClick: true, // see specs
 			iframe: {
 				markup: '<div class="mfp-iframe-scaler">'+
 					'<div class="mfp-close"></div>'+
@@ -648,6 +742,7 @@ var cc = (function(){
 					'<div class="mfp-message"></div>'+
 					'</div>'
 			},
+            removalDelay: 300,
 			callbacks: {
 				markupParse: function(template, values, item) {
 					// find closest message
@@ -668,9 +763,14 @@ var cc = (function(){
 					}
 
 				},
-				open: function() {
-					//console.log(this);
-				}
+                beforeOpen: function () {
+                    $('.main-content').addClass('popup');
+                    $('body').addClass('popup--dark');
+                },
+                beforeClose: function () {
+                    $('.main-content').removeClass('popup');
+                    $('body').removeClass('popup--dark');
+                }
 			}
 
 		});
@@ -698,6 +798,9 @@ var cc = (function(){
 
 	// re-process specific tasks after client-side DOM manipulation
 	function eloqua_postprocess() {
+		// disable internal form handling
+		form_handling_disabled = true;
+
 		// re-sort the grid list
 		grid_list_sort();
 

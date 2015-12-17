@@ -140,6 +140,15 @@
 		button {
 			width:100%;
 		}
+
+		@include breakpoint($sm) {
+			text-align: right;
+			button {
+
+				width: auto;
+			}
+			
+		}
 	}
 
 }
@@ -225,13 +234,10 @@
 		background: rgba(255,255,255,0.7);
 		align-items: center;
 
-		form h1,
-		form h2 {
-			margin-bottom:rhythm(1);
-		}
 		
 		.button-group {
 			margin-top: 0;
+			margin-bottom: $form-spacing;
 			overflow: hidden;
 		}
 
@@ -253,6 +259,17 @@
 			display:none;
 		}
 
+		.hcp-message {
+			@include adjust-font-size-to($size-sm);
+		}
+
 	}
 
+}
+
+#signup-form-hero-step2 {
+	@extend .mfp-form-popup;
+}
+#signup-form-hcp {
+	@extend .mfp-form-popup;
 }

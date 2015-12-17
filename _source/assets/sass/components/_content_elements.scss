@@ -7,6 +7,9 @@
 	clear:both;
 	@include clearfix;
 
+	// Fix for webkit redraw issues when turning off popups
+	transform: translateZ(0);
+
 	.elm-image {
 		text-align:center;
 		img {
@@ -28,6 +31,8 @@
 			@include grid-span(6,7);
 		}
 	}
+
+
 }
 
 ul.checkmarks {

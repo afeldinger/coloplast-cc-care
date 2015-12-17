@@ -31,8 +31,8 @@ textarea {
 	@extend %button;
 	background: #fff;
 	color:$color-text-body;
-	height: 40px;
-	line-height:40px;
+	height: 45px;
+	line-height:45px;
 	padding: $button-padding-v $button-padding-h;
 	margin-bottom: $form-spacing;
 	text-align: left;
@@ -82,7 +82,7 @@ textarea {
 .icon-button {
 	@extend .input-button;
 	text-align: center;
-	width: 40px;
+	width: 45px;
 	padding:0;
 
 	.label {
@@ -94,40 +94,9 @@ textarea {
 	@extend .icon-button;
 }
 
-
 label {
-	@extend %form-row-clear;
-	margin-bottom: $form-spacing;
+	margin-bottom: 2 * $form-spacing;
 
-	@include breakpoint($sm) {
-		&.sm {
-			display:inline;
-			float:left;
-			clear:none;
-			width:32%;
-			margin-right:1%;
-
-			&:nth-of-type(3n+3) {
-				float:right;
-				clear:right;
-			}
-		}
-
-		&.md {
-			display:inline;
-			float:right;
-			clear:none;
-			width:48%;
-			width: calc((100% - #{$form-spacing}) / 2);
-		}
-		&.md:first-child {
-			float:left;
-		}
-
-		&.lg {
-			width: 60%;
-		}
-	}
 
 	.label {
 		@include adjust-font-size-to($base-font-size);
@@ -146,11 +115,11 @@ label {
 	}
 
 	.icon-checkmark {
-		width: 20px;
-		height: 20px;
-		line-height: 20px;
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
 		text-align:center;
-		border: 1px solid $color-borders;
+		border: 1px solid transparent;
 		border-radius: $border-radius-sm;
 
 		&:before {
@@ -192,6 +161,52 @@ label {
 
 }
 
+label,
+.form-wrapper {
+	@extend %form-row-clear;
+
+	@include breakpoint($sm) {
+		&.sm {
+			display:inline;
+			float:left;
+			clear:none;
+			width:31%;
+			margin-right:3%;
+
+			&:nth-child(3n+3),
+			&.last {
+				width:32%;
+			}
+		}
+
+		&.md {
+			display:inline;
+			float:left;
+			clear:none;
+			width:48%;
+			margin-right: 2%;
+
+		}
+
+		&.lg {
+			display: inline;
+			float:left;
+			clear:left;
+			width: 65%;
+		}
+
+		
+		&.sm:nth-child(3n+3),
+		&.md:nth-child(2n+2),
+		&.last {
+			float:right;
+			clear:right;
+			margin-right: 0;
+		}
+
+	}
+}
+
 
 input,
 textarea {
@@ -215,43 +230,46 @@ button {
 
 .input-checkbox,
 .input-radio {
+    position: relative;
+    min-height: 25px;
+    padding: $field-padding-h 0;
+    text-align: left;
+    @include adjust-leading-to(3);
+    cursor: pointer;
 
-	position:relative;
-	min-height:40px;
-	padding: $field-padding-h 0;
-	text-align:left;
-	@include adjust-leading-to(3);
-    cursor: pointer; 
-
-	input {
-		position:absolute;
-		left: -9999em;
-		opacity: 0;
-	}
+    input {
+        position: absolute;
+        left: -9999em;
+        opacity: 0;
+        .ie8 & {
+            left: 0;
+        }
+    }
 
 }
+
 .input-checkbox {
+    padding: 4px 0 0 30px;
 
-	padding-left:48px;
 
-	&:before {
-		position: absolute;
-		content:'';
-		top:0;
-		left:0;
-		width: 40px;
-		height: 40px;
-		border-radius: $border-radius-md;
-		background:#fff;
-	}
-	
-	.icon {
-		position:absolute;
-		top:10px;
-		left:10px;
-		z-index:5;
-	}
+    &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 25px;
+        height: 25px;
+        border-radius: $border-radius-md;
+        background: #fff;
+    }
 
+    .icon {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 5;
+        line-height: 25px;
+    }
 }
 
 .input-text {
@@ -259,8 +277,8 @@ button {
 
 	.label {
 		position:absolute;
-		top:11px;
-		left:11px;
+		top:$field-padding-v;
+		left:$field-padding-h;
 		transition: top .1s, font-size .1s, color .1s;
 
 	}
@@ -286,9 +304,49 @@ button {
 }
 
 
+.input--no-bottom-spacing {
+	margin-bottom:0;
+}
+
+.input--small-bottom-spacing {
+	margin-bottom: $form-spacing;
+}
+
+.input--small {
+	.label {
+		@include adjust-font-size-to($size-sm);
+		color: $dark-gray;
+	}
+
+
+	&.input-checkbox {
+		padding-top: 0;
+
+		&:before,
+		.icon {
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+		}
+	}
+}
+
+
 .form-page {
 	&:nth-child(n+2) {
 		margin-top: rhythm(8);
+	}
+}
+
+.form-header {
+
+	h1 {
+		@include adjust-font-size-to(50px);
+		margin-bottom: 0;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 3em;
 	}
 }
 
@@ -379,7 +437,7 @@ button {
 		display: table;
 		table-layout: fixed;
 		width:100%;
-		min-height: 40px;
+		min-height: 45px;
 		clear:both;
 		margin-bottom: $form-spacing;
 
@@ -419,7 +477,7 @@ button {
 		.radio-group + .checkbox-group {
 			clear:none;
 			margin-left: $form-spacing;
-			width: calc(100% - (2 * (40px + #{$form-spacing})));
+			width: calc(100% - (2 * (45px + #{$form-spacing})));
 			float: left;
 
 			label {
@@ -431,10 +489,56 @@ button {
 	}
 }
 
+.date-gender-mobility {
+
+	.form-wrapper {
+		display:inline;
+		float:left;
+		clear: none;
+
+		&:nth-child(3n+1) {
+			width: 100%;
+			margin-right: 0;
+		}
+		&:nth-child(3n+2) {
+			width: 31%;
+			margin-right: 3%;
+		}
+		&:nth-child(3n+3) {
+			float:right;
+			width: 66%;
+			margin-right: 0;
+		}
+	}
+
+ 
+	@include breakpoint($md) {
+
+		.form-wrapper {
+
+			&:nth-child(3n+1) {
+				width: 50%;
+				width: calc(62% - #{2 * 45px + $form-spacing});
+				margin-right: 3%;
+			}
+			&:nth-child(3n+2) {
+				width: 2 * 45px + $form-spacing;
+			}
+			&:nth-child(3n+3) {
+				float:right;
+				width: 32%;
+				margin-right: 0;
+			}
+		}
+		
+	}
+}
+
 .button-group {
 	@extend %form-row-clear;
 	overflow: hidden;
-	button {
+	button,
+	.button {
 		@include adjust-font-size-to($size-xl);
 		@include adjust-leading-to(7);
 	}
@@ -467,11 +571,11 @@ button {
 
 .input-select {
 	display:block;
-	min-width: 100%;
+	width: 100%;
 
     @include breakpoint($xs) {
     	display:inline-block;
-    	min-width: 240px;	
+
     }
 }
 
@@ -487,7 +591,7 @@ button {
     display: inline-block;
     vertical-align: middle;
 	@include adjust-font-size-to($base-font-size);
-    line-height: 43px;
+    line-height: 44px;
     width: 100%;
     cursor: pointer; 
 }
@@ -651,8 +755,12 @@ button {
 
 .dk-select-disabled {
     opacity: 0.6;
-    color: $medium-gray;
+    color: $dark-gray;
     cursor: not-allowed; 
+
+    .dk-selected:before {
+    	color: $dark-gray;
+    }
 }
 
 select[data-dkcacheid] {
@@ -711,7 +819,7 @@ select[data-dkcacheid] {
 			background-color: $error-background;
 		}
 		.icon-checkmark {
-			border-color: $error-foreground;
+			//border-color: $error-foreground;
 		}
 
 	}
@@ -724,6 +832,22 @@ select[data-dkcacheid] {
 		&.input-error {
 			background: $error-background;
 			color: $error-foreground;
+		}
+	}
+	.icon-checkmark {
+		//border-color: $color-borders;
+	}
+}
+
+.input-select {
+	&.input-error {
+		.dk-selected {
+			background: $error-background;
+			color: $error-foreground;
+
+			&:before {
+				color: $error-foreground;
+			}
 		}
 	}
 }
