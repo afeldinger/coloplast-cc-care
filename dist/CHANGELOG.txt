@@ -13,7 +13,7 @@
 
 2015-12-15
   All pages
-  * New <div class="main-content"> wrapping all inner content, to enable overlay background blurring
+  * New <div class="page-wrapper"> wrapping all inner content, to enable overlay background blurring
 
   Frontpage
   * Hero and overlay signup form HTML modified to new layouts and behavior

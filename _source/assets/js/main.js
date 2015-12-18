@@ -457,7 +457,6 @@ var cc = (function(){
 		                    $this.closest('label').addClass('input-' + errorClass);
 		                });
 		            } else {
-		            	console.log($(element));
 						$(element).addClass(errorClass).removeClass(validClass);
 						$(element).closest('label').addClass('input-' + errorClass);
 		            }
@@ -551,7 +550,9 @@ var cc = (function(){
 			// Default form control for any other form than the hero signup form
 			if ($(this).parents('#signup-form-hero').length === 0) {
 				$(this).find('button[type=button]').click(function() {
-					if (form_handling_disabled) return;
+					if (form_handling_disabled) {
+						return;
+					}
 
 					var frm = $(this).closest('form');
 					var current_step = $(this).closest('.form-step');
@@ -559,7 +560,9 @@ var cc = (function(){
 					var next_step = (!form_complete)? current_step.next('.form-step') : current_step.siblings('.form-step:first');
 
 					// Validate fields
-					if (!current_step.find(':input').valid()) return;
+					if (!current_step.find(':input').valid()) {
+						return;
+					}
 
 
 					// disable current step, enable next or first step
@@ -578,16 +581,22 @@ var cc = (function(){
 			// Hero signup form
 			else {
 				$(this).find('button[type=button]').click(function(e) {
-					if (form_handling_disabled) return;
+					if (form_handling_disabled) {
+						return;
+					}
 
 					e.preventDefault();
 
 					var current_step = $(this).closest('.form-step');
 
 					// Validate fields
-					if (!current_step.find(':input').valid()) return;
-
-					form_popup('#signup-form-hero-step2');
+					if (!current_step.find(':input').valid()) {
+						return;
+					}
+					
+					$.magnificPopup.open(
+						jQuery.extend(true, {items: {src: '#signup-form-hero-step2', type: 'inline'}}, mfp_form_settings)
+					);
 				});
 			}
 
@@ -685,7 +694,7 @@ var cc = (function(){
 	    	e.preventDefault();
 	    	$.magnificPopup.close();
 	    });
-
+/*
 
 		var form_popup = function(src) {
 			$.magnificPopup.open({
@@ -699,35 +708,56 @@ var cc = (function(){
 				showCloseBtn: true,
 				callbacks: {
 					beforeOpen: function () {
-						$('.main-content').addClass('popup');
+						$('.page-wrapper').addClass('popup');
 					},
 					beforeClose: function () {
-						$('.main-content').removeClass('popup');
+						$('.page-wrapper').removeClass('popup');
 					},
 					open: function() {
 						$('select:visible').dropkick(dk_nested);
-					},
-					close: function() {
-						//$('.main-content').css('webkitTransform', 'scale(1)');
-						/*	Silently append and remove a text node	
-							This is the fix that worked for me in the Phonegap/Android application
-							the setTimeout allows a 'tick' to happen in the browser refresh,
-							giving the UI time to update
-						*/
-/*
-						var n = document.createTextNode(' ');
-						$('body').append(n);
-						setTimeout(function(){n.parentNode.removeChild(n)}, 1);
-*/
 					}
 				}
 			});
 		};
-
-		$('a[href="#signup-form-overlay"], a[href="#form-order-sample-overlay"], a[href="#signup-form-hcp"]').on('click', function(e) {
+		*/
+/*
+		.on('click', function(e) {
 			e.preventDefault();
 			form_popup($(this).prop('hash'));
 		});
+*/		
+		var mfp_form_settings = {
+			closeOnBgClick: false,
+			removalDelay: 300,
+			closeBtnInside: false,
+			showCloseBtn: true,
+			fixedContentPos: Modernizr.touch ? true : 'auto',
+			callbacks: {
+				beforeOpen: function () {
+					$('.page-wrapper').addClass('popup');
+				},
+				beforeClose: function () {
+					$('.page-wrapper').removeClass('popup');
+				},
+				open: function() {
+					$('select:visible').dropkick(dk_nested);
+				},
+				close: function() {
+					//$('.page-wrapper').css('webkitTransform', 'scale(1)');
+					/*	Silently append and remove a text node	
+						This is the fix that worked for me in the Phonegap/Android application
+						the setTimeout allows a 'tick' to happen in the browser refresh,
+						giving the UI time to update
+					*/
+/*
+					var n = document.createTextNode(' ');
+					$('body').append(n);
+					setTimeout(function(){n.parentNode.removeChild(n)}, 1);
+*/
+				}
+			}
+		};
+		$('a[href="#signup-form-overlay"], a[href="#form-order-sample-overlay"], a[href="#signup-form-hcp"]').magnificPopup(mfp_form_settings);
 
 		var video_msg = '<div class="message-trigger"><span class="icon icon-info"></span><span>Important Safety Information</span></div>'+
 		'<div class="message"><p><strong>Important Safety Information:</strong>  SpeediCath® catheters are indicated for use by patients with chronic urine retention and patients with a post void residual volume (PVR) due to neurogenic and non-neurogenic voiding dysfunction. The catheter is inserted into the urethra to reach the bladder allowing urine to drain. There is a separate SpeediCath Compact Set device intended for either males or females only.</p><p>SpeediCath catheters are available by prescription only. Patients performing self-catheterization should follow the advice of, and direct questions about use of the product to, their medical professional. Before using the device, carefully read the product labels and information accompanying the device including the instructions for use which contain additional safety information. The SpeediCath catheter is for single-use only; discard it after use. If you experience symptoms of a urinary tract infection, or are unable to pass the catheter into the bladder, contact your healthcare professional. The risk information provided here is not comprehensive. To learn more, talk to your healthcare provider.</p></div>';
@@ -764,11 +794,11 @@ var cc = (function(){
 
 				},
                 beforeOpen: function () {
-                    $('.main-content').addClass('popup');
+                    $('.page-wrapper').addClass('popup');
                     $('body').addClass('popup--dark');
                 },
                 beforeClose: function () {
-                    $('.main-content').removeClass('popup');
+                    $('.page-wrapper').removeClass('popup');
                     $('body').removeClass('popup--dark');
                 }
 			}

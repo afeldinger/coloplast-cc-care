@@ -43,18 +43,20 @@
 	.mfp-wrap:not(.mfp-close-btn-in) {
 		.mfp-close {
 			
-			top: 40px;
-			right: 40px;
+			top: 20px;
+			right: 20px;
 			left: auto;
 			bottom: auto;
-			width:45px;
-			height: 45px;
+			width:30px;
+			height: 30px;
 			padding: 0;
 
 			color: transparent !important;
 			//background-color: rgba(255,0,0,.3) !important;
 
 			@include breakpoint($md) {
+				width: 45px;
+				height: 45px;
 				top: 60px;
 				right: 70px;
 
