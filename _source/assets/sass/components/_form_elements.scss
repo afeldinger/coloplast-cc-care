@@ -41,8 +41,8 @@ textarea {
 	.icon {
 		line-height: inherit;
 	}
-	
 }
+
 
 
 
@@ -541,6 +541,7 @@ button {
 	.button {
 		@include adjust-font-size-to($size-xl);
 		@include adjust-leading-to(7);
+		margin-bottom: $form-spacing;
 	}
 }
 
@@ -850,4 +851,8 @@ select[data-dkcacheid] {
 			}
 		}
 	}
+}
+
+label.input--right {
+	float:right;
 }

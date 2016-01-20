@@ -1962,7 +1962,8 @@ button {
     line-height: 30px;
     line-height: 2rem;
     line-height: 42px;
-    line-height: 2.8rem; }
+    line-height: 2.8rem;
+    margin-bottom: 15px; }
 
 .form-step {
   display: none; }
@@ -2229,6 +2230,9 @@ select[data-dkcacheid] {
   .input-select.input-error .dk-selected:before {
     color: #fff; }
 
+label.input--right {
+  float: right; }
+
 #colorbox #form-order-sample-overlay {
   display: block; }
 
@@ -2416,7 +2420,6 @@ select[data-dkcacheid] {
             align-items: center; }
     #signup-form-hero .button-group {
       margin-top: 0;
-      margin-bottom: 15px;
       overflow: hidden; }
     #signup-form-hero button {
       width: 100%;
