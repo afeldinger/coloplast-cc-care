@@ -2232,6 +2232,8 @@ select[data-dkcacheid] {
 
 label.input--right {
   float: right; }
+  label.input--right.sm:only-of-type {
+    width: 32%; }
 
 #colorbox #form-order-sample-overlay {
   display: block; }
@@ -2354,7 +2356,8 @@ label.input--right {
     .form-signup .button-group {
       text-align: right; }
       .form-signup .button-group button {
-        width: auto; } }
+        width: auto;
+        min-width: 32%; } }
 
 #colorbox #signup-form-overlay {
   display: block; }

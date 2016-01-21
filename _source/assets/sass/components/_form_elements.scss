@@ -854,5 +854,10 @@ select[data-dkcacheid] {
 }
 
 label.input--right {
+
 	float:right;
+
+	&.sm:only-of-type {
+		width: 32%;	
+	}
 }
