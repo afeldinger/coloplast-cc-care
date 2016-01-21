@@ -580,6 +580,14 @@ var cc = (function(){
 			}
 			// Hero signup form
 			else {
+
+				// Define function for triggering overlay
+				this.open_popup = function() {
+					$.magnificPopup.open(
+						jQuery.extend(true, {items: {src: '#signup-form-hero-step2', type: 'inline'}}, mfp_form_settings)
+					);
+				};
+
 				$(this).find('button[type=button]').click(function(e) {
 					if (form_handling_disabled) {
 						return;
@@ -593,10 +601,10 @@ var cc = (function(){
 					if (!current_step.find(':input').valid()) {
 						return;
 					}
+
+					// Trigger popup
+					this.form.open_popup();
 					
-					$.magnificPopup.open(
-						jQuery.extend(true, {items: {src: '#signup-form-hero-step2', type: 'inline'}}, mfp_form_settings)
-					);
 				});
 			}
 
@@ -829,7 +837,7 @@ var cc = (function(){
 	// re-process specific tasks after client-side DOM manipulation
 	function eloqua_postprocess() {
 		// disable internal form handling
-		form_handling_disabled = true;
+		// form_handling_disabled = true;
 
 		// re-sort the grid list
 		grid_list_sort();
