@@ -610,7 +610,8 @@ h1 {
   line-height: 36px;
   line-height: 2.4rem;
   margin: 1.2rem 0;
-  color: #00b2ce; }
+  color: #00b2ce;
+  font-weight: 600; }
 
 h2, .article-full .main-content h1 {
   font-size: 22px;

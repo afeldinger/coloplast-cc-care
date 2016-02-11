@@ -593,7 +593,7 @@ var cc = (function(){
 						return;
 					}
 
-					e.preventDefault();
+					//e.preventDefault();
 
 					var current_step = $(this).closest('.form-step');
 
