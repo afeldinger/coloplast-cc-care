@@ -13,24 +13,31 @@
 	</div>
 	<div class="form-row">
 		<label class="input-text md" for="contact-email">
-			<div class="label">E-mail</div>
+			<div class="label">E-mail address</div>
 			<input type="email" id="contact-email" name="email" />
 		</label>
-		<label class="input-text md" for="contact-phone">
-			<div class="label">Phone number</div>
-			<input type="tel" id="contact-phone" name="phone" />
-		</label>
-	</div>
-	<div class="form-row">
-		<label class="input-checkbox" for="contact-is-cellphone">
-			<input type="checkbox" id="contact-is-cellphone" name="cellphone"></textarea>
-			<span class="icon icon-checkmark"></span>
-			<div class="label">Phone number is for a cell phone</div>
-		</label>
+
+		<div class="form-wrapper md">
+			<label class="input-text xs input--small-bottom-spacing input--prefix" for="contact-phone-areacode">
+				<div class="label">Prefix</div>
+				<input type="text" id="contact-phone-areacode" name="phone-areacode" value="+45" disabled>
+			</label>
+
+			<label class="input-text xl last input--small-bottom-spacing" for="contact-phone">
+				<div class="label">Phone no. (Optional)</div>
+				<input type="text" id="contact-phone" name="phone">
+			</label>
+
+			<label class="input-checkbox input--small" for="contact-phone-is-mobile">
+				<input id="contact-phone-is-mobile" name="phone-is-mobile" type="checkbox" value="1">
+				<span class="icon icon-checkmark"></span>
+				<span class="label">This is a mobile number</span>
+			</label>
+		</div>
 	</div>
 	<div class="form-row">
 		<label class="input-textarea" for="contact-message">
-			<div class="label">Your message ...</div>
+			<div class="label">Your message</div>
 			<textarea id="contact-message" name="message"></textarea>
 		</label>
 	</div>
@@ -38,7 +45,7 @@
 	<div class="button-group">
 
 		<button class="input-submit" type="submit">
-			Send
+			Submit
 		</button>
 	</div>
 

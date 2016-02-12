@@ -23,8 +23,8 @@
 	<form id="form-signup" name="signup">
 		<div class="form-step active">
 			<div class="form-header">
-				<h1>Please fill out details</h1>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis.</p>
+				<h1>Please fill out more details</h1>
+				<p>Help us to give more relevant advice, by providing a few more details. We cannot predict every question – but the more we know, the better we’ll be able to help.</p>
 			</div>
 
 			<div class="form-row">
@@ -61,8 +61,9 @@
 					</label>
 
 					<label class="input-select date-month" for="signup-catheterdate-month">
-						<select id="signup-catheterdate-month" name="month">
+						<select id="signup-catheterdate-month" name="month" disabled>
 							<option value="">Month</option>
+							<option value="unknown">I don't know</option>
 							<option value="01">January</option>
 							<option value="02">February</option>
 							<option value="03">March</option>
@@ -79,8 +80,9 @@
 					</label>
 
 					<label class="input-select date-day" for="signup-catheterdate-day">
-						<select id="signup-catheterdate-day" name="day">
+						<select id="signup-catheterdate-day" name="day" disabled>
 							<option value="">Day</option>
+							<option value="unknown">I don't know</option>
 							<option value="01">01</option>
 							<option value="02">02</option>
 							<option value="03">03</option>
@@ -140,10 +142,20 @@
 
 			</div>
 
-			<div class="form-row">
+			<div class="form-float form-float-sm">
 				<label class="input-text sm" for="signup-address1">
 					<div class="label">Address</div>
 					<input type="text" id="signup-address1" name="address">
+				</label>
+
+				<label class="input-text sm" for="signup-address2">
+					<div class="label">Address 2</div>
+					<input type="text" id="signup-address2" name="address2">
+				</label>
+
+				<label class="input-text sm" for="signup-address3">
+					<div class="label">Address 3</div>
+					<input type="text" id="signup-address3" name="address3">
 				</label>
 
 				<label class="input-text sm" for="signup-city">
@@ -155,46 +167,51 @@
 					<div class="label">State</div>
 					<input type="text" id="signup-state" name="state">
 				</label>
-			</div>
 
-			<div class="form-row">
 				<label class="input-text sm" for="signup-zip">
 					<div class="label">Zip code</div>
 					<input type="text" id="signup-zip" name="zip">
 				</label>
 
+				<label class="input-text sm" for="signup-province">
+					<div class="label">Province</div>
+					<input type="text" id="signup-province" name="province">
+				</label>
+
+				<label class="input-text sm" for="signup-po-box">
+					<div class="label">Po Box / Shorting code</div>
+					<input type="text" id="signup-po-box" name="po-box">
+				</label>
+
+				<label class="input-text sm" for="signup-country">
+					<div class="label">Country</div>
+					<input type="text" id="signup-country" name="country" value="US" disabled>
+				</label>
+
 				<div class="form-wrapper sm">
-					<label class="input-text sm input--small-bottom-spacing" for="signup-phone-areacode">
-						<div class="label">Area code</div>
+					<label class="input-text xs input--small-bottom-spacing input--prefix" for="signup-phone-areacode">
+						<div class="label">Prefix</div>
 						<input type="text" id="signup-phone-areacode" name="phone-areacode" value="+45" disabled>
 					</label>
 
-					<label class="input-text lg last input--small-bottom-spacing" for="signup-phone">
-						<div class="label">Phone no.</div>
+					<label class="input-text xl last input--small-bottom-spacing" for="signup-phone">
+						<div class="label">Phone no. (Optional)</div>
 						<input type="text" id="signup-phone" name="phone">
 					</label>
 
 					<label class="input-checkbox input--small" for="signup-phone-is-mobile">
 						<input id="signup-phone-is-mobile" name="phone-is-mobile" type="checkbox" value="1">
 						<span class="icon icon-checkmark"></span>
-						<span class="label">Phone number is for cell phone</span>
+						<span class="label">This is a mobile number</span>
 					</label>
 				</div>
 
 
-				<label class="input-select sm" for="signup-country">
-					<select id="signup-country" name="country" disabled>
-						<option value="">Select country</option>
-						<option value="opt1">UK</option>
-						<option value="opt2" selected>US</option>
-						<option value="opt3">Germany</option>
-					</select>
-				</label>
 			</div>
 
 			<div class="form-row button-group">
 				<button class="input-submit" type="button">
-					Submit
+					Sign up
 				</button>
 			</div>
 
@@ -215,7 +232,7 @@
 		<div class="form-header">
 			<h1>Thank you for signing up</h1>
 			<p>
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis.
+				You have successfully signed up for Coloplast® Care! We consider it a privilege to have the opportunity to help you find your way. Soon you will be receiving emails with tips and inspiration that we hope you’ll find relevant for your situation.
 			</p>
 		</div>
 

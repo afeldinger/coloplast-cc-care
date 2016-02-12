@@ -434,6 +434,11 @@
                 elem = this.item( elem );
             }
 
+            if (disabledClass === "dk-select-disabled") {
+                //this.data('select').prop('disabled', disabled);
+                this.data.select.disabled = disabled
+            }
+            
             _[ disabled ? "addClass" : "removeClass" ]( elem, disabledClass );
         },
 

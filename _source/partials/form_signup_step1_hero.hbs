@@ -48,7 +48,7 @@
 			</div>
 
 			<div class="form-row hcp-message">
-				<p>If you are a healthcare professional signing up a patient <a href="#signup-form-hcp">click here</a>
+				<a href="#signup-form-hcp" class="">I am a healthcare professional requesting a sign up on behalf of a patient.</a>
 			</div>
 
 
@@ -63,8 +63,8 @@
 	<form id="form-signup" name="signup">
 		<div class="form-step active">
 			<div class="form-header">
-				<h1>Please fill out details</h1>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis.</p>
+				<h1>Please fill out your details</h1>
+				<p>Help us give more relevant advice, by providing some personal details about your experience with catheters etc. We cannot predict every question - but the more we know, the better equipped we’ll be to help. </p>
 			</div>
 
 			<h2>Since when are you using a catheter?</h2>
@@ -83,8 +83,9 @@
 					</label>
 
 					<label class="input-select date-month" for="signup-hero-step2-catheterdate-month">
-						<select id="signup-hero-step2-catheterdate-month" name="month">
+						<select id="signup-hero-step2-catheterdate-month" name="month" disabled>
 							<option value="">Month</option>
+							<option value="unknown">I don't know</option>
 							<option value="01">January</option>
 							<option value="02">February</option>
 							<option value="03">March</option>
@@ -101,8 +102,9 @@
 					</label>
 
 					<label class="input-select date-day" for="signup-hero-step2-catheterdate-day">
-						<select id="signup-hero-step2-catheterdate-day" name="day">
+						<select id="signup-hero-step2-catheterdate-day" name="day" disabled>
 							<option value="">Day</option>
+							<option value="unknown">I don't know</option>
 							<option value="01">01</option>
 							<option value="02">02</option>
 							<option value="03">03</option>
@@ -156,16 +158,26 @@
 					<label class="input-checkbox" for="signup-hero-step2-mobility-wheelchair">
 						<input id="signup-hero-step2-mobility-wheelchair" name="mobility" type="checkbox" value="wheelchair">
 						<span class="icon icon-checkmark"></span>
-						<span class="label">I use a wheelchair</span>
+						<span class="label">Wheelchair</span>
 					</label>
 				</div>
 
 			</div>
 
-			<div class="form-row">
+			<div class="form-float form-float-sm">
 				<label class="input-text sm" for="signup-hero-step2-address1">
 					<div class="label">Address</div>
 					<input type="text" id="signup-hero-step2-address1" name="address">
+				</label>
+
+				<label class="input-text sm" for="signup-hero-step2-address2">
+					<div class="label">Address 2</div>
+					<input type="text" id="signup-hero-step2-address2" name="address2">
+				</label>
+
+				<label class="input-text sm" for="signup-hero-step2-address3">
+					<div class="label">Address 3</div>
+					<input type="text" id="signup-hero-step2-address3" name="address3">
 				</label>
 
 				<label class="input-text sm" for="signup-hero-step2-city">
@@ -177,46 +189,51 @@
 					<div class="label">State</div>
 					<input type="text" id="signup-hero-step2-state" name="state">
 				</label>
-			</div>
 
-			<div class="form-row">
 				<label class="input-text sm" for="signup-hero-step2-zip">
 					<div class="label">Zip code</div>
 					<input type="text" id="signup-hero-step2-zip" name="zip">
 				</label>
 
+				<label class="input-text sm" for="signup-hero-step2-province">
+					<div class="label">Province</div>
+					<input type="text" id="signup-hero-step2-province" name="province">
+				</label>
+
+				<label class="input-text sm" for="signup-hero-step2-po-box">
+					<div class="label">Po Box / Shorting code</div>
+					<input type="text" id="signup-hero-step2-po-box" name="po-box">
+				</label>
+
+				<label class="input-text sm" for="signup-hero-step2-country">
+					<div class="label">Country</div>
+					<input type="text" id="signup-hero-step2-country" name="country" value="US" disabled>
+				</label>
+
 				<div class="form-wrapper sm">
-					<label class="input-text sm input--small-bottom-spacing" for="signup-hero-step2-phone-areacode">
-						<div class="label">Area code</div>
+					<label class="input-text xs input--small-bottom-spacing input--prefix" for="signup-hero-step2-phone-areacode">
+						<div class="label">Prefix</div>
 						<input type="text" id="signup-hero-step2-phone-areacode" name="phone-areacode" value="+45" disabled>
 					</label>
 
-					<label class="input-text lg last input--small-bottom-spacing" for="signup-hero-step2-phone">
-						<div class="label">Phone no.</div>
+					<label class="input-text xl last input--small-bottom-spacing" for="signup-hero-step2-phone">
+						<div class="label">Phone no. (Optional)</div>
 						<input type="text" id="signup-hero-step2-phone" name="phone">
 					</label>
 
 					<label class="input-checkbox input--small" for="signup-hero-step2-phone-is-mobile">
 						<input id="signup-hero-step2-phone-is-mobile" name="phone-is-mobile" type="checkbox" value="1">
 						<span class="icon icon-checkmark"></span>
-						<span class="label">Phone number is for cell phone</span>
+						<span class="label">This is a mobile number</span>
 					</label>
 				</div>
 
 
-				<label class="input-select sm" for="signup-hero-step2-country">
-					<select id="signup-hero-step2-country" name="country" disabled>
-						<option value="">Select country</option>
-						<option value="opt1">UK</option>
-						<option value="opt2" selected>US</option>
-						<option value="opt3">Germany</option>
-					</select>
-				</label>
 			</div>
 
 			<div class="button-group">
 				<button class="input-submit" type="button">
-					Submit
+					Sign up
 				</button>
 			</div>
 
@@ -228,7 +245,7 @@
 		<div class="form-header">
 			<h1>Thank you for signing up</h1>
 			<p>
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis.
+				You have successfully signed up for Coloplast® Care! We consider it a privilege to have the opportunity to help you find your way. Soon you will be receiving emails with tips and inspiration that we hope you’ll find relevant for your situation.
 			</p>
 		</div>
 
@@ -243,15 +260,15 @@
 	<form id="form-signup" name="signup">
 		<div class="form-step active">
 			<div class="form-header">
-				<h1>Please fill out details</h1>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis.</p>
+				<h1>Please fill out details about yourself</h1>
+				<p>As you are a healthcare professional requesting a sign up on behalf of a patient, please, fill out the information below about yourself and your profession before you submit. </p>
+				<p>Information regarding your patient needs to be filled out on the next page. Once you click the sign up button on the next page, the patient will receive an email to confirm the sign up.</p>
 			</div>
-				
 
 			<div class="form-row">
 				<label class="input-select sm" for="signup-hcp-title">
 					<select id="signup-hcp-title" name="title">
-						<option value="">Title</option>
+						<option value="">Select profession</option>
 						<option value="Doctor">Doctor</option>
 						<option value="Nurse">Nurse</option>
 						<option value="Other">Other</option>
@@ -271,12 +288,12 @@
 			</div>
 			<div class="form-row">
 				<label class="input-text sm" for="signup-hcp-email">
-					<div class="label">E-mail</div>
+					<div class="label">E-mail address</div>
 					<input type="email" id="signup-hcp-email" name="email">
 				</label>
 
 				<label class="input-text sm" for="signup-hcp-organization">
-					<div class="label">Organization</div>
+					<div class="label">Organization name</div>
 					<input type="text" id="signup-hcp-organization" name="organization">
 				</label>
 
@@ -290,7 +307,7 @@
 
 			<div class="button-group">
 				<button class="input-submit" type="button">
-					Submit
+					Sign up
 				</button>
 			</div>
 		</div>
@@ -299,8 +316,8 @@
 
 		<div class="form-step">
 			<div class="form-header">
-				<h1>Please fill out details</h1>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis.</p>
+				<h1>Please fill out more details</h1>
+				<p>Help us to give more relevant advice, by providing a few more details. We cannot predict every question – but the more we know, the better we’ll be able to help.</p>
 			</div>
 
 			<div class="form-row">
@@ -337,7 +354,7 @@
 					</label>
 
 					<label class="input-select date-month" for="signup-hcp-catheterdate-month">
-						<select id="signup-hcp-catheterdate-month" name="month">
+						<select id="signup-hcp-catheterdate-month" name="month" disabled>
 							<option value="">Month</option>
 							<option value="01">January</option>
 							<option value="02">February</option>
@@ -355,7 +372,7 @@
 					</label>
 
 					<label class="input-select date-day" for="signup-hcp-catheterdate-day">
-						<select id="signup-hcp-catheterdate-day" name="day">
+						<select id="signup-hcp-catheterdate-day" name="day" disabled>
 							<option value="">Day</option>
 							<option value="01">01</option>
 							<option value="02">02</option>
@@ -416,10 +433,20 @@
 
 			</div>
 
-			<div class="form-row">
+			<div class="form-float form-float-sm">
 				<label class="input-text sm" for="signup-hcp-address1">
 					<div class="label">Address</div>
 					<input type="text" id="signup-hcp-address1" name="address">
+				</label>
+
+				<label class="input-text sm" for="signup-hcp-address2">
+					<div class="label">Address 2</div>
+					<input type="text" id="signup-hcp-address2" name="address2">
+				</label>
+
+				<label class="input-text sm" for="signup-hcp-address3">
+					<div class="label">Address 3</div>
+					<input type="text" id="signup-hcp-address3" name="address3">
 				</label>
 
 				<label class="input-text sm" for="signup-hcp-city">
@@ -431,46 +458,52 @@
 					<div class="label">State</div>
 					<input type="text" id="signup-hcp-state" name="state">
 				</label>
-			</div>
 
-			<div class="form-row">
 				<label class="input-text sm" for="signup-hcp-zip">
 					<div class="label">Zip code</div>
 					<input type="text" id="signup-hcp-zip" name="zip">
 				</label>
 
+				<label class="input-text sm" for="signup-hcp-province">
+					<div class="label">Province</div>
+					<input type="text" id="signup-hcp-province" name="province">
+				</label>
+
+				<label class="input-text sm" for="signup-hcp-po-box">
+					<div class="label">Po Box / Shorting code</div>
+					<input type="text" id="signup-hcp-po-box" name="po-box">
+				</label>
+
+				<label class="input-text sm" for="signup-hcp-country">
+					<div class="label">Country</div>
+					<input type="text" id="signup-hcp-country" name="country" value="US" disabled>
+				</label>
+
 				<div class="form-wrapper sm">
-					<label class="input-text sm input--small-bottom-spacing" for="signup-hcp-phone-areacode">
-						<div class="label">Area code</div>
+					<label class="input-text xs input--small-bottom-spacing input--prefix" for="signup-hcp-phone-areacode">
+						<div class="label">Prefix</div>
 						<input type="text" id="signup-hcp-phone-areacode" name="phone-areacode" value="+45" disabled>
 					</label>
 
-					<label class="input-text lg last input--small-bottom-spacing" for="signup-hcp-phone">
-						<div class="label">Phone no.</div>
+					<label class="input-text xl last input--small-bottom-spacing" for="signup-hcp-phone">
+						<div class="label">Phone no. (Optional)</div>
 						<input type="text" id="signup-hcp-phone" name="phone">
 					</label>
 
 					<label class="input-checkbox input--small" for="signup-hcp-phone-is-mobile">
 						<input id="signup-hcp-phone-is-mobile" name="phone-is-mobile" type="checkbox" value="1">
 						<span class="icon icon-checkmark"></span>
-						<span class="label">Phone number is for cell phone</span>
+						<span class="label">This is a mobile number</span>
 					</label>
 				</div>
 
 
-				<label class="input-select sm" for="signup-hcp-country">
-					<select id="signup-hcp-country" name="country" disabled>
-						<option value="">Select country</option>
-						<option value="opt1">UK</option>
-						<option value="opt2" selected>US</option>
-						<option value="opt3">Germany</option>
-					</select>
-				</label>
 			</div>
+
 
 			<div class="button-group">
 				<button class="input-submit" type="button">
-					Submit
+					Sign up
 				</button>
 			</div>
 
@@ -479,15 +512,18 @@
 	</form>
 
 	<div class="form-confirmation">
-		<div class="form-header">
-			<h1>Thank you for signing up</h1>
+		<div class="form-header">		
+			<h1>Thank you for requesting a sign up for your patient</h1>
 			<p>
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis.
+				You have now requested a sign up for Coloplast® Care on behalf of a patient. Soon your patient will receive an email, in which the patient needs to actively confirm the sign up by clicking on the link in that email.
+			</p>
+			<p>
+				If you wish to request a sign up on behalf of another patient, please click the button below.
 			</p>
 		</div>
 
 		<div class="button-group">
-			<a class="button popup-close" href="#">Sign up another patient</a>
+			<a class="button popup-close" href="#">Sign up a new patient</a>
 		</div>
 	</div>
 </div>

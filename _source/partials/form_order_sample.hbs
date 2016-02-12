@@ -7,98 +7,128 @@
 				
 			<h1>Get your free sample</h1>
 
-			<div class="form-col">
-				<div class="form-row">
-					<label class="input-text" for="order-sample-firstname">
-						<div class="label">First name</div>
-						<input type="text" id="order-sample-firstname" name="firstname">
+
+			<div class="form-row">
+				<label class="input-text sm" for="order-sample-firstname">
+					<div class="label">First name</div>
+					<input type="text" id="order-sample-firstname" name="firstname">
+				</label>
+
+				<label class="input-text sm" for="order-sample-lastname">
+					<div class="label">Last name</div>
+					<input type="text" id="order-sample-lastname" name="last-name">
+				</label>
+
+				<label class="input-text sm" for="order-sample-email">
+					<div class="label">E-mail address</div>
+					<input type="email" id="order-sample-email" name="email">
+				</label>
+			</div>
+			
+			<div class="form-row">
+
+				<div class="form-wrapper sm radio-group icon-buttons">
+					<label class="input-radio" for="order-sample-gender-female">
+						<input id="order-sample-gender-female" name="gender" type="radio" value="female">
+						<span class="icon icon-gender-female"></span>
+						<span class="label">Female</span>
+					</label>
+					<label class="input-radio" for="order-sample-gender-male">
+						<input id="order-sample-gender-male" name="gender" type="radio" value="male">
+						<span class="icon icon-gender-male"></span>
+						<span class="label">Male</span>
 					</label>
 				</div>
-				<div class="form-row">
-					<label class="input-text" for="order-sample-lastname">
-						<div class="label">Last name</div>
-						<input type="text" id="order-sample-lastname" name="last-name">
+
+				<div class="form-wrapper lg checkbox-group">
+					<label class="input-checkbox" for="order-sample-mobility-wheelchair">
+						<input id="order-sample-mobility-wheelchair" name="mobility" type="checkbox" value="wheelchair">
+						<span class="icon icon-checkmark"></span>
+						<span class="label">I use a wheelchair</span>
 					</label>
 				</div>
-				<div class="form-row gender-mobility">
-					<div class="radio-group icon-buttons">
-						<label class="input-radio" for="order-sample-gender-female">
-							<input id="order-sample-gender-female" name="gender" type="radio" value="female">
-							<span class="icon icon-gender-female"></span>
-							<span class="label">Female</span>
-						</label>
-						<label class="input-radio" for="order-sample-gender-male">
-							<input id="order-sample-gender-male" name="gender" type="radio" value="male">
-							<span class="icon icon-gender-male"></span>
-							<span class="label">Male</span>
-						</label>
-					</div>
-					<div class="checkbox-group input-buttons">
-						<label class="input-checkbox" for="order-sample-mobility-wheelchair">
-							<input id="order-sample-mobility-wheelchair" name="mobility" type="checkbox" value="wheelchair">
-							<span class="icon icon-checkmark"></span>
-							<span class="label">I use a wheelchair</span>
-						</label>
-					</div>
-				</div>
-				<div class="form-row">
-					<label class="input-text" for="order-sample-email">
-						<div class="label">E-mail address</div>
-						<input type="email" id="order-sample-email" name="email">
+
+			</div>
+
+			<div class="form-float form-float-sm">
+				<label class="input-text sm" for="order-sample-address1">
+					<div class="label">Address</div>
+					<input type="text" id="order-sample-address1" name="address">
+				</label>
+
+				<label class="input-text sm" for="order-sample-address2">
+					<div class="label">Address 2</div>
+					<input type="text" id="order-sample-address2" name="address2">
+				</label>
+
+				<label class="input-text sm" for="order-sample-address3">
+					<div class="label">Address 3</div>
+					<input type="text" id="order-sample-address3" name="address3">
+				</label>
+
+				<label class="input-text sm" for="order-sample-city">
+					<div class="label">City</div>
+					<input type="text" id="order-sample-city" name="city">
+				</label>
+
+				<label class="input-text sm" for="order-sample-state">
+					<div class="label">State</div>
+					<input type="text" id="order-sample-state" name="state">
+				</label>
+
+				<label class="input-text sm" for="order-sample-zip">
+					<div class="label">Zip code</div>
+					<input type="text" id="order-sample-zip" name="zip">
+				</label>
+
+				<label class="input-text sm" for="order-sample-province">
+					<div class="label">Province</div>
+					<input type="text" id="order-sample-province" name="province">
+				</label>
+
+				<label class="input-text sm" for="order-sample-po-box">
+					<div class="label">Po Box / Shorting code</div>
+					<input type="text" id="order-sample-po-box" name="po-box">
+				</label>
+
+				<label class="input-text sm" for="order-sample-country">
+					<div class="label">Country</div>
+					<input type="text" id="order-sample-country" name="country" value="US" disabled>
+				</label>
+
+				<div class="form-wrapper sm">
+					<label class="input-text xs input--small-bottom-spacing input--prefix" for="order-sample-phone-areacode">
+						<div class="label">Prefix</div>
+						<input type="text" id="order-sample-phone-areacode" name="phone-areacode" value="+45" disabled>
 					</label>
-				</div>
-				<div class="form-row">
-					<label class="input-text" for="order-sample-phone">
-						<div class="label">Phone number</div>
-						<input type="tel" id="order-sample-phone" name="phone">
+
+					<label class="input-text xl last input--small-bottom-spacing" for="order-sample-phone">
+						<div class="label">Phone no. (Optional)</div>
+						<input type="text" id="order-sample-phone" name="phone">
+					</label>
+
+					<label class="input-checkbox input--small" for="order-sample-phone-is-mobile">
+						<input id="order-sample-phone-is-mobile" name="phone-is-mobile" type="checkbox" value="1">
+						<span class="icon icon-checkmark"></span>
+						<span class="label">This is a mobile number</span>
 					</label>
 				</div>
 			</div>
-			<div class="form-col">
 
-				<div class="form-row">
-					<label class="input-text" for="order-sample-address1">
-						<div class="label">Address</div>
-						<input type="text" id="order-sample-address1" name="address1">
-					</label>
-				</div>
-				<div class="form-row">
-					<label class="input-text" for="order-sample-address2">
-						<div class="label">Address</div>
-						<input type="text" id="order-sample-address2" name="address2">
-					</label>
-				</div>
-				<div class="form-row">
-					<label class="input-text" for="order-sample-state">
-						<div class="label">State</div>
-						<input type="text" id="order-sample-state" name="state">
-					</label>
-				</div>
-				<div class="form-row">
-					<label class="input-text md" for="order-sample-zip">
-						<div class="label">Zip code</div>
-						<input type="text" id="order-sample-zip" name="zip">
-					</label>
 
-					<label class="input-text md" for="order-sample-city">
-						<div class="label">City</div>
-						<input type="text" id="order-sample-city" name="city">
-					</label>
-				</div>
 
-				<div class="form-row">
-					<label class="input-checkbox" for="order-sample-accept-legal">
-						<input id="order-sample-accept-legal" name="accept-legal" type="checkbox" value="1">
-						<span class="icon icon-checkmark"></span>
-						<span class="label">* Local legal requirements</span>
-					</label>
-				</div>
+			<div class="button-group">
+				<button class="input-submit type="submit">
+					Get your free sample
+				</button>
+			</div>
 
-				<div class="button-group">
-					<button class="input-submit type="submit">
-						Get your free sample
-					</button>
-				</div>
+			<div class="form-row checkbox-group">
+				<label class="input-checkbox sm input--small input--right" for="signup-terms">
+					<input id="signup-terms" name="terms" type="checkbox" value="1">
+					<span class="icon icon-checkmark"></span>
+					<span class="label">I accept the <a href="#">terms and conditions</a></span>
+				</label>
 			</div>
 			
 			<div class="disclaimer">

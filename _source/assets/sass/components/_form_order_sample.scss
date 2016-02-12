@@ -17,5 +17,15 @@
 		button {
 			width:100%;
 		}
+
+		@include breakpoint($sm) {
+			text-align: right;
+			button {
+
+				width: auto;
+				min-width: 32%
+			}
+			
+		}
 	}
 }

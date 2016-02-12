@@ -418,6 +418,23 @@ var cc = (function(){
 				var month = $('select[id$="month"]', group);
 				var day = $('select[id$="day"]', group);
 
+
+				if (isNaN(parseInt(year.val()))) {
+					month.data('dropkick').disable();
+					day.data('dropkick').disable();
+					return;
+
+				} else {
+					month.data('dropkick').disable(false);
+
+					if (isNaN(parseInt(month.val()))) {
+						day.data('dropkick').disable();
+						return;
+					} else {
+						day.data('dropkick').disable(false);
+					}
+				}
+
 				var date = new Date();
 				date.setFullYear(
 					year.val()? year.val() : date.getFullYear(),
@@ -432,7 +449,10 @@ var cc = (function(){
 					dk.remove(dk.length-1);
 				}
 
-				dk.appendOpt(new Option(dk.firstOption.text));
+				//dk.appendOpt(new Option(dk.firstOption.text));
+				for (var i=0; i<dk.alphaOptions.length; i++) {
+					dk.appendOpt(dk.alphaOptions[i]);
+				}
 
 				for (var i=1; i<=days; i++) {
 					var str = leftPad(i,2);
@@ -446,9 +466,7 @@ var cc = (function(){
 		// manages form submission and confirmation display
 		$('form').each(function() {
 			$(this).validate({
-        		ignore: [
-        			':hidden:not([data-dkcacheid])'
-        		],
+        		ignore: ':hidden:not([data-dkcacheid]), :disabled',
 				highlight: function(element, errorClass, validClass) {
 		            if(element.type === 'radio') {
 		                $(element.form).find('[name="' + element.name + '"]').each(function(){
@@ -526,16 +544,19 @@ var cc = (function(){
 				':input[id$="-phone"]',
 				':input[id$="-address1"]',
 				':input[id$="-address2"]',
+				':input[id$="-address3"]',
 				':input[id$="-state"]',
 				':input[id$="-city"]',
 				':input[id$="-zip"]',
+				':input[id$="-po-box"]',
+				':input[id$="-province"]',
 				':input[id$="-accept-legal"]',
 				':input[id$="-organization"]',
 				':input[id$="-title"]',
 				':input[id$="-terms"]'
 			).join(', ');
 
-			$(fields, this).each(function() {
+			$(fields, this).not(':disabled').each(function() {
 				$(this).rules('add','required');
 			});
 
@@ -614,8 +635,8 @@ var cc = (function(){
 		// Phone number is optional on step 1 of signup forms
 		//$('#signup-form-hero, #signup-form-overlay').find(':input[id$="-phone"]').rules('remove');
 
-		$('#signup-form-hero, #signup-form-overlay').find(':input[id$="-phone"]').each(function() {
-			//$(this).rules('remove');
+		$('#signup-form-hero, #signup-form-hero-step2, #signup-form-overlay').find(':input[id$="-phone"]').each(function() {
+			$(this).rules('remove');
 		});
 		/*
 		$('form').filter(function() {
@@ -650,6 +671,12 @@ var cc = (function(){
             var origWidth = $select.parents('.selectbox').width();
 
             this.firstOption = this.data.select.options[0]? this.data.select.options[0] : null;
+            this.alphaOptions = [];
+            for (var i=0; i<this.data.select.options.length; i++) {
+            	if (isNaN(parseInt(this.data.select.options[i].value))) {
+            		this.alphaOptions[this.alphaOptions.length] = this.data.select.options[i];
+            	}
+            }
 
             $(this.data.select).data('dropkick', this);
 
@@ -670,6 +697,11 @@ var cc = (function(){
 	                $select.parent().width(widestOptionWidth + togglerWidth);
 	            }
 	        }
+
+	        // Disable month and day selects if no year selected
+	        if ($select.is('[id$="year"]')) {
+	        	$select.trigger('change');
+	        };
         };
 
 		var dk_defaults = {
