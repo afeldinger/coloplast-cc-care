@@ -466,7 +466,7 @@ var cc = (function(){
 		// manages form submission and confirmation display
 		$('form').each(function() {
 			$(this).validate({
-        		ignore: ':hidden:not([data-dkcacheid]), :disabled',
+        		ignore: ':hidden:not([data-dkcacheid])',
 				highlight: function(element, errorClass, validClass) {
 		            if(element.type === 'radio') {
 		                $(element.form).find('[name="' + element.name + '"]').each(function(){
@@ -541,7 +541,7 @@ var cc = (function(){
 				':input[id$="-email"]',
 				':input[id*="-gender"]',
 				':input[id$="-message"]',
-				':input[id$="-phone"]',
+				':input[id="order-sample-phone"]',
 				':input[id$="-address1"]',
 				':input[id$="-address2"]',
 				':input[id$="-address3"]',
@@ -556,7 +556,7 @@ var cc = (function(){
 				':input[id$="-terms"]'
 			).join(', ');
 
-			$(fields, this).not(':disabled').each(function() {
+			$(fields, this).each(function() {
 				$(this).rules('add','required');
 			});
 
@@ -566,6 +566,10 @@ var cc = (function(){
 					$(this).rules('remove');
 				});
 			}
+
+			$(':input[name*="profile-catheterdate-"]', this).each(function() {
+				$(this).rules('remove');
+			});
 
 		
 			// Default form control for any other form than the hero signup form
@@ -640,7 +644,7 @@ var cc = (function(){
 		});
 		$(':input#contact-phone, :input#contact-terms').each(function() {
 			$(this).rules('remove');
-		})
+		});
 		/*
 		$('form').filter(function() {
 			return $(this).next('.form-confirmation').length;
@@ -704,7 +708,7 @@ var cc = (function(){
 	        // Disable month and day selects if no year selected
 	        if ($select.is('[id$="year"]')) {
 	        	$select.trigger('change');
-	        };
+	        }
         };
 
 		var dk_defaults = {

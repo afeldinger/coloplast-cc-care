@@ -10,7 +10,7 @@
 		color: $color-text-headers;
 		@include adjust-font-size-to($size-xl);
 	}
-	/*
+	
 	.elm-image {
 		display:none;
 
@@ -19,6 +19,10 @@
 			max-width: 100%;
 		}
 	}
+
+}
+
+.form-page:not(.form-page--full-width) {
 
 
 	@include breakpoint($sm, true) {
@@ -42,5 +46,5 @@
 			@include grid-span(6,7);
 		}
 	}
-	*/
+
 }
