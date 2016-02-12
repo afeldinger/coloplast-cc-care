@@ -610,8 +610,7 @@ h1 {
   line-height: 36px;
   line-height: 2.4rem;
   margin: 1.2rem 0;
-  color: #00b2ce;
-  font-weight: 600; }
+  color: #00b2ce; }
 
 h2, .article-full .main-content h1 {
   font-size: 22px;
@@ -1573,6 +1572,9 @@ ul.social {
   #page-footer .main-footer .content-wrapper, #page-footer .main-footer .article-full .main-content, .article-full #page-footer .main-footer .main-content, #page-footer .main-footer .facts {
     margin-left: auto;
     margin-right: auto; } }
+
+#form-contact .button-group button {
+  width: 100%; }
 
 input,
 textarea {
@@ -4678,7 +4680,40 @@ html:not(.csstransitions) .type-article,
     clear: none; } }
 
 .form-page {
-  margin-bottom: 3.2rem; }
+  margin-bottom: 3.2rem;
+  /*
+	.elm-image {
+		display:none;
+
+		img {
+			display:block;
+			max-width: 100%;
+		}
+	}
+
+
+	@include breakpoint($sm, true) {
+
+		.elm-content {
+			@include grid-span(6,1);
+		}	
+		.elm-image {
+			display:block;
+			@include grid-span(5,8);
+		}
+	}
+
+	@include breakpoint($md, true) {
+
+		.elm-content {
+			@include grid-span(5,1);
+		}	
+		.elm-image {
+			display:block;
+			@include grid-span(6,7);
+		}
+	}
+	*/ }
   .form-page h1,
   .form-page h2, .form-page .article-full .main-content h1, .article-full .main-content .form-page h1 {
     color: #00b2ce;
@@ -4692,39 +4727,6 @@ html:not(.csstransitions) .type-article,
     font-size: 1.47rem;
     line-height: 30px;
     line-height: 2rem; }
-  .form-page .elm-image {
-    display: none; }
-    .form-page .elm-image img {
-      display: block;
-      max-width: 100%; }
-  @media (min-width: 45em) {
-    .form-page .elm-content {
-      width: 49.02%;
-      float: left;
-      margin-right: -100%;
-      margin-left: 0;
-      clear: none; }
-    .form-page .elm-image {
-      display: block;
-      width: 40.52%;
-      float: right;
-      margin-left: 0;
-      margin-right: 0;
-      clear: none; } }
-  @media (min-width: 55em) {
-    .form-page .elm-content {
-      width: 40.52%;
-      float: left;
-      margin-right: -100%;
-      margin-left: 0;
-      clear: none; }
-    .form-page .elm-image {
-      display: block;
-      width: 49.02%;
-      float: right;
-      margin-left: 0;
-      margin-right: 0;
-      clear: none; } }
 
 @media (min-width: 0) and (max-width: 55em) {
   .page-section .form-signup-cta {

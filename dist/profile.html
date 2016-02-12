@@ -259,75 +259,46 @@
         <div class="form-page">
           <div class="elm-content">
             <h1>About you</h1>
+            <hr>
             <form>
-              <div class="form-row">
-                <label class="input-text" for="profile-firstname">
-                  <div class="label">First name</div>
-                  <input type="text" id="profile-firstname" name="firstname" value="Janet">
-                </label>
-              </div>
-              <div class="form-row">
-                <label class="input-text" for="profile-lastname">
-                  <div class="label">Last name</div>
-                  <input type="text" id="profile-lastname" name="lastname" value="Smith">
-                </label>
-              </div>
-              <div class="form-row">
-                <label class="input-text" for="profile-address1">
+              <div class="form-float form-float-sm">
+                <label class="input-text sm" for="profile-address1">
                   <div class="label">Address</div>
                   <input type="text" id="profile-address1" name="address">
                 </label>
-              </div>
-              <div class="form-row">
-                <label class="input-text" for="profile-address2">
+                <label class="input-text sm" for="profile-address2">
                   <div class="label">Address 2</div>
                   <input type="text" id="profile-address2" name="address2">
                 </label>
-              </div>
-              <div class="form-row">
-                <label class="input-text" for="profile-address3">
+                <label class="input-text sm" for="profile-address3">
                   <div class="label">Address 3</div>
                   <input type="text" id="profile-address3" name="address3">
                 </label>
-              </div>
-              <div class="form-row">
-                <label class="input-text" for="profile-city">
+                <label class="input-text sm" for="profile-city">
                   <div class="label">City</div>
                   <input type="text" id="profile-city" name="city">
                 </label>
-              </div>
-              <div class="form-row">
-                <label class="input-text" for="profile-state">
+                <label class="input-text sm" for="profile-state">
                   <div class="label">State</div>
                   <input type="text" id="profile-state" name="state">
                 </label>
-              </div>
-              <div class="form-row">
-                <label class="input-text" for="profile-zip">
+                <label class="input-text sm" for="profile-zip">
                   <div class="label">Zip code</div>
                   <input type="text" id="profile-zip" name="zip">
                 </label>
-              </div>
-              <div class="form-row">
-                <label class="input-text" for="profile-province">
+                <label class="input-text sm" for="profile-province">
                   <div class="label">Province</div>
                   <input type="text" id="profile-province" name="province">
                 </label>
-              </div>
-              <div class="form-row">
-                <label class="input-text" for="profile-po-box">
+                <label class="input-text sm" for="profile-po-box">
                   <div class="label">Po Box / Shorting code</div>
                   <input type="text" id="profile-po-box" name="po-box">
                 </label>
-              </div>
-              <div class="form-row">
-                <label class="input-text" for="profile-country">
+                <label class="input-text sm" for="profile-country">
                   <div class="label">Country</div>
                   <input type="text" id="profile-country" name="country" value="US" disabled="disabled">
                 </label>
-              </div>
-              <div class="form-row">
-                <div class="form-wrapper">
+                <div class="form-wrapper sm">
                   <label class="input-text xs input--small-bottom-spacing input--prefix" for="profile-phone-areacode">
                     <div class="label">Prefix</div>
                     <input type="text" id="profile-phone-areacode" name="phone-areacode" value="+45" disabled="disabled">
@@ -343,30 +314,26 @@
                   </label>
                 </div>
               </div>
-              <div class="form-row radio-group icon-buttons">
-                <label class="input-radio" for="profile-gender-female">
-                  <input id="profile-gender-female" name="gender" type="radio" value="female">
-                  <span class="icon icon-gender-female"></span>
-                  <span class="label">Female</span>
-                </label>
-                <label class="input-radio" for="profile-gender-male">
-                  <input id="profile-gender-male" name="gender" type="radio" value="male">
-                  <span class="icon icon-gender-male"></span>
-                  <span class="label">Male</span>
-                </label>
-              </div>
               <div class="form-row">
-                <label class="input-checkbox" for="profile-mobility-wheelchair">
-                  <input id="profile-mobility-wheelchair" name="mobility" type="checkbox" value="wheelchair">
-                  <span class="icon icon-checkmark"></span>
-                  <span class="label">I use a wheelchair</span>
-                </label>
-              </div>
-              <div class="form-row">
-                <label class="input-text" for="profile-email">
-                  <div class="label">E-mail address</div>
-                  <input type="email" id="profile-email" name="email">
-                </label>
+                <div class="form-wrapper sm radio-group icon-buttons">
+                  <label class="input-radio" for="profile-gender-female">
+                    <input id="profile-gender-female" name="gender" type="radio" value="female">
+                    <span class="icon icon-gender-female"></span>
+                    <span class="label">Female</span>
+                  </label>
+                  <label class="input-radio" for="profile-gender-male">
+                    <input id="profile-gender-male" name="gender" type="radio" value="male">
+                    <span class="icon icon-gender-male"></span>
+                    <span class="label">Male</span>
+                  </label>
+                </div>
+                <div class="form-wrapper lg">
+                  <label class="input-checkbox" for="profile-mobility-wheelchair">
+                    <input id="profile-mobility-wheelchair" name="mobility" type="checkbox" value="wheelchair">
+                    <span class="icon icon-checkmark"></span>
+                    <span class="label">I use a wheelchair</span>
+                  </label>
+                </div>
               </div>
               <hr>
               <h2>Please tell us more about you</h2>
@@ -382,7 +349,7 @@
                   </select>
                 </label>
                 <label class="input-select date-month" for="profile-birthdate-month">
-                  <select id="profile-birthdate-month" name="month">
+                  <select id="profile-birthdate-month" name="month" disabled="disabled">
                     <option value="">Month</option>
                     <option value="01">January</option>
                     <option value="02">February</option>
@@ -399,7 +366,7 @@
                   </select>
                 </label>
                 <label class="input-select date-day" for="profile-birthdate-day">
-                  <select id="profile-birthdate-day" name="day">
+                  <select id="profile-birthdate-day" name="day" disabled="disabled">
                     <option value="">Day</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -447,7 +414,7 @@
                   </select>
                 </label>
                 <label class="input-select date-month" for="profile-catheterdate-month">
-                  <select id="profile-catheterdate-month" name="month">
+                  <select id="profile-catheterdate-month" name="month" disabled="disabled">
                     <option value="">Month</option>
                     <option value="01">January</option>
                     <option value="02">February</option>
@@ -464,7 +431,7 @@
                   </select>
                 </label>
                 <label class="input-select date-day" for="profile-catheterdate-day">
-                  <select id="profile-catheterdate-day" name="day">
+                  <select id="profile-catheterdate-day" name="day" disabled="disabled">
                     <option value="">Day</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -584,9 +551,6 @@
                 </button>
               </div>
             </form>
-          </div>
-          <div class="elm-image">
-            <img src="http://lorempixel.com/470/645/nature/3/" alt="Image text" border="0">
           </div>
         </div>
       </div>

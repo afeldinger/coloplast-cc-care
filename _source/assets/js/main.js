@@ -638,6 +638,9 @@ var cc = (function(){
 		$('#signup-form-hero, #signup-form-hero-step2, #signup-form-overlay').find(':input[id$="-phone"]').each(function() {
 			$(this).rules('remove');
 		});
+		$(':input#contact-phone, :input#contact-terms').each(function() {
+			$(this).rules('remove');
+		})
 		/*
 		$('form').filter(function() {
 			return $(this).next('.form-confirmation').length;

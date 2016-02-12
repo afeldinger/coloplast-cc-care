@@ -10,6 +10,7 @@
 		color: $color-text-headers;
 		@include adjust-font-size-to($size-xl);
 	}
+	/*
 	.elm-image {
 		display:none;
 
@@ -41,4 +42,5 @@
 			@include grid-span(6,7);
 		}
 	}
+	*/
 }

@@ -297,7 +297,7 @@
       <div class="content-wrapper contact-page">
         <div class="contact-form">
           <h2>Write to us</h2>
-          <form>
+          <form id="form-contact" method="post">
             <div class="form-row">
               <label class="input-text md" for="contact-firstname">
                 <div class="label">First name</div>
@@ -309,16 +309,12 @@
               </label>
             </div>
             <div class="form-row">
-              <label class="input-text md" for="contact-email">
-                <div class="label">E-mail address</div>
-                <input type="email" id="contact-email" name="email">
-              </label>
               <div class="form-wrapper md">
-                <label class="input-text xs input--small-bottom-spacing input--prefix" for="contact-phone-areacode">
+                <label class="input-text xs input--prefix" for="contact-phone-areacode">
                   <div class="label">Prefix</div>
                   <input type="text" id="contact-phone-areacode" name="phone-areacode" value="+45" disabled="disabled">
                 </label>
-                <label class="input-text xl last input--small-bottom-spacing" for="contact-phone">
+                <label class="input-text xl last" for="contact-phone">
                   <div class="label">Phone no. (Optional)</div>
                   <input type="text" id="contact-phone" name="phone">
                 </label>
@@ -328,6 +324,16 @@
                   <span class="label">This is a mobile number</span>
                 </label>
               </div>
+              <div class="form-wrapper md">
+                <label class="input-text" for="contact-email">
+                  <div class="label">E-mail address</div>
+                  <input type="email" id="contact-email" name="email">
+                </label>
+                <label class="input-text" for="contact-country">
+                  <div class="label">Country</div>
+                  <input type="text" id="contact-country" name="country" value="US" disabled="disabled">
+                </label>
+              </div>
             </div>
             <div class="form-row">
               <label class="input-textarea" for="contact-message">
@@ -335,10 +341,20 @@
                 <textarea id="contact-message" name="message"></textarea>
               </label>
             </div>
-            <div class="button-group">
-              <button class="input-submit" type="submit">
-                Submit
-              </button>
+            <div class="form-row">
+              <div class="form-wrapper md checkbox-group">
+                <label class="input-checkbox input--small" for="contact-terms">
+                  <input id="contact-terms" name="terms" type="checkbox" value="1">
+                  <span class="icon icon-checkmark"></span>
+                  <span class="label">I accept the <a href="#">terms and conditions</a>
+                  </span>
+                </label>
+              </div>
+              <div class="form-wrapper md button-group">
+                <button class="input-submit" type="submit">
+                  Submit
+                </button>
+              </div>
             </div>
           </form>
           <div class="form-confirmation">
