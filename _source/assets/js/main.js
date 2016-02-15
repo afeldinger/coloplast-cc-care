@@ -466,7 +466,7 @@ var cc = (function(){
 		// manages form submission and confirmation display
 		$('form').each(function() {
 			$(this).validate({
-        		ignore: ':hidden:not([data-dkcacheid])',
+        		ignore: ':hidden:not([data-dkcacheid]), :disabled',
 				highlight: function(element, errorClass, validClass) {
 		            if(element.type === 'radio') {
 		                $(element.form).find('[name="' + element.name + '"]').each(function(){
@@ -495,9 +495,11 @@ var cc = (function(){
 				errorPlacement: function() {
 					return true;
 				},
+				/*
 				submitHandler: function() {
 
 				},
+				*/
 				/*
 				submitHandler: function(form) {
 					// Form has .form-confirmation - use jquery.post to submit form and display confirmation
