@@ -574,6 +574,11 @@ var cc = (function(){
 			});
 
 		
+			$(':input#contact-phone').each(function() {
+				$(this).rules('remove');
+			});
+
+
 			// Default form control for any other form than the hero signup form
 			if ($(this).parents('#signup-form-hero').length === 0) {
 				$(this).find('button[type=button]').click(function() {
@@ -638,15 +643,7 @@ var cc = (function(){
 		});
 
 
-		// Phone number is optional on step 1 of signup forms
-		//$('#signup-form-hero, #signup-form-overlay').find(':input[id$="-phone"]').rules('remove');
 
-		$('#signup-form-hero, #signup-form-hero-step2, #signup-form-overlay').find(':input[id$="-phone"]').each(function() {
-			$(this).rules('remove');
-		});
-		$(':input#contact-phone, :input#contact-terms').each(function() {
-			$(this).rules('remove');
-		});
 		/*
 		$('form').filter(function() {
 			return $(this).next('.form-confirmation').length;
