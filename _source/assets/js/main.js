@@ -605,7 +605,8 @@ var cc = (function(){
 
 					// hide form and show confirmation if on last step
 					if (form_complete) {
-						frm.hide().next('.form-confirmation').show();
+						// confirmation display disabled by request of Claudia Zoglmann
+						frm.hide();//.next('.form-confirmation').show();
 					}
 					
 				});
