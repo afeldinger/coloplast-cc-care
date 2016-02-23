@@ -599,7 +599,8 @@ var cc = (function(){
 
 					// disable current step, enable next or first step
 					if (current_step !== next_step) {
-						current_step.removeClass('active');
+						// Removed active disabling by request of Claudia Zoglmann
+						// current_step.removeClass('active');
 						next_step.addClass('active').find('select:visible').dropkick(dk_nested);
 					}
 
