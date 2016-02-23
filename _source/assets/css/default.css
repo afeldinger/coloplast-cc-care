@@ -3842,6 +3842,52 @@ html, body {
   .article-full > *:nth-child(n+2) {
     margin-top: 2.8rem; }
 
+/** 
+ *	Override sensible styling due to irregular requirements for translation system 
+ */
+.article-full .main-content {
+  /* Remove absurdly large white-space between headers and block elements */
+  /* Remove regular whitespace for headers following double breaks */ }
+  .article-full .main-content p,
+  .article-full .main-content ul,
+  .article-full .main-content ol {
+    /* Mimic double breaks in spacing :( */
+    margin-top: 2em;
+    margin-bottom: 2em;
+    /* Repeat basic typography rules for specificity */ }
+    h2 + .article-full .main-content p,
+    .article-full .main-content h1 + .article-full .main-content p,
+    h3 + .article-full .main-content p,
+    h2 + .article-full .main-content ul,
+    .article-full .main-content h1 + .article-full .main-content ul,
+    h3 + .article-full .main-content ul,
+    h2 + .article-full .main-content ol,
+    .article-full .main-content h1 + .article-full .main-content ol,
+    h3 + .article-full .main-content ol {
+      margin-top: 0; }
+    .article-full .main-content p:first-child,
+    .article-full .main-content ul:first-child,
+    .article-full .main-content ol:first-child {
+      margin-top: 0; }
+    .article-full .main-content p + h2,
+    .article-full .main-content p + h1, .article-full .main-content ul + h2,
+    .article-full .main-content ul + h1, .article-full .main-content ol + h2, .article-full .main-content ol + h1 {
+      margin-top: 1.2rem; }
+    .article-full .main-content p + h3,
+    .article-full .main-content ul + h3,
+    .article-full .main-content ol + h3 {
+      margin-top: 1.2rem; }
+  .article-full .main-content h2 + p,
+  .article-full .main-content h1 + p, .article-full .main-content h2 + ul,
+  .article-full .main-content h1 + ul, .article-full .main-content h2 + ol,
+  .article-full .main-content h1 + ol, .article-full .main-content h3 + p,
+  .article-full .main-content h3 + ul,
+  .article-full .main-content h3 + ol {
+    margin-top: 0; }
+  .article-full .main-content br + br + h2,
+  .article-full .main-content br + br + h1, .article-full .main-content br + br + h3 {
+    margin-top: 0; }
+
 .article-header {
   text-align: left;
   background-repeat: no-repeat;

@@ -23,6 +23,59 @@ html, body {
 	}
 }
 
+/** 
+ *	Override sensible styling due to irregular requirements for translation system 
+ */
+.article-full {
+	.main-content {
+
+		
+		p,
+		ul,
+		ol {
+		    
+		    /* Mimic double breaks in spacing :( */
+		    margin-top: 2em;
+		    margin-bottom: 2em;
+
+		    h2 + &,
+		    h3 + & {
+		        margin-top: 0;
+		    }
+		    
+			/* Repeat basic typography rules for specificity */
+		    &:first-child {
+		        margin-top:0;
+		    }
+		    & + h2 {
+		        margin-top: rhythm(3)
+		    }
+		    & + h3 {
+		        margin-top: rhythm(3)
+		    }
+		}
+
+		/* Remove absurdly large white-space between headers and block elements */
+		h2,
+		h3 {
+			& + p,
+			& + ul,
+			& + ol {
+				margin-top: 0;
+			}
+		}
+
+		/* Remove regular whitespace for headers following double breaks */
+		br + br {
+			+ h2,
+			+ h3 {
+				margin-top: 0;
+			}
+		}
+
+	}
+}
+
 .article-header {
 	text-align:left;
 	background-repeat: no-repeat;
@@ -65,6 +118,7 @@ html, body {
 		max-width: 636px + (2 * 30px);
 		margin-left: auto;
 		margin-right: auto;
+
 
 		@include layout(6 6, $gutter: 1.25) {
 			.content-block {
