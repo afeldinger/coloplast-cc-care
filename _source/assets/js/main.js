@@ -597,9 +597,11 @@ var cc = (function(){
 					}
 
 
+					/* Section now completely modified by request of Claudia Zoglmann */
+					/*
 					// disable current step, enable next or first step
 					if (current_step !== next_step) {
-						// Removed active disabling by request of Claudia Zoglmann
+						// Altered "active" toggle by request of Claudia Zoglmann
 						// current_step.removeClass('active');
 						next_step.addClass('active').find('select:visible').dropkick(dk_nested);
 					}
@@ -608,6 +610,11 @@ var cc = (function(){
 					if (form_complete) {
 						// confirmation display disabled by request of Claudia Zoglmann
 						frm.hide();//.next('.form-confirmation').show();
+					}
+					*/
+
+					if (current_step !== next_step) {
+						next_step.find('select:visible').dropkick(dk_nested);
 					}
 					
 				});
