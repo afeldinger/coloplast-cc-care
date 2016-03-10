@@ -3480,17 +3480,15 @@ img.mfp-img {
 
 /* overlay at start */
 .mfp-bg {
-  background: white;
+  background: #e9e9e9;
   opacity: 0;
   transition: all 0.15s ease-out; }
-  .cssfilters .mfp-bg {
-    background: #e9e9e9; }
   .popup--dark .mfp-bg {
     background: #000; }
 
 /* overlay animate in */
 .mfp-bg.mfp-ready {
-  opacity: 0.93; }
+  opacity: 0.95; }
 
 /* overlay animate out */
 .mfp-bg.mfp-removing {
