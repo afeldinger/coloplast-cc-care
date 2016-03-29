@@ -465,118 +465,6 @@ var cc = (function(){
 
 		// manages form submission and confirmation display
 		$('form').each(function() {
-			$(this).validate({
-        		ignore: ':hidden:not([data-dkcacheid]), :disabled',
-				highlight: function(element, errorClass, validClass) {
-		            if(element.type === 'radio') {
-		                $(element.form).find('[name="' + element.name + '"]').each(function(){
-		                    var $this = $(this);
-		                    $this.addClass(errorClass).removeClass(validClass);
-		                    $this.closest('label').addClass('input-' + errorClass);
-		                });
-		            } else {
-						$(element).addClass(errorClass).removeClass(validClass);
-						$(element).closest('label').addClass('input-' + errorClass);
-		            }
-
-				},
-				unhighlight: function(element, errorClass, validClass) {
-		            if(element.type === 'radio') {
-		                $(element.form).find('[name="' + element.name + '"]').each(function(){
-		                    var $this = $(this);
-		                    $this.removeClass(errorClass).addClass(validClass);
-		                    $this.closest('label').removeClass('input-' + errorClass);
-		                });
-		            } else {
-						$(element).removeClass(errorClass).addClass(validClass);
-						$(element).closest('label').removeClass('input-' + errorClass);
-					}
-				},
-				errorPlacement: function() {
-					return true;
-				},
-				/*
-				submitHandler: function() {
-
-				},
-				*/
-				/*
-				submitHandler: function(form) {
-					// Form has .form-confirmation - use jquery.post to submit form and display confirmation
-
-					if ($(this).next('.form-confirmation').length >= 0) {
-
-						var frm = $(form);
-						var url = frm.attr('action')? frm.attr('action') : location.href;
-						var data = frm.serializeArray();
-
-						//console.log('Form request:', url, data);
-
-						$.post(
-							url,
-							data,
-							function(response, status) {
-								//console.log('Form response:', status);
-								frm.hide().next('.form-confirmation').show();
-							}
-						);
-
-
-
-					} 
-					// No .form-confirmation: default to standard submit handler
-					else {
-						//console.log('No form confirmation - submit form');
-						form.submit();
-					}
-				},
-				*/
-			});
-
-			// required fields
-			var fields = new Array(
-				':input[id*="-catheterdate-"]',
-				':input[id$="-firstname"]',
-				':input[id$="-first-name"]',
-				':input[id$="-lastname"]',
-				':input[id$="-last-name"]',
-				':input[id$="-email"]',
-				':input[id*="-gender"]',
-				':input[id$="-message"]',
-				':input[id="order-sample-phone"]',
-				':input[id$="-address1"]',
-				':input[id$="-address2"]',
-				':input[id$="-address3"]',
-				':input[id$="-state"]',
-				':input[id$="-city"]',
-				':input[id$="-zip"]',
-				':input[id$="-po-box"]',
-				':input[id$="-province"]',
-				':input[id$="-accept-legal"]',
-				':input[id$="-organization"]',
-				':input[id$="-title"]',
-				':input[id$="-terms"]'
-			).join(', ');
-
-			$(fields, this).each(function() {
-				$(this).rules('add','required');
-			});
-
-			// has care receiver field - remove rule for gender
-			if ($('#profile-receiver-firstname', this).length) {
-				$('input[name="gender"]', this).each(function() {
-					$(this).rules('remove');
-				});
-			}
-
-			$(':input[name*="profile-catheterdate-"]', this).each(function() {
-				$(this).rules('remove');
-			});
-
-		
-			$(':input#contact-phone').each(function() {
-				$(this).rules('remove');
-			});
 
 
 			// Default form control for any other form than the hero signup form
@@ -592,7 +480,7 @@ var cc = (function(){
 					var next_step = (!form_complete)? current_step.next('.form-step') : current_step.siblings('.form-step:first');
 
 					// Validate fields
-					if (!current_step.find(':input').valid()) {
+					if ($.validator && !current_step.find(':input').valid()) {
 						return;
 					}
 
@@ -639,7 +527,7 @@ var cc = (function(){
 					var current_step = $(this).closest('.form-step');
 
 					// Validate fields
-					if (!current_step.find(':input').valid()) {
+					if ($.validator && !current_step.find(':input').valid()) {
 						return;
 					}
 
