@@ -299,6 +299,9 @@
 								color: inherit;
 								@include adjust-leading-to(9);
 								
+								span:not(.icon) {
+									display:none;
+								}
 								.icon {
 									@include icon($arrow-right);
 

@@ -569,6 +569,18 @@ button {
 	}
 }
 
+.date-group {
+	@include breakpoint($md) {
+		.date-year,
+		.date-day {
+			max-width: 25%;
+		}
+		.date-month {
+			max-width: 48%;
+		}
+	}
+}
+
 .input--prefix {
 	width: 50px !important;
 	margin-right: -50px !important;

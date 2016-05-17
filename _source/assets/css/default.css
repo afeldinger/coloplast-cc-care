@@ -1978,6 +1978,13 @@ button {
     width: 32%;
     margin-right: 0; } }
 
+@media (min-width: 55em) {
+  .date-group .date-year,
+  .date-group .date-day {
+    max-width: 25%; }
+  .date-group .date-month {
+    max-width: 48%; } }
+
 .input--prefix {
   width: 50px !important;
   margin-right: -50px !important; }
@@ -3770,6 +3777,9 @@ img.mfp-img {
               color: inherit;
               line-height: 54px;
               line-height: 3.6rem; }
+              #primary-nav > div > ul > li > ul > li > .teaser a.more-link span:not(.icon),
+              #primary-nav > ul > li > ul > li > .teaser a.more-link span:not(.icon) {
+                display: none; }
               #primary-nav > div > ul > li > ul > li > .teaser a.more-link .icon,
               #primary-nav > ul > li > ul > li > .teaser a.more-link .icon {
                 font-family: "cc-icons";
